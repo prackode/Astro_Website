@@ -1,4 +1,4 @@
-# AeroClub_Website
+# AstroClub_Website
 
 # Features :-
 
