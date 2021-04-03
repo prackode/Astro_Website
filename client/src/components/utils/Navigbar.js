@@ -1,7 +1,7 @@
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import "../../css/navbar.css";
-import im1 from "../..//images/utils/logo-aero2.png";
+import im1 from "../..//images/utils/astro_logo2.png";
 import { ExitToApp, PermIdentity } from '@material-ui/icons'
 
 
@@ -49,7 +49,7 @@ export default function Navigbar() {
         collapseOnSelect
         expand="lg"
         variant="light"
-        className="style top-bottom"
+        className="style top-bottom starbg"
         id="navbar"
       >
         <Navbar.Brand href="/" className="title-nav">
@@ -154,7 +154,7 @@ export default function Navigbar() {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Button className='mr-sm-2 my-2 right-btn btn-danger' href='#'>Astrowing Club</Button>
+          <Button className='mr-sm-2 my-2 right-btn btn-info' href='#'>AeroClub</Button>
         </Navbar.Collapse>
       </Navbar>
     </>

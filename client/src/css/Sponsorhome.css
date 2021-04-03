@@ -3,6 +3,12 @@
   width: 100%;
 }
 
+.starbg {
+  background: url("../images/utils/space4.jpg");
+  background-size:contain;
+  background-position:center center;
+}
+
 
 .owl-carousel .owl-stage {
   display: flex;

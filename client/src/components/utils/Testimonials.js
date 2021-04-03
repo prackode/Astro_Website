@@ -11,7 +11,7 @@ import { Container, Jumbotron } from "react-bootstrap";
 export default function Testimonials() {
   return (
 
-    <section className="testimonial text-center">
+    <section className="testimonial text-center starbg">
       <div className="container">
       <div
         className="pageTitle titleBold headingc white-headingc"

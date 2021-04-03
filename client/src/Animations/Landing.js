@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/Landing.css";
-import m from "../images/utils/logo-aero2.png";
+import m from "../images/utils/astro_logo3.png";
 
 class Landing extends React.Component {
   render() {
@@ -14,7 +14,7 @@ class Landing extends React.Component {
               </div>
               <div className="landing-about">
                 <h1 className="font-weight-bold text-uppercase">
-                  AeroClub MNNIT
+                  AstroWing MNNIT
                 </h1>
               </div>
             </div>

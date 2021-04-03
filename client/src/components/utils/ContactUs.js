@@ -62,11 +62,11 @@ const ContactUs = () => {
   };
 
   return (
-    <div className="contact-us">
+    <div className="contact-us bgrt">
       <div
         className="pageTitle titleBold headingc white-headingc"
         data-aos="fade-up"
-        style={{ marginBottom: "5px" }}
+        style={{ marginBottom: "5px", color:"rgb(25, 25, 25)" }}
       >
         CONTACT US
       </div>
@@ -98,7 +98,7 @@ const ContactUs = () => {
               style={{ width: "auto", height: "13rem", margin: "18px" }}
             />
             <div className="col-sm-12 col-md-12 col-lg-8">
-              <h6>
+              <h6 style={{color: "rgb(41, 41, 41);"}}>
                 Motilal Nehru National Institute of Technology Allahabad,
                 Prayagraj
               </h6>

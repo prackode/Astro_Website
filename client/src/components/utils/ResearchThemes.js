@@ -3,18 +3,18 @@ import "../../css/ResearchThemes.css";
 
 const ResearchThemes = () => {
   return (
-    <div className="container-fluid" style={{ background: "rgb(29, 29, 29)" }}>
+    <div className="container-fluid bgrt">
       <div
         className="pageTitle titleBold headingc white-headingc"
         data-aos="fade-down"
-        style={{ marginBottom: "-25px", color: "white" }}
+        style={{ marginBottom: "-25px", color: "rgb(25, 25, 25)" }}
       >
         Research Themes
       </div>
       <div className="jumbotron" style={{ marginBottom: "0", background: "rgba(0, 0, 0, 0)" }}>
         <div
           className="miniSep"
-          style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+          style={{ marginBottom: "40px", background: "rgb(3, 150, 244)" }}
         ></div>
         <div className="row justify-content-center">
           <div
@@ -84,7 +84,7 @@ const ResearchThemes = () => {
               <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(113, 48, 48)", borderRadius: "10px", margin: "2px" }}
+                  style={{ background: "rgb(3, 150, 244)", borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
                     <i className="far fa-eye" style={{ paddingRight: "20px" }}></i>
@@ -119,7 +119,7 @@ const ResearchThemes = () => {
               <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(113, 48, 48)", borderRadius: "10px", margin: "2px" }}
+                  style={{ background: "rgb(48, 88, 113)", borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
                     <i className="fas fa-laptop-code" style={{ paddingRight: "20px" }}></i>
@@ -154,7 +154,7 @@ const ResearchThemes = () => {
               <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(113, 48, 48)", borderRadius: "10px", margin: "2px" }}
+                  style={{ background: "rgb(3, 150, 244)", borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
                     <i className="fa fa-tools" style={{ paddingRight: "20px" }}></i>
@@ -184,7 +184,7 @@ const ResearchThemes = () => {
               <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(113, 48, 48)", borderRadius: "10px", margin: "2px" }}
+                  style={{ background: "rgb(48, 88, 113)", borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
                     <i className="fas fa-fighter-jet" style={{ paddingRight: "20px" }}></i>
@@ -215,7 +215,7 @@ const ResearchThemes = () => {
               <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(113, 48, 48)", borderRadius: "10px", margin: "2px" }}
+                  style={{ background: "rgb(3, 150, 244)", borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
                     <i className="fas fa-bolt" style={{ paddingRight: "20px" }}></i>
@@ -246,7 +246,7 @@ const ResearchThemes = () => {
               <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(113, 48, 48)", borderRadius: "10px", margin: "2px" }}
+                  style={{ background: "rgb(48, 88, 113)", borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
                     <i className="fas fa-microchip" style={{ paddingRight: "20px" }}></i>

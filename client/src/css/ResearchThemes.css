@@ -18,6 +18,10 @@
 }
 }
 
+.bgrt{
+    background-color: aliceblue;
+}
+
 .card-text {
     font-family: "Roboto";
 }

@@ -34,7 +34,9 @@ body{
   order: -1;
 }
 .col-text{
-    background-color: rgb(41, 41, 41);
+  background: url("../images/utils/space4.jpg");
+  background-size:contain;
+  background-position:center center;
   display: flex;
   align-items: center;
   justify-content: center;
