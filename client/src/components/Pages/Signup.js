@@ -160,7 +160,7 @@ function Signup() {
                   </span>
                 </div>
                 <button
-                  className="btn btn-danger btn-block text-uppercase l1 mb-3"
+                  className="btn btn-primary btn-block text-uppercase l1 mb-3"
                   type="submit"
                   onClick={handleSubmit}
                 >
@@ -179,7 +179,7 @@ function Signup() {
                   </p>
                   <button
                     type="button"
-                    className="btn btn-danger text-uppercase l1"
+                    className="btn btn-primary text-uppercase l1"
                     style={{ width: "100%" }}
                   >
                     <Link

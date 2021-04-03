@@ -50,7 +50,7 @@ export default function Faculty() {
                 President, Student Activity Centre(SAC) <br />
                 Professor, Department of Electrical Engineering
               </p>
-              <a className="btn btn-danger" href='http://www.mnnit.ac.in/images/newstories/2021/eed/CV_Rajesh_Gupta_Jan2021.pdf' target='_blank'>View Profile</a>
+              <a className="btn btn-primary" href='http://www.mnnit.ac.in/images/newstories/2021/eed/CV_Rajesh_Gupta_Jan2021.pdf' target='_blank'>View Profile</a>
             </div>
           </div>
         </div>
@@ -82,7 +82,7 @@ export default function Faculty() {
                 Faculty Incharge Technical Activities, SAC <br />
 Associate Professor, Department of Mechanical Engineering
               </p>
-              <a className="btn btn-danger" href='http://www.mnnit.ac.in/images/newstories/2021/med/cv/Dr._V.R._Komma_Profile.pdf' target='_blank'>View Profile</a>
+              <a className="btn btn-primary" href='http://www.mnnit.ac.in/images/newstories/2021/med/cv/Dr._V.R._Komma_Profile.pdf' target='_blank'>View Profile</a>
             </div>
           </div>
         </div>
@@ -115,7 +115,7 @@ Associate Professor, Department of Mechanical Engineering
               <p>
                 Associate Professor MED, Faculty In-charge
               </p>
-              <a className="btn btn-danger" href='http://www.mnnit.ac.in/images/newstories/2021/med/cv/Dr._Dharmendra_Kumar_Shukla_Profile.pdf' target='_blank'>View Profile</a>
+              <a className="btn btn-primary" href='http://www.mnnit.ac.in/images/newstories/2021/med/cv/Dr._Dharmendra_Kumar_Shukla_Profile.pdf' target='_blank'>View Profile</a>
             </div>
           </div>
         </div>

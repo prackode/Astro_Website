@@ -43,7 +43,7 @@ export default function Achievements() {
                 className="vertical-timeline-element--work"
                 contentStyle={{ boxShadow: 'rgb(167, 166, 166) 0px 0px 20px -3px', color: 'black', }}
                 date={`${new Date(achievement.date).toLocaleString('default', { month: 'long' })}, ${new Date(achievement.date).getFullYear()}`}
-                iconStyle={{ background: 'red', color: '#fff' }}
+                iconStyle={{ background: '#253cd9', color: '#fff' }}
                 icon={<EmojiEvents />}
               >
                 <div className='my-4'>

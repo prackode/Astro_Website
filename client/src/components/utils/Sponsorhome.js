@@ -194,8 +194,8 @@ export default function Sponsorhome() {
                     </div>
                 </OwlCarousel>
                 <div className='d-flex justify-content-center mt-5 '>
-                    <a href="/sponsors" className="btn btn-info mx-2">View More</a>
-                    <a href="mailto:aeroclubclub@mnnit.ac.in?subject=Regarding%20sponsoring%20the%20Aero%20Club%20MNNIT&amp;body=We%20would%20like%20to%20sponsor%20the%20Aero%20Club%20MNNIT." target="__blank" className='btn btn-info'>Sponsor Us</a>
+                    <a href="/sponsors" className="btn btn-primary mx-2">View More</a>
+                    <a href="mailto:aeroclubclub@mnnit.ac.in?subject=Regarding%20sponsoring%20the%20Aero%20Club%20MNNIT&amp;body=We%20would%20like%20to%20sponsor%20the%20Aero%20Club%20MNNIT." target="__blank" className='btn btn-primary'>Sponsor Us</a>
                 </div>
                 div.
             </div>

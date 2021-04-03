@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Loading from "../../Animations/Loading";
 import "../../css/Alumni.css";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE } from "../../grobalVars"
 
 export default function Collaboration() {
   useEffect(() => {
@@ -28,7 +28,7 @@ export default function Collaboration() {
 
       <div className="container col-10 col-md-10">
 
-        <div className="my-5 collaborate" style={{border: "3px solid rgb(204, 67, 67)", padding:"20px", borderRadius:"7px"}}>
+        <div className="my-5 collaborate" style={{ border: "3px solid rgb(22 ,101, 151)", padding: "20px", borderRadius: "7px" }}>
           <h4 className="my-3 titleBold d-flex justify-content-center topic">
             <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>About us</p>
           </h4>
@@ -50,7 +50,7 @@ export default function Collaboration() {
             multiple domains in aerospace.
           </p>
         </div>
-        <div className="my-5 collaborate" style={{border: "3px solid rgb(204, 67, 67)", padding:"20px", borderRadius:"7px"}}>
+        <div className="my-5 collaborate" style={{ border: "3px solid rgb(22 ,101, 151)", padding: "20px", borderRadius: "7px" }}>
           <h4 className="my-3 titleBold d-flex justify-content-center topic">
             <p>What We Have to Offer</p>
           </h4>
@@ -58,7 +58,7 @@ export default function Collaboration() {
             className="miniSep"
             style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
           ></div>
-          <p  className="text-xl paragr" style={{ textAlign: "justify" }}>
+          <p className="text-xl paragr" style={{ textAlign: "justify" }}>
             There is no denying that we in our hand have many challenges which
             are yet far from being solved. We offer our skills, experience,
             passion, and commitment to solving them. We genuinely believe in the
@@ -67,7 +67,7 @@ export default function Collaboration() {
             this domain, notably (Research Themes of our Club-link).
           </p>
         </div>
-        <div className="my-5 collaborate" style={{border: "3px solid rgb(204, 67, 67)", padding:"20px", borderRadius:"7px"}}>
+        <div className="my-5 collaborate" style={{ border: "3px solid rgb(22 ,101, 151)", padding: "20px", borderRadius: "7px" }}>
           <h4 className="my-3 titleBold d-flex justify-content-center topic">
             <p>Technical Collaboration</p>
           </h4>
@@ -89,11 +89,11 @@ export default function Collaboration() {
             dedication from our end with anything you trust us.
           </p>
         </div>
-        <div className="my-5 collaborate" style={{border: "3px solid rgb(204, 67, 67)", padding:"20px", borderRadius:"7px"}}>
+        <div className="my-5 collaborate" style={{ border: "3px solid rgb(22 ,101, 151)", padding: "20px", borderRadius: "7px" }}>
           <h4 className="my-3 titleBold d-flex justify-content-center topic">
-            <p style={{textAlign:"center"}}>Collaboration for Learning and Workshops</p>
+            <p style={{ textAlign: "center" }}>Collaboration for Learning and Workshops</p>
           </h4>
-          
+
           <div
             className="miniSep"
             style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}

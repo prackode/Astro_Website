@@ -2,23 +2,17 @@ import React, { useEffect } from "react";
 import Loading from "../../Animations/Loading";
 import "../../css/Alumni.css";
 import f1 from "../../images/coordinators&Nontech/Amit Gupta.jpg";
-import f2 from "../../images/coordinators&Nontech/Sandeep Singh.jpg";
-import f3 from "../../images/coordinators&Nontech/Devansh Sethi.jpg";
-import f4 from "../../images/coordinators&Nontech/Kanak Agrawal.jpg";
-import f5 from "../../images/coordinators&Nontech/nitish kushwaha.jpeg";
-import f6 from "../../images/coordinators&Nontech/Pushpa Devi.jpeg";
-import f7 from "../../images/coordinators&Nontech/RUCHI SRIVASTAVA.jpg";
-import f8 from "../../images/coordinators&Nontech/Prasanna Sneha.jpg";
-import f9 from "../../images/coordinators&Nontech/Ayush.jpg";
-import f10 from "../../images/coordinators&Nontech/Rishabh.jpg";
-import f11 from "../../images/coordinators&Nontech/Harsh Kumar Singh.jpg";
-import f12 from "../../images/coordinators&Nontech/Bhuvan Jhumb.jpg";
-import f13 from "../../images/coordinators&Nontech/Apoorva Dinesh Singh.jpg";
-import f14 from "../../images/coordinators&Nontech/Archit Chaudhary.jpg";
-import f15 from "../../images/coordinators&Nontech/Ayan Santania.jpg";
-import f16 from "../../images/coordinators&Nontech/ABHISHEK GAUTAM.jpg";
-import f17 from "../../images/coordinators&Nontech/Karimulla Mohammad.bmp";
-import f18 from "../../images/coordinators&Nontech/Ankur Singh.jpg";
+import f2 from "../../images/coordinators&Nontech/Abhijeet Pandey.jpg";
+import f3 from "../../images/coordinators&Nontech/Harshika Peeyoosh.jpg";
+import f4 from "../../images/coordinators&Nontech/Siddharth Tiwari.jpeg";
+import f5 from "../../images/coordinators&Nontech/Aditya Gupta.jpeg";
+import f6 from "../../images/coordinators&Nontech/Dushyant Mittal.jpg";
+import f7 from "../../images/coordinators&Nontech/Ankur Kumar.jpg";
+import f8 from "../../images/coordinators&Nontech/Nilotpal Mukherjee.jpeg";
+import f9 from "../../images/coordinators&Nontech/Bhuvan Jhamb.jpg";
+import f10 from "../../images/coordinators&Nontech/Ardhya_Kumar.jpg";
+import f11 from "../../images/coordinators&Nontech/Apoorva Dinesh Singh.jpg";
+import f12 from "../../images/coordinators&Nontech/Archit Chaudhary.jpg";
 import { REACT_APP_BASE_TITLE } from "../../grobalVars"
 
 export default function Coordinators() {
@@ -28,153 +22,100 @@ export default function Coordinators() {
 
   const members = [
     {
-      emailAddress: "amit758000@gmail.com",
-      name: "Amit Gupta",
-      year: "2nd",
-      photo: f1,
-      linkedinId: "https://www.linkedin.com/in/amit-gupta-0b64991bb/",
-      areaOfInterests:
-        "Drone Automation, Deep Learning, Path Planning",
+      "emailAddress": "amit758000@gmail.com",
+      "name": "Amit Gupta",
+      "year": "2nd",
+      "linkedinId": "https://www.linkedin.com/in/amit-gupta-0b64991bb",
+      "photo": f1,
+      "areaOfInterests": "Machine Learning, Quantum Computing"
     },
     {
-      emailAddress: "sandeepsingh.avanti@gmail.com",
-      name: "SANDEEP SINGH",
-      year: "2nd",
-      photo: f2,
-      linkedinId: "https://www.linkedin.com/in/sandeep-singh-b020a6168/",
-      areaOfInterests: "Drone Automation, Flying, Electronics",
+      "emailAddress": "p.abhijeetp94@gmail.com",
+      "name": "Abhijeet Pandey",
+      "year": "2nd",
+      "linkedinId": "https://www.linkedin.com/in/abhijeetp94/",
+      "photo": f2,
+      "areaOfInterests": "Astrophysics, quantum computing, programming, cryptography"
     },
     {
-      emailAddress: "devanshsethi77@gmail.com",
-      name: "Devansh Sethi",
-      year: "2nd",
-      photo: f3,
-      linkedinId: "https://www.linkedin.com/in/devansh-sethi-2a97721b3/",
-      areaOfInterests:
-        "Electronics, Aerodynamics",
+      "emailAddress": "harshikapeeyoosh@gmail.com",
+      "name": "Harshika Peeyoosh",
+      "year": "2nd",
+      "linkedinId": "https://www.linkedin.com/in/harshika-peeyoosh-5850b3190",
+      "photo": f3,
+      "areaOfInterests": "Cosmology, Observational astronomy and Astrophotography"
     },
     {
-      emailAddress: "akanak101@gmail.com",
-      name: "Kanak Agrawal",
-      year: "2nd",
-      photo: f4,
-      linkedinId: "https://www.linkedin.com/in/kanak-agrawal-03b55b159/",
-      areaOfInterests: "Mechanical Design and Analysis, Controls",
+      "emailAddress": "siddharthtiwari958@gmail.com",
+      "name": "Siddharth Tiwari",
+      "year": "3rd",
+      "linkedinId": "https://www.linkedin.com/in/siddharth-tiwari-12b433181/",
+      "photo": f4,
+      "areaOfInterests": "Theoretical Astronomy, Galactic and extragalactic objects, Classical physics"
     },
     {
-      emailAddress: "nitishkumarkushwaha89@gmail.com",
-      name: "Nitish Kumar",
-      year: "2nd",
-      photo: f5,
-      linkedinId: "https://www.linkedin.com/in/nitish-kumar-9b1b84206/",
-      areaOfInterests: "Mechanical Design and Analysis, Aerodynamics",
+      "emailAddress": "aditya.20192074@mnnit.ac.in",
+      "name": "Aditya Gupta",
+      "year": "2nd",
+      "linkedinId": "https://www.linkedin.com/in/aditya-gupta-916304199",
+      "photo": f5,
+      "areaOfInterests": "Astrophotography, Cosmology, astrophysics"
     },
     {
-      emailAddress: "prasannamkumar43@gmail.com",
-      name: "Prasannam Kumar Sah",
-      year: "2nd",
-      photo: f6,
-      linkedinId: "https://www.linkedin.com/in/prasannam-kumar-sah-a4125b1b2/",
-      areaOfInterests: "Drone Automation, Electronics, Aerodynamics",
+      "emailAddress": "dushyant.20186048@mnnit.ac.in",
+      "name": "Dushyant Mittal",
+      "year": "3rd",
+      "linkedinId": f6,
+      "photo": "https://drive.google.com/open?id=1r3NlKDn04egKJPcYVtqQ6u6wKMyk3VSU",
+      "areaOfInterests": "Stellar Astronomy"
     },
     {
-      emailAddress: "ruchi1112200@gmail.com",
-      name: "Ruchi Srivastava",
-      year: "2nd",
-      photo: f7,
-      linkedinId: "https://www.linkedin.com/in/ruchi-srivastava-aaa2701b3",
-      areaOfInterests:
-        "Design and Simulations, CFD",
+      "emailAddress": "ankur.20191080@mnnit.ac.in",
+      "name": "Ankur Kumar",
+      "year": "2nd",
+      "linkedinId": "https://www.linkedin.com/in/ankur-kumar-3565721a2/",
+      "photo": f7,
+      "areaOfInterests": "Astronomy, Skating, Competitive Coding, Software Development."
     },
     {
-      emailAddress: "prasannasneha1322@gmail.com",
-      name: "Prasanna Sneha",
-      year: "2nd",
-      photo: f8,
-      linkedinId: "Prasanna Sneha",
-      areaOfInterests: "CAD, Aerodynamics"
+      "emailAddress": "nilotpalmukherjee.909@gmail.com",
+      "name": "NILOTPAL MUKHERJEE",
+      "year": "3rd",
+      "linkedinId": "https://www.linkedin.com/in/nilotpal-mukherjee-579249196",
+      "photo": f8,
+      "areaOfInterests": "Physics"
     },
     {
-      emailAddress: "ayushchaturvedi702@gmail.com",
-      name: "Ayush Chaturvedi",
-      year: "2nd",
-      photo: f9,
-      areaOfInterests:
-        "Design and Manufacturing , Drone Automation (Basics i.e dronekit)",
+      "emailAddress": "bhuvanjhamb29@gmail.com",
+      "name": "Bhuvan Jhamb",
+      "year": "Final",
+      "linkedinId": "www.linkedin.com/in/bhuvanjhamb",
+      "photo": f9,
+      "areaOfInterests": "Theoretical Physics, Computational Physics, Observational Astronomy."
     },
     {
-      emailAddress: "rishabhdwivedi462@gmail.com",
-      name: "Rishabh Dwivedi",
-      year: "2nd",
-      photo: f10,
-      linkedinId: "https://www.linkedin.com/in/rishabh-dwivedi-8b85491a2",
-      areaOfInterests: "CAD, Aerodynamics",
+      "emailAddress": "ardhyakumar55@gmail.com",
+      "name": "Ardhya Kumar",
+      "year": "Final",
+      "linkedinId": "https://www.linkedin.com/in/ardhya/",
+      "photo": f10
     },
     {
-      emailAddress: "harshkumarsingh325@gmail.com",
-      name: "Harsh Kumar Singh ",
-      year: "2nd",
-      photo: f11,
-      linkedinId: "harshkumarsingh325@gmail.com",
-      areaOfInterests: "Drone Automation, Computer Vision, Simulation",
+      "emailAddress": "apoorva011199@gmail.com",
+      "name": "Apoorva Dinesh Singh ",
+      "year": "Final",
+      "linkedinId": "https://www.linkedin.com/in/apoorva-singh-0111",
+      "photo": f11,
+      "areaOfInterests": "ML, CV"
     },
     {
-      emailAddress: "bhuvanjhamb29@gmail.com",
-      name: "Bhuvan Jhamb",
-      year: "Final",
-      photo: f12,
-      linkedinId: "https://www.linkedin.com/in/bhuvanjhamb",
-      areaOfInterests:
-        "Drone Automation, Controls, Path Planning, AI, Simulations",
-    },
-    {
-      emailAddress: "apoorva011199@gmail.com",
-      name: "Apoorva Dinesh Singh ",
-      year: "Final",
-      photo: f13,
-      linkedinId: "https://www.linkedin.com/in/apoorva-singh-0111",
-      areaOfInterests: "Machine Learning, Computer Vision, Path Planning",
-    },
-    {
-      emailAddress: "chaudharyarchit2000@gmail.com",
-      name: "ARCHIT CHAUDHARY",
-      year: "Final",
-      photo: f14,
-      linkedinId: "https://www.linkedin.com/in/archit-chaudhary-010a78164/",
-      areaOfInterests: "Automation, Aerodynamics, Propulsion",
-    },
-    {
-      emailAddress: "ayan.santania@gmail.com",
-      name: "Ayan Kishore",
-      year: "Final",
-      photo: f15,
-      areaOfInterests: "CAD, 3D Printing, Manufacturing",
-    },
-    {
-      emailAddress: "abhishekgautam689@gmail.com",
-      name: "Abhishek Gautam",
-      year: "Final",
-      photo: f16,
-      linkedinId: "https://www.linkedin.com/in/abhishekgautam01",
-      areaOfInterests: "Mechanical Design and Analysis, Controls and Electronics",
-    },
-    {
-      emailAddress: "karimulla17999@gmail.com",
-      name: "Karimulla Mohammad",
-      year: "2nd",
-      photo: f17,
-      linkedinId: "https://www.linkedin.com/in/karimulla1098/",
-      areaOfInterests: "Deep Learning, Path Planning, ROS, AI",
-    },
-    {
-      emailAddress: "as096255@gmail.com",
-      name: "Ankur Pratap Singh",
-      year: "2nd",
-      photo: f18,
-      linkedinId: "https://linkedin.com/in/ankur-singh-82496514b/",
-      areaOfInterests:
-        "Autonomous Systems, Data Science, Computer Vision",
-    },
+      "emailAddress": "chaudharyarchit2000@gmail.com",
+      "name": "ARCHIT CHAUDHARY",
+      "year": "Final",
+      "linkedinId": "https://www.linkedin.com/in/archit-chaudhary-010a78164/",
+      "photo": f12,
+      "areaOfInterests": "theoretical physics"
+    }
   ];
 
   return (

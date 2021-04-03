@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "../../css/Login.css";
-import m from "../../images/utils/logo-aero2.png";
+import m from "../../images/utils/astro_logo.png";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 function Login() {
@@ -99,7 +99,7 @@ function Login() {
                   </span>
                 </div>
                 <button
-                  className="btn btn-lg btn-danger btn-block text-uppercase l1"
+                  className="btn btn-lg btn-primary btn-block text-uppercase l1"
                   type="submit"
                   onClick={handleSubmit}
                 >
@@ -128,7 +128,7 @@ function Login() {
                   </p>
                   <button
                     type="button"
-                    className="btn btn-danger text-uppercase l1"
+                    className="btn btn-primary text-uppercase l1"
                     style={{ width: "100%" }}
                   >
                     <Link

@@ -49,7 +49,7 @@
   }
 
   .panel-title a {
-    background: #dc3545;
+    background: #317eab;
     border-radius: 15px;
     color: white;
     text-decoration: none;
@@ -57,12 +57,12 @@
 
 
 .news-container .panel-collapse{
-  background: #e4dddd;
+  background: #e3eafa;
 }
 
 .panel-default>.panel-heading a[aria-expanded="true"] {
     color: rgb(228, 225, 225);
-    background-color: #311111;
+    background-color:#0f1a3a;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     border-top-right-radius: 15px;

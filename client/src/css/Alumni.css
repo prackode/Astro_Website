@@ -79,7 +79,7 @@
   /* margin: 50px auto 0 auto !important; */
 }
 .alumni-container .card-body{
-  background-color: rgb(202, 49, 49);
+  background-color: rgb(33 ,85 ,139);
   color: white;
 }
 .alumni-container .card-body a{
@@ -129,7 +129,7 @@
 }
 
 .alumni-container .panel-collapse{
-  background: #fdf9f9;
+  background:#e3eafa;
 }
 
 @media screen and (max-width: 619px) {

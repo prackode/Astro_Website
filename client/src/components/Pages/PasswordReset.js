@@ -145,7 +145,7 @@ function PasswordReset() {
                   </span>
                 </div>
                 <button
-                  className="btn btn-block text-uppercase btn-danger l1 mb-3"
+                  className="btn btn-block text-uppercase btn-primary l1 mb-3"
                   type="submit"
                   onClick={handleSubmit}
                 >

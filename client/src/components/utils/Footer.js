@@ -2,8 +2,7 @@ import React from "react";
 import "../../css/footer.css";
 import { useLocation } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
-import { Link as Scroll } from "react-scroll";
-import m from "../../images/utils/aerologofix.png";
+import m from "../../images/utils/astro_logo2.png";
 
 export default function Footer() {
   const location = useLocation();
@@ -17,7 +16,7 @@ export default function Footer() {
               <div className="row d-flex">
                 <div className="col-sm-12 col-md-12 col-lg-4">
                   <div className="information">
-                    <h2 style={{ fontFamily: "Monospace" }}>AERO CLUB MNNIT</h2>
+                    <h2 style={{ fontFamily: "Monospace" }}>ASTROWING MNNIT</h2>
                     <p>
                       Near Boys SAC,
                       <br />
@@ -76,7 +75,7 @@ export default function Footer() {
             <div className="row">
               <div className="col-md-8 col-sm-6 col-xs-12">
                 <p className="copyright-text">
-                  Copyright © 2021 All Rights Reserved by AERO CLUB MNNIT
+                  Copyright © 2021 All Rights Reserved by ASTROWING MNNIT
                 </p>
               </div>
               <div className="col-md-4 col-sm-6 col-xs-12">

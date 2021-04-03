@@ -64,7 +64,7 @@ function ForgetPassword() {
                 </div>
 
                 <button
-                  className="btn btn-lg btn-block text-uppercase btn-danger l1 my-1"
+                  className="btn btn-lg btn-block text-uppercase btn-primary l1 my-1"
                   type="submit"
                   onClick={handleSubmit}
                 >
@@ -72,7 +72,7 @@ function ForgetPassword() {
                   </button>
                 <button
                   type="button"
-                  className="btn btn-danger text-uppercase l1 my-1"
+                  className="btn btn-primary text-uppercase l1 my-1"
                   style={{ width: "100%" }}
                 >
                   <Link
