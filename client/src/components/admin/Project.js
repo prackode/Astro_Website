@@ -26,10 +26,12 @@ import {
   ReferenceInput,
   ReferenceField,
   ChipField,
+  SingleFieldList,
 } from "react-admin";
 
 import RichTextInput from "ra-input-rich-text";
 import ImageResize from "quill-image-resize";
+import TextArrayField from "./TextArrayField";
 
 export const ProjectList = (props) => {
   return (
@@ -112,11 +114,6 @@ export const ProjectCreate = (props) => {
             { id: "Completed", name: "Completed" },
           ]}
         />
-        <ArrayInput source="compTech" label="Components and technologies used">
-          <SimpleFormIterator>
-            <TextInput label="" />
-          </SimpleFormIterator>
-        </ArrayInput>
         <ArrayInput source="members">
           <SimpleFormIterator>
             <ReferenceInput label="User" source="user" reference="users">
@@ -126,12 +123,17 @@ export const ProjectCreate = (props) => {
             <BooleanInput source="leader" label="Leader" />
           </SimpleFormIterator>
         </ArrayInput>
+        <ArrayInput source="compTech" label="Components and technologies used">
+          <SimpleFormIterator>
+            <TextInput label="" />
+          </SimpleFormIterator>
+        </ArrayInput>
         <DateInput
           source="issuedon"
           label="Issued On"
           defaultValue={new Date()}
         />
-        <TextInput source="ytID" label="Youtube Embed ID"/>
+        <TextInput source="ytID" label="Youtube Embed ID" />
         <BooleanInput source="featured" label="Featured" />
         <BooleanInput source="home" />
         <BooleanInput source="approved" />
@@ -166,6 +168,11 @@ export const ProjectShow = (props) => {
         </ArrayField>
         <DateField source="issuedon" label="Issued On" />
         <BooleanField source="featured" label="Featured" />
+        <TextArrayField source='compTech' label='Components and Technologies used'>
+          <SingleFieldList>
+            <ChipField source='id' />
+          </SingleFieldList>
+        </TextArrayField>
         <BooleanField source="home" />
         <BooleanField source="approved" />
       </SimpleShowLayout>
@@ -244,8 +251,13 @@ export const ProjectEdit = (props) => {
             <BooleanInput source="leader" label="Leader" />
           </SimpleFormIterator>
         </ArrayInput>
+        <ArrayInput source="compTech" label="Components and technologies used">
+          <SimpleFormIterator>
+            <TextInput label="" />
+          </SimpleFormIterator>
+        </ArrayInput>
         <DateInput source="issuedon" label="Issued On" validate={required()} />
-        <TextInput source="ytID" label="Youtube Embed ID"/>
+        <TextInput source="ytID" label="Youtube Embed ID" />
         <BooleanInput source="featured" label="Featured" />
         <BooleanInput source="home" />
         <BooleanInput source="approved" />

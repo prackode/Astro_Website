@@ -267,9 +267,13 @@ exports.getMyDetails = (req, res) => {
       path: "blogs",
       populate: { path: "acceptedBy", select: "name email" },
     })
-    .populate("notifications")
     .populate({
       path: "projects",
+      populate: { path: "members.user", select: "name" },
+    })
+    .populate({
+      path: "photos",
+      select: "title description instrumentUsed instrumentSettings tags pic members",
       populate: { path: "members.user", select: "name" },
     })
     .populate({

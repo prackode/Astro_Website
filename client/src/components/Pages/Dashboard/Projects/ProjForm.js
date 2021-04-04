@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import ReactQuill from "react-quill";
 import { useDispatch } from "react-redux";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../../grobalVars";
+import { REACT_APP_SERVER } from "../../../../grobalVars";
 
-export default function ProjForm(props) {
+export default function ProjForm() {
   const [formData, setformData] = useState({
     title: "",
     overview: "",

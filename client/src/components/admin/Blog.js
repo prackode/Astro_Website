@@ -17,7 +17,6 @@ import {
   required,
   RichTextField,
   SelectInput,
-
   Show,
   ShowButton,
   SimpleForm,

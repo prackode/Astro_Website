@@ -30,7 +30,6 @@ function Projects() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
         return SetProjects(data);
       });
   }, []);
@@ -43,13 +42,13 @@ function Projects() {
     <>
       <Loading time={2} />
       <div className="cont">
-      <h3 className="my-3 titleBold d-flex justify-content-center topic">
-              <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>PROJECTS</p>
-            </h3>
-            <div
-              className="miniSep"
-              style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
-            ></div>
+        <h3 className="my-3 titleBold d-flex justify-content-center topic">
+          <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>PROJECTS</p>
+        </h3>
+        <div
+          className="miniSep"
+          style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
+        ></div>
         <div
           className="main"
           style={{ overflow: "hidden", minHeight: "31.7vh" }}

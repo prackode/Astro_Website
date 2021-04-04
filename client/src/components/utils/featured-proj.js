@@ -19,7 +19,7 @@ export default function Featuredproject() {
         <div
           className="pageTitle titleBold headingc white-headingc"
           data-aos="fade-down"
-          style={{ marginBottom: "5px" }}
+          style={{ marginBottom: "5px", color: "rgb(25, 25, 25)" }}
         >
           Flagship Projects
         </div>

@@ -63,7 +63,7 @@ export default function Navigbar() {
               id="basic-nav-dropdown"
               onMouseEnter={() => setShow4(true)}
               onMouseLeave={() => setShow4(false)}
-              onTouchEnd={() => setShow4(!show3)}
+              onTouchEnd={() => setShow4(!show4)}
               show={show4}
             >
               <NavDropdown.Item href="/projects/featured">Flagship Projects</NavDropdown.Item>
@@ -124,8 +124,8 @@ export default function Navigbar() {
             <Nav.Link eventKey="collaborate" href="/collaborate" className="nav-items">
               Collaborate
             </Nav.Link>
-            <Nav.Link eventKey="spinoff" href="/spinoff" className="nav-items">
-              Spinoff
+            <Nav.Link eventKey="astrophotography" href="/astrophotography" className="nav-items">
+              Astrophotography
             </Nav.Link>
             <Nav.Link eventKey="sponsors" href="/sponsors" className="nav-items">
               Sponsors
@@ -149,12 +149,16 @@ export default function Navigbar() {
                   </NavDropdown.Item>
               }
               <NavDropdown.Divider />
+              <NavDropdown.Item href="/spinoff" eventKey="spinoff">
+                Spinoff
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
               <NavDropdown.Item href="/news" eventKey="news">
                 Updates
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Button className='mr-sm-2 my-2 right-btn btn-info' href='#'>AeroClub</Button>
+          <Button className='mr-sm-2 my-2 right-btn btn-primary' href='#'>Aero Club</Button>
         </Navbar.Collapse>
       </Navbar>
     </>

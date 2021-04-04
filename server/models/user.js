@@ -52,6 +52,12 @@ var userSchema = new mongoose.Schema(
         ref: "Project",
       },
     ],
+    photos: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Astrophotography",
+      },
+    ],
     blogs: [
       {
         type: mongoose.Schema.Types.ObjectId,
@@ -106,7 +112,11 @@ userSchema.method("transform", function () {
   delete obj.encry_password;
   delete obj.createdAt;
   delete obj.updatedAt;
+  delete obj.reset_pass_session;
   return obj;
 });
+
+userSchema.set('toObject', { virtuals: true });
+userSchema.set('toJSON', { virtuals: true });
 
 module.exports = mongoose.model("User", userSchema);

@@ -1,4 +1,3 @@
-const { request } = require("express");
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -6,6 +5,8 @@ const mongoose = require("mongoose");
 const port = process.env.PORT || 9500;
 require("dotenv").config();
 app.use(cors());
+app.use(express.static(__dirname + '/public'))
+app.use('/images', express.static('/public/images'));
 // mongodb
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -26,11 +27,12 @@ const userRoutes = require("./routes/user");
 const projectRoutes = require("./routes/project");
 const newsRoutes = require("./routes/news");
 const workshopRoutes = require("./routes/workshop");
+const photoRoutes = require("./routes/astrophotography");
 const achievementRoutes = require("./routes/achievement");
 const contactRouters = require("./routes/contact");
+
 // app specific
 app.use(express.json());
-
 
 //Adding routes to the app
 app.use("/api", authRoutes);
@@ -41,6 +43,7 @@ app.use("/api", projectRoutes);
 app.use("/api", newsRoutes);
 app.use("/api", userRoutes);
 app.use("/api", workshopRoutes);
+app.use("/api", photoRoutes);
 app.use("/api", achievementRoutes);
 app.use("/api", contactRouters);
 

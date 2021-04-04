@@ -33,6 +33,7 @@ import { UserList, UserShow, UserEdit, UserCreate } from "./Users";
 import { useSelector } from "react-redux";
 import { dataProvider } from "./dataProvider";
 import { history } from "../../ConfigureStore";
+import { PhotoEdit, PhotoList, PhotoShow } from "./Astrophotography";
 
 function AdminComp() {
   document.title = `Admin Panel | ${REACT_APP_BASE_TITLE}`;
@@ -66,6 +67,12 @@ function AdminComp() {
           create={BlogCreate}
           edit={BlogEdit}
           show={BlogShow}
+        />
+        <Resource
+          name="astrophotographies"
+          list={PhotoList}
+          show={PhotoShow}
+          edit={PhotoEdit}
         />
         <Resource
           name="achievement"

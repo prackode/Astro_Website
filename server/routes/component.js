@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const { getAllComponents, addComponent, updateComponent, deleteComponent, getComponentById, getAllComponentsFilter,upload } = require("../middleware/component");
+const { getAllComponents, addComponent, updateComponent, deleteComponent, getComponentById, getAllComponentsFilter } = require("../middleware/component");
+const { upload } = require('../middleware/fileUpload')
 const { isSignedIn, isAdmin } = require("../middleware/auth");
 
 //params

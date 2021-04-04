@@ -41,6 +41,11 @@ const userReducer = (user = null, action) => {
         ...user,
         projects: [...user.projects, action.payload]
       }
+    case "CREATE_PHOTO":
+      return {
+        ...user,
+        photos: [...user.photos, action.payload]
+      }
     case "CLEAR":
       return null;
     default:

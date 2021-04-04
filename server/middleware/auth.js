@@ -29,7 +29,7 @@ exports.signup = (req, res) => {
       We hope you have an exciting and adrenaline-packed experience throughout your stay with us.
       You're just a step away from completion.</p>
       
-      <h4><a href="${process.env.BASE_URL}/user/confirm/${jwtToken}">Click Here</a> to confirm your registration.</h4>
+      <h4><a href="${process.env.CLIENT_URL}/user/confirm/${jwtToken}">Click Here</a> to confirm your registration.</h4>
       
       <br/>
       <p class='float-left'>
@@ -137,7 +137,7 @@ exports.forgetPassword = (req, res) => {
         to: req.body.email,
         subject: "Password-Reset@aeroclubmnnit",
         html: `<h2>You requested for password reset</h2>
-      <p>Click on this <a href="${process.env.BASE_URL}/user/resetpassword/${jwtToken}">link</a> to reset password<p>`,
+      <p>Click on this <a href="${process.env.CLIENT_URL}/user/resetpassword/${jwtToken}">link</a> to reset password<p>`,
       },
       (err, info) => {
         if (err) {

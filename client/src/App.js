@@ -43,6 +43,8 @@ import Spinoff from "./components/Pages/Spinoff.js";
 import WebTeam from "./components/Pages/WebTeam.js";
 import FeaturedProjects from "./components/Pages/FeaturedProjects.js";
 import Loading from "./Animations/Loading.js";
+import Astrophotography from "./components/Pages/Astrophotography.js";
+import SingleAstrophoto from "./components/Pages/SingleAstrophoto.js";
 
 function App() {
   return (
@@ -114,6 +116,9 @@ function App() {
             <Route path="/spinoff" exact>
               <Spinoff />
             </Route>
+            <Route path="/astrophotography" exact>
+              <Astrophotography />
+            </Route>
             <Route path="/user/createblog" exact>
               <CreateBlog />
             </Route>
@@ -149,6 +154,9 @@ function App() {
             </Route>
             <Route path="/projects/:projectId" exact>
               <SingleProject />
+            </Route>
+            <Route path="/astrophotography/:photoId" exact>
+              <SingleAstrophoto />
             </Route>
             <Route path="/blogs" exact>
               <Blogs />

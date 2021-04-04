@@ -75,7 +75,7 @@ export default function Coordinators() {
       "year": "2nd",
       "linkedinId": "https://www.linkedin.com/in/ankur-kumar-3565721a2/",
       "photo": f7,
-      "areaOfInterests": "Astronomy, Skating, Competitive Coding, Software Development."
+      "areaOfInterests": "Astronomy, Cosmoslogy, Astrophysics"
     },
     {
       "emailAddress": "nilotpalmukherjee.909@gmail.com",

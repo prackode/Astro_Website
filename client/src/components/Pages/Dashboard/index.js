@@ -4,6 +4,7 @@ import { toast } from "react-toastify";
 import "../../../css/Dashboard.css";
 import DashComp from "./ComponentRequests/DashComp";
 import DashProjects from "./Projects/DashProjects";
+import Dashphotos from "./Astrophotography/Dashphotos";
 import DashInvites from "./Invites/DashInvites";
 import DashProfile from "./Profile/DashProfile";
 import DashBlogs from "./Blogs/DashBlogs";
@@ -111,6 +112,17 @@ function Dashboard() {
           </a>
           <a
             className="nav-item nav-link"
+            id="nav-photos-tab"
+            data-toggle="tab"
+            href="#nav-photos"
+            role="tab"
+            aria-controls="nav-photos"
+            aria-selected="false"
+          >
+            Astrophotography
+          </a>
+          <a
+            className="nav-item nav-link"
             id="nav-news-tab"
             data-toggle="tab"
             href="#nav-news"
@@ -170,6 +182,14 @@ function Dashboard() {
           aria-labelledby="nav-blogs-tab"
         >
           <DashBlogs />
+        </div>
+        <div
+          className="tab-pane fade"
+          id="nav-photos"
+          role="tabpanel"
+          aria-labelledby="nav-photos-tab"
+        >
+          <Dashphotos />
         </div>
         <div
           className="tab-pane fade"
