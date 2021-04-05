@@ -53,7 +53,7 @@ export default function Featuredproject() {
                             </p>
                             <Button
                               className="btns card_btns"
-                              variant="danger"
+                              variant="primary"
                               href={`projects/${project._id}`}
                             >
                               Read More

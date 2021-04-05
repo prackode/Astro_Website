@@ -46,7 +46,7 @@ function FeaturedProjects() {
       <Loading time={2} />
       <div className="cont">
       <h3 className="my-3 titleBold d-flex justify-content-center topic">
-              <p className="" style={{ marginBottom: "0px", textAlign: "center", color:"white" }}>FLAGSHIP PROJECTS</p>
+              <p className="" style={{ marginBottom: "0px", textAlign: "center", color:"rgb(29, 29, 29)" }}>FLAGSHIP PROJECTS</p>
             </h3>
             <div
               className="miniSep"
@@ -75,7 +75,7 @@ function FeaturedProjects() {
                         </p>
                         <Button
                           className="btns card_btns"
-                          variant="danger"
+                          variant="primary"
                           href={`${window.location.origin}/projects/${project._id}`}
                           style={{ marginTop: 10 }}
                         >
@@ -106,7 +106,7 @@ function FeaturedProjects() {
             )}
             {page < no_of_pages && (
               <Button
-                variant="danger"
+                variant="primary"
                 className="mx-1"
                 onClick={() => {
                   SetPage((page) => page + 1);

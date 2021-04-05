@@ -97,7 +97,7 @@ function Blogs() {
                       </p>
                       <Button
                         className="btns card_btns"
-                        variant="danger"
+                        variant="primary"
                         href={`/blogs/${blog._id}`}
                         style={{ marginTop: 10 }}
                       >
@@ -116,7 +116,7 @@ function Blogs() {
             {page > 1 && (
               <Button
                 className="mx-1"
-                variant="danger"
+                variant="primary"
                 onClick={() => {
                   SetPage((page) => page - 1);
                 }}
@@ -126,7 +126,7 @@ function Blogs() {
             )}
             {page < no_of_pages && (
               <Button
-                variant="danger"
+                variant="primary"
                 className="mx-1"
                 onClick={() => {
                   SetPage((page) => page + 1);

@@ -21,7 +21,7 @@ export default function Achievements() {
     <>
       <Loading time={2} />
       <div className="pagesa">
-        <div className="overlaya">
+        <div className="overlaya starbg">
           <div className="pageTitlea titleBolda">Our Achievements</div>
           <div className="py-2">
             <p

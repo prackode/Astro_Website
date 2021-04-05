@@ -51,7 +51,7 @@ function SingleBlog() {
           background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,.4))`,
         }}
       >
-        <div className="overlayp">
+        <div className="overlayp starbg">
           <div className="pageTitlep titleBoldp container col-11 pl-0">
             <div className='blog-title'>
               {blog?.title}

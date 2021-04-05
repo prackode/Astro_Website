@@ -13,7 +13,7 @@ export default function Spinoff() {
         <>
             <Loading time={2} />
             <div className=" pagesa">
-                <div className="overlaya">
+                <div className="overlaya starbg">
                     <div className="pageTitlea titleBolda">Spinoff</div>
                 </div>
             </div>

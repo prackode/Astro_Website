@@ -11,12 +11,12 @@ import { Container, Jumbotron } from "react-bootstrap";
 export default function Testimonials() {
   return (
 
-    <section className="testimonial text-center starbg">
+    <section className="testimonial text-center">
       <div className="container">
       <div
         className="pageTitle titleBold headingc white-headingc"
         data-aos="fade-down"
-        style={{ marginBottom: "0px"}}
+        style={{ marginBottom: "0px", color:"rgb(25, 25, 25)"}}
       >
         Testimonials
       </div>

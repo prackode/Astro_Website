@@ -12,15 +12,15 @@ export default function Collaboration() {
     <>
       <Loading time={2} />
       <div className="pagesa">
-        <div className="overlaya">
+        <div className="overlaya starbg">
           <div className="pageTitlea titleBolda">Collaborate</div>
           <div className="py-2">
             <p
               className="font-italic text-center my-5 quote"
               style={{ fontSize: "1.5rem" }}
             >
-              "Alone we can do so little; together we can do so much." ~Helen
-              Keller
+              "A strong team can take any vision and turn it into reality" -John Carmack.
+
           </p>
           </div>
         </div>
@@ -30,43 +30,20 @@ export default function Collaboration() {
 
         <div className="my-5 collaborate" style={{ border: "3px solid rgb(22 ,101, 151)", padding: "20px", borderRadius: "7px" }}>
           <h4 className="my-3 titleBold d-flex justify-content-center topic">
-            <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>About us</p>
+            <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>Who are we</p>
           </h4>
           <div
             className="miniSep"
             style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
           ></div>
           <p className="text-xl paragr" style={{ textAlign: "justify" }}>
-            AeroClub MNNIT is a student body under the Student Activity Centre
-            (SAC), MNNIT Allahabad. We, here, congregate students from all over
-            the college, not confining to branches but uniting by technology's
-            passion. Since the establishment of the club, we have completed
-            numerous projects, which do not only serve the purpose of competing
-            in events but also solve real-life problems. Our projects cover all
-            aerospace sector domains ranging from RC planes to design, from
-            aerodynamic analysis to autonomous drones, and then astronomy. We
-            are also the birthplace of a fully functional startup, TSAW (link).
-            With years of hard work and persistence, we have honed our skills in
-            multiple domains in aerospace.
-          </p>
+          Astrowing MNNIT is a student body under the Student Activity Centre (SAC), MNNIT Allahabad. We are a group of like-minded engineering students from all the college departments. We are passionate about science and believe that engineers and scientists should work in unison for humanity's real progress. Being from a technical background, we have expertise in several fields like machine learning, data analysis, programming, electronics, designing, etc (Link). 
+Also, we continuously strive to expand our knowledge in theoretical concepts of physics and astronomy. We have also completed various projects like 3D printing telescopes, detecting galaxies using machine learning, web-based quantum simulator, etc. (Link).
+We also have some experience observing the sky both through the naked eye and telescopes. 
+We offer our knowledge and commitment for any possible collaborations.</p>
+
         </div>
-        <div className="my-5 collaborate" style={{ border: "3px solid rgb(22 ,101, 151)", padding: "20px", borderRadius: "7px" }}>
-          <h4 className="my-3 titleBold d-flex justify-content-center topic">
-            <p>What We Have to Offer</p>
-          </h4>
-          <div
-            className="miniSep"
-            style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
-          ></div>
-          <p className="text-xl paragr" style={{ textAlign: "justify" }}>
-            There is no denying that we in our hand have many challenges which
-            are yet far from being solved. We offer our skills, experience,
-            passion, and commitment to solving them. We genuinely believe in the
-            motto of MNNIT - "Success is born out of action". Since our
-            establishment, we have gained expertise in all aspects related to
-            this domain, notably (Research Themes of our Club-link).
-          </p>
-        </div>
+        
         <div className="my-5 collaborate" style={{ border: "3px solid rgb(22 ,101, 151)", padding: "20px", borderRadius: "7px" }}>
           <h4 className="my-3 titleBold d-flex justify-content-center topic">
             <p>Technical Collaboration</p>
@@ -76,17 +53,7 @@ export default function Collaboration() {
             style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
           ></div>
           <p className="text-xl paragr" style={{ textAlign: "justify" }}>
-            Our club's budding engineers are always present if you face any
-            problems in the above technological domains. We believe that the
-            essence of engineering must be instilled within us since the day we
-            enter the college premises and shall not be held back to our
-            graduation day. We offer a workforce equipped with all tools to deal
-            with challenges and are eager to apply their knowledge to real-world
-            problems. Hereby, we are open to all potential partners who want to
-            collaborate with us. Any collaborative projects from startups or
-            companies from the industries, related to technologies mentioned
-            above, are most welcome. We assure you full professionalism and
-            dedication from our end with anything you trust us.
+          Suppose you have any problem statement where our knowledge and skills in science and engineering can be useful for any scientific work, either in the industry or academia. In that case, we are open to all sorts of collaborations. We assure you of full professionalism and dedication for any collaborative projects that may take place.
           </p>
         </div>
         <div className="my-5 collaborate" style={{ border: "3px solid rgb(22 ,101, 151)", padding: "20px", borderRadius: "7px" }}>
@@ -99,10 +66,7 @@ export default function Collaboration() {
             style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
           ></div>
           <p className="text-xl paragr" style={{ textAlign: "justify" }}>
-            Apart from technical expertise, the club also organizes workshops at
-            both the school and college level, which will surely help you set a
-            firm foot in technology. For more details, refer to this page
-            (Jigyasa).
+          Apart from technical expertise, we also have several workshops at both the school and college level, which will surely help you expand your knowledge in the realm of astronomy, whether you are a beginner or have some knowledge beforehand. For more details, refer to this page (Jigyasa).
           </p>
         </div>
       </div>

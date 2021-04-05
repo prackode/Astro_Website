@@ -215,8 +215,8 @@
 }
 .testimonial4_slide:after {
     content:'';
-    background-color: rgb(32, 32, 32);;
-    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.7), 0 6px 20px 0 rgba(255, 255, 255, 0.6);
+    background-color: rgb(78, 175, 255);
+    box-shadow: 0 4px 8px 0 rgba(29, 29, 29, 0.7), 0 6px 20px 0 rgba(26, 26, 26, 0.6);
     background-size: cover;
     position: absolute;
     top:0px;

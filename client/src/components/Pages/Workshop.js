@@ -26,7 +26,7 @@ export default function Workshop() {
     <>
       <Loading time={2} />
       <section className="section1 pagese ">
-        <div className="overlaye">
+        <div className="overlaye starbg">
           <div className="containere ">
             <h1 className="titlee">
               <div className="pageTitlee titleBolde">

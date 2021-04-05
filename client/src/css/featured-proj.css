@@ -111,7 +111,7 @@ img {
 }
 
 .evavishkar{
-  height: 17rem;
+  height: 18rem;
 }
 
 .evavishkar:hover {
@@ -161,6 +161,7 @@ img {
 
 .btns:hover {
   background-color: rgba(124, 193, 233, 0.856);
+  border: 1px solid rgba(6, 56, 77, 0.884);;
 }
 
 .cards {
@@ -226,7 +227,7 @@ img {
   background-size:contain;
   background-position:center center;
   /* background: rgb(19, 19, 19); */
-  border: 2px solid rgb(90, 194, 255);
+  /* border: 2px solid rgb(90, 194, 255); */
   border-radius: 0px 0px 0.5rem 0.5rem;
 }
 

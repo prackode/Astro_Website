@@ -3,11 +3,11 @@ import "../../css/ResearchThemes.css";
 
 const ResearchThemes = () => {
   return (
-    <div className="container-fluid bgrt">
+    <div className="container-fluid starbg">
       <div
         className="pageTitle titleBold headingc white-headingc"
         data-aos="fade-down"
-        style={{ marginBottom: "-25px", color: "rgb(25, 25, 25)" }}
+        style={{ marginBottom: "-25px", color: "white" }}
       >
         Research Themes
       </div>
@@ -23,7 +23,7 @@ const ResearchThemes = () => {
             data-aos-duration="2000"
             style={{ padding: "0 4rem 0 4rem" }}
           >
-            <div
+            {/* <div
               className="card text-center"
               style={{ marginBottom: "1.5rem", width: "auto" }}
             >
@@ -39,7 +39,7 @@ const ResearchThemes = () => {
                 Our Domains
               </div>
               <div className="card-body">
-                {/* <h5 class="card-title">Special title treatment</h5> */}
+                
                 <p className="card-text">
                   <p>Fixed Wing Aircraft </p>
                   <p>Multirotors</p>
@@ -49,15 +49,13 @@ const ResearchThemes = () => {
                   </a>
                 </p>
               </div>
-              {/* <div class="card-footer text-muted">
-                    2 days ago
-                </div> */}
-            </div>
+              
+            </div> */}
           </div>
         </div>
         <div className="i-am-centered">
           <div className="row justify-content-center">
-            <div className="col-sm-10" data-aos="fade-up">
+            {/* <div className="col-sm-10" data-aos="fade-up">
               <div
                 className="card text-center"
                 style={{ marginBottom: "0.5rem", width: "auto" }}
@@ -74,7 +72,7 @@ const ResearchThemes = () => {
                   Technologies
                 </div>
               </div>
-            </div>
+            </div> */}
             {/* <div className="row"> */}
             <div
               className="col-sm-4"
@@ -87,25 +85,21 @@ const ResearchThemes = () => {
                   style={{ background: "rgb(3, 150, 244)", borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="far fa-eye" style={{ paddingRight: "20px" }}></i>
-                       Perception
+                    <i className="fas fa-calculator" style={{ paddingRight: "20px" }}></i>
+                    Computational Skills
                     <hr style={{ background: "white" }}></hr>
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
                   <p className="card-text" style={{ color: "white" }}>
                     <ul className="lststyle" style={{ margin: "5px" }}>
-                      <li>Perception using Sensors</li>
+                      <li>Orbit Simulation </li>
                       {/* <br /> */}
-                      <li>GPS Based Navigation</li>
+                      <li>Eclipse prediction</li>
                       {/* <br /> */}
-                      <li>Deep Learning</li>
+                      <li>3-body problem</li>
                       {/* <br /> */}
-                      <li>Object Detection, Tracking and Avoidance</li>
-                      {/* <br /> */}
-                      <li>Computer Vision</li>
-                      {/* <br /> */}
-                      <li>Sensor Fusion</li>
-                      {/* <br /> */}
+                      <li>Image stacking</li>
+
                     </ul>
                   </p>
                 </div>
@@ -123,23 +117,19 @@ const ResearchThemes = () => {
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
                     <i className="fas fa-laptop-code" style={{ paddingRight: "20px" }}></i>
-                    Design
+                    Data Analysis
                     <hr style={{ background: "white" }}></hr>
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
                   <p className="card-text" style={{ color: "white" }}>
                     <ul className="lststyle" style={{ margin: "5px" }}>
-                      <li>Computer Aided Design</li>
+                      <li>Crater data analysis</li>
                       {/* <br /> */}
-                      <li>Structural Analysis</li>
+                      <li>ML-based applications</li>
                       {/* <br /> */}
-                      <li>Design and Manufacture of RC Aircrafts and Multirotors</li>
+                      <li>Raw data processing</li>
                       {/* <br /> */}
-                      <li>3D Printing</li>
-                      {/* <br /> */}
-                      <li>Materials</li>
-                      {/* <br /> */}
-                      {/* <br /> */}
+
                     </ul>
                   </p>
                 </div>
@@ -158,18 +148,19 @@ const ResearchThemes = () => {
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
                     <i className="fa fa-tools" style={{ paddingRight: "20px" }}></i>
-                    Planning & Control
+                    Design and Manufacturing
                     <hr style={{ background: "white" }}></hr>
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
                   <p className="card-text" style={{ color: "white" }}>
                     <ul className="lststyle" style={{ margin: "5px" }}>
-                      <li>Swarm Intelligence</li>
+                      <li>3D Printing</li>
                       {/* <br /> */}
-                      <li>Control System Algorithms</li>
+                      <li>CAD Models</li>
                       {/* <br /> */}
-                      <li>Path Planning</li>
-                      <li>Different Actuators and their Control</li>
+                      <li>Dobsonian Telescope</li>
+                      <li>German Equatorial Mount -- design and codes</li>
+                      <li>Refractor Telescope</li>
                     </ul>
                   </p>
                 </div>
@@ -187,18 +178,18 @@ const ResearchThemes = () => {
                   style={{ background: "rgb(48, 88, 113)", borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="fas fa-fighter-jet" style={{ paddingRight: "20px" }}></i>
-                  Aerodynamics
+                    <i className="fas fa-satellite" style={{ paddingRight: "20px" }}></i>
+                    Observational Astronomy
                     <hr style={{ background: "white" }}></hr>
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
                   <p className="card-text" style={{ color: "white" }}>
                     <ul className="lststyle" style={{ margin: "5px" }}>
-                      <li>CFD Simulations</li>
+                      <li>Telescope based</li>
                       {/* <br /> */}
-                      <li>Aerofoil Analysis</li>
+                      <li>Radio astronomy</li>
                       {/* <br /> */}
-                      <li>Lift and Drag Studies</li>
+                      <li>Astrophotography (DSLR and Phone cameras)</li>
 
                       {/* <br /> */}
                     </ul>
@@ -218,27 +209,23 @@ const ResearchThemes = () => {
                   style={{ background: "rgb(3, 150, 244)", borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="fas fa-bolt" style={{ paddingRight: "20px" }}></i>
-                  Power Source
+                    <i className="fas fa-atom" style={{ paddingRight: "20px" }}></i>
+                    Quantum Computing
                     <hr style={{ background: "white" }}></hr>
                   </h5>
                   {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
                   <p className="card-text" style={{ color: "white" }}>
                     <ul className="lststyle" style={{ margin: "5px" }}>
-                      <li> Battery Related Studies</li>
+                      <li>Simulator development</li>
                       {/* <br /> */}
-                      <li>Electronic Speed Controllers</li>
-                      {/* <br /> */}
-                      <li>Propulsion Systems</li>
 
-                      {/* <br /> */}
                     </ul>
                   </p>
                 </div>
               </div>
             </div>
 
-            <div
+            {/* <div
               className="col-sm-4"
               data-aos="zoom-in-down"
               data-aos-duration="1500"
@@ -253,21 +240,18 @@ const ResearchThemes = () => {
                   Electronics
                     <hr style={{ background: "white" }}></hr>
                   </h5>
-                  {/* <div className="miniSep" style={{width:'auto',height:'2px', background: 'white' }} ></div> */}
+
                   <p className="card-text" style={{ color: "white" }}>
                     <ul className="lststyle" style={{ margin: "5px" }}>
                       <li> Sensors and Microcontrollers</li>
-                      {/* <br /> */}
-                      {/* <li>Electronic Speed Controllers</li> */}
-                      {/* <br /> */}
+
                       <li>Embedded systems</li>
 
-                      {/* <br /> */}
                     </ul>
                   </p>
                 </div>
               </div>
-            </div>
+            </div> */}
 
             {/* <div
               className="col-sm-5"

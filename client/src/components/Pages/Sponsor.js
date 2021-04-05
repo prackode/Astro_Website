@@ -21,14 +21,14 @@ export default function Ṣponsors() {
     <>
       <Loading time={2} />
       <div className="pagesg">
-        <div className="overlayg">
+        <div className="overlayg starbg">
           <div className="pageTitleg titleBoldg">Sponsors</div>
           <div className="py-2">
             <p
               className="font-italic text-center my-5 quote"
               style={{ fontSize: "1.5rem" }}
             >
-              "The purpose of life is to contribute in some way to making things better." ~ Robert F. Kennedy
+              "I was going to an engineering school, but I fell in love with physics."
 
           </p>
           </div>
@@ -48,31 +48,29 @@ export default function Ṣponsors() {
             <div className="text-center">
               <p>
 
-                <button className="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
+                <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11">
                   Who are we?
                                                      </button>
               </p>
 
               <div class="collapse collapsews" id="collapse11">
                 <div class="card card-body details" >
-                  <p className="just">AeroClub MNNIT, established in 2018, is a student body under the Student Activity Centre (SAC). Since then, it has been the epicenter of the surging ideas in various aerospace field domains, passing through the students, genuinely prepared to do impactful interdisciplinary work. Here, we work across all the aerospace sector domains ranging from RC planes to design, from aerodynamic analysis to autonomous drones, from biomimicking to astronomy, and various others (Link), catalyzed by abstract classes, open discussions, and projects.
-                  Speaking of achievements, our club has won accolades in many national level competitions (Link) and completed a diverse range of projects (Link) and, most importantly, emphasized innovation with state-of-the-art projects like drone automation, RC planes, etc.
-                  We are proud to say that our club is the birthplace of a fully functional startup, TSAW (Link). Also, our club's prosperity resulted in an offshoot, Astrowing(Link) itself, which focuses entirely upon the field of astronomy and theoretical sciences. The club, in these years, has achieved enormous growth, and in the future, we aim to surpass our past achievements.
+                  <p className="just">Astrowing MNNIT, an offshoot of its parent club Aeroclub MNNIT, focuses entirely on <b>astronomy</b> and <b>theoretical sciences</b>. We operate as a separate wing under Aeroclub MNNIT, under Student Activity Centre(SAC), MNNIT Allahabad.
+Our expertise lies in blending our engineering skills with our passion for the sciences. 
+Our work spans equally among theoretical domains in core sciences and practical disciplines like <b>space science</b>, <b>quantum computing</b>, <b>machine learning</b>, <b>and data science</b> applications in astronomy, designing and 3D printing telescopes, observing the night sky through telescopes, and a lot more!</p>
+
+                <p className="just">We also conduct regular stargazing sessions, both with the naked eye and through our telescope, a different and out-of-the-world experience for students that amuse them and relieve them from their stressful lives. Also, we regularly organize quizzes and other intriguing activities related to sciences that are fun and enhance the student’s knowledge.
+In short, a lot of exciting stuff can happen when engineering meets science, and that's what we do. 
+
 </p>
-                  <p className="just">With an eye on that, we look forward to:<br></br><br></br>
-                    <ul>
-                      <li>Collaborate with industries and work on current challenges prevailing in all domains of the aerospace sector</li>
-                      <li>Proceed as a center of excellence by carrying leading-edge research in our club, in the theoretical and applied domains.</li>
-                      <li>Bring honors to college and nation by participating not only in national but also international competitions.</li>
-                    </ul>
-                  </p>
+                  
 
                 </div>
               </div>
 
               <p>
 
-                <button className="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
+                <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse12" aria-expanded="false" aria-controls="collapse12">
                   How can You Help Us?
                                                      </button>
               </p>
@@ -80,7 +78,7 @@ export default function Ṣponsors() {
               <div class="collapse collapsews" id="collapse12">
                 <div class="card card-body details">
 
-                  <p className="just">We ask for support suitable to your capability. This support can be in the form of:<br></br><br></br>
+                  <p className="just">We ask for <b>support</b> suitable to your capability. This support can be in the form of:<br></br><br></br>
                     <ul>
                       <li>Financial support</li>
                       <li>Helping us purchase equipment for projects and competitions</li>
@@ -96,7 +94,7 @@ export default function Ṣponsors() {
 
               <p>
 
-                <button className="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
+                <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse13" aria-expanded="false" aria-controls="collapse13">
                   Why Sponsor Us?
                                                      </button>
               </p>
@@ -104,8 +102,21 @@ export default function Ṣponsors() {
               <div class="collapse collapsews" id="collapse13">
                 <div class="card card-body details">
 
-                  <p className="just">It took centuries to engineer 1st human flight, and just a few years later, we had crossed the solar system. With the advent of drone delivery, air taxis, and privatization of India's space sector, the demand for people who understand flying machines is increasing exponentially. However, not many people are ready for the same. Aeroclub MNNIT attempts to bridge this gap and utilize engineering students' potential and passion, converting them into leaders who can solve problems in the aerospace sector and beyond.
+                  <p className="just">Engineering and sciences are not different fields; they are two approaches to the quest of understanding the universe. Without engineering, science is mere philosophy and vice versa.
+From telephones to CERN Supercollider, from exciting new materials to LIGO detectors, from semiconductors to quantum computing to discovery of cosmos, no invention could ever occur without the collaboration of science and engineering. 
+However, right after JEE, when students who are fueled by their passion for sciences enter into engineering, they find it challenging to continue exploring the sciences, and that's where we facilitate interests. They do a lot of exciting work in the realm of sciences as a part of our clubs. Many even plan to take sciences as their <b>graduate studies</b>, thus contributing to the scientific domain with their engineering skills.
+Also, many people consider astronomy as a hobby, which helps them genuinely have an out-of-world experience, forgetting their worries and stressful lives, all the while peering at the celestial beauties.
+
                   </p>
+                  <p className="just">However, to do all this and beyond in the form of industry and academia collaborations, we need the <b>right equipment</b> in telescopes and other expensive accessories. Right now, we have only a basic telescope, which we want to upgrade soon.
+                  </p>
+                  <p className="just">Also, being in an engineering college, <b>any form of academic / industrial mentorship</b> will help our curious individuals continue their passion for sciences and make something genuinely innovative when blended with their engineering expertise. If you choose to sponsor us, <b>we'll promote you</b> from all our social media accounts and our website's homepage too; this holds true regardless of whether you're an alumnus, individual or a company.
+
+                  </p>
+                  <p className="just"><b>If you resonate with our cause and want to help us in any form, contact us at</b> aeroclub@mnnit.ac.in
+
+                  </p>
+
 
                 </div>
               </div>

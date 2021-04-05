@@ -23,7 +23,7 @@ export default function News() {
       <Loading time={2} />
       <div>
         <div className="pagesg">
-          <div className="overlayg">
+          <div className="overlayg starbg">
             <div className="pageTitleg titleBoldg">Updates</div>
           </div>
         </div>
