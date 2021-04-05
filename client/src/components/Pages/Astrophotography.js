@@ -10,19 +10,19 @@ function AstrophotoGraphy() {
     document.title = `Astrophotography | ${REACT_APP_BASE_TITLE}`;
 
     useEffect(() => {
-        fetch(`${REACT_APP_SERVER}/api/isSignedIn`, {
-            method: "post",
-            headers: {
-                Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
-            },
-        })
-            .then((res) => res.json())
-            .then((data) => {
-                if (data.error) {
-                    localStorage.removeItem("jwtToken");
-                    return;
-                }
-            });
+        // fetch(`${REACT_APP_SERVER}/api/isSignedIn`, {
+        //     method: "post",
+        //     headers: {
+        //         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+        //     },
+        // })
+        //     .then((res) => res.json())
+        //     .then((data) => {
+        //         if (data.error) {
+        //             localStorage.removeItem("jwtToken");
+        //             return;
+        //         }
+        //     });
 
         fetch(`${REACT_APP_SERVER}/api/astrophotographies/approved`, {
             method: "get",

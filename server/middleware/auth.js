@@ -25,7 +25,7 @@ exports.signup = (req, res) => {
       subject: "Activate your account",
       html: `
       <h2>Hello ${req.body.name},</h2>
-      <p style='font-size:1rem;'>Heartiest welcome from <strong>Aeroclub MNNIT</strong>.
+      <p style='font-size:1rem;'>Heartiest welcome from <strong>Astrowing MNNIT</strong>.
       We hope you have an exciting and adrenaline-packed experience throughout your stay with us.
       You're just a step away from completion.</p>
       
@@ -135,7 +135,7 @@ exports.forgetPassword = (req, res) => {
       {
         from: process.env.USER,
         to: req.body.email,
-        subject: "Password-Reset@aeroclubmnnit",
+        subject: "Password-Reset@astrowingmnnit",
         html: `<h2>You requested for password reset</h2>
       <p>Click on this <a href="${process.env.CLIENT_URL}/user/resetpassword/${jwtToken}">link</a> to reset password<p>`,
       },
