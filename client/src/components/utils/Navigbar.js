@@ -1,9 +1,8 @@
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import "../../css/navbar.css";
-import im1 from "../..//images/utils/astro_logo2.png";
+import im1 from "../..//images/utils/astro_logo4.png";
 import { ExitToApp, PermIdentity } from '@material-ui/icons'
-
 
 export default function Navigbar() {
   const [show1, setShow1] = useState(false);

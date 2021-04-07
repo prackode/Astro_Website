@@ -3,7 +3,7 @@ import "../../css/Contact.css";
 import logo from "../../images/utils/collegelogo.png";
 import $ from "jquery";
 import { toast } from "react-toastify";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_SERVER } from "../../grobalVars"
 
 const ContactUs = () => {
   const name = useRef("");
@@ -148,7 +148,7 @@ const ContactUs = () => {
               <div className="after-logo">
                 <h4> Contact : </h4>
                 <br />
-                +91 8295018236 <br />+91 9521818693
+                +91 7568213682 <br />+91 8295018236
               </div>
             </div>
           </div>

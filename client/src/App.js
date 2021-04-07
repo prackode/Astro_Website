@@ -45,6 +45,7 @@ import FeaturedProjects from "./components/Pages/FeaturedProjects.js";
 import Loading from "./Animations/Loading.js";
 import Astrophotography from "./components/Pages/Astrophotography.js";
 import SingleAstrophoto from "./components/Pages/SingleAstrophoto.js";
+import APOD from "./components/utils/APOD.js";
 
 function App() {
   return (
@@ -108,6 +109,7 @@ function App() {
               <Landing />
               <About />
               <Featuredproject />
+              <APOD />
               <ResearchThemes />
               <Testimonials />
               <Sponsorhome />
