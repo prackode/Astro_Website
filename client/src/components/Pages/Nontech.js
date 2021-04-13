@@ -175,7 +175,7 @@ export default function Nontech() {
     <>
       <Loading time={2} />
       <h3 className="my-3 titleBold d-flex justify-content-center topic">
-        <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>NON-TECH MENBERS</p>
+        <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>NON-TECH MEMBERS</p>
       </h3>
       <div
         className="miniSep"

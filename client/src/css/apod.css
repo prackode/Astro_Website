@@ -8,11 +8,11 @@
 }
 .hdimage img{
     height: 35rem;
-    width: auto;
+    width: 35rem;
 }
 
 .explanation{
-    max-height: 24rem;
+    max-height: 22rem;
     overflow-y: auto;
 }
 

@@ -273,7 +273,7 @@ exports.getMyDetails = (req, res) => {
     })
     .populate({
       path: "photos",
-      select: "title description instrumentUsed instrumentSettings tags pic members",
+      select: "title desc instrumentUsed instrumentSettings tags pic members",
       populate: { path: "members.user", select: "name" },
     })
     .populate({

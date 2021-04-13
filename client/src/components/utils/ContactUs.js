@@ -26,8 +26,9 @@ const ContactUs = () => {
     setLoading(true);
     e.preventDefault();
 
-    if (!name || !email || !subject || !body) {
+    if (!name.current.value || !email.current.value || !subject.current.value || !body.current.value) {
       toast.warn('Please specify all the details...!')
+      setLoading(false)
       return
     }
 

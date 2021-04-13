@@ -5,6 +5,8 @@ import PhotoForm from "./PhotoForm";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { REACT_APP_SERVER } from "../../../../grobalVars"
+import PhotoPreview from "./PhotoPreview";
+import PhotoEdit from "./PhotoEdit";
 
 export default function Dashphotos() {
     const [modalShow, setModalShow] = React.useState(false);
@@ -28,26 +30,46 @@ export default function Dashphotos() {
             });
     }, []);
 
+
+
     return (
         <div>
             <div className="container" style={{ minHeight: "60vh" }}>
-                <Accordion>
+                <Accordion className='mt-2 mb-5'>
                     {user?.photos?.map(photo => {
+                        let badge;
+                        const leaders = photo?.members?.map((m) => {
+                            if (m.leader) return m.user._id;
+                        });
+                        let isCurLeader = leaders?.includes(user.id);
+                        if (photo.status === "Ongoing")
+                            badge = (
+                                <span class="badge badge-pill badge-warning">
+                                    {photo.status}
+                                </span>
+                            );
+                        else if (photo.status === "Completed")
+                            badge = (
+                                <span class="badge badge-pill badge-success">
+                                    {photo.status}
+                                </span>
+                            );
                         return (
-                            <Card key={photo.id}>
+                            <Card key={photo._id}>
                                 <Card.Header style={{ cursor: "pointer" }}>
-                                    <Accordion.Toggle as={Card.Header} eventKey={photo.id}>
+                                    <Accordion.Toggle as={Card.Header} eventKey={photo._id}>
                                         <div>
                                             {photo.title}
+                                            <em className="float-right">{badge}</em>
                                         </div>
                                     </Accordion.Toggle>
                                 </Card.Header>
-                                <Accordion.Collapse eventKey={photo.id}>
-                                    <Card.Body>
+                                <Accordion.Collapse eventKey={photo._id}>
+                                    <Card.Body className='border'>
                                         <div className="p-3">
                                             <div>
                                                 <div>Members</div>
-                                                {user.id === photo.leader ? (
+                                                {isCurLeader ? (
                                                     <Button
                                                         onClick={() => {
                                                             setModalShow(true);
@@ -60,7 +82,7 @@ export default function Dashphotos() {
                                                 )}
 
                                                 <ul>
-                                                    {photo?.members?.map((member) => {
+                                                    {photo?.members?.map((member, i) => {
                                                         let badge;
                                                         if (member.accepted && member.leader) {
                                                             badge = <span>👑</span>;
@@ -78,15 +100,16 @@ export default function Dashphotos() {
                                                             );
                                                         }
                                                         return (
-                                                            <li key={member._id}>
+                                                            <li key={i}>
                                                                 {member.user?.name}
-                                                                <em className="float-right">{badge}</em>
+                                                                <div className="float-right">{badge}</div>
                                                             </li>
                                                         );
                                                     })}
                                                 </ul>
-                                                <div className="astro-image">
-                                                    <img src={`${REACT_APP_SERVER}/images/${photo.pic}`} alt="astro" />
+                                                <div className="my-5">
+                                                    {isCurLeader && <PhotoEdit photo={photo} />}
+                                                    <PhotoPreview photo={photo} />
                                                 </div>
                                             </div>
                                         </div>
@@ -95,24 +118,16 @@ export default function Dashphotos() {
                                 <MyVerticallyCenteredModal
                                     show={modalShow}
                                     onHide={() => setModalShow(false)}
-                                    projectId={photo.id}
+                                    projectId={photo._id}
                                 />
                             </Card>
                         );
                     })}
-                    <Card key="newProj">
-                        <Card.Header style={{ cursor: "pointer" }}>
-                            <Accordion.Toggle as={Card.Header} eventKey="newProj">
-                                <h6>Create New Photo</h6>
-                            </Accordion.Toggle>
-                        </Card.Header>
-                        <Accordion.Collapse eventKey="newProj">
-                            <Card.Body>
-                                <PhotoForm />
-                            </Card.Body>
-                        </Accordion.Collapse>
-                    </Card>
+                    {
+                        user?.photos.length === 0 && <h3 className="text-center mt-5">No Photo created...!</h3>
+                    }
                 </Accordion>
+                <PhotoForm />
             </div>
         </div>
     );

@@ -46,6 +46,12 @@ const userReducer = (user = null, action) => {
         ...user,
         photos: [...user.photos, action.payload]
       }
+    case "UPDATE_PHOTO": {
+      return {
+        ...user,
+        photos: [...user.photos, action.payload]
+      }
+    }
     case "CLEAR":
       return null;
     default:

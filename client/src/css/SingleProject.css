@@ -72,6 +72,16 @@
     height: 100%;
 }
 
+.photo__photo{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.photo__photo:hover{
+    transform: scale(1.5);
+}
+
 .subheaders{
     text-decoration: underline;
 }
@@ -80,5 +90,8 @@
   {
       .subheaders{
         font-size: large;
+      }
+      .photo__desc > p{
+          font-size: smaller;
       }
   }

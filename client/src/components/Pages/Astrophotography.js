@@ -10,20 +10,6 @@ function AstrophotoGraphy() {
     document.title = `Astrophotography | ${REACT_APP_BASE_TITLE}`;
 
     useEffect(() => {
-        // fetch(`${REACT_APP_SERVER}/api/isSignedIn`, {
-        //     method: "post",
-        //     headers: {
-        //         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
-        //     },
-        // })
-        //     .then((res) => res.json())
-        //     .then((data) => {
-        //         if (data.error) {
-        //             localStorage.removeItem("jwtToken");
-        //             return;
-        //         }
-        //     });
-
         fetch(`${REACT_APP_SERVER}/api/astrophotographies/approved`, {
             method: "get",
         })
@@ -47,7 +33,7 @@ function AstrophotoGraphy() {
             <Loading time={2} />
             <div className="cont">
                 <h3 className="my-3 titleBold d-flex justify-content-center topic">
-                    <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>PROJECTS</p>
+                    <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>ASTROPHOTOGRAPHY</p>
                 </h3>
                 <div
                     className="miniSep"
@@ -69,11 +55,11 @@ function AstrophotoGraphy() {
                                     data-aos-duration="1500"
                                     key={photos._id}
                                 >
-                                    <div className="card cardproj">
+                                    <div className="card cardproj border" style={{ backgroundColor: 'none' }}>
                                         <div className="card_image">
                                             <img
                                                 className="evfeatured"
-                                                src={`${REACT_APP_SERVER}/images/${photo.pic}`}
+                                                src={photo.pic}
                                                 style={{
                                                     width: "100%",
                                                     maxHeight: "18rem",
@@ -83,11 +69,11 @@ function AstrophotoGraphy() {
                                         </div>
                                         <div
                                             className="card_content forphone forphone1"
-                                            style={{ width: "100%" }}
+                                            style={{ width: "100%", background: 'aliceblue' }}
                                         >
                                             <h2
-                                                className="card_title forphone forphone2 text-center"
-                                                style={{ width: "100%", fontSize: '4rem' }}
+                                                className="card_title forphone text-center my-3"
+                                                style={{ width: "100%", fontSize: 'x-large', color: 'black' }}
                                             >
                                                 {photo.title}
                                             </h2>
@@ -95,7 +81,7 @@ function AstrophotoGraphy() {
                                                 className="card_text forphone forphone3"
                                                 style={{ width: "100%", height: '3rem' }}
                                             >
-                                                <strong>Tags :{" "}</strong>
+                                                <strong style={{ color: 'black' }}>Tags :{" "}</strong>
                                                 {
                                                     photo.tags.map((tag, i) => (
                                                         <h5 className="d-inline" key={i} style={{ cursor: 'pointer' }} onClick={e => handleTagFilter(tag)}><span className="badge badge-primary my-1 mx-1">{tag}</span></h5>
@@ -104,9 +90,8 @@ function AstrophotoGraphy() {
                                             </p>
                                             <Button
                                                 className="btns card_btns"
-                                                variant="danger"
-                                                href={`astrophotography/${photo._id}`}
-                                                style={{ marginTop: 10 }}
+                                                href={`/astrophotography/${photo._id}`}
+                                                style={{ marginTop: 10, backgroundColor: '#007bff', color: 'white' }}
                                             >
                                                 Read More
                       </Button>

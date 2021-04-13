@@ -3,7 +3,6 @@ const router = express.Router();
 const { Astrophotography, Member1 } = require("../models/astrophotography");
 const { isSignedIn, isAdmin } = require("../middleware/auth");
 const User = require("../models/user");
-const { upload } = require("../middleware/fileUpload");
 
 // fetching all photos
 router.get("/astrophotographies", isSignedIn, isAdmin, (req, res) => {
@@ -47,41 +46,38 @@ router.get("/astrophotographies/:id", (req, res) => {
         .catch((e) => console.log(e));
 });
 
-// // creating a photo
-// router.post("/astrophotographies", isSignedIn, (req, res) => {
-//     req.body.leader = req.user.id;
-//     const project = new Project(req.body);
-//     project.save((err, project) => {
-//         if (err) {
-//             console.log(err);
-//             return res.status(400).json({
-//                 err: err.message,
-//             });
-//         }
-//         let userIds = project.members.map((member) => member.user);
-//         User.updateMany(
-//             { _id: { $in: userIds } },
-//             { $push: { photos: photo._id } },
-//             (err, users) => {
-//                 if (err) {
-//                     console.log(err);
-//                     return res.status(400).json({
-//                         err: err.message,
-//                     });
-//                 }
-//                 res.json(project.transform());
-//             }
-//         );
-//     });
-// });
+// creating a photo
+router.post("/astrophotographies", isSignedIn, (req, res) => {
+    req.body.leader = req.user.id;
+    const photoObj = new Astrophotography(req.body);
+    photoObj.save((err, photo) => {
+        if (err) {
+            console.log(err);
+            return res.status(400).json({
+                err: err.message,
+            });
+        }
+        let userIds = photo.members.map((member) => member.user);
+        User.updateMany(
+            { _id: { $in: userIds } },
+            { $push: { photos: photo._id } },
+            (err, users) => {
+                if (err) {
+                    console.log(err);
+                    return res.status(400).json({
+                        err: err.message,
+                    });
+                }
+                res.json(photo.transform());
+            }
+        );
+    });
+});
 
 // creating a photo from dashboard
-router.post("/astrophotographies/user", isSignedIn, upload.single('image'), (req, res) => {
-    console.log(req.body)
+router.post("/astrophotographies/user", isSignedIn, (req, res) => {
     req.body.leader = req.user.id;
-    const { title, instrumentUsed, instrumentSettings, description, tags } = req.body
-    const photoObj = new Astrophotography({ title, instrumentUsed, instrumentSettings, description, tags, pic: req.file.filename });
-    console.log(photoObj.picURL)
+    const photoObj = new Astrophotography(req.body)
     photoObj.members.push(
         new Member1({ user: req.user.id, accepted: true, leader: true })
     );
@@ -112,7 +108,7 @@ router.post("/astrophotographies/user", isSignedIn, upload.single('image'), (req
 router.put("/astrophotographies/:id", isSignedIn, isAdmin, (req, res) => {
     Astrophotography.findByIdAndUpdate(
         { _id: req.params.id },
-        { $set: { title: req.body.title, instrumentUsed: req.body.instrumentUsed, instrumentSettings: req.body.instrumentSettings, members: req.body.members, description: req.body.description, approved: req.body.approved, issuedon: req.body.issuedon, tags: req.body.tags } },
+        { $set: { title: req.body.title, instrumentUsed: req.body.instrumentUsed, instrumentSettings: req.body.instrumentSettings, members: req.body.members, description: req.body.description, approved: req.body.approved, issuedon: req.body.issuedon, tags: req.body.tags, pic: req.body.pic } },
         { new: true },
         (e, photo) => {
             if (e) {
@@ -154,7 +150,7 @@ router.put("/astrophotographies/:id", isSignedIn, isAdmin, (req, res) => {
     );
 });
 
-// deleting a project
+// deleting a photo
 router.delete("/astrophotographies/:id", isSignedIn, isAdmin, (req, res) => {
     Project.findById(req.params.id, (err, photo) => {
         if (err) return res.status(500).send(err);
@@ -166,7 +162,7 @@ router.delete("/astrophotographies/:id", isSignedIn, isAdmin, (req, res) => {
     });
 });
 
-//Invite member to the project
+//Invite member to the photo
 router.post("/astrophotographies/invite", isSignedIn, (req, res) => {
     const { email, photoId } = req.body;
     let userId;

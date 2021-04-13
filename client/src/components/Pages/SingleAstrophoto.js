@@ -21,7 +21,6 @@ function SingleAstrophoto() {
             .then((res) => res.json())
             .then((data) => {
                 if (data.error) history.push("/404");
-                console.log(data)
                 setPhoto(data);
             });
     }, []);
@@ -39,8 +38,10 @@ function SingleAstrophoto() {
                 </div>
                 <div className="container">
                     <hr />
-                    <div className="image mx-auto" style={{ maxWidth: '30rem' }}>
-                        <img src={photo?.picURL} alt="img" style={{ width: '100%', height: '100%' }} className='my-3' />
+                    <div className="image mx-auto" style={{ maxWidth: '50rem' }}>
+                        <a href={photo?.pic} target="_blank">
+                            <img src={photo?.pic} alt="img" className='my-3 photo__photo' />
+                        </a>
                     </div>
                     <hr />
                     <div>
@@ -52,51 +53,33 @@ function SingleAstrophoto() {
                         <p className="px-5">{photo?.instrumentSettings}</p>
                     </div>
                     <div>
-                        <h3 className='my-3 subheaders'>tags</h3>
-                        <div className="d-flex px-5 flex-wrap">
-                            {photo?.tags?.map((tag, i) => (
-                                <h5 className="d-inline" key={i} style={{ cursor: 'pointer' }}><span className="badge badge-primary my-1 mx-1">{tag}</span></h5>
-                            ))}
-                        </div>
+                        <h3 className='my-3 subheaders'>Clicked By: </h3>
+                        <ul className="px-5">
+                            {photo?.members?.map((member) =>
+                                member.accepted ? (
+                                    <li>
+                                        {member.user.linkedin_url ? (
+                                            <a href={member.user.linkedin_url}>{member.user.name}</a>
+                                        ) : (
+                                            <span>{member.user.name}</span>
+                                        )}
+                                    </li>
+                                ) : (
+                                    <></>
+                                )
+                            )}
+                        </ul>
                     </div>
-                    <div className='my-5'>
-                        <h3 className='mb-4 subheaders'>Overview</h3>
-                        <p
-                            className="px-5"
-                            dangerouslySetInnerHTML={{ __html: photo?.overview }}
-                        ></p>
-                    </div>
-                    <div>
-                        <div>
-                            <h3 className='my-3 subheaders'>photo By: </h3>
-                            <ul className="px-5">
-                                {photo?.members?.map((member) =>
-                                    member.accepted ? (
-                                        <li>
-                                            {member.user.linkedin_url ? (
-                                                <a href={member.user.linkedin_url}>{member.user.name}</a>
-                                            ) : (
-                                                <span>{member.user.name}</span>
-                                            )}
-                                        </li>
-                                    ) : (
-                                        <></>
-                                    )
-                                )}
-                            </ul>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="collapse collapsews" id="collapse11">
-                            <div >
-                                <h3 className='my-3 subheaders'>Description</h3>
-                                <p
-                                    className="px-3"
-                                    dangerouslySetInnerHTML={{ __html: photo?.description }}
-                                ></p>
+                    <div className='' style={{ marginBottom: '5rem' }}>
+                        <div className='my-3 photo__desc'>
+                            <h3 className='my-3 subheaders'>Description : </h3>
+                            <div className="my-5 text-center"
+                                dangerouslySetInnerHTML={{ __html: photo?.desc }}
+                            >
                             </div>
                         </div>
                     </div>
+
                 </div>
             </div>
         </>

@@ -25,7 +25,6 @@ import Dashboard from "./components/Pages/Dashboard";
 import Confirmation from "./components/Pages/Confirmation.js";
 import NotFound from "./components/Pages/NotFound.js";
 import News from "./components/Pages/News.js";
-import CreateBlog from "./components/Pages/Dashboard/Blogs/CreateBlog.js";
 import Avishkar from "./components/Pages/Avishkar";
 import Prosang from "./components/Pages/Prosang";
 import Workshop from "./components/Pages/Workshop";
@@ -120,9 +119,6 @@ function App() {
             </Route>
             <Route path="/astrophotography" exact>
               <Astrophotography />
-            </Route>
-            <Route path="/user/createblog" exact>
-              <CreateBlog />
             </Route>
             <Route path="/user/dashboard" exact>
               <Dashboard />

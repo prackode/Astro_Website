@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const { Project, Member } = require("../models/project");
 const { isSignedIn, isAdmin } = require("../middleware/auth");
-const { json } = require("express");
 const User = require("../models/user");
 const ObjectId = require("mongodb").ObjectId;
 const jwt = require("jsonwebtoken");
@@ -129,7 +128,7 @@ router.post("/projects", isSignedIn, (req, res) => {
   });
 });
 
-// creating a project
+// creating a project from dashboard
 router.post("/projects/user", isSignedIn, (req, res) => {
   req.body.leader = req.user.id;
   const project = new Project(req.body);
