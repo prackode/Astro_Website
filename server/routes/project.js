@@ -3,7 +3,6 @@ const router = express.Router();
 const { Project, Member } = require("../models/project");
 const { isSignedIn, isAdmin } = require("../middleware/auth");
 const User = require("../models/user");
-const ObjectId = require("mongodb").ObjectId;
 const jwt = require("jsonwebtoken");
 
 // fetching all projects
@@ -47,7 +46,12 @@ router.get("/projects/featured", (req, res) => {
 });
 
 router.get("/projects/featured_home", (req, res) => {
-  Project.find({ approved: true, status: "Completed", featured: true, home: true })
+  Project.find({
+    approved: true,
+    status: "Completed",
+    featured: true,
+    home: true,
+  })
     .populate({ path: "members.user", select: "name" })
     .exec((err, projects) => {
       if (err) {
@@ -128,7 +132,7 @@ router.post("/projects", isSignedIn, (req, res) => {
   });
 });
 
-// creating a project from dashboard
+// creating a project
 router.post("/projects/user", isSignedIn, (req, res) => {
   req.body.leader = req.user.id;
   const project = new Project(req.body);
@@ -154,22 +158,39 @@ router.post("/projects/user", isSignedIn, (req, res) => {
             err: err.message,
           });
         }
-        res.json(project);
+        project
+          .populate({
+            path: "members.user",
+            select: "name",
+          })
+          .execPopulate((err, popProject) => {
+            return res.json(popProject);
+          });
       }
     );
   });
 });
 
 // updating a project
-router.put("/projects/:id", isSignedIn, isAdmin, (req, res) => {
+router.put("/projects/:id", isSignedIn, (req, res) => {
   Project.findOneAndReplace(
     { _id: req.params.id },
     req.body,
-    null,
+    {
+      returnOriginal: false,
+    },
     (e, project) => {
       if (e) {
         return res.status(400).json({
           error: "Project cannot be updated !",
+        });
+      }
+      const leaders = project.members.map((m) => {
+        if (m.leader) return m.user._id;
+      });
+      if (!(req.user.role === "Admin" || leaders.includes(req.user.id))) {
+        return res.status(403).json({
+          error: "You are not ADMIN nor member of project, Access denied",
         });
       }
       const userIds_old = project.members.map((member) => member.user);
@@ -203,7 +224,14 @@ router.put("/projects/:id", isSignedIn, isAdmin, (req, res) => {
           }
         }
       );
-      res.json(project.transform());
+      project
+        .populate({
+          path: "members.user",
+          select: "name",
+        })
+        .execPopulate((err, popProject) => {
+          return res.json(popProject.transform());
+        });
     }
   );
 });
