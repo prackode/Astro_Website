@@ -25,7 +25,7 @@ export default function NotFound() {
       <Particles
         params={particlesOptions}
         style={{
-          height: "100%", width: "100%", background: "rgb(221 ,148 ,148)", zIndex: -1,
+          height: "100%", width: "100%", background: "rgb(130 ,134 ,188)", zIndex: -1,
           position: "absolute",
           left: "0",
           right: "0",
@@ -46,7 +46,7 @@ export default function NotFound() {
         <p className="text-center" style={{ fontWeight: "bold" }}>
           The page you are looking for is not found ⚠
         </p>
-        <a className="btn btn-danger" style={{ alignItems: "center" }} href="/">
+        <a className="btn btn-primary" style={{ alignItems: "center" }} href="/">
           Back to Home
         </a>
       </div>

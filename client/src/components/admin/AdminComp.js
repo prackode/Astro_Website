@@ -33,13 +33,12 @@ import { UserList, UserShow, UserEdit, UserCreate } from "./Users";
 import { useSelector } from "react-redux";
 import { dataProvider } from "./dataProvider";
 import { history } from "../../ConfigureStore";
-import { PhotoEdit, PhotoList, PhotoShow } from "./Astrophotography";
+import { PhotoCreate, PhotoEdit, PhotoList, PhotoShow } from "./Astrophotography";
 
 function AdminComp() {
   document.title = `Admin Panel | ${REACT_APP_BASE_TITLE}`;
 
   const user = useSelector(state => state.user)
-
   return (
     <>
       <Admin
@@ -73,6 +72,7 @@ function AdminComp() {
           list={PhotoList}
           show={PhotoShow}
           edit={PhotoEdit}
+          create={PhotoCreate}
         />
         <Resource
           name="achievement"

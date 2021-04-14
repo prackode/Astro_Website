@@ -22,7 +22,7 @@ const astrophotographySchema = new mongoose.Schema(
             type: String,
             required: true,
         },
-        description: {
+        desc: {
             type: String,
             required: true,
         },
@@ -42,7 +42,6 @@ const astrophotographySchema = new mongoose.Schema(
         approved: {
             type: Boolean,
             default: false,
-            required: true,
         },
         members: [memberSchema],
         issuedon: {
@@ -55,8 +54,6 @@ const astrophotographySchema = new mongoose.Schema(
 astrophotographySchema.method("transform", function () {
     let obj = this.toObject();
     obj.id = obj._id;
-    obj.picURL = `${process.env.BASE_URL}/images/${obj.pic}`;
-    delete obj.pic;
     delete obj._id;
     return obj;
 });
@@ -70,9 +67,6 @@ astrophotographySchema.pre('remove', function (next) {
         next
     );
 });
-
-astrophotographySchema.set('toObject', { virtuals: true });
-astrophotographySchema.set('toJSON', { virtuals: true });
 
 const Astrophotography = mongoose.model("Astrophotography", astrophotographySchema);
 module.exports = { Member1, Astrophotography };

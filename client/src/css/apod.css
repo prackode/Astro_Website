@@ -1,0 +1,55 @@
+.apod-container{
+    padding: 0;
+    border: 2px solid;
+}
+
+.information{
+    flex: 1;
+}
+.hdimage img{
+    height: 35rem;
+    width: 35rem;
+}
+
+.explanation{
+    max-height: 22rem;
+    overflow-y: auto;
+}
+
+@media only screen and ( max-width:990px){
+    .hdimage img{
+        height: 25rem;
+        width: auto;
+    }
+    .information h3{
+        font-size: medium;
+    }
+    .information p {
+        margin-top: 0 ;
+        font-size: small;
+        max-height: 18rem;
+    }
+}
+@media only screen and ( max-width:770px){
+    .information{
+        margin-top: 1.5rem !important;
+    }
+    .hdimage{
+        margin:1rem auto;
+        margin-bottom: 2rem;
+    }
+    .information h3{
+        font-size: medium;
+    }
+    .information p {
+        margin-top: 0 ;
+        font-size: x-small;
+        max-height: 18rem;
+    }
+}
+@media only screen and ( max-width:390px){
+    .hdimage{
+        margin:1rem auto;
+        margin-bottom: 0;
+    }
+}

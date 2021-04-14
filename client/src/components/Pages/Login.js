@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "../../css/Login.css";
-import m from "../../images/utils/astro_logo.png";
+import m from "../../images/utils/astro_logo4.png";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 function Login() {

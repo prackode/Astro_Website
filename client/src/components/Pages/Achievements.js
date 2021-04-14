@@ -28,7 +28,7 @@ export default function Achievements() {
               className="font-italic text-center my-5 quote"
               style={{ fontSize: "1.5rem" }}
             >
-              "Only those who attempt the absurd can achieve the impossible" ~ Albert Einstein
+              "Everyone Has A Will To Win, But Very Few Have The Will To Prepare To Win." ~ Vince Lombardi
               
           </p>
           </div>

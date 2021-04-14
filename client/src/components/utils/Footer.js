@@ -2,7 +2,7 @@ import React from "react";
 import "../../css/footer.css";
 import { useLocation } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
-import m from "../../images/utils/astro_logo2.png";
+import m from "../../images/utils/astro_logo4.png";
 
 export default function Footer() {
   const location = useLocation();
@@ -80,9 +80,8 @@ export default function Footer() {
               </div>
               <div className="col-md-4 col-sm-6 col-xs-12">
                 <ul className="social-icons">
-                  <SocialIcon url="https://www.facebook.com/AeroClubMNNIT/" target="_blank" />
-                  <SocialIcon url="https://www.youtube.com/channel/UCm7uHtNLbmq--wBzt7Yf23w" target="_blank" />
-                  <SocialIcon url="https://www.instagram.com/aeroclubmnnit/?hl=en" target="_blank" />
+                  <SocialIcon url="https://www.facebook.com/AstrowingMNNIT/" target="_blank" />
+                  <SocialIcon url="https://www.youtube.com/playlist?list=PLY2QAhcYlBMAfexTcDKplFUrX0eyvzmRp" target="_blank" />
                   <SocialIcon url="mailto:aeroclub@mnnit.ac.in" target="_blank" />
                 </ul>
               </div>

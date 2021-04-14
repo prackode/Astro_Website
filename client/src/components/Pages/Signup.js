@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
 import "../../css/Login.css";
 import { toast } from "react-toastify";
-import m from "../../images/utils/logo-aero2.png";
+import m from "../../images/utils/astro_logo4.png";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 

@@ -12,6 +12,7 @@ import {
 import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
+import CreateBlog from "./CreateBlog";
 
 export default function DashBlogs() {
   const user = useSelector(state => state.user);
@@ -163,60 +164,6 @@ export default function DashBlogs() {
                         </Container>
                       </Jumbotron>
                     </div>
-                    {/* <div id={`preview${blog._id}`} className="collapse">
-                      <div
-                        className="pagesp"
-                        style={{
-                          background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,.4)), url(${blog.pic})`,
-                        }}
-                      >
-                        <div className="overlayp">
-                          <div className="pageTitlep titleBoldp">
-                            {blog.title}
-                            <p className="meta">
-                              <em style={{ fontSize: "0.8rem" }}>
-                                Posted by{" "}
-                                {user.linkedin_url !==
-                                  "https://www.linkedin.com/in/username/" ? (
-                                  <a href={user.linkedin_url} target="_blank">
-                                    {user.name}
-                                  </a>
-                                ) : (
-                                  user.name
-                                )}{" "}
-                                {`(reg. no :- ${user.registration_no == "xxxxxxxx"
-                                  ? "NA"
-                                  : user.registration_no
-                                  }, ${user.year == -1
-                                    ? "year - NA"
-                                    : year[user.year]
-                                  })`}{" "}
-                                on {new Date(Date.now()).toLocaleDateString()}
-                              </em>
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <Jumbotron
-                        fluid
-                        style={{
-                          background: "white",
-                          width: "100%",
-                          margin: "auto",
-                          paddingBottom: "1rem",
-                          paddingLeft: "2rem",
-                          overflow: "auto",
-                        }}
-                      >
-                        <Container>
-                          <p
-                            dangerouslySetInnerHTML={{ __html: blog.body }}
-                          ></p>
-                        </Container>
-                        <hr />
-                      </Jumbotron>
-                    </div> */}
                   </>
                 )}
               </Card.Body>
@@ -227,11 +174,7 @@ export default function DashBlogs() {
           user?.blogs.length === 0 && <h3 className="text-center mt-5">No blogs created...!</h3>
         }
       </Accordion>
-      <div className="d-flex justify-content-center align-items-center mt-5">
-        <Button size="lg" href="/user/createblog" variant="danger">
-          Create Blog
-        </Button>
-      </div>
+      <CreateBlog />
     </div>
   );
 }
