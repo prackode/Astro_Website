@@ -3,6 +3,7 @@ import ReactQuill from "react-quill";
 import { useDispatch } from "react-redux";
 import { REACT_APP_SERVER } from "../../../../grobalVars";
 import { CloseRounded } from '@material-ui/icons';
+import { toast } from "react-toastify";
 
 export default function PhotoEdit({ photo }) {
     const [formData, setformData] = useState({})
@@ -58,6 +59,7 @@ export default function PhotoEdit({ photo }) {
                                 res.json().then((data) => {
                                     data._id = data.id;
                                     delete data.id;
+                                    toast.success("Photo Updated !");
                                     dispatch({ type: "UPDATE_PHOTO", payload: data });
                                     setLoading(false);
                                 });

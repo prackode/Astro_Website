@@ -3,6 +3,7 @@ import ReactQuill from "react-quill";
 import { useDispatch } from "react-redux";
 import { REACT_APP_SERVER } from "../../../../grobalVars";
 import { AddCircleOutline, RemoveCircleOutline } from "@material-ui/icons";
+import { toast } from "react-toastify";
 
 export default function ProjEdit(props) {
   const [formData, setformData] = useState({});
@@ -17,7 +18,7 @@ export default function ProjEdit(props) {
     <div>
       <p className="d-flex justify-content-center">
         <button
-          className="btn btn-danger px-4"
+          className="btn btn-primary px-4"
           type="button"
           data-toggle="collapse"
           data-target="#collapseprojedit"
@@ -45,6 +46,7 @@ export default function ProjEdit(props) {
                   res.json().then((data) => {
                     data._id = data.id;
                     delete data.id;
+                    toast.success("Project Updated !");
                     dispatch({ type: "UPDATE_PROJECT", payload: data });
                     setLoading(false);
                   });
@@ -238,7 +240,7 @@ export default function ProjEdit(props) {
 
             <button
               type="submit"
-              className="btn btn-danger"
+              className="btn btn-primary"
               data-toggle="collapse"
               data-target="#collapseprojedit"
               aria-expanded="false"

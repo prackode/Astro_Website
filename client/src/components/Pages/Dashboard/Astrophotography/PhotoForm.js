@@ -3,6 +3,7 @@ import ReactQuill from "react-quill";
 import { useDispatch } from "react-redux";
 import { REACT_APP_SERVER } from "../../../../grobalVars";
 import { CloseRounded } from '@material-ui/icons';
+import { toast } from "react-toastify";
 
 export default function PhotoForm() {
     const [formData, setformData] = useState({
@@ -64,6 +65,8 @@ export default function PhotoForm() {
                                 });
                                 setTags([])
                                 res.json().then((data) => {
+                                    toast.success("Photo Created !");
+                                    document.getElementById("collapsenewphoto").classList.remove("show");
                                     dispatch({ type: "CREATE_PHOTO", payload: data });
                                     setLoading(false);
                                 });
