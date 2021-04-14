@@ -90,14 +90,8 @@ function AstrophotoGraphy() {
                                             </p>
                                             <Button
                                                 className="btns card_btns"
-<<<<<<< HEAD
-                                                variant="primary"
-                                                href={`astrophotography/${photo._id}`}
-                                                style={{ marginTop: 10 }}
-=======
                                                 href={`/astrophotography/${photo._id}`}
                                                 style={{ marginTop: 10, backgroundColor: '#007bff', color: 'white' }}
->>>>>>> ac99a47051d5f08ccc17301d9015cdcb3f2f1bf4
                                             >
                                                 Read More
                       </Button>
