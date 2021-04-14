@@ -67,7 +67,7 @@
 {
 	border-radius: 10px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: rgb(204, 67, 67);
+	background-color: rgb(30, 81, 116);
 }
 
 /* .scroller::-webkit-scrollbar {
@@ -84,7 +84,7 @@
 } */
 
 .details{
-  border: 2px solid rgb(204, 67, 67);
+  border: 2px solid rgb(41, 123, 176);
   border-radius: 5px;
   margin: auto;
   width:58rem;
@@ -108,7 +108,7 @@
 .sponabt {
   text-decoration: none;
   font-size: 1.8rem;
-  color: rgb(204, 67, 67);
+  color: rgb(41, 123, 176);
 }
 .sponabt:hover {
   transform: scale(1.1);

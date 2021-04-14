@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import Loading from "../../Animations/Loading";
 import "../../css/Alumni.css";
+import { Link } from "react-router-dom";
 import { REACT_APP_BASE_TITLE } from "../../grobalVars"
 
 export default function Collaboration() {
@@ -37,7 +38,7 @@ export default function Collaboration() {
             style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
           ></div>
           <p className="text-xl paragr" style={{ textAlign: "justify" }}>
-          Astrowing MNNIT is a student body under the Student Activity Centre (SAC), MNNIT Allahabad. We are a group of like-minded engineering students from all the college departments. We are passionate about science and believe that engineers and scientists should work in unison for humanity's real progress. Being from a technical background, we have expertise in several fields like machine learning, data analysis, programming, electronics, designing, etc (Link). 
+          Astrowing MNNIT is a student body under the Student Activity Centre (SAC), MNNIT Allahabad. We are a group of like-minded engineering students from all the college departments. We are passionate about science and believe that engineers and scientists should work in unison for humanity's real progress. Being from a technical background, we have expertise in several fields like machine learning, data analysis, programming, electronics, designing, etc <Link to='/#restheme'>(Research Themes) </Link> 
 Also, we continuously strive to expand our knowledge in theoretical concepts of physics and astronomy. We have also completed various projects like 3D printing telescopes, detecting galaxies using machine learning, web-based quantum simulator, etc. (Link).
 We also have some experience observing the sky both through the naked eye and telescopes. 
 We offer our knowledge and commitment for any possible collaborations.</p>
@@ -66,7 +67,7 @@ We offer our knowledge and commitment for any possible collaborations.</p>
             style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
           ></div>
           <p className="text-xl paragr" style={{ textAlign: "justify" }}>
-          Apart from technical expertise, we also have several workshops at both the school and college level, which will surely help you expand your knowledge in the realm of astronomy, whether you are a beginner or have some knowledge beforehand. For more details, refer to this page (Jigyasa).
+          Apart from technical expertise, we also have several workshops at both the school and college level, which will surely help you expand your knowledge in the realm of astronomy, whether you are a beginner or have some knowledge beforehand. For more details, refer to this page <a href="/workshop" style={{textDecoration:"none", fontWeight:"bold"}}>Jigyasa</a>.
           </p>
         </div>
       </div>

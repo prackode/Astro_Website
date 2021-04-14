@@ -19,7 +19,7 @@ export default function Spinoff() {
             </div>
 
             <div className="spinoff container col-10" >
-                <div className="content my-5" style={{ border: "3px solid rgb(204, 67, 67)", padding: "20px", borderRadius: "7px" }}>
+                <div className="content my-5" style={{ border: "3px solid rgb(41, 123, 176)", padding: "20px", borderRadius: "7px" }}>
                     <p style={{ textAlign: "justify" }}>
                         Technology is the best medium to bring real changes to this world.
                         At our club, we don't judge ourselves by the number of projects we do. Nor the number of competitions we win. Rather, we measure by the impact we bring to our society.
@@ -28,7 +28,7 @@ export default function Spinoff() {
                         TSAW Drones (TechNIT Space and Aero Works) is such startup founded by Mr. Kishan Tiwari (Student President, Robotics & Aeromodelling Club 2018-19, Alumnus 2019, MNNIT) which was later joined by Mr. Rimanshu Pandey (Alumnus 2015, MNNIT), and Mr. Ankesh Singh (Alumnus 2015, MNNIT and Alumnus 2017, IIM-K).
                     </p>
                 </div>
-                <div className="content my-5" style={{ border: "3px solid rgb(204, 67, 67)", padding: "20px", borderRadius: "7px" }}>
+                <div className="content my-5" style={{ border: "3px solid rgb(41, 123, 176)", padding: "20px", borderRadius: "7px" }}>
                     <h4 className='my-3' style={{ marginBottom: "0px", textAlign: "center" }}>In the Words of the Founders:</h4>
                     <div
                         className="miniSep"
@@ -39,7 +39,7 @@ export default function Spinoff() {
                         </em>
                     </p>
                 </div>
-                <div className="content my-5" style={{ border: "3px solid rgb(204, 67, 67)", padding: "20px", borderRadius: "7px" }}>
+                <div className="content my-5" style={{ border: "3px solid rgb(41, 123, 176)", padding: "20px", borderRadius: "7px" }}>
                     <h4 className='my-3' style={{ marginBottom: "0px", textAlign: "center" }}>About TSAW</h4>
                     <div
                         className="miniSep"
