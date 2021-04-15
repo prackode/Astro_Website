@@ -34,7 +34,8 @@
     .information{
         margin-top: 1.5rem !important;
     }
-    .hdimage{
+    .hdimage img{
+        display: block;
         margin:1rem auto;
         margin-bottom: 2rem;
     }
@@ -47,9 +48,8 @@
         max-height: 18rem;
     }
 }
-@media only screen and ( max-width:390px){
-    .hdimage{
-        margin:1rem auto;
+@media only screen and ( max-width:450px){
+    .hdimage img{
         margin-bottom: 0;
     }
 }
