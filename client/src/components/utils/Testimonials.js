@@ -34,17 +34,18 @@ export default function Testimonials() {
                 {/* <div className="miniSep" style={{ marginBottom: '25px', width: '70%', height: '3px' }} ></div> */}
                 <h4>Surendra Singh Jayant</h4>
                 <a href="https://www.linkedin.com/in/ssjayant" target="_blank">
-                  <i className="fab fa-linkedin fa-3x mx-2"></i>
+                  <i className="fab fa-linkedin fa-3x mx-2 colchange"></i>
                 </a>
               </div>
             </div>
             <div className="carousel-item">
               <div className="testimonial4_slide">
-                <img src={shrey} className="img-circle img-responsive" /><p className="testfont scrollert" id="stylet-2">"It was an honor being part of the Aeromodelling Club, MNNIT. I will remember all those priceless moments that I had with my supporting friends, guiding professors, visionary seniors, and enthusiastic juniors throughout my college life. The experiences made me a better person and prepared me in unpredictable ways for my career. I wish I had a time machine to relive all of those memories for eternity. Memories worth being cherished!!"</p>
+                <img src={shrey} className="img-circle img-responsive" /><p className="testfont scrollert" id="stylet-2">"Among the darkest of the nights, we were able to conjure the brightest of the stars, a unique constellation; Astronomy wing, MNNIT. We learnt from yesterday, lived for today and hoped for a better tomorrow. But the important thing was that we never stopped questioning. I hope these qualities are passed down to our budding astronauts in our Astronomy wing, MNNIT while challenging all the limits and exploring the beyond.
+                "</p>
                 {/* <div className="miniSep" style={{ marginBottom: '25px', width: '70%', height: '3px' }} ></div> */}
                 <h4>Shrey Dixit</h4>
                 <a href="linkedin.com/in/shrey-dixit" target="_blank">
-                  <i className="fab fa-linkedin fa-3x mx-2"></i>
+                  <i className="fab fa-linkedin fa-3x mx-2 colchange"></i>
                 </a>'
               </div>
             </div>
@@ -55,7 +56,7 @@ export default function Testimonials() {
                 {/* <div className="miniSep" style={{ marginBottom: '25px', width: '70%', height: '3px' }} ></div> */}
                 <h4>Mohammed Maaz Latifee</h4>
                 <a href="linkedin.com/in/mohammed-maaz-latifee-0a3375169" target="_blank">
-                  <i className="fab fa-linkedin fa-3x mx-2"></i>
+                  <i className="fab fa-linkedin fa-3x mx-2 colchange"></i>
                 </a>
               </div>
             </div>
@@ -66,7 +67,7 @@ export default function Testimonials() {
                 {/* <div className="miniSep" style={{ marginBottom: '25px', width: '70%', height: '3px' }} ></div> */}
                 <h4>Soumya Khanna</h4>
                 <a href="https://www.linkedin.com/in/soumya-khanna-20169040" target="_blank">
-                  <i className="fab fa-linkedin fa-3x mx-2"></i>
+                  <i className="fab fa-linkedin fa-3x mx-2 colchange"></i>
                 </a>
               </div>
             </div>
@@ -77,7 +78,7 @@ export default function Testimonials() {
                 {/* <div className="miniSep" style={{ marginBottom: '25px', width: '70%', height: '3px' }} ></div> */}
                 <h4>Sarita Chaudhary</h4>
                 <a href="https://www.linkedin.com/in/sarita-chaudhary-b92170137/" target="_blank">
-                  <i className="fab fa-linkedin fa-3x mx-2"></i>
+                  <i className="fab fa-linkedin fa-3x mx-2 colchange"></i>
                 </a>
               </div>
             </div>
@@ -88,7 +89,7 @@ export default function Testimonials() {
                 {/* <div className="miniSep" style={{ marginBottom: '25px', width: '70%', height: '3px' }} ></div> */}
                 <h4>Kishan Tiwari</h4>
                 <a href="https://www.linkedin.com/in/kishan-tiwari-poseidon/" target="_blank">
-                  <i className="fab fa-linkedin fa-3x mx-2"></i>
+                  <i className="fab fa-linkedin fa-3x mx-2 colchange"></i>
                 </a>
               </div>
             </div>

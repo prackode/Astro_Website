@@ -45,11 +45,12 @@ import Loading from "./Animations/Loading.js";
 import Astrophotography from "./components/Pages/Astrophotography.js";
 import SingleAstrophoto from "./components/Pages/SingleAstrophoto.js";
 import APOD from "./components/utils/APOD.js";
+import "./css/App.css";
 
 function App() {
   return (
 
-    <div className="App">
+    <div className="App bgrt">
       <ToastContainer
         autoClose={4000}
         hideProgressBar={true}
@@ -109,7 +110,7 @@ function App() {
               <About />
               <Featuredproject />
               <APOD />
-              <ResearchThemes />
+              <ResearchThemes id={'restheme'}/>
               <Testimonials />
               <Sponsorhome />
               <ContactUs />

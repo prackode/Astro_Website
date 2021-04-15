@@ -3,7 +3,7 @@ import "../../css/ResearchThemes.css";
 
 const ResearchThemes = () => {
   return (
-    <div className="container-fluid starbg">
+    <div className="container-fluid starbg" id={'restheme'}>
       <div
         className="pageTitle titleBold headingc white-headingc"
         data-aos="fade-down"
@@ -82,7 +82,7 @@ const ResearchThemes = () => {
               <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(3, 150, 244)", borderRadius: "10px", margin: "2px" }}
+                  style={{ borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
                     <i className="fas fa-calculator" style={{ paddingRight: "20px" }}></i>
@@ -113,7 +113,7 @@ const ResearchThemes = () => {
               <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(48, 88, 113)", borderRadius: "10px", margin: "2px" }}
+                  style={{borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
                     <i className="fas fa-laptop-code" style={{ paddingRight: "20px" }}></i>
@@ -144,7 +144,7 @@ const ResearchThemes = () => {
               <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(3, 150, 244)", borderRadius: "10px", margin: "2px" }}
+                  style={{borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
                     <i className="fa fa-tools" style={{ paddingRight: "20px" }}></i>
@@ -175,7 +175,7 @@ const ResearchThemes = () => {
               <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(48, 88, 113)", borderRadius: "10px", margin: "2px" }}
+                  style={{borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
                     <i className="fas fa-satellite" style={{ paddingRight: "20px" }}></i>
@@ -206,7 +206,7 @@ const ResearchThemes = () => {
               <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
                 <div
                   className="card-body cardbd"
-                  style={{ background: "rgb(3, 150, 244)", borderRadius: "10px", margin: "2px" }}
+                  style={{borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
                     <i className="fas fa-atom" style={{ paddingRight: "20px" }}></i>

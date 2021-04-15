@@ -25,7 +25,7 @@
     width: 180px;
     border-radius: 4px;
     transform: translateX(-50%);
-    background: url();
+    /* background: url(); */
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -210,12 +210,12 @@
   padding: 20px;
   position: relative;
   text-align: center;
-  background-color:rgb(78, 175, 255);
+  background-color:rgb(41, 123, 176);
   border-radius: 20px;
 }
 .testimonial4_slide:after {
     content:'';
-    background-color: rgb(78, 175, 255);
+    background-color: rgb(41, 123, 176);
     box-shadow: 0 4px 8px 0 rgba(29, 29, 29, 0.7), 0 6px 20px 0 rgba(26, 26, 26, 0.6);
     background-size: cover;
     position: absolute;
@@ -226,6 +226,10 @@
     z-index:-1;
     opacity: 0.7; /* Here is your opacity */
     border-radius: 15px;
+}
+
+.colchange{
+  color: #0e1354;
 }
 .testimonial4_slide img {
     top: 0;
@@ -247,11 +251,13 @@
     -webkit-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
 }
 .testimonial4_slide p {
-    color: #131313;
-    font-weight: bold;
-    font-style: italic;
-    line-height: 1.4;
-    margin: 40px 0 20px 0;
+  color: #c2dffe;
+  font-size: 1rem;
+  font-family: Raleway;
+  /* font-weight: bold; */
+  font-style: italic;
+  line-height: 1.4;
+  margin: 40px 0 20px 0;
 }
 .testimonial4_slide h4 {
   color: rgb(241, 241, 241);
