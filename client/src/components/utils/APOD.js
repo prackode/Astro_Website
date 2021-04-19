@@ -29,7 +29,7 @@ export default function APOD() {
                             <h3>{data?.title}</h3>
                         </div>
                         <div className="explanation mx-0 mx-md-3 mt-md-2 mt-lg-5 " id="style-3">
-                            <p>{data?.explanation}k</p>
+                            <p className="expl">{data?.explanation}k</p>
                         </div>
                     </div>
                     <div className="hdimage">
