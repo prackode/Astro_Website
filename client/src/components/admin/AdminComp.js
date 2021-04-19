@@ -2,9 +2,14 @@ import React from "react";
 import { Admin, Resource } from "react-admin";
 import authProvider from "./authProvider";
 import { BlogCreate, BlogEdit, BlogList, BlogShow } from "./Blog";
-import { ComponentCreate, ComponentEdit, ComponentList, ComponentShow } from "./Component";
+import {
+  ComponentCreate,
+  ComponentEdit,
+  ComponentList,
+  ComponentShow,
+} from "./Component";
 import { IssueEdit, IssueList } from "./Issues";
-import { REACT_APP_BASE_TITLE } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE } from "../../grobalVars";
 
 import {
   ProjectCreate,
@@ -12,10 +17,7 @@ import {
   ProjectList,
   ProjectShow,
 } from "./Project";
-import {
-  ContactList,
-  ContactShow
-} from "./Contact";
+import { ContactList, ContactShow } from "./Contact";
 import {
   AchievementList,
   AchievementCreate,
@@ -33,12 +35,18 @@ import { UserList, UserShow, UserEdit, UserCreate } from "./Users";
 import { useSelector } from "react-redux";
 import { dataProvider } from "./dataProvider";
 import { history } from "../../ConfigureStore";
-import { PhotoCreate, PhotoEdit, PhotoList, PhotoShow } from "./Astrophotography";
+import {
+  PhotoCreate,
+  PhotoEdit,
+  PhotoList,
+  PhotoShow,
+} from "./Astrophotography";
+import { TagCreate, TagEdit, TagList, TagShow } from "./Tag";
 
 function AdminComp() {
   document.title = `Admin Panel | ${REACT_APP_BASE_TITLE}`;
 
-  const user = useSelector(state => state.user)
+  const user = useSelector((state) => state.user);
   return (
     <>
       <Admin
@@ -103,10 +111,13 @@ function AdminComp() {
           edit={WorkshopEdit}
           show={WorkshopShow}
         />
+        <Resource name="Contact" list={ContactList} show={ContactShow} />
         <Resource
-          name="Contact"
-          list={ContactList}
-          show={ContactShow}
+          name="tags"
+          list={TagList}
+          create={TagCreate}
+          edit={TagEdit}
+          show={TagShow}
         />
       </Admin>
     </>
