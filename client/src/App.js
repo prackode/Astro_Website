@@ -1,11 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navigbar from "./components/utils/Navigbar.js";
 import Footer from "./components/utils/Footer.js";
-import {
-  Redirect,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { Redirect, Route, Switch } from "react-router-dom";
 import AdminComp from "./components/admin/AdminComp.js";
 import Landing from "./Animations/Landing.js";
 import Alumni from "./components/Pages/Alumni.js";
@@ -48,8 +44,17 @@ import APOD from "./components/utils/APOD.js";
 import "./css/App.css";
 
 function App() {
+  useEffect(() => {
+    const { hash } = window.location;
+    if (hash !== "") {
+      let id = hash.replace("#/", "");
+      console.log(id);
+      const element = document.getElementById(id);
+      if (element)
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  });
   return (
-
     <div className="App bgrt">
       <ToastContainer
         autoClose={4000}
@@ -60,10 +65,10 @@ function App() {
       <Switch>
         <Route path="/1208e2fe-b5f6-439b-94e0-aef5dde3b777/admin" exact>
           {localStorage.getItem("jwtToken") ? (
-            <AdminComp />) : (
+            <AdminComp />
+          ) : (
             <Redirect to="/404" />
-          )
-          }
+          )}
         </Route>
         <Route path="/user/login" exact>
           {!localStorage.getItem("jwtToken") ? (
@@ -110,7 +115,7 @@ function App() {
               <About />
               <Featuredproject />
               <APOD />
-              <ResearchThemes id={'restheme'}/>
+              <ResearchThemes id={"restheme"} />
               <Testimonials />
               <Sponsorhome />
               <ContactUs />
