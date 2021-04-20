@@ -5,8 +5,8 @@ const mongoose = require("mongoose");
 const port = process.env.PORT || 9500;
 require("dotenv").config();
 app.use(cors());
-app.use(express.static(__dirname + '/public'))
-app.use('/images', express.static('/public/images'));
+app.use(express.static(__dirname + "/public"));
+app.use("/images", express.static("/public/images"));
 // mongodb
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -30,7 +30,7 @@ const workshopRoutes = require("./routes/workshop");
 const photoRoutes = require("./routes/astrophotography");
 const achievementRoutes = require("./routes/achievement");
 const contactRouters = require("./routes/contact");
-
+const tagRouters = require("./routes/tag");
 // app specific
 app.use(express.json());
 
@@ -46,6 +46,7 @@ app.use("/api", workshopRoutes);
 app.use("/api", photoRoutes);
 app.use("/api", achievementRoutes);
 app.use("/api", contactRouters);
+app.use("/api", tagRouters);
 
 app.listen(port, () => {
   console.log(`Server Started at ${port}`);
