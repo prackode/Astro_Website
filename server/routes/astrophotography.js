@@ -115,7 +115,26 @@ router.post("/astrophotographies/user", isSignedIn, (req, res) => {
 });
 
 // updating a photo
-router.put("/astrophotographies/:id", isSignedIn, isAdmin, (req, res) => {
+router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
+  Project.findOne({ _id: req.params.id })
+    .then((project) => {
+      const leaders = project.members.map((m) => {
+        if (m.leader) return m.user;
+      });
+      if (
+        !(
+          req.user.role === "Admin" ||
+          req.user.role === "Super-Admin" ||
+          leaders.includes(req.user.id)
+        )
+      ) {
+        return res.status(403).json({
+          error: "You are not ADMIN nor member of project, Access denied",
+        });
+      }
+    })
+    .catch((e) => console.log(e));
+
   Astrophotography.findByIdAndUpdate(
     { _id: req.params.id },
     {
