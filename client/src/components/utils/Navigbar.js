@@ -1,5 +1,4 @@
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
-import Link from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import "../../css/navbar.css";
 import im1 from "../..//images/utils/astro_logo4.png";
@@ -158,7 +157,7 @@ export default function Navigbar() {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Button className='mr-sm-2 my-2 right-btn btn-primary' href='#'>Aero Club</Button>
+          <Button className='mr-sm-2 my-2 right-btn btn-primary' href={process.env.REACT_APP_AEROCLUB}>Aero Club</Button>
         </Navbar.Collapse>
       </Navbar>
     </>
