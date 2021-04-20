@@ -38,7 +38,11 @@ export default function APOD() {
                         </div>
                     </div>
                     <div className="hdimage">
-                        <img src={data?.hdurl} alt="" />
+                        {data?.media_type === 'video' ?
+                            <iframe src={data?.url}></iframe>
+                            :
+                            <img src={data?.hdurl} alt="" />
+                        }
                     </div>
                 </div>
             </div>

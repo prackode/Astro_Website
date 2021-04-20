@@ -210,12 +210,12 @@
   padding: 20px;
   position: relative;
   text-align: center;
-  background-color:#007bff;
+  background-color:#2766a9;
   border-radius: 20px;
 }
 .testimonial4_slide:after {
     content:'';
-    background-color: #007bff;
+    background-color: #2766a9;
     box-shadow: 0 4px 8px 0 rgba(29, 29, 29, 0.7), 0 6px 20px 0 rgba(26, 26, 26, 0.6);
     background-size: cover;
     position: absolute;
