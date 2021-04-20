@@ -9,12 +9,7 @@ export default function APOD() {
         fetch('https://api.nasa.gov/planetary/apod?api_key=uc04exQjhM4tO8QCCl0wcuAvJ4QMaJJxDfofWrvm', {
             method: 'GET'
         }).then(res => res.json())
-            .then(data => {
-
-                console.log(data)
-                setData(data)
-            }
-            )
+            .then(data => setData(data))
     }, [])
 
     return (
