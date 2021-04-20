@@ -221,7 +221,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                             className="miniSep"
                                                             style={{ marginBottom: "40px", background: "rgb(204, 67, 67)", width: "100%" }}
                                                         ></div>
-                                                        <ul>
+                                                        <ul className="remul">
                                                             <li> <b>Mr. Sanjeev Sharma (CEO and Founder, Swaayatt Robots) </b><a href="https://www.linkedin.com/in/sanjeevsharmaiitr/"><i className="fab fa-linkedin fa-lg"></i></a></li>
 
                                                             <br></br>
@@ -579,7 +579,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                             className="miniSep"
                                                             style={{ marginBottom: "40px", background: "rgb(204, 67, 67)", width: "100%" }}
                                                         ></div>
-                                                        <ul>
+                                                        <ul className="remul">
                                                             <li> <b>Mr. Ravi Prakash
                                                             -Winner, Amazon Robotics Challenge-Japan 2017
 (Ph.D. Scholar, IIT Kanpur) </b><a href="https://www.linkedin.com/in/ravi-prakash-a93ab9a8/?originalSubdomain=in"><i className="fab fa-linkedin fa-lg"></i></a></li>

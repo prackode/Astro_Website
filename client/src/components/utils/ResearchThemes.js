@@ -3,7 +3,7 @@ import "../../css/ResearchThemes.css";
 
 const ResearchThemes = () => {
   return (
-    <div className="container-fluid starbg" id={'restheme'}>
+    <div className="container-fluid starbg" id="restheme">
       <div
         className="pageTitle titleBold headingc white-headingc"
         data-aos="fade-down"
@@ -11,7 +11,10 @@ const ResearchThemes = () => {
       >
         Research Themes
       </div>
-      <div className="jumbotron" style={{ marginBottom: "0", background: "rgba(0, 0, 0, 0)" }}>
+      <div
+        className="jumbotron"
+        style={{ marginBottom: "0", background: "rgba(0, 0, 0, 0)" }}
+      >
         <div
           className="miniSep"
           style={{ marginBottom: "40px", background: "rgb(3, 150, 244)" }}
@@ -79,13 +82,19 @@ const ResearchThemes = () => {
               data-aos="zoom-in-down"
               data-aos-duration="1500"
             >
-              <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
+              <div
+                className="card cardhgt phoneheight"
+                style={{ marginBottom: "1rem", borderRadius: "10px" }}
+              >
                 <div
                   className="card-body cardbd"
                   style={{ borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="fas fa-calculator" style={{ paddingRight: "20px" }}></i>
+                    <i
+                      className="fas fa-calculator"
+                      style={{ paddingRight: "20px" }}
+                    ></i>
                     Computational Skills
                     <hr style={{ background: "white" }}></hr>
                   </h5>
@@ -99,7 +108,6 @@ const ResearchThemes = () => {
                       <li>3-body problem</li>
                       {/* <br /> */}
                       <li>Image stacking</li>
-
                     </ul>
                   </p>
                 </div>
@@ -110,13 +118,19 @@ const ResearchThemes = () => {
               data-aos="zoom-in-down"
               data-aos-duration="1500"
             >
-              <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
+              <div
+                className="card cardhgt phoneheight"
+                style={{ marginBottom: "1rem", borderRadius: "10px" }}
+              >
                 <div
                   className="card-body cardbd"
-                  style={{borderRadius: "10px", margin: "2px" }}
+                  style={{ borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="fas fa-laptop-code" style={{ paddingRight: "20px" }}></i>
+                    <i
+                      className="fas fa-laptop-code"
+                      style={{ paddingRight: "20px" }}
+                    ></i>
                     Data Analysis
                     <hr style={{ background: "white" }}></hr>
                   </h5>
@@ -129,7 +143,6 @@ const ResearchThemes = () => {
                       {/* <br /> */}
                       <li>Raw data processing</li>
                       {/* <br /> */}
-
                     </ul>
                   </p>
                 </div>
@@ -141,13 +154,19 @@ const ResearchThemes = () => {
               data-aos="zoom-in-down"
               data-aos-duration="1500"
             >
-              <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
+              <div
+                className="card cardhgt phoneheight"
+                style={{ marginBottom: "1rem", borderRadius: "10px" }}
+              >
                 <div
                   className="card-body cardbd"
-                  style={{borderRadius: "10px", margin: "2px" }}
+                  style={{ borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="fa fa-tools" style={{ paddingRight: "20px" }}></i>
+                    <i
+                      className="fa fa-tools"
+                      style={{ paddingRight: "20px" }}
+                    ></i>
                     Design and Manufacturing
                     <hr style={{ background: "white" }}></hr>
                   </h5>
@@ -172,13 +191,19 @@ const ResearchThemes = () => {
               data-aos="zoom-in-down"
               data-aos-duration="1500"
             >
-              <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
+              <div
+                className="card cardhgt phoneheight"
+                style={{ marginBottom: "1rem", borderRadius: "10px" }}
+              >
                 <div
                   className="card-body cardbd"
-                  style={{borderRadius: "10px", margin: "2px" }}
+                  style={{ borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="fas fa-satellite" style={{ paddingRight: "20px" }}></i>
+                    <i
+                      className="fas fa-satellite"
+                      style={{ paddingRight: "20px" }}
+                    ></i>
                     Observational Astronomy
                     <hr style={{ background: "white" }}></hr>
                   </h5>
@@ -203,13 +228,19 @@ const ResearchThemes = () => {
               data-aos="zoom-in-down"
               data-aos-duration="1500"
             >
-              <div className="card cardhgt phoneheight" style={{ marginBottom: "1rem", borderRadius: "10px" }}>
+              <div
+                className="card cardhgt phoneheight"
+                style={{ marginBottom: "1rem", borderRadius: "10px" }}
+              >
                 <div
                   className="card-body cardbd"
-                  style={{borderRadius: "10px", margin: "2px" }}
+                  style={{ borderRadius: "10px", margin: "2px" }}
                 >
                   <h5 className="card-title" style={{ color: "white" }}>
-                    <i className="fas fa-atom" style={{ paddingRight: "20px" }}></i>
+                    <i
+                      className="fas fa-atom"
+                      style={{ paddingRight: "20px" }}
+                    ></i>
                     Quantum Computing
                     <hr style={{ background: "white" }}></hr>
                   </h5>
@@ -218,7 +249,6 @@ const ResearchThemes = () => {
                     <ul className="lststyle" style={{ margin: "5px" }}>
                       <li>Simulator development</li>
                       {/* <br /> */}
-
                     </ul>
                   </p>
                 </div>

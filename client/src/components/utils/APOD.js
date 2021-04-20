@@ -9,7 +9,12 @@ export default function APOD() {
         fetch('https://api.nasa.gov/planetary/apod?api_key=uc04exQjhM4tO8QCCl0wcuAvJ4QMaJJxDfofWrvm', {
             method: 'GET'
         }).then(res => res.json())
-            .then(data => setData(data))
+            .then(data => {
+
+                console.log(data)
+                setData(data)
+            }
+            )
     }, [])
 
     return (
@@ -29,7 +34,7 @@ export default function APOD() {
                             <h3>{data?.title}</h3>
                         </div>
                         <div className="explanation mx-0 mx-md-3 mt-md-2 mt-lg-5 " id="style-3">
-                            <p>{data?.explanation}k</p>
+                            <p className="expl">{data?.explanation}k</p>
                         </div>
                     </div>
                     <div className="hdimage">

@@ -18,6 +18,8 @@ function Dashboard() {
   const dispatch = useDispatch();
   document.title = `Dashboard | ${REACT_APP_BASE_TITLE}`;
   useEffect(() => {
+    document.getElementsByClassName('App')[0].classList.remove('bgrt')
+    document.getElementsByClassName('App')[0].style.backgroundColor = '#ffffff'
     if (!localStorage.getItem("jwtToken")) {
       history.push("/user/login");
       toast.warn("You must be logged in !");
@@ -38,6 +40,11 @@ function Dashboard() {
         }
         dispatch({ type: "SET", payload: data.user });
       });
+
+    return () => {
+      document.getElementsByClassName('App')[0].classList.add('bgrt')
+    }
+
   }, []);
 
   return (

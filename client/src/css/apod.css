@@ -24,6 +24,10 @@
 	margin-bottom: 25px;
 }
 
+.expl {
+    padding: 15px;
+}
+
 .force-overflow
 {
 	min-height: 100px;

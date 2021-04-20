@@ -149,7 +149,7 @@ const ContactUs = () => {
               <div className="after-logo">
                 <h4> Contact : </h4>
                 <br />
-                +91 7568213682 <br />+91 8295018236
+                +91 7568213682 <br /> +91 8295018236
               </div>
             </div>
           </div>

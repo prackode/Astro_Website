@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import Loading from "../../Animations/Loading";
 import "../../css/Alumni.css";
-import f3 from "../../images/alumni/SHREY Dixit.jpg";
-import f8 from "../../images/alumni/Soumya Khanna.jpeg";
-import f9 from "../../images/alumni/Aman Sharma(1).jpg";
-import f12 from "../../images/alumni/Kishan Tiwari.jfif";
+import f1 from "../../images/alumni/SHREY Dixit.jpg";
+import f2 from "../../images/alumni/Soumya Khanna.jpeg";
+import f3 from "../../images/alumni/Aman Sharma(1).jpg";
+import f4 from "../../images/alumni/Kishan Tiwari.jfif";
+import f5 from "../../images/alumni/VivekKumar.jfif";
 import { REACT_APP_BASE_TITLE } from "../../grobalVars"
 
 export default function Alumni() {
@@ -18,7 +19,7 @@ export default function Alumni() {
       yearOfGraduation: 2020,
       yourLinkedinId: "linkedin.com/in/shrey-dixit",
       yourContactInformationEmail: "shreydixit99@gmail.com ",
-      aPhotoForWebsiteOfYourself: f3,
+      aPhotoForWebsiteOfYourself: f1,
     },
     {
       emailAddress: "soumyakhanna17997@gmail.com",
@@ -28,7 +29,7 @@ export default function Alumni() {
       presentLocation: "Akurdi, Pune",
       yourLinkedinId: "https://www.linkedin.com/in/soumya-khanna-20169040",
       yourContactInformationEmail: "soumyakhanna17997@gmail.com",
-      aPhotoForWebsiteOfYourself: f8,
+      aPhotoForWebsiteOfYourself: f2,
     },
     {
       emailAddress: "sharmaaman0571@gmail.com",
@@ -38,8 +39,7 @@ export default function Alumni() {
       presentLocation: "Gurgaon",
       yourContactInformationEmail: "sharmaaman0571@gmail.com",
       yourLinkedinId: "https://www.linkedin.com/in/aman-sharma-910598149",
-      yourContactInformationPhoneNumber: "08218289118",
-      aPhotoForWebsiteOfYourself: f9,
+      aPhotoForWebsiteOfYourself: f3,
     },
     {
       emailAddress: "Kishan@tsaw.tech",
@@ -49,8 +49,16 @@ export default function Alumni() {
       presentLocation: "Gurgaon",
       yourLinkedinId: "https://www.linkedin.com/in/kishan-tiwari-poseidon/",
       yourContactInformationEmail: "kishan@tsaw.tech",
-      yourContactInformationPhoneNumber: 7905461842,
-      aPhotoForWebsiteOfYourself: f12,
+      aPhotoForWebsiteOfYourself: f4,
+    },
+    {
+      emailAddress: "Kishan@tsaw.tech",
+      name: "Vivek Kumar",
+      yearOfGraduation: 2020,
+      presentOrganisation: "Graduated Mechanical Engineer, MNNIT Allahabad",
+      presentLocation: "Gurgaon",
+      yourLinkedinId: "https://www.linkedin.com/in/vivek-kumar-baa735151/",
+      aPhotoForWebsiteOfYourself: f5,
     },
   ];
 

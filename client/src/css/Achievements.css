@@ -1,10 +1,10 @@
 .team{
     font-weight: 700;
-    color: blue;
+    color: rgb(37, 60, 217);
 }
 
 .team a{
-    color: blue;
+    color:rgb(37, 60, 217);
 }
 
 .vertical-timeline:before {

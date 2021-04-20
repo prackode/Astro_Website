@@ -14,7 +14,7 @@ export default function Faculty() {
     <>
       <Loading time={2} />
       <h3 className="my-3 titleBold d-flex justify-content-center topic">
-        <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>FACULTY CORNER</p>
+        <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>FACULTY INCHARGE</p>
       </h3>
       <div
         className="miniSep"
@@ -22,7 +22,7 @@ export default function Faculty() {
       ></div>
       <div className="faculty-container container col-11">
         <div
-          className="container rounded border d-flex flex-column flex-md-row justify-content-center my-5 shadow"
+          className="container bg-white rounded border d-flex flex-column flex-md-row justify-content-center my-5 shadow"
         >
           <img src={f1} className="ml-5 mt-4 mt-md-5 mx-auto rounded" alt="..." />
           <div className="content col-11 col-md-6 col-lg-7 mx-auto mt-5 mb-md-5">
@@ -55,7 +55,7 @@ export default function Faculty() {
           </div>
         </div>
         <div
-          className="container rounded border d-flex flex-column flex-md-row justify-content-center my-5 shadow"
+          className="container bg-white rounded border d-flex flex-column flex-md-row justify-content-center my-5 shadow"
         >
           <img src={f2} className="ml-5 mt-4 mt-md-5 mx-auto rounded" alt="..." />
           <div className="content col-11 col-md-6 col-lg-7 mx-auto mt-5 mb-md-5">
@@ -87,7 +87,7 @@ Associate Professor, Department of Mechanical Engineering
           </div>
         </div>
         <div
-          className="container rounded border d-flex flex-column flex-md-row justify-content-center my-5 shadow"
+          className="container rounded bg-white border d-flex flex-column flex-md-row justify-content-center my-5 shadow"
         >
           <img src={f3} className="ml-5 mt-4 mt-md-5 mx-auto rounded" alt="..." />
           <div className="content col-11 col-md-6 col-lg-7 mx-auto mt-5 mb-md-5">

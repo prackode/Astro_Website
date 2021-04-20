@@ -65,6 +65,7 @@ export default function ProjForm() {
                 });
                 setCompTech([]);
                 res.json().then((data) => {
+                  console.log(data);
                   dispatch({ type: "CREATE_PROJECT", payload: data });
                   toast.success("Project Created !");
                   document
