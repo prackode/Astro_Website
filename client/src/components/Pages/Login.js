@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "../../css/Login.css";
-import m from "../../images/utils/astro_logo4.png";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 function Login() {
@@ -57,9 +56,6 @@ function Login() {
   return (
     <div className="login">
       <div className="container h-100 m-auto d-flex justify-content-center align-items-center">
-        <div className="login-logo">
-          <img src={m} alt="aeroclub" />
-        </div>
         <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
           <div className="card card-signin shadow">
             <div className="card-body">

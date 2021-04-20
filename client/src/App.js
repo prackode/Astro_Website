@@ -50,7 +50,7 @@ import "./css/App.css";
 function App() {
   return (
 
-    <div className="App bgrt">
+    <div className="App">
       <ToastContainer
         autoClose={4000}
         hideProgressBar={true}
@@ -110,7 +110,7 @@ function App() {
               <About />
               <Featuredproject />
               <APOD />
-              <ResearchThemes id={'restheme'}/>
+              <ResearchThemes id={'restheme'} />
               <Testimonials />
               <Sponsorhome />
               <ContactUs />

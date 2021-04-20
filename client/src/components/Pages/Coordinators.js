@@ -94,19 +94,20 @@ export default function Coordinators() {
       "areaOfInterests": "Theoretical Physics, Computational Physics, Observational Astronomy."
     },
     {
-      "emailAddress": "ardhyakumar55@gmail.com",
-      "name": "Ardhya Kumar",
-      "year": "Final",
-      "linkedinId": "https://www.linkedin.com/in/ardhya/",
-      "photo": f10
-    },
-    {
       "emailAddress": "apoorva011199@gmail.com",
       "name": "Apoorva Dinesh Singh ",
       "year": "Final",
       "linkedinId": "https://www.linkedin.com/in/apoorva-singh-0111",
       "photo": f11,
       "areaOfInterests": "ML, CV"
+    },
+    {
+      "emailAddress": "ardhyakumar55@gmail.com",
+      "name": "Ardhya Kumar",
+      "year": "Final",
+      "linkedinId": "https://www.linkedin.com/in/ardhya/",
+      "photo": f10,
+      "areaOfInterests": "Observational Astronomy, Astrophysics"
     },
     {
       "emailAddress": "chaudharyarchit2000@gmail.com",

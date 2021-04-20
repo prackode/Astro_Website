@@ -1,6 +1,7 @@
 .apod-container{
     padding: 0;
     border: 2px solid;
+    background-color: white;
 }
 
 .information{
@@ -11,10 +12,9 @@
     width: 35rem;
 }
 
-
 .scroller2
 {
-  text-align: justify ;
+    text-align: justify;
 	margin-left: 15px;
 	float: left;
 	height: auto;

@@ -5,9 +5,10 @@
 
 .login {
   height: 100vh;
-  background: url('../images/utils/deepspace.jpg');
+  background: url('../images/utils/login_3.jpg');
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   color: grey;
   overflow: auto;
 }
