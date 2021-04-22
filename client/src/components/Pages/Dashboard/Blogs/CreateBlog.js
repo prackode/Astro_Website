@@ -73,7 +73,7 @@ export default function CreateBlog() {
   };
 
   return (
-    <div className='container-fluid'>
+    <div className='container-fluid mb-5'>
       <div className="d-flex justify-content-center align-items-center mt-5">
         <button className="btn btn-primary px-4 btn-lg"
           type="button"
