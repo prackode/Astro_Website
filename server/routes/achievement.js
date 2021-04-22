@@ -60,7 +60,9 @@ router.post("/achievement", isSignedIn, isAdmin, (req, res) => {
     .then((achievement) => {
       res.json(achievement.transform());
     })
-    .catch((e) => console.log(e));
+    .catch((e) => res.status(400).json({
+      error: "cannot be created !",
+    }));
 });
 
 // updating a achievement
