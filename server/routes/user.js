@@ -11,6 +11,7 @@ const {
   deleteUser,
   updateProfileFromAdmin,
   createUserFromAdmin,
+  rejectInvite,
 } = require("../middleware/user");
 const { body } = require("express-validator");
 const router = express.Router();
@@ -21,9 +22,9 @@ router.post(
   isSignedIn,
   isAdmin,
   [
-    body('name', 'name is not present').exists(),
-    body('email', 'Invalid email').exists().isEmail(),
-    body('registration_no', 'registration_no is not present').exists()
+    body("name", "name is not present").exists(),
+    body("email", "Invalid email").exists().isEmail(),
+    body("registration_no", "registration_no is not present").exists(),
   ],
   createUserFromAdmin
 );
@@ -34,5 +35,6 @@ router.put("/users/:id", isSignedIn, isAdmin, updateProfileFromAdmin);
 router.get("/my/issue", isSignedIn, getMyRequests);
 router.post("/my/details", isSignedIn, getMyDetails);
 router.get("/my/invites/accept/:projectId", isSignedIn, acceptInvite);
+router.get("/my/invites/reject/:projectId", isSignedIn, rejectInvite);
 router.get("/my/invites", isSignedIn, getMyInvites);
 module.exports = router;
