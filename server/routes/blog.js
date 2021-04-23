@@ -87,15 +87,46 @@ router.post("/blogs", isSignedIn, (req, res) => {
     .catch((e) => console.log(e));
 });
 
-// updating a blog
 router.put("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
   Blog.findOneAndUpdate(
     { _id: req.params.id },
-    { $set: { title: req.body.title, body: req.body.body, pic: req.body.pic, postedBy: req.body.postedBy, publishedAt: req.body.publishedAt, accepted: req.body.accepted, acceptedBy: req.body.acceptedBy } },
-    { new: true },
+    req.body,
+    { returnOriginal: true },
     (e, blog) => {
-      if (e) return res.status(400).json({ error: "Blog cannot be updated !", });
-      return res.json(blog.transform());
+      if (e) {
+        return res.status(400).json({
+          error: "Project cannot be updated !",
+        });
+      }
+      const old_pb = blog.postedBy;
+      const new_pb = req.body.postedBy;
+      if (old_pb !== new_pb) {
+        User.findOneAndUpdate(
+          { _id: old_pb },
+          { $pull: { blogs: blog._id } },
+          (e, user) => {
+            if (e) {
+              console.log(e);
+              return res.status(400).json({
+                error: "Posted By cannot be updated !",
+              });
+            }
+          }
+        );
+        User.findOneAndUpdate(
+          { _id: new_pb },
+          { $addToSet: { blogs: blog._id } },
+          (e, user) => {
+            if (e) {
+              console.log(e);
+              return res.status(400).json({
+                error: "Posted By cannot be updated !",
+              });
+            }
+          }
+        );
+      }
+      res.json(blog);
     }
   );
 });

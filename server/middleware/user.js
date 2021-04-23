@@ -232,19 +232,18 @@ exports.getMyInvites = (req, res) => {
 };
 
 exports.updateMyProfile = (req, res) => {
-  User
-    .findOneAndUpdate(
-      { _id: req.user.id },
-      {
-        $set: {
-          name: req.body.name,
-          year: req.body.year,
-          registration_no: req.body.regis_no,
-          linkedin_url: req.body.linkedin,
-        },
+  User.findOneAndUpdate(
+    { _id: req.user.id },
+    {
+      $set: {
+        name: req.body.name,
+        year: req.body.year,
+        registration_no: req.body.regis_no,
+        linkedin_url: req.body.linkedin,
       },
-      { new: true }
-    )
+    },
+    { new: true }
+  )
     .populate("blogs")
     .populate({
       path: "projects",
@@ -261,8 +260,7 @@ exports.updateMyProfile = (req, res) => {
     .catch((e) => console.log(e));
 };
 exports.getMyDetails = (req, res) => {
-  User
-    .findById(req.user.id)
+  User.findById(req.user.id)
     .populate({
       path: "blogs",
       populate: { path: "acceptedBy", select: "name email" },
@@ -284,7 +282,26 @@ exports.getMyDetails = (req, res) => {
       res.json({ user: user.transform() });
     });
 };
-
+exports.rejectInvite = (req, res) => {
+  const projectId = req.params.projectId;
+  const userId = req.user.id;
+  Project.findOneAndUpdate(
+    { _id: projectId },
+    { $pull: { members: { user: userId } } },
+    {
+      returnOriginal: false,
+    },
+    (e, project) => {
+      if (e) {
+        return res.status(400).json({
+          success: false,
+          msg: "Not rejected",
+        });
+      }
+      res.json(project);
+    }
+  );
+};
 exports.acceptInvite = (req, res) => {
   const projectId = req.params.projectId;
   const userId = req.user.id;
@@ -342,7 +359,13 @@ exports.updateProfileFromAdmin = (req, res) => {
   User.findOneAndUpdate(
     { _id: req.params.id },
     {
-      $set: { name: req.body.name, email: req.body.email, role: req.body.role, canSignIn: req.body.canSignIn, linkedin_url: req.body.linkedin_url },
+      $set: {
+        name: req.body.name,
+        email: req.body.email,
+        role: req.body.role,
+        canSignIn: req.body.canSignIn,
+        linkedin_url: req.body.linkedin_url,
+      },
     },
     { new: true }
   )
