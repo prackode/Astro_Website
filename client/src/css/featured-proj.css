@@ -223,7 +223,7 @@ img {
 
 .card_content {
   padding: 1rem;
-  background: url(https://media.giphy.com/media/xUPGcH7WRAnKKWhR7y/giphy.gif) center center;
+  background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(https://media.giphy.com/media/xUPGcH7WRAnKKWhR7y/giphy.gif) center center;
   background-size:cover;
   background-position:center center;
   /* background: rgb(19, 19, 19); */
