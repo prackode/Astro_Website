@@ -116,7 +116,7 @@ router.post("/astrophotographies/user", isSignedIn, (req, res) => {
 
 // updating a photo
 router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
-  Project.findOne({ _id: req.params.id })
+  Astrophotography.findOne({ _id: req.params.id })
     .then((project) => {
       const leaders = project.members.map((m) => {
         if (m.leader) return m.user;
