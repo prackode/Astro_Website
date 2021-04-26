@@ -62,6 +62,6 @@ exports.deleteTag = (req, res) => {
         error: "Not deleted",
       });
     }
-    return res.json(deletedTag.transform());
+    return res.json(deletedTag);
   });
 };
