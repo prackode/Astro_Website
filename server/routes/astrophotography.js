@@ -52,6 +52,37 @@ router.get("/astrophotographies/:id", (req, res) => {
 router.post("/astrophotographies", isSignedIn, (req, res) => {
   console.log(req.body);
   req.body.leader = req.user.id;
+  const pic = req.body.pic;
+  if (pic) {
+    try {
+      const dUrl = new URL(pic);
+      if (dUrl.hostname === "drive.google.com") {
+        const sp = dUrl.pathname.split("/");
+        if (
+          sp[0] === "" &&
+          sp[1] === "file" &&
+          sp[2] === "d" &&
+          sp[4] === "view"
+        ) {
+          const imgId = sp[3];
+          req.body.pic = `https://drive.google.com/uc?export=view&id=${imgId}`;
+        } else {
+          throw new Error(
+            "Invalid drive link, eg: https://drive.google.com/file/d/1edRXTBfSU2B3lPfFYabpCavhXADz3TUT/view"
+          );
+        }
+      }
+    } catch (error) {
+      console.log(error.message);
+      return res.status(400).json({
+        err: error.message,
+      });
+    }
+  } else {
+    return res.status(400).json({
+      err: "Picture is compulsory",
+    });
+  }
   const photoObj = new Astrophotography(req.body);
   photoObj.save((err, photo) => {
     if (err) {
@@ -79,7 +110,38 @@ router.post("/astrophotographies", isSignedIn, (req, res) => {
 
 // creating a photo from dashboard
 router.post("/astrophotographies/user", isSignedIn, (req, res) => {
+  console.log(req.body);
   req.body.leader = req.user.id;
+  const pic = req.body.pic;
+  if (pic) {
+    try {
+      const dUrl = new URL(pic);
+      if (dUrl.hostname === "drive.google.com") {
+        const sp = dUrl.pathname.split("/");
+        if (
+          sp[0] === "" &&
+          sp[1] === "file" &&
+          sp[2] === "d" &&
+          sp[4] === "view"
+        ) {
+          const imgId = sp[3];
+          req.body.pic = `https://drive.google.com/uc?export=view&id=${imgId}`;
+        } else {
+          throw new Error(
+            "Invalid drive link, eg: https://drive.google.com/file/d/1edRXTBfSU2B3lPfFYabpCavhXADz3TUT/view"
+          );
+        }
+      }
+    } catch (error) {
+      return res.status(400).json({
+        err: error.message,
+      });
+    }
+  } else {
+    return res.status(400).json({
+      err: "Picture is compulsory",
+    });
+  }
   const photoObj = new Astrophotography(req.body);
   photoObj.members.push(
     new Member1({ user: req.user.id, accepted: true, leader: true })
@@ -116,6 +178,37 @@ router.post("/astrophotographies/user", isSignedIn, (req, res) => {
 
 // updating a photo
 router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
+  const pic = req.body.pic;
+  if (pic) {
+    try {
+      const dUrl = new URL(pic);
+      if (dUrl.hostname === "drive.google.com") {
+        const sp = dUrl.pathname.split("/");
+        if (
+          sp[0] === "" &&
+          sp[1] === "file" &&
+          sp[2] === "d" &&
+          sp[4] === "view"
+        ) {
+          const imgId = sp[3];
+          req.body.pic = `https://drive.google.com/uc?export=view&id=${imgId}`;
+        } else {
+          throw new Error(
+            "Invalid drive link, eg: https://drive.google.com/file/d/1edRXTBfSU2B3lPfFYabpCavhXADz3TUT/view"
+          );
+        }
+      }
+    } catch (error) {
+      return res.status(400).json({
+        err: error.message,
+      });
+    }
+  } else {
+    return res.status(400).json({
+      err: "Picture is compulsory",
+    });
+  }
+
   Astrophotography.findOne({ _id: req.params.id })
     .then((project) => {
       const leaders = project.members.map((m) => {

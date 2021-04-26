@@ -26,7 +26,7 @@ export default function PhotoEdit({ photo }) {
 
   return (
     <div>
-      <p className="d-flex justify-content-center">
+      {/* <p className="d-flex justify-content-center">
         <button
           className="btn btn-primary px-4"
           type="button"
@@ -204,7 +204,7 @@ export default function PhotoEdit({ photo }) {
             {loading ? "loading..." : "Submit"}
           </button>
         </form>
-      </div>
+      </div> */}
     </div>
   );
 }
