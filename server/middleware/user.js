@@ -272,7 +272,7 @@ exports.getMyDetails = (req, res) => {
     .populate({
       path: "photos",
       select: "title desc instrumentUsed instrumentSettings tags pic members",
-      populate: { path: "members.user", select: "name" },
+      populate: [{ path: "members.user", select: "name" }, { path: "tags" }],
     })
     .populate({
       path: "issues",
@@ -382,4 +382,4 @@ exports.updateProfileFromAdmin = (req, res) => {
 
 exports.isImageFromGDrive = (req, res, next) => {
   // if(req.body.)
-}
+};
