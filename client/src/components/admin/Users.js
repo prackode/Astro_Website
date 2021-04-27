@@ -28,8 +28,8 @@ export const UserList = (props) => {
   const user = useSelector((state) => state.user);
 
   return (
-    <List {...props}>
-      <Datagrid>
+    <List {...props} bulkActionButtons={false}>
+      <Datagrid >
         <TextField source="name" />
         <TextField source="email" />
         <TextField source="registration_no" />

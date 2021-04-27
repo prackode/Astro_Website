@@ -379,3 +379,7 @@ exports.updateProfileFromAdmin = (req, res) => {
     })
     .catch((e) => console.log(e));
 };
+
+exports.isImageFromGDrive = (req, res, next) => {
+  // if(req.body.)
+}

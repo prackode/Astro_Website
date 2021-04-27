@@ -106,7 +106,7 @@ img {
   font-size: 1rem !important;
 }
 .forphone3{
-  height: 6.7rem;
+  height: 5.9rem;
   font-size: 0.85rem !important;
 }
 
@@ -231,6 +231,14 @@ img {
   border-radius: 0px 0px 0.5rem 0.5rem;
 }
 
+.card_content a{
+  color: white;
+}
+
+.card_content a:hover{
+  color: #5286e6;
+}
+
 .card_title {
   color: rgb(235, 235, 235);
   font-size: 1.3rem;
@@ -238,6 +246,7 @@ img {
   letter-spacing: 1px;
   text-transform: capitalize;
   margin: 0px;
+  text-align: center;
 }
 
 .card_text {

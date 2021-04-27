@@ -21,7 +21,7 @@ import {
 
 export const TagList = (props) => {
   return (
-    <List {...props}>
+    <List {...props} bulkActionButtons={false}>
       <Datagrid>
         <TextField source="name" />
         <ShowButton basePath="/tag" />

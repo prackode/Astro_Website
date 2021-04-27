@@ -32,7 +32,7 @@ import RichTextQuill from "./RichTextQuill";
 
 export const PhotoList = (props) => {
   return (
-    <List {...props}>
+    <List {...props} bulkActionButtons={false}>
       <Datagrid>
         <TextField source="id" />
         <TextField source="title" />
