@@ -334,7 +334,6 @@ exports.acceptInvite = (req, res) => {
       }
       User.findById(req.user.id).exec((err, user) => {
         user.projects.push(projectId);
-        user.projects.push(projectId);
         user.save((err, updatedUser) => {
           if (err) {
             console.log(err);
@@ -382,4 +381,4 @@ exports.updateProfileFromAdmin = (req, res) => {
 
 exports.isImageFromGDrive = (req, res, next) => {
   // if(req.body.)
-}
+};
