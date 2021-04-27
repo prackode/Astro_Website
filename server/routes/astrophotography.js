@@ -51,7 +51,6 @@ router.get("/astrophotographies/:id", (req, res) => {
 
 // creating a photo
 router.post("/astrophotographies", isSignedIn, (req, res) => {
-  console.log(req.body);
   req.body.leader = req.user.id;
   const pic = req.body.pic;
   if (pic) {
@@ -254,7 +253,7 @@ router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
 
 // deleting a photo
 router.delete("/astrophotographies/:id", isSignedIn, isAdmin, (req, res) => {
-  Project.findById(req.params.id, (err, photo) => {
+  Astrophotography.findById(req.params.id, (err, photo) => {
     if (err) return res.status(500).send(err);
     if (photo) {
       photo.remove(() => {

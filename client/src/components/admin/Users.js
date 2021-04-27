@@ -72,6 +72,11 @@ export const UserShow = (props) => {
             <ChipField source="title" />
           </SingleFieldList>
         </ReferenceArrayField>
+        <ReferenceArrayField source="photos" reference="astrophotographies">
+          <SingleFieldList linkType="show">
+            <ChipField source="title" />
+          </SingleFieldList>
+        </ReferenceArrayField>
         <ReferenceArrayField source="blogs" reference="blogs">
           <SingleFieldList linkType="show">
             <ChipField source="title" />
