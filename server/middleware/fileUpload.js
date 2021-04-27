@@ -27,8 +27,8 @@ exports.upload = multer({
   },
 });
 
-exports.drivePicParser = (dUrl) => {
-  const dUrl = new URL(pic);
+exports.drivePicParser = (inputUrl) => {
+  const dUrl = new URL(inputUrl);
   if (dUrl.hostname === "drive.google.com") {
     const sp = dUrl.pathname.split("/");
     if (sp[0] === "" && sp[1] === "file" && sp[2] === "d" && sp[4] === "view") {
@@ -40,4 +40,5 @@ exports.drivePicParser = (dUrl) => {
       );
     }
   }
+  return inputUrl;
 };

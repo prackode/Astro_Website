@@ -1,4 +1,5 @@
 const Component = require("../models/component");
+const { drivePicParser } = require("./fileUpload");
 
 exports.getComponentById = (req, res, next, id) => {
   Component.findById(id).exec((err, comp) => {
@@ -77,7 +78,16 @@ exports.addComponent = (req, res) => {
 exports.updateComponent = (req, res) => {
   const component = req.component;
   component.available = req.body.available;
-
+  const pic = req.body.pic;
+  if (pic) {
+    try {
+      component.image_url = drivePicParser(req.body.pic);
+    } catch (error) {
+      return res.status(400).json({
+        err: error.message,
+      });
+    }
+  }
   component.save((err, updatedComponent) => {
     if (err) {
       return res.status(400).json({
