@@ -93,7 +93,6 @@ router.post("/astrophotographies", isSignedIn, (req, res) => {
 
 // creating a photo from dashboard
 router.post("/astrophotographies/user", isSignedIn, (req, res) => {
-  console.log(req.body);
   req.body.leader = req.user.id;
   const pic = req.body.pic;
   if (pic) {
