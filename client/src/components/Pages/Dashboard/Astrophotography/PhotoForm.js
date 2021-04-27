@@ -77,12 +77,10 @@ export default function PhotoForm() {
                     document
                       .getElementById("collapsenewphoto")
                       .classList.remove("show");
-                    console.log(data);
                     dispatch({ type: "CREATE_PHOTO", payload: data });
                   });
                 } else {
                   res.json((data) => {
-                    console.log(data);
                     toast.warn(data.err);
                   });
                 }

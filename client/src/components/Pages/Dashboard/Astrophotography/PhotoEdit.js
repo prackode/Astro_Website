@@ -14,19 +14,21 @@ export default function PhotoEdit({ photo }) {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    fetch(`${REACT_APP_SERVER}/api/tags`, { method: "GET" })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-        setDefinedTags(data.filter((item) => !photo.tags.includes(item)));
-        setformData(photo);
-        setTags(photo.tags);
-      });
+    if (photo) {
+      fetch(`${REACT_APP_SERVER}/api/tags`, { method: "GET" })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data)
+          setDefinedTags(data.filter((item) => !photo.tags.find(tag => tag.name === item.name)));
+          setformData(photo);
+          setTags(photo.tags);
+        });
+    }
   }, [photo]);
 
   return (
     <div>
-      {/* <p className="d-flex justify-content-center">
+      <p className="d-flex justify-content-center">
         <button
           className="btn btn-primary px-4"
           type="button"
@@ -153,13 +155,13 @@ export default function PhotoEdit({ photo }) {
             {tags.map((tag, i) => (
               <h4 className="d-inline">
                 <span className="badge badge-primary my-1 mx-1">
-                  {tag}{" "}
+                  {tag.name}{" "}
                   <CloseRounded
                     style={{ cursor: "pointer" }}
                     onClick={() => {
                       setDefinedTags((prev) => [...prev, tag]);
                       setTags((prev) =>
-                        prev.filter((item) => prev.indexOf(item) !== i)
+                        prev.filter((item) => item._id !== tag._id)
                       );
                     }}
                   />
@@ -189,12 +191,15 @@ export default function PhotoEdit({ photo }) {
                     key={i}
                     onClick={() => {
                       setTags((prev) => [...prev, tag]);
-                      setDefinedTags((prev) =>
-                        prev.filter((item) => item !== tag)
-                      );
+                      setDefinedTags((prev) => {
+                        const new_def = prev.filter(
+                          (item) => item._id !== tag._id
+                        );
+                        return new_def;
+                      });
                     }}
                   >
-                    {tag}
+                    {tag.name}
                   </li>
                 ))}
               </ul>
@@ -204,7 +209,7 @@ export default function PhotoEdit({ photo }) {
             {loading ? "loading..." : "Submit"}
           </button>
         </form>
-      </div> */}
+      </div>
     </div>
   );
 }
