@@ -35,7 +35,6 @@ const userReducer = (user = null, action) => {
         ...user,
         projects: [...user.projects, action.payload]
       }
-
     case "CREATE_PROJECT":
       return {
         ...user,

@@ -50,7 +50,7 @@ exports.addComponent = (req, res) => {
   const pic = req.body.pic;
   if (pic) {
     try {
-      req.body.pic = drivePicParser(req.body.image_url);
+      req.body.pic = drivePicParser(req.body.pic);
     } catch (error) {
       return res.status(400).json({
         err: error.message,
@@ -60,7 +60,7 @@ exports.addComponent = (req, res) => {
   const component = new Component({
     name: req.body.name,
     type: req.body.type,
-    image_url: req.file.path,
+    pic: req.body.pic,
     available: req.body.available,
   });
   component.save((err, component) => {
@@ -81,7 +81,7 @@ exports.updateComponent = (req, res) => {
   const pic = req.body.pic;
   if (pic) {
     try {
-      component.image_url = drivePicParser(req.body.pic);
+      component.pic = drivePicParser(req.body.pic);
     } catch (error) {
       return res.status(400).json({
         err: error.message,
