@@ -70,12 +70,12 @@ export default function DashInvites(props) {
                                     <LoadingButton
                                       projectId={project._id}
                                       type="accept"
-                                      inviteTyoe="project"
+                                      inviteType="project"
                                     />
                                     <LoadingButton
                                       projectId={project._id}
                                       type="reject"
-                                      inviteTyoe="project"
+                                      inviteType="project"
                                     />
                                   </span>
                                 );
@@ -149,12 +149,12 @@ export default function DashInvites(props) {
                                     <LoadingButton
                                       projectId={project._id}
                                       type="accept"
-                                      inviteTyoe="photo"
+                                      inviteType="photo"
                                     />
                                     <LoadingButton
                                       projectId={project._id}
                                       type="reject"
-                                      inviteTyoe="photo"
+                                      inviteType="photo"
                                     />
                                   </span>
                                 );
@@ -198,7 +198,7 @@ function LoadingButton(props) {
   useEffect(() => {
     if (isLoading) {
       fetch(
-        `${REACT_APP_SERVER}/api/my/invites/${type}/${props.inviteTyoe}/${props.projectId}`,
+        `${REACT_APP_SERVER}/api/my/invites/${type}/${props.inviteType}/${props.projectId}`,
         {
           method: "get",
           headers: {
@@ -213,7 +213,13 @@ function LoadingButton(props) {
           setLoading(false);
           setDone(true);
           if (type === "accept")
-            dispatch({ type: "ACCEPT_INVITE", payload: data.project });
+            if (props.inviteType === "project")
+              dispatch({
+                type: "ACCEPT_INVITE_PROJECT",
+                payload: data.project,
+              });
+            else if (props.inviteType === "photo")
+              dispatch({ type: "ACCEPT_INVITE_PHOTO", payload: data.photo });
         });
     }
   }, [isLoading]);
