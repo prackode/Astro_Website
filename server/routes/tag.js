@@ -10,10 +10,10 @@ const {
 } = require("../middleware/tag");
 const tagRouter = express.Router();
 const { errHandler } = require("../middleware/errValidator");
-tagRouter.get("/tag", getAllTags);
-tagRouter.get("/tag/:id", getOneTag);
+tagRouter.get("/tags", getAllTags);
+tagRouter.get("/tags/:id", getOneTag);
 tagRouter.post(
-  "/tag",
+  "/tags",
   [body(["name"]).notEmpty().withMessage("No fields should be empty!")],
   errHandler,
   isSignedIn,
@@ -21,13 +21,13 @@ tagRouter.post(
   createTag
 );
 tagRouter.put(
-  "/tag/:id",
+  "/tags/:id",
   [body(["name"]).notEmpty().withMessage("No fields should be empty!")],
   errHandler,
   isSignedIn,
   isAdmin,
   updateTag
 );
-tagRouter.delete("/tag/:id", isSignedIn, isAdmin, deleteTag);
+tagRouter.delete("/tags/:id", isSignedIn, isAdmin, deleteTag);
 
 module.exports = tagRouter;

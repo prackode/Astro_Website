@@ -18,4 +18,13 @@ tagSchema.method("transform", function () {
   return obj;
 });
 
+tagSchema.pre("remove", function (next) {
+  this.model("Astrophotography").update(
+    { tags: this._id },
+    { $pull: { tags: this._id } },
+    { multi: true },
+    next
+  );
+});
+
 module.exports = mongoose.model("Tag", tagSchema);
