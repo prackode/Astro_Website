@@ -60,6 +60,16 @@ router.get("/blogstoUI/:id", (req, res) => {
 
 // creating a blog
 router.post("/blogs", isSignedIn, (req, res) => {
+  const pic = req.body.pic;
+  if (pic) {
+    try {
+      req.body.pic = drivePicParser(req.body.pic);
+    } catch (error) {
+      return res.status(400).json({
+        err: error.message,
+      });
+    }
+  }
   const blog = new Blog(req.body);
   blog
     .save()

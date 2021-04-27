@@ -107,6 +107,16 @@ router.get("/projects/:id", (req, res) => {
 // creating a project
 router.post("/projects", isSignedIn, (req, res) => {
   req.body.leader = req.user.id;
+  const pic = req.body.pic;
+  if (pic) {
+    try {
+      req.body.pic = drivePicParser(req.body.pic);
+    } catch (error) {
+      return res.status(400).json({
+        err: error.message,
+      });
+    }
+  }
   const project = new Project(req.body);
   project.save((err, project) => {
     if (err) {
@@ -135,6 +145,16 @@ router.post("/projects", isSignedIn, (req, res) => {
 // creating a project
 router.post("/projects/user", isSignedIn, (req, res) => {
   req.body.leader = req.user.id;
+  const pic = req.body.pic;
+  if (pic) {
+    try {
+      req.body.pic = drivePicParser(req.body.pic);
+    } catch (error) {
+      return res.status(400).json({
+        err: error.message,
+      });
+    }
+  }
   const project = new Project(req.body);
   project.members.push(
     new Member({ user: req.user.id, accepted: true, leader: true })
