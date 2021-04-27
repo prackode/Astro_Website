@@ -12,6 +12,8 @@ const {
   updateProfileFromAdmin,
   createUserFromAdmin,
   rejectInvite,
+  acceptInvitePhoto,
+  rejectInvitePhoto,
 } = require("../middleware/user");
 const { body } = require("express-validator");
 const router = express.Router();
@@ -34,7 +36,9 @@ router.post("/my/updateProfile", isSignedIn, updateMyProfile);
 router.put("/users/:id", isSignedIn, isAdmin, updateProfileFromAdmin);
 router.get("/my/issue", isSignedIn, getMyRequests);
 router.post("/my/details", isSignedIn, getMyDetails);
-router.get("/my/invites/accept/:projectId", isSignedIn, acceptInvite);
-router.get("/my/invites/reject/:projectId", isSignedIn, rejectInvite);
 router.get("/my/invites", isSignedIn, getMyInvites);
+router.get("/my/invites/accept/project/:projectId", isSignedIn, acceptInvite);
+router.get("/my/invites/reject/project/:projectId", isSignedIn, rejectInvite);
+router.get("/my/invites/accept/photo/:photoId", isSignedIn, acceptInvitePhoto);
+router.get("/my/invites/reject/photo/:photoId", isSignedIn, rejectInvitePhoto);
 module.exports = router;
