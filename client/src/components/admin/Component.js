@@ -4,9 +4,7 @@ import {
   DeleteButton,
   Edit,
   EditButton,
-  FileInput,
   ImageField,
-  ImageInput,
   List,
   number,
   NumberInput,
@@ -20,12 +18,8 @@ import {
 } from "react-admin";
 
 const types_arr = [
-  "Transmitter And Receiver",
-  "Batteries",
-  "Mechanical Tools",
-  "Electronic Components and Sensors",
-  "Development Boards",
-  "Material For Drones and Planes",
+  "Telescope",
+  "Accessories",
 ];
 const types = types_arr.map((type) => ({
   id: type,
@@ -92,7 +86,7 @@ export const ComponentShow = (props) => {
         <TextField source="id" />
         <TextField source="name" />
         <TextField source="type" label="Type" />
-        <TextInput source="pic" label="Image" validate={[required()]} />
+        <ImageField source="pic" label="Image" validate={[required()]} />
         <TextField source="available" />
         <TextField source="issued" />
       </SimpleShowLayout>
