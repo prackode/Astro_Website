@@ -32,7 +32,7 @@ function FeaturedProjects() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log(data)
         return SetProjects(data);
       });
   }, []);
@@ -62,7 +62,7 @@ function FeaturedProjects() {
               .map((project) =>
                 project.open || signedin ? (
                   <li className="cards_item" data-aos="fade-up" data-aos="flip-left" data-aos-easing="linear"
-                    data-aos-duration="1500">
+                    data-aos-duration="1500" key={project._id}>
                     <div className="card cardproj">
                       <div className="card_image">
                         <img className="evfeatured" src={project.pic || 'https://lh3.googleusercontent.com/22uNNnzS6tHVU9N-BR3zlu6S_Fg03yb5omXJtTbR7Ixcd_FRL23sNadI2G5X0tkoQAqcjzwMPf5BXDYdtCWtfxcmEN90ybDONZCzQdQiIcnrnIg9oAhrjRjiCqGwXxx8tDsk4yH89A=w2400'} style={{ width: '100%', maxHeight: '18rem', minHeight: '18rem' }} />
