@@ -4,6 +4,7 @@ const { Project, Member } = require("../models/project");
 const { isSignedIn, isAdmin } = require("../middleware/auth");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
+const { drivePicParser } = require("../middleware/fileUpload");
 
 // fetching all projects
 router.get("/projects", isSignedIn, isAdmin, (req, res) => {
@@ -107,6 +108,16 @@ router.get("/projects/:id", (req, res) => {
 // creating a project
 router.post("/projects", isSignedIn, (req, res) => {
   req.body.leader = req.user.id;
+  const pic = req.body.pic;
+  if (pic) {
+    try {
+      req.body.pic = drivePicParser(req.body.pic);
+    } catch (error) {
+      return res.status(400).json({
+        err: error.message,
+      });
+    }
+  }
   const project = new Project(req.body);
   project.save((err, project) => {
     if (err) {
@@ -135,6 +146,16 @@ router.post("/projects", isSignedIn, (req, res) => {
 // creating a project
 router.post("/projects/user", isSignedIn, (req, res) => {
   req.body.leader = req.user.id;
+  const pic = req.body.pic;
+  if (pic) {
+    try {
+      req.body.pic = drivePicParser(req.body.pic);
+    } catch (error) {
+      return res.status(400).json({
+        err: error.message,
+      });
+    }
+  }
   const project = new Project(req.body);
   project.members.push(
     new Member({ user: req.user.id, accepted: true, leader: true })
@@ -173,6 +194,16 @@ router.post("/projects/user", isSignedIn, (req, res) => {
 
 // updating a project
 router.put("/projects/:id", isSignedIn, (req, res) => {
+  const pic = req.body.pic;
+  if (pic) {
+    try {
+      req.body.pic = drivePicParser(req.body.pic);
+    } catch (error) {
+      return res.status(400).json({
+        err: error.message,
+      });
+    }
+  }
   Project.findOne({ _id: req.params.id })
     .then((project) => {
       const leaders = project.members.map((m) => {

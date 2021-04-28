@@ -21,12 +21,12 @@ import {
 
 export const TagList = (props) => {
   return (
-    <List {...props}>
+    <List {...props} bulkActionButtons={false}>
       <Datagrid>
         <TextField source="name" />
-        <ShowButton basePath="/tag" />
-        <DeleteButton basePath="/tag" />
-        <EditButton basePath="/tag" />
+        <ShowButton basePath="/tags" />
+        <DeleteButton basePath="/tags" />
+        <EditButton basePath="/tags" />
       </Datagrid>
     </List>
   );
@@ -35,8 +35,8 @@ export const TagList = (props) => {
 export const TagCreate = (props) => {
   return (
     <Create {...props}>
-      <SimpleForm redirect="/tag">
-        <TextInput source="name" validate={[required()]} />
+      <SimpleForm redirect="/tags">
+        <TextInput source="name" validate={required()} />
       </SimpleForm>
     </Create>
   );
@@ -56,8 +56,8 @@ export const TagShow = (props) => {
 export const TagEdit = (props) => {
   return (
     <Edit title="Tag Edit" {...props}>
-      <SimpleForm redirect="/tag">
-        <TextInput source="name" validate={[required()]} />
+      <SimpleForm redirect="/tags">
+        <TextInput source="name" validate={required()} />
       </SimpleForm>
     </Edit>
   );

@@ -3,6 +3,7 @@ const { Project } = require("../models/project");
 const User = require("../models/user");
 const blog = require("../models/blog");
 const { validationResult } = require("express-validator");
+const { Astrophotography } = require("../models/astrophotography");
 
 exports.getAllUsers = (req, res) => {
   res.setHeader("Content-Range", "users 0-10/20");
@@ -217,6 +218,10 @@ exports.getMyRequests = (req, res) => {
 };
 
 exports.getMyInvites = (req, res) => {
+  var invites = {
+    projects: undefined,
+    photos: undefined,
+  };
   Project.find({
     members: { $elemMatch: { user: req.user.id, accepted: false } },
   })
@@ -227,7 +232,22 @@ exports.getMyInvites = (req, res) => {
           error: err.message,
         });
       }
-      res.json(projects);
+      invites.projects = projects;
+
+      Astrophotography.find({
+        members: { $elemMatch: { user: req.user.id, accepted: false } },
+      })
+        .populate({ path: "members.user tags", select: "name" })
+        .exec((err, photos) => {
+          if (err) {
+            return res.status(400).json({
+              error: err.message,
+            });
+          }
+          invites.photos = photos;
+          console.log(invites);
+          res.json(invites);
+        });
     });
 };
 
@@ -272,7 +292,7 @@ exports.getMyDetails = (req, res) => {
     .populate({
       path: "photos",
       select: "title desc instrumentUsed instrumentSettings tags pic members",
-      populate: { path: "members.user", select: "name" },
+      populate: { path: "members.user tags", select: "name" },
     })
     .populate({
       path: "issues",
@@ -334,7 +354,6 @@ exports.acceptInvite = (req, res) => {
       }
       User.findById(req.user.id).exec((err, user) => {
         user.projects.push(projectId);
-        user.projects.push(projectId);
         user.save((err, updatedUser) => {
           if (err) {
             console.log(err);
@@ -347,6 +366,78 @@ exports.acceptInvite = (req, res) => {
             .execPopulate((err, populatedProject) => {
               res.json({
                 project: populatedProject,
+              });
+            });
+        });
+      });
+    });
+  });
+};
+
+exports.rejectInvitePhoto = (req, res) => {
+  const photoId = req.params.photoId;
+  const userId = req.user.id;
+  Astrophotography.findOneAndUpdate(
+    { _id: photoId },
+    { $pull: { members: { user: userId } } },
+    {
+      returnOriginal: false,
+    },
+    (e, photo) => {
+      if (e) {
+        return res.status(400).json({
+          success: false,
+          msg: "Not rejected",
+        });
+      }
+      res.json(photo);
+    }
+  );
+};
+exports.acceptInvitePhoto = (req, res) => {
+  const photoId = req.params.photoId;
+  const userId = req.user.id;
+  Astrophotography.findOne({ _id: photoId }).exec((err, photo) => {
+    if (err || !photo) {
+      return res.status(400).json({
+        error: "Project not found in DB",
+      });
+    }
+    let isInvited = false;
+    let i = 0;
+    for (; i < photo.members.length; i++) {
+      if (JSON.stringify(photo.members[i].user) === JSON.stringify(userId)) {
+        isInvited = true;
+        break;
+      }
+    }
+    if (!isInvited) {
+      return res.status(400).json({
+        error: "User not invited",
+      });
+    }
+    photo.members[i].accepted = true;
+    photo.save((err, updatedPhoto) => {
+      if (err) {
+        console.log(err);
+        return res.status(400).json({
+          error: "Cannot accept invite, try again",
+        });
+      }
+      User.findById(req.user.id).exec((err, user) => {
+        user.photos.push(photoId);
+        user.save((err, updatedUser) => {
+          if (err) {
+            console.log(err);
+            return res.status(400).json({
+              error: "Cannot accept invite, try again",
+            });
+          }
+          updatedPhoto
+            .populate({ path: "members.user tags", select: "name" })
+            .execPopulate((err, populatedProject) => {
+              res.json({
+                photo: populatedProject,
               });
             });
         });
@@ -378,4 +469,8 @@ exports.updateProfileFromAdmin = (req, res) => {
       return res.json(updatedUser.transform());
     })
     .catch((e) => console.log(e));
+};
+
+exports.isImageFromGDrive = (req, res, next) => {
+  // if(req.body.)
 };

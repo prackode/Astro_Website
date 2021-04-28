@@ -3,6 +3,7 @@ const router = express.Router();
 const Blog = require("../models/blog");
 const User = require("../models/user");
 const { isSignedIn, isAdmin } = require("../middleware/auth");
+const { drivePicParser } = require("../middleware/fileUpload");
 
 // fetching all blogs through admin
 router.get("/blogs", isSignedIn, isAdmin, (req, res) => {
@@ -60,6 +61,16 @@ router.get("/blogstoUI/:id", (req, res) => {
 
 // creating a blog
 router.post("/blogs", isSignedIn, (req, res) => {
+  const pic = req.body.pic;
+  if (pic) {
+    try {
+      req.body.pic = drivePicParser(req.body.pic);
+    } catch (error) {
+      return res.status(400).json({
+        err: error.message,
+      });
+    }
+  }
   const blog = new Blog(req.body);
   blog
     .save()
@@ -88,6 +99,16 @@ router.post("/blogs", isSignedIn, (req, res) => {
 });
 
 router.put("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
+  const pic = req.body.pic;
+  if (pic) {
+    try {
+      req.body.pic = drivePicParser(req.body.pic);
+    } catch (error) {
+      return res.status(400).json({
+        err: error.message,
+      });
+    }
+  }
   Blog.findOneAndUpdate(
     { _id: req.params.id },
     req.body,

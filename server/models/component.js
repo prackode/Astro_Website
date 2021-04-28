@@ -1,5 +1,4 @@
 var mongoose = require("mongoose");
-const User = require("./user");
 
 var componentSchema = new mongoose.Schema(
   {
@@ -14,7 +13,7 @@ var componentSchema = new mongoose.Schema(
       required: true,
       trim: true
     },
-    image_url: {
+    pic: {
       type: String,
       required: true,
     },
