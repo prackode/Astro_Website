@@ -147,23 +147,7 @@ router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
   const pic = req.body.pic;
   if (pic) {
     try {
-      const dUrl = new URL(pic);
-      if (dUrl.hostname === "drive.google.com") {
-        const sp = dUrl.pathname.split("/");
-        if (
-          sp[0] === "" &&
-          sp[1] === "file" &&
-          sp[2] === "d" &&
-          sp[4] === "view"
-        ) {
-          const imgId = sp[3];
-          req.body.pic = `https://drive.google.com/uc?export=view&id=${imgId}`;
-        } else {
-          throw new Error(
-            "Invalid drive link, eg: https://drive.google.com/file/d/1edRXTBfSU2B3lPfFYabpCavhXADz3TUT/view"
-          );
-        }
-      }
+      req.body.pic = drivePicParser(req.body.pic);
     } catch (error) {
       return res.status(400).json({
         err: error.message,
