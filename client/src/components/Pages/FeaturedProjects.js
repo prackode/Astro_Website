@@ -7,7 +7,7 @@ import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
 function FeaturedProjects() {
   const [projects, SetProjects] = useState([]);
   const [signedin, setsignedin] = useState(false);
-  document.title = `Projects | ${REACT_APP_BASE_TITLE}`;
+  document.title = `Flagship Projects | ${REACT_APP_BASE_TITLE}`;
 
   useEffect(() => {
     fetch(`${REACT_APP_SERVER}/api/isSignedIn`, {
@@ -30,7 +30,7 @@ function FeaturedProjects() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log(data)
         return SetProjects(data);
       });
   }, []);
