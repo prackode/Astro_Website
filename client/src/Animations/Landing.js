@@ -12,11 +12,11 @@ class Landing extends React.Component {
               <div className="landing-logo mb-3">
                 <img src={m} alt="aero" />
               </div>
-              <div className="landing-about">
+              {/* <div className="landing-about">
                 <h1 className="font-weight-bold text-uppercase">
                   AstroWing MNNIT
                 </h1>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
