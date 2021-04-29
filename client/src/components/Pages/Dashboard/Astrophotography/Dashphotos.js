@@ -166,10 +166,10 @@ function MyVerticallyCenteredModal(props) {
               if (res.status == 200) {
                 toast.success("USER INVITED");
                 res.json().then((data) => {
-                  console.log(data.updatedProject);
+                  console.log(data.updatedPhoto);
                   dispatch({
                     type: "INVITE_USER",
-                    payload: data.updatedProject,
+                    payload: data.updatedPhoto,
                   });
                 });
               } else {
