@@ -20,11 +20,13 @@ export default function PhotoForm() {
   const [definedTags, setDefinedTags] = useState([]);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+  const [const_tags, setconst_tags] = useState([]);
   useEffect(() => {
     fetch(`${REACT_APP_SERVER}/api/tags`, { method: "GET" })
       .then((res) => res.json())
       .then((data) => {
         setDefinedTags(data);
+        setconst_tags(data);
       });
   }, []);
   return (
@@ -70,8 +72,11 @@ export default function PhotoForm() {
                     desc: "",
                     objective: "",
                     pic: "",
+                    instrumentUsed: "",
+                    instrumentSettings: "",
                   });
                   setTags([]);
+                  setDefinedTags(const_tags);
                   res.json().then((data) => {
                     toast.success("Photo Created !");
                     document
