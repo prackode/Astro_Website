@@ -29,6 +29,15 @@ const userReducer = (user = null, action) => {
         ...user,
         projects: new_proj_arr,
       };
+    case "INVITE_USER_PHOTO":
+      const new_photo_arr = user.photos.map((photo) => {
+        if (photo._id === action.payload._id) return action.payload;
+        return photo;
+      });
+      return {
+        ...user,
+        photos: new_photo_arr,
+      };
     case "ACCEPT_INVITE_PROJECT":
       return {
         ...user,

@@ -31,6 +31,7 @@ exports.drivePicParser = (inputUrl) => {
   const dUrl = new URL(inputUrl);
   if (dUrl.hostname === "drive.google.com") {
     const sp = dUrl.pathname.split("/");
+    if (dUrl.pathname === "/uc") return inputUrl;
     if (sp[0] === "" && sp[1] === "file" && sp[2] === "d" && sp[4] === "view") {
       const imgId = sp[3];
       return `https://drive.google.com/uc?export=view&id=${imgId}`;
