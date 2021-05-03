@@ -220,7 +220,7 @@ img {
 @media (min-width: 56rem) {
   
   
-  .cardproj {
+  .astroproj {
     margin: 0 2rem;
   }
   .cards_item {
@@ -239,7 +239,7 @@ img {
 
 .cardproj {
   background-color: rgb(14, 14, 14);
-  /* box-shadow: 0 20px 40px -14px rgba(253, 251, 251, 0.5); */
+  box-shadow: 0 20px 40px -14px rgba(253, 251, 251, 0.5);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -318,6 +318,14 @@ img {
   box-shadow: 0 20px 40px -14px rgba(7, 56, 148, 0.5);
 }
 
+.astroproj {
+  /* background-color: rgb(14, 14, 14); */
+  /* box-shadow: 0 20px 40px -14px rgba(253, 251, 251, 0.5); */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100%;
+}
 
 /* .astrobg {
   background: linear-gradient(90deg, rgba(45,78,128,1) 0%, rgba(1,19,32,1) 100%);

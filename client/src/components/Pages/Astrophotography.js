@@ -72,7 +72,7 @@ function AstrophotoGraphy() {
           </a>
         </div>
       </div> */}
-                  <div className="card cardproj hovpic">
+                  <div className="card hovpic astroproj">
                     {/* <p className="content_img"> */}
                       <a href={`/astrophotography/${photo.id}`} ><img
                         // className="evfeatured"
