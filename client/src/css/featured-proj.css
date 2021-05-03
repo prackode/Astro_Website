@@ -35,7 +35,7 @@
 
 .main {
   max-width: 1400px;
-  /* margin: 1rem auto; */
+  margin: 1rem auto;
   border-radius: 1.5rem;
   min-width: 18rem;
 }
@@ -187,15 +187,8 @@ img {
 }
 
 @media (min-width: 40rem) {
-  .phoneviewproj {
-    width: 100%;
-    max-height: 12rem;
-    min-height: 12rem;
-  }
-  .forphone3 {
-    height: 5.5rem;
-    font-size: 0.75rem !important;
-  }
+  
+  
   .cards_item {
     width: 70%;
   }
@@ -225,15 +218,8 @@ img {
 }
 
 @media (min-width: 56rem) {
-  .phoneviewproj {
-    width: 100%;
-    max-height: 12rem;
-    min-height: 12rem;
-  }
-  .forphone3 {
-    height: 5.9rem;
-    font-size: 0.75rem !important;
-  }
+  
+  
   .cardproj {
     margin: 0 2rem;
   }
