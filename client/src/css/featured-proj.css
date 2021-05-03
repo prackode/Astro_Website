@@ -99,45 +99,45 @@ img {
   overflow: hidden;
 }
 
-.forphone1{
-  height: 15rem ;
+.forphone1 {
+  height: 15rem;
 }
-.forphone2{
+.forphone2 {
   height: 3.5rem;
   font-size: 1rem !important;
 }
-.forphone3{
+.forphone3 {
   height: 5.9rem;
   font-size: 0.85rem !important;
 }
 
-.evavishkar{
+.evavishkar {
   height: 18rem;
 }
 
 .evavishkar:hover {
-  transform:scale(1.2);
-  -ms-transform:scale(1.2); /* IE 9 */
-  -moz-transform:scale(1.2); /* Firefox */
-  -webkit-transform:scale(1.2); /* Safari and Chrome */
-  -o-transform:scale(1.2); /* Opera */
+  transform: scale(1.2);
+  -ms-transform: scale(1.2); /* IE 9 */
+  -moz-transform: scale(1.2); /* Firefox */
+  -webkit-transform: scale(1.2); /* Safari and Chrome */
+  -o-transform: scale(1.2); /* Opera */
 }
 
-.evfeatured{
+.evfeatured {
   height: 30vh;
 }
 
 .evfeatured:hover {
-  transform:scale(1.2);
-  -ms-transform:scale(1.2); /* IE 9 */
-  -moz-transform:scale(1.2); /* Firefox */
-  -webkit-transform:scale(1.2); /* Safari and Chrome */
-  -o-transform:scale(1.2); /* Opera */
+  transform: scale(1.2);
+  -ms-transform: scale(1.2); /* IE 9 */
+  -moz-transform: scale(1.2); /* Firefox */
+  -webkit-transform: scale(1.2); /* Safari and Chrome */
+  -o-transform: scale(1.2); /* Opera */
 }
 
 .card_image {
   display: inline-block; /* change the default display type to inline-block */
-  overflow: hidden;      /* hide the overflow */
+  overflow: hidden; /* hide the overflow */
 }
 
 .cards_item:hover {
@@ -162,7 +162,7 @@ img {
 
 .btns:hover {
   background-color: rgba(124, 193, 233, 0.856);
-  border: 1px solid rgba(6, 56, 77, 0.884);;
+  border: 1px solid rgba(6, 56, 77, 0.884);
 }
 
 .cards {
@@ -189,7 +189,7 @@ img {
   }
 }
 @media (max-width: 40rem) {
-  .card_content{
+  .card_content {
     height: auto;
   }
   .phoneheight {
@@ -203,12 +203,11 @@ img {
   }
   .avishkar_cont {
     height: 20vh !important;
-  } 
+  }
 }
 
-@media only screen and (max-width:900px)
-{
-  .pagesp .image{
+@media only screen and (max-width: 900px) {
+  .pagesp .image {
     display: none;
   }
 }
@@ -224,19 +223,20 @@ img {
 
 .card_content {
   padding: 1rem;
-  background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url(https://media.giphy.com/media/xUPGcH7WRAnKKWhR7y/giphy.gif) center center;
-  background-size:cover;
-  background-position:center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../images/utils/milky-way.jpg") center center;
+  background-size: cover;
+  background-position: center center;
   /* background: rgb(19, 19, 19); */
   /* border: 2px solid rgb(90, 194, 255); */
   border-radius: 0px 0px 0.5rem 0.5rem;
 }
 
-.card_content a{
+.card_content a {
   color: white;
 }
 
-.card_content a:hover{
+.card_content a:hover {
   color: #5286e6;
 }
 

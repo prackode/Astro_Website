@@ -23,15 +23,17 @@ router.get("/astrophotographies", isSignedIn, isAdmin, (req, res) => {
 // fetching all approved photos
 router.get("/astrophotographies/approved", (req, res) => {
   Astrophotography.find({ approved: true })
-    .populate({ path: "members.user", select: "name" })
-    .populate("tags")
+    .populate({ path: "tags" })
     .exec((err, photos) => {
       if (err) {
+        console.log(err.message);
         return res.status(400).json({
           error: err.message,
         });
       }
-      res.json(photos);
+      let arr = [];
+      photos.forEach((photo) => arr.push(photo.transform()));
+      res.json(arr);
     });
 });
 

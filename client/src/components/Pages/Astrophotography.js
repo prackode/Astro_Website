@@ -57,11 +57,9 @@ function AstrophotoGraphy() {
                   data-aos="flip-left"
                   data-aos-easing="linear"
                   data-aos-duration="1500"
-                  key={photos._id}
+                  key={photo.id}
                 >
-                  <div
-                    className="card cardproj"
-                  >
+                  <div className="card cardproj">
                     <div className="card_image">
                       <img
                         className="evfeatured"
@@ -90,7 +88,7 @@ function AstrophotoGraphy() {
                         className="card_text forphone forphone3"
                         style={{ width: "100%", height: "3rem" }}
                       >
-                        <strong >Tags : </strong>
+                        <strong>Tags : </strong>
                         {photo.tags.map((tag, i) => (
                           <h5
                             className="d-inline"
@@ -106,7 +104,7 @@ function AstrophotoGraphy() {
                       </p>
                       <Button
                         className="btns card_btns"
-                        href={`/astrophotography/${photo._id}`}
+                        href={`/astrophotography/${photo.id}`}
                         style={{
                           marginTop: 10,
                           backgroundColor: "#007bff",
