@@ -35,7 +35,7 @@
 
 .main {
   max-width: 1400px;
-  margin: 1rem auto;
+  /* margin: 1rem auto; */
   border-radius: 1.5rem;
   min-width: 18rem;
 }
@@ -189,6 +189,9 @@ img {
   }
 }
 @media (max-width: 40rem) {
+  .cardproj {
+    margin: 0 2rem;
+  }
   .card_content {
     height: auto;
   }
@@ -198,6 +201,9 @@ img {
 }
 
 @media (min-width: 56rem) {
+  .cardproj {
+    margin: 0 2rem;
+  }
   .cards_item {
     width: 33.333%;
   }
@@ -214,7 +220,7 @@ img {
 
 .cardproj {
   background-color: rgb(14, 14, 14);
-  box-shadow: 0 20px 40px -14px rgba(253, 251, 251, 0.5);
+  /* box-shadow: 0 20px 40px -14px rgba(253, 251, 251, 0.5); */
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -263,3 +269,37 @@ img {
   margin-top: 35px;
   text-align: center;
 }
+
+.hovpic {
+  margin: 1em 0;
+}
+.hovpic .img-text {
+  position: absolute;
+  text-align: center;
+  width: 50%;
+  bottom: 50px;
+  right: 0;
+  left: 0;
+  /* background: rgba(0, 0, 0, 0.65); */
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
+}
+.hovpic:hover .img-text {
+  /* padding: 8px 15px; */
+  visibility: visible;
+  opacity: 1;
+  /* max-width: 80%; */
+}
+.hovpic:hover {
+  box-shadow: 0 20px 40px -14px rgba(7, 56, 148, 0.5);
+}
+
+
+/* .astrobg {
+  background: linear-gradient(90deg, rgba(45,78,128,1) 0%, rgba(1,19,32,1) 100%);
+} */
