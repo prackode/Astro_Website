@@ -37,7 +37,7 @@ const projectSchema = new mongoose.Schema(
     compTech: [String],
     pic: {
       type: String,
-      default: ''
+      default: "",
     },
     status: {
       type: String,
@@ -60,18 +60,22 @@ const projectSchema = new mongoose.Schema(
     },
     home: {
       type: Boolean,
-      default: false
+      default: false,
     },
     featured: {
       type: Boolean,
-      default: false
+      default: false,
     },
     acknowledgement: {
-      type: String
+      type: String,
     },
     ytID: {
-      type: String
-    }
+      type: String,
+    },
+    shareId: {
+      type: String,
+      unique: true,
+    },
   },
   { timestamps: true }
 );
@@ -83,9 +87,9 @@ projectSchema.method("transform", function () {
   return obj;
 });
 
-projectSchema.pre('remove', function (next) {
-  let userIds = this.members.map(member => member.user)
-  this.model('User').update(
+projectSchema.pre("remove", function (next) {
+  let userIds = this.members.map((member) => member.user);
+  this.model("User").update(
     { _id: { $in: userIds } },
     { $pull: { projects: this._id } },
     { multi: true },

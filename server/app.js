@@ -31,6 +31,7 @@ const photoRoutes = require("./routes/astrophotography");
 const achievementRoutes = require("./routes/achievement");
 const contactRouters = require("./routes/contact");
 const tagRouters = require("./routes/tag");
+const shareRouter = require("./routes/shareProj");
 // app specific
 app.use(express.json());
 
@@ -47,6 +48,7 @@ app.use("/api", photoRoutes);
 app.use("/api", achievementRoutes);
 app.use("/api", contactRouters);
 app.use("/api", tagRouters);
+app.use("/api", shareRouter);
 
 app.listen(port, () => {
   console.log(`Server Started at ${port}`);
