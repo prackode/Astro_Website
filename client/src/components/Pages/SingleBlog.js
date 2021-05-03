@@ -49,7 +49,7 @@ function SingleBlog() {
     <div>
       <Loading time={2} />
       <div
-        className="pagesp singleblog-pagesp"
+        className="pagesp singleblog-pagesp "
         style={{
           background: `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,.4))`,
         }}

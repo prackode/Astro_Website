@@ -192,33 +192,10 @@ export default function DashProfile() {
           </button>
         </>
       )}
-      <Button
-        href="https://docs.google.com/document/d/1jrgm6h7DVs173Cjfc2kjc32yuPFj0R4TFRNsdN6E150/edit?usp=sharing"
-        target="_blank"
-        variant="success"
-        className="mr-1 my-1"
-        disabled={!disabled}
-      >
-        Resources
-      </Button>
-      <Button
-        href="https://drive.google.com/drive/folders/1f40R_HtkI06KJPqQQgpHlNGt9-15mKrI?usp=sharing"
-        target="_blank"
-        variant="primary"
-        className="mr-1 my-1"
-        disabled={!disabled}
-      >
-        Class material
-      </Button>
-      <Button
-        href="https://drive.google.com/file/d/1D82NbcQi7YA7Z_Bs0m5dIzUaGU9n8l8Z/view?usp=sharing"
-        target="_blank"
-        variant="success"
-        className="mr-1 my-1"
-        disabled={!disabled}
-      >
-        Startups and Companies
-      </Button>
+      <Button href='https://docs.google.com/document/d/1jrgm6h7DVs173Cjfc2kjc32yuPFj0R4TFRNsdN6E150/edit?usp=sharing' target="_blank" variant='dark' className='mr-1 my-1' disabled={!disabled}>Resources</Button>
+      <Button href='https://drive.google.com/folderview?id=1FySNhNauMJEAn6MM6_Nenz4v_907kyIQ' target="_blank" variant='info' className='mr-1 my-1' disabled={!disabled}>Class Materials</Button>
+      <Button href='https://drive.google.com/drive/folders/1BE1VYUNhn5nAivSLQ8JATXIZ-I6Tp9Gd?usp=sharing' target="_blank" variant='secondary' className='mr-1 my-1' disabled={!disabled}>Astrophotography</Button>
+      <Button href='https://chat.whatsapp.com/EKjFH39YckeGgX2W3EiicX' target="_blank" variant='success' className='mr-1 my-1' disabled={!disabled}>WhatsApp</Button>
       {user?.role !== "User" && (
         <Button
           href="/1208e2fe-b5f6-439b-94e0-aef5dde3b777/admin"
