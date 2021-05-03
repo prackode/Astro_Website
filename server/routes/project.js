@@ -5,7 +5,7 @@ const { isSignedIn, isAdmin } = require("../middleware/auth");
 const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const { drivePicParser } = require("../middleware/fileUpload");
-
+const uuid = require("uuid");
 // fetching all projects
 router.get("/projects", isSignedIn, isAdmin, (req, res) => {
   res.setHeader("Content-Range", "projects 0-10/20");
@@ -108,6 +108,7 @@ router.get("/projects/:id", (req, res) => {
 // creating a project
 router.post("/projects", isSignedIn, (req, res) => {
   req.body.leader = req.user.id;
+  req.body.shareId = uuid.v4();
   const pic = req.body.pic;
   if (pic) {
     try {
@@ -146,6 +147,7 @@ router.post("/projects", isSignedIn, (req, res) => {
 // creating a project
 router.post("/projects/user", isSignedIn, (req, res) => {
   req.body.leader = req.user.id;
+  req.body.shareId = uuid.v4();
   const pic = req.body.pic;
   if (pic) {
     try {
@@ -185,6 +187,7 @@ router.post("/projects/user", isSignedIn, (req, res) => {
             select: "name",
           })
           .execPopulate((err, popProject) => {
+            console.log(popProject);
             return res.json(popProject);
           });
       }
