@@ -48,8 +48,8 @@ export default function Featuredproject() {
                           </div>
                           <div className="card_content forphone forphone1" style={{ width: '100%' }}>
                             <h2 className="card_title forphone forphone2" style={{ width: '100%' }}>{project.title}</h2>
-                            <p className="card_text forphone forphone3" style={{ width: '100%' }}>
-                              <strong>OBJECTIVE</strong> : {project.objective} <br /> <br />
+                            <p className="card_text forphone forphone3 proj-objective" style={{ width: '100%' }}>
+                              {project.objective} <br /> <br />
                             </p>
                             <Button
                               className="btns card_btns"
