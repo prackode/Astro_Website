@@ -3,10 +3,14 @@ import { Button } from "react-bootstrap";
 import Loading from "../../Animations/Loading";
 import "../../css/featured-proj.css";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
+import { animateScroll as scroll } from 'react-scroll'
 
 function AstrophotoGraphy() {
   const [photos, SetPhotos] = useState([]);
   const [filteredPhotos, setFilteredPhotos] = useState([]);
+  const [no_of_pages, setNoOfPages] = useState(0);
+  const [page, SetPage] = useState(1);
+  const [currTag, setCurrTag] = useState('')
   document.title = `Astrophotography | ${REACT_APP_BASE_TITLE}`;
 
   useEffect(() => {
@@ -16,18 +20,22 @@ function AstrophotoGraphy() {
       .then((res) => res.json())
       .then((data) => {
         SetPhotos(data);
+        setCurrTag('')
         setFilteredPhotos(data);
+        setNoOfPages(Math.ceil(data.length / photos_per_page))
       });
   }, []);
 
-  const [page, SetPage] = useState(1);
   const photos_per_page = 9;
-  const no_of_pages = Math.ceil(photos.length / photos_per_page);
 
   const handleTagFilter = (tag) => {
+    setCurrTag(tag.name)
+    scroll.scrollToTop()
     setFilteredPhotos(
       photos.filter((item) => item.tags.some((itag) => itag._id === tag._id))
     );
+    SetPage(1)
+    setNoOfPages(Math.ceil(photos.filter((item) => item.tags.some((itag) => itag._id === tag._id)).length / photos_per_page));
   };
 
   return (
@@ -42,7 +50,13 @@ function AstrophotoGraphy() {
         <div
           className="miniSep"
           style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
-        ></div>
+        >
+        </div>
+        {
+          currTag && <h2 className='text-center'><span className="badge badge-primary my-2">
+            {currTag}
+          </span></h2>
+        }
         <div
           className="main"
           style={{ overflow: "hidden", minHeight: "31.7vh" }}
@@ -57,11 +71,9 @@ function AstrophotoGraphy() {
                   data-aos="flip-left"
                   data-aos-easing="linear"
                   data-aos-duration="1500"
-                  key={photos._id}
+                  key={photo.id}
                 >
-                  <div
-                    className="card cardproj"
-                  >
+                  <div className="card cardproj">
                     <div className="card_image">
                       <img
                         className="evfeatured"
@@ -90,7 +102,7 @@ function AstrophotoGraphy() {
                         className="card_text forphone forphone3"
                         style={{ width: "100%", height: "3rem" }}
                       >
-                        <strong >Tags : </strong>
+                        <strong>Tags : </strong>
                         {photo.tags.map((tag, i) => (
                           <h5
                             className="d-inline"
@@ -106,7 +118,7 @@ function AstrophotoGraphy() {
                       </p>
                       <Button
                         className="btns card_btns"
-                        href={`/astrophotography/${photo._id}`}
+                        href={`/astrophotography/${photo.id}`}
                         style={{
                           marginTop: 10,
                           backgroundColor: "#007bff",
@@ -129,6 +141,7 @@ function AstrophotoGraphy() {
                 className="mx-1"
                 variant="primary"
                 onClick={() => {
+                  scroll.scrollToTop()
                   SetPage((page) => page - 1);
                 }}
               >
@@ -140,6 +153,7 @@ function AstrophotoGraphy() {
                 variant="primary"
                 className="mx-1"
                 onClick={() => {
+                  scroll.scrollToTop()
                   SetPage((page) => page + 1);
                 }}
               >
@@ -147,6 +161,15 @@ function AstrophotoGraphy() {
               </Button>
             )}
           </div>
+          {
+            photos.length !== filteredPhotos.length && <Button className='float-left my-3' onClick={e => {
+              setFilteredPhotos(photos)
+              SetPage(1)
+              setNoOfPages(Math.ceil(photos.length / photos_per_page))
+              scroll.scrollToTop()
+              setCurrTag('')
+            }}>All Images</Button>
+          }
         </div>
       </div>
     </>
