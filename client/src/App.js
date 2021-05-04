@@ -41,6 +41,7 @@ import Loading from "./Animations/Loading.js";
 import Astrophotography from "./components/Pages/Astrophotography.js";
 import SingleAstrophoto from "./components/Pages/SingleAstrophoto.js";
 import APOD from "./components/utils/APOD.js";
+import SharedProj from "./components/Pages/SharedProj.js";
 import "./css/App.css";
 
 function App() {
@@ -109,7 +110,7 @@ function App() {
           <Navigbar />
           <Switch>
             <Route path="/" exact>
-              <Loading time={2} />
+              <Loading time={3} />
               <Landing />
               <About />
               <Featuredproject />
@@ -121,6 +122,9 @@ function App() {
             </Route>
             <Route path="/spinoff" exact>
               <Spinoff />
+            </Route>
+            <Route path="/sharedProject/:shareId" exact>
+              <SharedProj />
             </Route>
             <Route path="/astrophotography" exact>
               <Astrophotography />

@@ -3,10 +3,14 @@ import { Button } from "react-bootstrap";
 import Loading from "../../Animations/Loading";
 import "../../css/featured-proj.css";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
+import { animateScroll as scroll } from 'react-scroll'
 
 function AstrophotoGraphy() {
   const [photos, SetPhotos] = useState([]);
   const [filteredPhotos, setFilteredPhotos] = useState([]);
+  const [no_of_pages, setNoOfPages] = useState(0);
+  const [page, SetPage] = useState(1);
+  const [currTag, setCurrTag] = useState('')
   document.title = `Astrophotography | ${REACT_APP_BASE_TITLE}`;
 
   useEffect(() => {
@@ -16,18 +20,22 @@ function AstrophotoGraphy() {
       .then((res) => res.json())
       .then((data) => {
         SetPhotos(data);
+        setCurrTag('')
         setFilteredPhotos(data);
+        setNoOfPages(Math.ceil(data.length / photos_per_page))
       });
   }, []);
 
-  const [page, SetPage] = useState(1);
   const photos_per_page = 9;
-  const no_of_pages = Math.ceil(photos.length / photos_per_page);
 
   const handleTagFilter = (tag) => {
+    setCurrTag(tag.name)
+    scroll.scrollToTop()
     setFilteredPhotos(
       photos.filter((item) => item.tags.some((itag) => itag._id === tag._id))
     );
+    SetPage(1)
+    setNoOfPages(Math.ceil(photos.filter((item) => item.tags.some((itag) => itag._id === tag._id)).length / photos_per_page));
   };
 
   return (
@@ -42,7 +50,13 @@ function AstrophotoGraphy() {
         <div
           className="miniSep"
           style={{ marginBottom: "40px", background: "rgb(204, 67, 67)" }}
-        ></div>
+        >
+        </div>
+        {
+          currTag && <h2 className='text-center'><span className="badge badge-primary my-2">
+            {currTag}
+          </span></h2>
+        }
         <div
           className="main"
           style={{ overflow: "hidden", minHeight: "31.7vh" }}
@@ -59,7 +73,7 @@ function AstrophotoGraphy() {
                   data-aos-duration="1500"
                   key={photo.id}
                 >
-                {/* <div className="container">
+                  {/* <div className="container">
         <h3 className="title">Text fadeIn bottom</h3>
         <div className="content card cardproj hovpic">
           <a href={`/astrophotography/${photo.id}` }>
@@ -108,7 +122,7 @@ function AstrophotoGraphy() {
                       className="card_content forphone forphone1"
                       style={{ width: "100%" }}
                     > */}
-                      {/* <h2
+                    {/* <h2
                         className="card_title forphone text-center my-3"
                         style={{
                           width: "100%",
@@ -117,7 +131,7 @@ function AstrophotoGraphy() {
                       >
                         {photo.title}
                       </h2> */}
-                      {/* <p
+                    {/* <p
                         className="card_text forphone forphone3"
                         style={{ width: "100%", height: "3rem" }}
                       >
@@ -135,7 +149,7 @@ function AstrophotoGraphy() {
                           </h5>
                         ))}
                       </p> */}
-                      {/* <Button
+                    {/* <Button
                         className="btns card_btns"
                         href={`/astrophotography/${photo.id}`}
                         style={{
@@ -151,15 +165,13 @@ function AstrophotoGraphy() {
                 </li>
               ))}
           </ul>
-          {!photos.length && (
-            <h3 className="text-center mt-5">No photos available...!</h3>
-          )}
           <div className="float-right mr-5 mb-3 mt-5">
             {page > 1 && (
               <Button
                 className="mx-1"
                 variant="primary"
                 onClick={() => {
+                  scroll.scrollToTop()
                   SetPage((page) => page - 1);
                 }}
               >
@@ -171,6 +183,7 @@ function AstrophotoGraphy() {
                 variant="primary"
                 className="mx-1"
                 onClick={() => {
+                  scroll.scrollToTop()
                   SetPage((page) => page + 1);
                 }}
               >
@@ -178,6 +191,15 @@ function AstrophotoGraphy() {
               </Button>
             )}
           </div>
+          {
+            photos.length !== filteredPhotos.length && <Button className='float-left my-3' onClick={e => {
+              setFilteredPhotos(photos)
+              SetPage(1)
+              setNoOfPages(Math.ceil(photos.length / photos_per_page))
+              scroll.scrollToTop()
+              setCurrTag('')
+            }}>All Images</Button>
+          }
         </div>
       </div>
     </>

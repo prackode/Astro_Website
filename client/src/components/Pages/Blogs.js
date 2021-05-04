@@ -69,7 +69,7 @@ function Blogs() {
                     <div className="card_content forphone forphone1" style={{ width: '100%' }}>
                       <h2 className="card_title forphone forphone2" style={{ width: '100%', minHeight: '4rem' }}>{blog.title}</h2>
                       <p className="card_text forphone" style={{ width: '100%', height: '2rem' }}>
-                        <i className="fa fa-user mr-3 ml-1"></i> by{" "}
+                        <i className="fa fa-user mr-3 ml-1"></i> By{" "}
                         {
                           branch[blog.postedBy.registration_no[4]] === 'NA' || blog.postedBy.year === -1 || blog.postedBy.linkedin_url ===
                             "https://www.linkedin.com/in/username/" ?
@@ -108,9 +108,6 @@ function Blogs() {
               )
               )}
           </ul>
-          {!blogs.length && (
-            <h3 className="text-center mt-5">No blogs available...!</h3>
-          )}
           <div className="float-right mr-5 mb-3 mt-5">
             {page > 1 && (
               <Button
