@@ -74,7 +74,7 @@ function AstrophotoGraphy() {
       </div> */}
                   <div className="card hovpic astroproj">
                     {/* <p className="content_img"> */}
-                      <a href={`/astrophotography/${photo.id}`} ><img
+                      <img
                         // className="evfeatured"
                         src={photo.pic}
                         // style={{
@@ -82,14 +82,14 @@ function AstrophotoGraphy() {
                         //   maxHeight: "18rem",
                         //   minHeight: "18rem",
                         // }}
-                      /></a>
+                      />
                       
                       <div
                         className="card_text forphone forphone3 img-text"
                         style={{ width: "100%", height: "3rem" }}
                       >
                         {/* <strong>Tags : </strong> */}
-                        <p style={{paddingLeft:"2px"}}>Click to Know More </p>
+                        <a href={`/astrophotography/${photo.id}`} ><p style={{paddingLeft:"2px"}} className="clickable">Click to Know More </p></a>
                         {photo.tags.map((tag, i) => (
                           <h5
                             className="d-inline"
