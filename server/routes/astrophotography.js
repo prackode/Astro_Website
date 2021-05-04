@@ -188,7 +188,7 @@ router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
         instrumentUsed: req.body.instrumentUsed,
         instrumentSettings: req.body.instrumentSettings,
         members: req.body.members,
-        description: req.body.description,
+        desc: req.body.desc,
         approved: req.body.approved,
         issuedon: req.body.issuedon,
         tags: req.body.tags,
