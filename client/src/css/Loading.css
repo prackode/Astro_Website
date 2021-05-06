@@ -99,3 +99,19 @@
     opacity: 0;
   }
 }
+@media only screen and (max-width:700px) {
+  #bh{
+    width: 22rem;
+  }
+}
+@media only screen and (max-width:400px) {
+  #bh{
+    width: 18rem;
+  }
+}
+
+@media only screen and (max-width:350px) {
+  #bh{
+    width: 14rem;
+  }
+}

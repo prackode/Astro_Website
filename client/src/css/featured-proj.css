@@ -15,7 +15,7 @@
 
 .cont {
   position: relative;
-  min-height: 33rem;
+  min-height: 85vh;
   /* background-color: rgb(240, 240, 240); */
   /* opacity: 0.4; */
 }
@@ -105,6 +105,14 @@ img {
   overflow: hidden;
 }
 
+.loading-img{
+  max-height: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+  object-fit: cover;
+  background-color: black; 
+}
+
 .forphone1{
   height: 15rem ;
 }
@@ -172,7 +180,7 @@ img {
 
 .btns:hover {
   background-color: rgba(124, 193, 233, 0.856);
-  border: 1px solid rgba(6, 56, 77, 0.884);;
+  border: 1px solid rgba(6, 56, 77, 0.884);
 }
 
 .cards {
@@ -254,7 +262,7 @@ img {
 
 .card_content {
   padding: 1rem;
-  background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3)), url(../images/utils/milky-way.jpg) center center;
+  background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.3)), url(../images/utils/milky-way-min.jpg) center center;
   background-size:cover;
   background-position:center center;
   /* background: rgb(19, 19, 19); */
@@ -267,7 +275,8 @@ img {
 }
 
 .card_content a:hover{
-  color: #5286e6;
+  color: #082458;
+  font-weight: 600;
 }
 
 .card_title {
