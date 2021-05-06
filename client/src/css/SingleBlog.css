@@ -38,6 +38,9 @@ article {
 }
 
 @media only screen and (max-width: 800px) {
+  .singleblog-pagesp{
+    height: 30vh;
+  }
   #header h1 {
     font-size: x-large;
   }
@@ -65,6 +68,9 @@ article {
 }
 
 @media only screen and (max-width: 450px) {
+  .singleblog-pagesp{
+    height: 30vh;
+  }
   .post-heading h5 {
     font-size: small;
   }
@@ -97,12 +103,11 @@ article {
     font-size: 0.9em;
   }
   .blog-title{
-    font-size: 1rem;
+    font-size: 1.5rem;
+    padding-top: 1rem;
   }
   .postedBy-info{
-    font-size:xx-small;
+    font-size:x-small;
   }
-  .singleblog-pagesp{
-    height: 42vh;
-  }
+  
 }

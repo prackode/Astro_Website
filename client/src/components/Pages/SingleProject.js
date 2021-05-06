@@ -43,7 +43,7 @@ function SingleProject() {
   return (
     <>
       <Loading time={2} />
-      <div className="my-5">
+      <div className="my-5" style={{ textAlign: "justify" }}>
         <div className="mb-4">
           <h4 className='my-3' style={{ marginBottom: "0px", textAlign: "center" }}>{project?.title}</h4>
           <div
@@ -77,6 +77,7 @@ function SingleProject() {
             <h3 className='mb-4 subheaders'>Overview</h3>
             <p
               className="px-5 ql-editor"
+              style={{ textAlign: "justify" }}
               dangerouslySetInnerHTML={{ __html: project?.overview }}
             ></p>
           </div>
@@ -119,21 +120,24 @@ function SingleProject() {
           <div>
             <div className="d-flex justify-content-center mt-5">
               {project?.description ? (
-                <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse11" aria-expanded="false" aria-controls="collapse11" id='collapsebtn'>
+                <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapse101" aria-expanded="false" aria-controls="collapse11" id='collapsebtn'>
                   Read More
                 </button>
               ) : (
                 <></>
               )}
             </div>
-            <div class="collapse collapsews" id="collapse11">
+            <div className="container">
+            <div class="collapse collapsews" id="collapse101">
               <div >
                 <h3 className='my-3 subheaders'>Description</h3>
                 <p
-                  className="px-3 ql-editor container"
+                  className="px-3 ql-editor"
+                  style={{ textAlign: "justify" }}
                   dangerouslySetInnerHTML={{ __html: project?.description }}
                 ></p>
               </div>
+            </div>
             </div>
           </div>
         </div>

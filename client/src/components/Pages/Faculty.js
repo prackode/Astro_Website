@@ -25,8 +25,8 @@ export default function Faculty() {
           className="container bg-white rounded border d-flex flex-column flex-md-row justify-content-center my-5 shadow"
         >
           <img src={f1} className="ml-5 mt-4 mt-md-5 mx-auto rounded" alt="..." />
-          <div className="content col-11 col-md-6 col-lg-7 mx-auto mt-5 mb-md-5">
-            <em>
+          <div className="content col-11 col-md-6 col-lg-7 mx-auto mt-5 mb-md-5" style={{ textAlign: "justify" }}>
+            <em style={{ textAlign: "justify" }}>
               "When it comes to aero club, it makes me feel that I am flying with
               my students. The aero club of MNNIT is known for its innovations in
               air. The engineering knowledge and skill, combined with
@@ -58,8 +58,8 @@ export default function Faculty() {
           className="container bg-white rounded border d-flex flex-column flex-md-row justify-content-center my-5 shadow"
         >
           <img src={f2} className="ml-5 mt-4 mt-md-5 mx-auto rounded" alt="..." />
-          <div className="content col-11 col-md-6 col-lg-7 mx-auto mt-5 mb-md-5">
-            <em>
+          <div className="content col-11 col-md-6 col-lg-7 mx-auto mt-5 mb-md-5" style={{ textAlign: "justify" }}>
+            <em >
               "If you’re not making some notable mistakes along the way, you’re
             certainly not taking enough chances. <br /> Aeroclub and Astrowing
             of MNNIT are the places where one not only learns but most
@@ -90,7 +90,7 @@ Associate Professor, Department of Mechanical Engineering
           className="container rounded bg-white border d-flex flex-column flex-md-row justify-content-center my-5 shadow"
         >
           <img src={f3} className="ml-5 mt-4 mt-md-5 mx-auto rounded" alt="..." />
-          <div className="content col-11 col-md-6 col-lg-7 mx-auto mt-5 mb-md-5">
+          <div className="content col-11 col-md-6 col-lg-7 mx-auto mt-5 mb-md-5" style={{ textAlign: "justify" }}>
             <em>
               "When praising one another, people often use the statement “Sky's the
               limit for you.”, but with the ceaseless success of our Aero Club,
