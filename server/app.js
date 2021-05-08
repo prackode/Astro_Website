@@ -50,6 +50,13 @@ app.use("/api", contactRouters);
 app.use("/api", tagRouters);
 app.use("/api", shareRouter);
 
+app.use(express.static('client/build'))
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+})
+
+
 app.listen(port, () => {
   console.log(`Server Started at ${port}`);
 });
