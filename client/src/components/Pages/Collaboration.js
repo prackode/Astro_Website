@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Loading from "../../Animations/Loading";
 import "../../css/Alumni.css";
-import { Link } from "react-router-dom";
+
 import { REACT_APP_BASE_TITLE } from "../../grobalVars"
 
 export default function Collaboration() {
