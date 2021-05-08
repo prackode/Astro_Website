@@ -7,6 +7,7 @@ import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
 function FeaturedProjects() {
   const [projects, SetProjects] = useState([]);
   const [signedin, setsignedin] = useState(false);
+  const [fetching, setFetching] = useState(1)
   document.title = `Flagship Projects | ${REACT_APP_BASE_TITLE}`;
 
   useEffect(() => {
@@ -30,8 +31,8 @@ function FeaturedProjects() {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
-        return SetProjects(data);
+        SetProjects(data);
+        setFetching(0)
       });
   }, []);
 
@@ -41,7 +42,7 @@ function FeaturedProjects() {
 
   return (
     <>
-      <Loading time={2} />
+      <Loading time={2} fetching={fetching} />
       <div className="cont">
         <h3 className="my-3 titleBold d-flex justify-content-center topic">
           <p

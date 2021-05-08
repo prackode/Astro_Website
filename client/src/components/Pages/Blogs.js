@@ -7,6 +7,7 @@ import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 
 function Blogs() {
   const [blogs, SetBlogs] = useState([]);
+  const [fetching, setFetching] = useState(1)
 
   useEffect(() => {
     document.title = `Blogs | ${REACT_APP_BASE_TITLE}`;
@@ -14,7 +15,10 @@ function Blogs() {
       method: "get",
     })
       .then((res) => res.json())
-      .then((data) => SetBlogs(data));
+      .then((data) => {
+        SetBlogs(data)
+        setFetching(0)
+      });
   }, []);
 
   const [page, SetPage] = useState(1);
@@ -42,7 +46,7 @@ function Blogs() {
 
   return (
     <>
-      <Loading time={2} />
+      <Loading time={2} fetching={fetching} />
       <div className="cont">
         <h3 className="my-3 titleBold d-flex justify-content-center topic">
           <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>BLOGS</p>

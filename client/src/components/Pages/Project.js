@@ -7,6 +7,7 @@ import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
 function Projects() {
   const [projects, SetProjects] = useState([]);
   const [signedin, setsignedin] = useState(false);
+  const [fetching, setFetching] = useState(1)
   document.title = `Projects | ${REACT_APP_BASE_TITLE}`;
 
   useEffect(() => {
@@ -30,7 +31,8 @@ function Projects() {
     })
       .then((res) => res.json())
       .then((data) => {
-        return SetProjects(data);
+        SetProjects(data);
+        setFetching(0)
       });
   }, []);
 
@@ -40,7 +42,7 @@ function Projects() {
 
   return (
     <>
-      <Loading time={2} />
+      <Loading time={2} fetching={fetching} />
       <div className="cont">
         <h3 className="my-3 titleBold d-flex justify-content-center topic">
           <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>OTHER PROJECTS</p>

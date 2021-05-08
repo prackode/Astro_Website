@@ -98,7 +98,9 @@ router.post("/blogs", isSignedIn, (req, res) => {
     .catch((e) => console.log(e));
 });
 
+// updating a blog
 router.put("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
+  console.log(req.params.id)
   const pic = req.body.pic;
   if (pic) {
     try {
@@ -111,7 +113,17 @@ router.put("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
   }
   Blog.findOneAndUpdate(
     { _id: req.params.id },
-    req.body,
+    {
+      $set: {
+        title: req.body.title,
+        pic: req.body.pic,
+        body: req.body.body,
+        postedBy: req.body.postedBy,
+        publishedAt: req.body.publishedAt,
+        accepted: req.body.accepted,
+        acceptedBy: req.body.acceptedBy,
+      },
+    },
     { returnOriginal: true },
     (e, blog) => {
       if (e) {
@@ -119,8 +131,9 @@ router.put("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
           error: "Project cannot be updated !",
         });
       }
-      const old_pb = blog.postedBy;
+      const old_pb = blog.postedBy.toString();
       const new_pb = req.body.postedBy;
+
       if (old_pb !== new_pb) {
         User.findOneAndUpdate(
           { _id: old_pb },
@@ -147,7 +160,7 @@ router.put("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
           }
         );
       }
-      res.json(blog);
+      res.json(blog.transform());
     }
   );
 });
@@ -158,7 +171,7 @@ router.delete("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
     if (err) return res.status(500).send(err);
     if (blog) {
       blog.remove(() => {
-        return res.json(blog);
+        return res.json(blog.transform());
       });
     }
   });

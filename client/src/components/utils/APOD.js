@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../../css/apod.css'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 export default function APOD() {
 
@@ -32,13 +34,16 @@ export default function APOD() {
                         </div>
                         <div className="explanation mx-3 mx-md-3 mt-md-2 mt-lg-5 mozStyle" id="style-3">
                             <p className="expl">{data?.explanation}k</p>
+                            <p className='expl'>source : <i><a href="https://apod.nasa.gov/apod/astropix.html">apod.nasa.gov</a></i></p>
                         </div>
                     </div>
                     <div className="hdimage">
                         {data?.media_type === 'video' ?
                             <iframe src={data?.url} className=''></iframe>
                             :
-                            <img src={data?.hdurl} alt="" />
+                            <a href={data?.hdurl} target='_blank'>
+                                <LazyLoadImage src={data?.url} alt="apod" effect='blur' />
+                            </a>
                         }
                     </div>
                 </div>
