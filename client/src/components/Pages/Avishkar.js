@@ -3,7 +3,7 @@ import Loading from "../../Animations/Loading";
 import "../../css/Event.css";
 import m from "../../images/utils/avishkar.png";
 import Phantom from "../../images/Events/Phantom.PNG";
-import guardian from "../../images/Events/guardian2.PNG";
+
 import lostinspace from "../../images/Events/lostinspace.PNG";
 import { REACT_APP_BASE_TITLE } from "../../grobalVars"
 

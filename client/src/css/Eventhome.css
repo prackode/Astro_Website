@@ -147,7 +147,7 @@
   background-position: center;
   /* background-size: cover; */
 
-  animation: image 3s ease-in-out infinite alternate;
+  /* animation: image 3s ease-in-out infinite alternate; */
 }
 
 .overlay {
@@ -161,7 +161,7 @@
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-@keyframes image {
+/* @keyframes image {
   0% {
     background-image: url("../images/utils/about.jpg");
   }
@@ -171,7 +171,7 @@
   100% {
     background-image: url("../images/utils/about.jpg");
   }
-}
+} */
 
 @media (min-width: 576px) {
   .jumbotron {

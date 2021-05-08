@@ -385,7 +385,7 @@ Also, many people consider astronomy as a hobby, which helps them genuinely have
             <div className="img-wrappers mx-auto">
               <a
                 className="card-title text-center sponimg"
-                href="http://www.mnnit.ac.in/"
+                href="https://alumni.mnnit.ac.in/"
                 target="_blank"
               >
                 <img

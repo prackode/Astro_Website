@@ -26,9 +26,9 @@ body {
   background-size: cover;
   padding-bottom: 0px;
 
-  background-color: #eee;
+  background-color: rgb(163, 163, 163);
   background-position: center;
-  animation: image 3s ease-in-out infinite alternate;
+  /* animation: image 3s ease-in-out infinite alternate; */
 }
 
 .overlayg {

@@ -24,7 +24,7 @@
   margin: 0vh 0vw;
   clip-path: polygon(0 0,100% 0,100% 80%,0 100%);
 
-  background-image: url('https://unsplash.it/600/600');
+  /* background-image: url('https://unsplash.it/600/600'); */
   background-size: cover;
   padding-bottom: 0px;
 
