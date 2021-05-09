@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import "../../css/navbar.css";
 import im1 from "../..//images/utils/astro_logo4.png";
 import { ExitToApp, PermIdentity } from '@material-ui/icons'
+import { Link } from 'react-router-dom'
 
 export default function Navigbar() {
   const [show1, setShow1] = useState(false);
@@ -51,7 +52,7 @@ export default function Navigbar() {
         className="style top-bottom starbg"
         id="navbar"
       >
-        <Navbar.Brand href="/" className="title-nav">
+        <Navbar.Brand as={Link} to="/" className="title-nav">
           <img className="logoimg" src={im1} />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -65,14 +66,14 @@ export default function Navigbar() {
               onTouchEnd={() => setShow4(!show4)}
               show={show4}
             >
-              <NavDropdown.Item href="/projects/featured">Flagship Projects</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/projects/featured">Flagship Projects</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/projects">Other Projects</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/projects">Other Projects</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link eventKey="blogs" hresname="nav-items" href="/blogs">
+            <Nav.Link eventKey="blogs" hresname="nav-items" as={Link} to="/blogs">
               Blogs
             </Nav.Link>
-            <Nav.Link eventKey="astrophotography" href="/astrophotography" className="nav-items">
+            <Nav.Link eventKey="astrophotography" as={Link} to="/astrophotography" className="nav-items">
               Astrophotography
             </Nav.Link>
             <NavDropdown
@@ -83,16 +84,17 @@ export default function Navigbar() {
               onTouchEnd={() => setShow3(!show3)}
               show={show3}
             >
-              <NavDropdown.Item href="/avishkar">Avishkar</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/avishkar">Avishkar</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/prosang">Prosang</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/prosang">Prosang</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link eventKey="blogs" href="/workshop" className="nav-items">
+            <Nav.Link eventKey="blogs" as={Link} to="/workshop" className="nav-items">
               Jigyasa
             </Nav.Link>
             <Nav.Link
               eventKey="sponsors"
-              href="/achievements"
+              as={Link}
+              to="/achievements"
               className="nav-items"
             >
               Achievements
@@ -105,28 +107,28 @@ export default function Navigbar() {
               onTouchEnd={() => setShow1(!show1)}
               show={show1}
             >
-              <NavDropdown.Item href="/faculty">
+              <NavDropdown.Item as={Link} to="/faculty">
                 Faculty Corner
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/coordinators">
+              <NavDropdown.Item as={Link} to="/coordinators">
                 Coordinators
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/non-tech">
+              <NavDropdown.Item as={Link} to="/non-tech">
                 Non-Tech Members
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/alumni">Our Alumni</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/alumni">Our Alumni</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/webteam">
+              <NavDropdown.Item as={Link} to="/webteam">
                 Web Team
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link eventKey="collaborate" href="/collaborate" className="nav-items">
+            <Nav.Link eventKey="collaborate" as={Link} to="/collaborate" className="nav-items">
               Collaborate
             </Nav.Link>
-            <Nav.Link eventKey="sponsors" href="/sponsors" className="nav-items">
+            <Nav.Link eventKey="sponsors" as={Link} to="/sponsors" className="nav-items">
               Sponsors
             </Nav.Link>
             <NavDropdown
@@ -139,20 +141,20 @@ export default function Navigbar() {
             >
               {
                 loggedIn ?
-                  <NavDropdown.Item href="/user/dashboard" eventKey="dasboard">
+                  <NavDropdown.Item as={Link} to="/user/dashboard" eventKey="dasboard" active={false}>
                     <PermIdentity className='mr-1' /> Dashboard
                   </NavDropdown.Item>
                   :
-                  <NavDropdown.Item href="/user/login" eventKey="login">
+                  <NavDropdown.Item as={Link} to="/user/login" eventKey="login" active={false}>
                     Login <ExitToApp className='ml-3' />
                   </NavDropdown.Item>
               }
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/spinoff" eventKey="spinoff">
+              <NavDropdown.Item as={Link} to="/spinoff" eventKey="spinoff" active={false}>
                 Spinoff
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item href="/news" eventKey="news">
+              <NavDropdown.Item as={Link} to="/news" eventKey="news" active={false}>
                 Updates
               </NavDropdown.Item>
             </NavDropdown>

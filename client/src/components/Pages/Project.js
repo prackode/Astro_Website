@@ -65,6 +65,7 @@ function Projects() {
                   data-aos="flip-left"
                   data-aos-easing="linear"
                   data-aos-duration="1500"
+                  key={project._id}
                 >
                   <div className="card cardproj">
                     <div className="card_image">

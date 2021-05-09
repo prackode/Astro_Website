@@ -121,7 +121,7 @@ export default function Dashphotos() {
               </Card>
             );
           })}
-          {user?.photos.length === 0 && (
+          {user?.photos?.length === 0 && (
             <h3 className="text-center mt-5">No Photo created...!</h3>
           )}
         </Accordion>

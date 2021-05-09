@@ -53,7 +53,7 @@ function App() {
       if (element)
         element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  });
+  }, []);
   return (
     <div className="App bgrt">
       <ToastContainer

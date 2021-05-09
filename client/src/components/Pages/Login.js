@@ -31,10 +31,12 @@ function Login() {
       .then((data) => {
         if (data.error) toast.warn(data.error);
         else {
-          localStorage.setItem("jwtToken", data.token);
-          history.push("/user/dashboard");
           toast.success(data.message);
-          window.location.reload();
+          setTimeout(() => {
+            localStorage.setItem("jwtToken", data.token)
+            history.push("/user/dashboard");
+            window.location.reload();
+          }, 500)
         }
       });
   };
