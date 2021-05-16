@@ -10,21 +10,21 @@ export default function Testimonials() {
 
     <section className="testimonial text-center">
       <div className="container">
-      <div
-        className="pageTitle titleBold headingc white-headingc"
-        data-aos="fade-down"
-        style={{ marginBottom: "0px", color:"rgb(25, 25, 25)"}}
-      >
-        Testimonials
+        <div
+          className="pageTitle titleBold headingc white-headingc"
+          data-aos="fade-down"
+          style={{ marginBottom: "0px", color: "rgb(25, 25, 25)" }}
+        >
+          Testimonials
       </div>
-      <div className="miniSep" style={{ marginBottom: '30px' }} ></div>
+        <div className="miniSep" style={{ marginBottom: '30px' }} ></div>
         {/* <Jumbotron> */}
-        
+
         <div id="testimonial4" className="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval={5000} data-duration={2000} data-aos="zoom-in-down">
           <div className="carousel-inner" role="listbox">
             <div className="carousel-item active">
               <div className="testimonial4_slide">
-                <img src={aman} className="img-circle img-responsive" /> 
+                <img src={aman} className="img-circle img-responsive" />
                 {/* <div className="scrollert" id="stylet-2"> */}
                 <p className="testfont scrollert" id="stylet-2">"Indeed the best place to learn and show your creativity .Thanks to all the juniors, seniors, professors and my colleagues for supporting and guiding me to lead the club. Happy to see that the club is expanding continuously with new Astrowing dimension. The experience gained has helped me a lot to adjust to my corporate life. It was a roller coaster ride for me and I have enjoyed every bit of it!"</p>
 
@@ -41,7 +41,7 @@ export default function Testimonials() {
                 "</p>
                 {/* <div className="miniSep" style={{ marginBottom: '25px', width: '70%', height: '3px' }} ></div> */}
                 <h4>Shrey Dixit</h4>
-                <a href="linkedin.com/in/shrey-dixit" target="_blank">
+                <a href="https://linkedin.com/in/shrey-dixit/" target="_blank">
                   <i className="fab fa-linkedin fa-3x mx-2 colchange"></i>
                 </a>'
               </div>
@@ -52,14 +52,14 @@ export default function Testimonials() {
                 "</p>
                 {/* <div className="miniSep" style={{ marginBottom: '25px', width: '70%', height: '3px' }} ></div> */}
                 <h4>Vivek Kumar</h4>
-                <a href="linkedin.com/in/shrey-dixit" target="_blank">
+                <a href="https://www.linkedin.com/in/vivek-kumar-baa735151/" target="_blank">
                   <i className="fab fa-linkedin fa-3x mx-2 colchange"></i>
                 </a>'
               </div>
             </div>
-            
-            
-            
+
+
+
           </div>
           <a className="carousel-control-prev" href="#testimonial4" data-slide="prev">
             <span className="carousel-control-prev-icon" />
@@ -70,7 +70,7 @@ export default function Testimonials() {
         </div>
         {/* </Jumbotron> */}
       </div>
-      
+
     </section>
   );
 }

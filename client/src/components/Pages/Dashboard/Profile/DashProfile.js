@@ -32,12 +32,14 @@ export default function DashProfile() {
     })
       .then((res) => res.json())
       .then((data) => {
-        localStorage.removeItem("jwtToken");
-        localStorage.removeItem("role");
-        dispatch({ type: "CLEAR" });
-        history.push("/");
-        window.location.reload();
         toast.success(data.message);
+        setTimeout(() => {
+          localStorage.removeItem("jwtToken");
+          localStorage.removeItem("role");
+          dispatch({ type: "CLEAR" });
+          history.push("/");
+          window.location.reload();
+        }, 1000)
       });
   };
 
