@@ -192,9 +192,9 @@ export default function DashProfile() {
           </button>
         </>
       )}
-      <Button href='https://docs.google.com/document/d/1jrgm6h7DVs173Cjfc2kjc32yuPFj0R4TFRNsdN6E150/edit?usp=sharing' target="_blank" variant='dark' className='mr-1 my-1' disabled={!disabled}>Resources</Button>
-      <Button href='https://drive.google.com/folderview?id=1FySNhNauMJEAn6MM6_Nenz4v_907kyIQ' target="_blank" variant='info' className='mr-1 my-1' disabled={!disabled}>Class Materials</Button>
-      <Button href='https://drive.google.com/drive/folders/1BE1VYUNhn5nAivSLQ8JATXIZ-I6Tp9Gd?usp=sharing' target="_blank" variant='secondary' className='mr-1 my-1' disabled={!disabled}>Astrophotography</Button>
+      <Button href='https://docs.google.com/document/d/1jrgm6h7DVs173Cjfc2kjc32yuPFj0R4TFRNsdN6E150/edit?usp=sharing' target="_blank" variant='primary' className='mr-1 my-1' disabled={!disabled}>Resources</Button>
+      <Button href='https://drive.google.com/folderview?id=1FySNhNauMJEAn6MM6_Nenz4v_907kyIQ' target="_blank" variant='primary' className='mr-1 my-1' disabled={!disabled}>Class Materials</Button>
+      <Button href='https://drive.google.com/drive/folders/1BE1VYUNhn5nAivSLQ8JATXIZ-I6Tp9Gd?usp=sharing' target="_blank" variant='primary' className='mr-1 my-1' disabled={!disabled}>Astrophotography</Button>
       <Button href='https://chat.whatsapp.com/EKjFH39YckeGgX2W3EiicX' target="_blank" variant='success' className='mr-1 my-1' disabled={!disabled}>WhatsApp</Button>
       {user?.role !== "User" && (
         <Button
@@ -210,7 +210,7 @@ export default function DashProfile() {
       <button
         disabled={!disabled}
         onClick={handleLogout}
-        className="btn btn-warning mx-1"
+        className="btn btn-dark mx-1"
       >
         Logout <ExitToApp />
       </button>
