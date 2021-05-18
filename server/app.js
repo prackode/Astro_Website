@@ -3,6 +3,7 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 const port = process.env.PORT || 9500;
+const path = require("path");
 require("dotenv").config();
 app.use(cors());
 app.use(express.static(__dirname + "/public"));
