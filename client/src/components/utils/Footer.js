@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <div>
-      <footer className="site-footer container-fluid starbg">
+      <footer className="site-footer container-fluid starbg2">
         <div className="topBottomMargin">
           {location.pathname === "/" && (
             <div className="wrap mar ">

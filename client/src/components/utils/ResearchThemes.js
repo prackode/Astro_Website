@@ -3,7 +3,7 @@ import "../../css/ResearchThemes.css";
 
 const ResearchThemes = () => {
   return (
-    <div className="container-fluid starbg" id="restheme">
+    <div className="container-fluid starbg3" id="restheme">
       <div
         className="pageTitle titleBold headingc white-headingc"
         data-aos="fade-down"
