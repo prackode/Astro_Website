@@ -21,47 +21,50 @@ router.get("/projects", isSignedIn, isAdmin, (req, res) => {
 });
 
 router.get("/projects/approved", (req, res) => {
-  Project.find({ approved: true, status: "Completed", featured: false })
-    .populate({ path: "members.user", select: "name" })
-    .exec((err, projects) => {
-      if (err) {
-        return res.status(400).json({
-          error: err.message,
-        });
-      }
-      res.json(projects);
-    });
+  Project.find(
+    { approved: true, status: "Completed", featured: false },
+    { title: 1, objective: 1, pic: 1 }
+  ).exec((err, projects) => {
+    if (err) {
+      return res.status(400).json({
+        error: err.message,
+      });
+    }
+    res.json(projects);
+  });
 });
 
 router.get("/projects/featured", (req, res) => {
-  Project.find({ approved: true, status: "Completed", featured: true })
-    .populate({ path: "members.user", select: "name" })
-    .exec((err, projects) => {
-      if (err) {
-        return res.status(400).json({
-          error: err.message,
-        });
-      }
-      res.json(projects);
-    });
+  Project.find(
+    { approved: true, status: "Completed", featured: true },
+    { title: 1, objective: 1, pic: 1 }
+  ).exec((err, projects) => {
+    if (err) {
+      return res.status(400).json({
+        error: err.message,
+      });
+    }
+    res.json(projects);
+  });
 });
 
 router.get("/projects/featured_home", (req, res) => {
-  Project.find({
-    approved: true,
-    status: "Completed",
-    featured: true,
-    home: true,
-  })
-    .populate({ path: "members.user", select: "name" })
-    .exec((err, projects) => {
-      if (err) {
-        return res.status(400).json({
-          error: err.message,
-        });
-      }
-      res.json(projects);
-    });
+  Project.find(
+    {
+      approved: true,
+      status: "Completed",
+      featured: true,
+      home: true,
+    },
+    { title: 1, objective: 1, pic: 1 }
+  ).exec((err, projects) => {
+    if (err) {
+      return res.status(400).json({
+        error: err.message,
+      });
+    }
+    res.json(projects);
+  });
 });
 
 // fetching a projects with id

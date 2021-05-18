@@ -21,7 +21,7 @@ router.get("/blogs", isSignedIn, isAdmin, (req, res) => {
 
 // fetching all accepted blogs to the frontend
 router.get("/blogs/toUI", (req, res) => {
-  Blog.find({ accepted: true })
+  Blog.find({ accepted: true }, { pic: 1, title: 1, postedBy: 1 })
     .sort("-createdAt")
     .populate("postedBy", "name registration_no year linkedin_url")
     .then((blogs) => {
@@ -100,7 +100,7 @@ router.post("/blogs", isSignedIn, (req, res) => {
 
 // updating a blog
 router.put("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
-  console.log(req.params.id)
+  console.log(req.params.id);
   const pic = req.body.pic;
   if (pic) {
     try {
