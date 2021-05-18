@@ -14,7 +14,8 @@
   background-position:center center;
 }
 .starbg3 {
-  background: url("../images/utils/resimg.jpg");
+  background-color: #02051b;
+  /* background: url("../images/utils/resimg.jpg"); */
   background-size:contain;
   background-position:center center;
 }
