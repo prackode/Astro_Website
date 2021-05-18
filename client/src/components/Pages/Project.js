@@ -6,33 +6,17 @@ import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
 
 function Projects() {
   const [projects, SetProjects] = useState([]);
-  const [signedin, setsignedin] = useState(false);
-  const [fetching, setFetching] = useState(1)
+  const [fetching, setFetching] = useState(1);
   document.title = `Projects | ${REACT_APP_BASE_TITLE}`;
 
   useEffect(() => {
-    fetch(`${REACT_APP_SERVER}/api/isSignedIn`, {
-      method: "post",
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.error) {
-          localStorage.removeItem("jwtToken");
-          return;
-        }
-        setsignedin(true);
-      });
-
     fetch(`${REACT_APP_SERVER}/api/projects/approved`, {
       method: "get",
     })
       .then((res) => res.json())
       .then((data) => {
         SetProjects(data);
-        setFetching(0)
+        setFetching(0);
       });
   }, []);
 
@@ -45,7 +29,9 @@ function Projects() {
       <Loading time={2} fetching={fetching} />
       <div className="cont">
         <h3 className="my-3 titleBold d-flex justify-content-center topic">
-          <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>OTHER PROJECTS</p>
+          <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>
+            OTHER PROJECTS
+          </p>
         </h3>
         <div
           className="miniSep"
@@ -71,8 +57,10 @@ function Projects() {
                     <div className="card_image">
                       <img
                         className="evfeatured phoneviewproj"
-                        src={project.pic || 'https://lh3.googleusercontent.com/22uNNnzS6tHVU9N-BR3zlu6S_Fg03yb5omXJtTbR7Ixcd_FRL23sNadI2G5X0tkoQAqcjzwMPf5BXDYdtCWtfxcmEN90ybDONZCzQdQiIcnrnIg9oAhrjRjiCqGwXxx8tDsk4yH89A=w2400'}
-
+                        src={
+                          project.pic ||
+                          "https://lh3.googleusercontent.com/22uNNnzS6tHVU9N-BR3zlu6S_Fg03yb5omXJtTbR7Ixcd_FRL23sNadI2G5X0tkoQAqcjzwMPf5BXDYdtCWtfxcmEN90ybDONZCzQdQiIcnrnIg9oAhrjRjiCqGwXxx8tDsk4yH89A=w2400"
+                        }
                       />
                     </div>
                     <div
@@ -89,8 +77,7 @@ function Projects() {
                         className="card_text forphone forphone3"
                         style={{ width: "100%" }}
                       >
-                        {project.objective} <br />{" "}
-                        <br />
+                        {project.objective} <br /> <br />
                       </p>
                       <Button
                         className="btns card_btns"
