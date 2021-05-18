@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { animateScroll } from "react-scroll";
 import Loading from "../../Animations/Loading";
 import "../../css/featured-proj.css";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
@@ -8,9 +10,10 @@ function Projects() {
   const [projects, SetProjects] = useState([]);
   const [signedin, setsignedin] = useState(false);
   const [fetching, setFetching] = useState(1)
-  document.title = `Projects | ${REACT_APP_BASE_TITLE}`;
 
   useEffect(() => {
+    document.title = `Projects | ${REACT_APP_BASE_TITLE}`;
+    animateScroll.scrollToTop()
     fetch(`${REACT_APP_SERVER}/api/isSignedIn`, {
       method: "post",
       headers: {
@@ -95,7 +98,8 @@ function Projects() {
                       <Button
                         className="btns card_btns"
                         variant="danger"
-                        href={`projects/${project._id}`}
+                        as={Link}
+                        to={`/projects/${project._id}`}
                         style={{ marginTop: 10 }}
                       >
                         Read More
@@ -111,6 +115,7 @@ function Projects() {
                 className="mx-1"
                 variant="danger"
                 onClick={() => {
+                  animateScroll.scrollToTop()
                   SetPage((page) => page - 1);
                 }}
               >
@@ -122,6 +127,7 @@ function Projects() {
                 variant="danger"
                 className="mx-1"
                 onClick={() => {
+                  animateScroll.scrollToTop()
                   SetPage((page) => page + 1);
                 }}
               >

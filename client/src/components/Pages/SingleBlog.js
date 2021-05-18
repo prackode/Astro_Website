@@ -5,10 +5,12 @@ import Loading from "../../Animations/Loading";
 import "react-quill/dist/quill.core.css";
 import { Container, Jumbotron, OverlayTrigger, Tooltip } from "react-bootstrap";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { animateScroll } from "react-scroll";
 
 function SingleBlog() {
   const { blogId } = useParams();
   const [blog, setBlog] = useState(undefined);
+  const [fetching, setFetching] = useState(1)
   const history = useHistory();
 
   const year = {
@@ -32,6 +34,9 @@ function SingleBlog() {
   }
 
   useEffect(() => {
+
+    animateScroll.scrollToTop()
+
     fetch(`${REACT_APP_SERVER}/api/blogstoUI/${blogId}`, {
       method: "get",
     })
@@ -41,13 +46,14 @@ function SingleBlog() {
         else {
           document.title = `${data.title} | ${REACT_APP_BASE_TITLE}`;
           setBlog(data);
+          setFetching(0)
         }
       });
   }, []);
 
   return (
     <div>
-      <Loading time={2} />
+      <Loading time={2} fetching={fetching} />
       <div
         className="pagesp singleblog-pagesp "
         style={{

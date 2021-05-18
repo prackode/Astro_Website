@@ -14,10 +14,12 @@ import f10 from "../../images/coordinators&Nontech/Ardhya_Kumar.jpg";
 import f11 from "../../images/coordinators&Nontech/Apoorva Dinesh Singh.jpg";
 import f12 from "../../images/coordinators&Nontech/Archit Chaudhary.jpg";
 import { REACT_APP_BASE_TITLE } from "../../grobalVars"
+import { animateScroll } from "react-scroll";
 
 export default function Coordinators() {
   useEffect(() => {
     document.title = `Coordinators | ${REACT_APP_BASE_TITLE}`;
+    animateScroll.scrollToTop()
   }, [])
 
   const members = [
@@ -121,7 +123,7 @@ export default function Coordinators() {
 
   return (
     <>
-      <Loading time={2} />
+      <Loading time={1} />
       <h3 className="my-3 titleBold d-flex justify-content-center topic">
         <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>COORDINATORS</p>
       </h3>

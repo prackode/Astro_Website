@@ -6,15 +6,17 @@ import Phantom from "../../images/Events/Phantom.PNG";
 
 import lostinspace from "../../images/Events/lostinspace.PNG";
 import { REACT_APP_BASE_TITLE } from "../../grobalVars"
+import { animateScroll } from "react-scroll";
 
 export default function Avishkar() {
     useEffect(() => {
         document.title = `Avishkar | ${REACT_APP_BASE_TITLE}`;
+        animateScroll.scrollToTop()
     }, [])
 
     return (
         <>
-            <Loading time={2} />
+            <Loading time={1} />
             <section className="section1 pagese">
                 <div className="overlaye starbg">
                     <div className="containere ">
@@ -118,10 +120,10 @@ export default function Avishkar() {
                             </p>
                             <p classNameName="text-gray-700" style={{ textAlign: "justify" }}>
                                 <i style={{ fontSize: "medium" }}>As a technical club, Astrowing MNNIT organizes one event during Avishkar under Aerodynamix:</i><br></br><br></br><ul className="ulprosang">
-                                    
+
                                     <li><b>Lost in Space: </b>
 Astrowing, under Aeroclub, organizes the competition ‘Lost in Space’ in MNNIT. An enlightening yet fun event, LIS mainly deals with astronomy, space science, and theoretical aspects.</li><br></br>
-                                    
+
 
 
                                 </ul>
@@ -133,8 +135,8 @@ Astrowing, under Aeroclub, organizes the competition ‘Lost in Space’ in MNNI
                         <div className="main">
 
                             <ul className="cards">
-                                
-                                
+
+
                                 <li className="cards_item" data-aos="flip-left" data-aos-duration="1000">
                                     <div className="card">
                                         <div className="card_image">
@@ -204,10 +206,10 @@ Astrowing, under Aeroclub, organizes the competition ‘Lost in Space’ in MNNI
                                     ></div>
                                     <div className="row">
                                         <div className="col-xs-12 col-sm-4">
-                                            
-                                            </div>
-                                        
-                                        
+
+                                        </div>
+
+
                                         <div className="col-xs-12 col-sm-4">
                                             <div className="card cardev">
                                                 {/* <a
@@ -223,7 +225,7 @@ Astrowing, under Aeroclub, organizes the competition ‘Lost in Space’ in MNNI
                             </a>
                                                     </h4>
                                                     <p className="phonetxt">
-                                                    LIS comprised of 2 events: Quiz and a problem statement to implement
+                                                        LIS comprised of 2 events: Quiz and a problem statement to implement
 <br></br><br></br>
                                                     </p>
                                                 </div>
@@ -240,8 +242,8 @@ Astrowing, under Aeroclub, organizes the competition ‘Lost in Space’ in MNNI
                                                         href="https://youtube.com/playlist?list=PLY2QAhcYlBMAngxpVSCn4C2GAEZrMTrfU"
                                                         className="btn btn-link btn-block"
                                                     >
-                                                       <i style={{ color: "red" }} className="fab fa-youtube fa-lg"></i>
-                          </a>
+                                                        <i style={{ color: "red" }} className="fab fa-youtube fa-lg"></i>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -306,9 +308,9 @@ Astrowing, under Aeroclub, organizes the competition ‘Lost in Space’ in MNNI
                                     ></div>
                                     <div className="row">
                                         <div className="col-xs-12 col-sm-4">
-                                            
+
                                         </div>
-                                        
+
                                         <div className="col-xs-12 col-sm-4">
                                             <div className="card cardev">
                                                 {/* <a
@@ -324,7 +326,7 @@ Astrowing, under Aeroclub, organizes the competition ‘Lost in Space’ in MNNI
                             </a>
                                                     </h4>
                                                     <p className="phonetxt">
-                                                    LIS was composed of 1 event: Quiz<br></br><br></br>
+                                                        LIS was composed of 1 event: Quiz<br></br><br></br>
                                                     </p>
                                                 </div>
                                                 <div className="card-read-more">
@@ -349,7 +351,7 @@ Astrowing, under Aeroclub, organizes the competition ‘Lost in Space’ in MNNI
                 </div>
             </section>
 
-            
+
         </>
     );
 }

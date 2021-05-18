@@ -4,8 +4,10 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const port = process.env.PORT || 9500;
 const path = require('path');
+const compression = require('compression')
 require("dotenv").config();
 app.use(cors());
+app.use(compression())
 app.use(express.static(__dirname + "/public"));
 app.use("/images", express.static("/public/images"));
 // mongodb

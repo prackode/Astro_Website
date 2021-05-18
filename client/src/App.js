@@ -110,7 +110,7 @@ function App() {
           <Navigbar />
           <Switch>
             <Route path="/" exact>
-              <Loading time={2} />
+              <Loading time={1} />
               <Landing />
               <About />
               <Featuredproject />

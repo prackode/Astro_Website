@@ -5,15 +5,17 @@ import pro from "../../images/utils/Prosangnew.png";
 
 
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { animateScroll } from "react-scroll";
 
 export default function Prosang() {
     useEffect(() => {
         document.title = `Prosang | ${REACT_APP_BASE_TITLE}`;
+        animateScroll.scrollToTop()
     }, [])
 
     return (
         <>
-            <Loading time={2} />
+            <Loading time={1} />
             <section className="section1 pagese ">
                 <div className="overlaye starbg">
                     <div className="containere ">

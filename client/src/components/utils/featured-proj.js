@@ -3,6 +3,7 @@ import { Button } from "react-bootstrap";
 import "../../css/featured-proj.css";
 import OwlCarousel from 'react-owl-carousel';
 import { REACT_APP_SERVER } from "../../grobalVars";
+import { Link } from "react-router-dom";
 
 export default function Featuredproject() {
   const [projects, SetProjects] = useState([]);
@@ -54,7 +55,8 @@ export default function Featuredproject() {
                             <Button
                               className="btns card_btns"
                               variant="primary"
-                              href={`projects/${project._id}`}
+                              as={Link}
+                              to={`/projects/${project._id}`}
                             >
                               Read More
                             </Button>

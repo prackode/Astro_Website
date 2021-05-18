@@ -4,6 +4,8 @@ import Loading from "../../Animations/Loading";
 import "react-quill/dist/quill.snow.css";
 import "../../css/featured-proj.css";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { animateScroll } from "react-scroll";
+import { Link } from "react-router-dom";
 
 function Blogs() {
   const [blogs, SetBlogs] = useState([]);
@@ -11,6 +13,7 @@ function Blogs() {
 
   useEffect(() => {
     document.title = `Blogs | ${REACT_APP_BASE_TITLE}`;
+    animateScroll.scrollToTop()
     fetch(`${REACT_APP_SERVER}/api/blogs/toUI`, {
       method: "get",
     })
@@ -72,7 +75,7 @@ function Blogs() {
                     </div>
                     <div className="card_content forphone forphone1" style={{ width: '100%' }}>
                       <h2 className="card_title forphone forphone2" style={{ width: '100%', minHeight: '4rem' }}>{blog.title}</h2>
-                      <p className="card_text forphone" style={{ width: '100%', height: '2rem' }}>
+                      <p className="card_text forphone" style={{ width: '100%', height: '2rem', textAlign: 'initial' }}>
                         <i className="fa fa-user mr-3 ml-1"></i> By{" "}
                         {
                           branch[blog.postedBy.registration_no[4]] === 'NA' || blog.postedBy.year === -1 || blog.postedBy.linkedin_url ===
@@ -91,7 +94,7 @@ function Blogs() {
                                 </Tooltip>}
                             >
                               <div className='d-inline'>
-                                <a href={blog.postedBy.linkedin_url} target="_blank" style={{ textDecoration: 'none' }}>
+                                <a href={blog.postedBy.linkedin_url} className='posted_by' target="_blank" style={{ textDecoration: 'none' }}>
                                   {blog.postedBy.name}
                                 </a>
                               </div>
@@ -100,8 +103,9 @@ function Blogs() {
                       </p>
                       <Button
                         className="btns card_btns"
+                        as={Link}
                         variant="primary"
-                        href={`/blogs/${blog._id}`}
+                        to={`/blogs/${blog._id}`}
                         style={{ marginTop: 10 }}
                       >
                         Read More
@@ -118,6 +122,7 @@ function Blogs() {
                 className="mx-1"
                 variant="primary"
                 onClick={() => {
+                  animateScroll.scrollToTop()
                   SetPage((page) => page - 1);
                 }}
               >
@@ -129,6 +134,7 @@ function Blogs() {
                 variant="primary"
                 className="mx-1"
                 onClick={() => {
+                  animateScroll.scrollToTop()
                   SetPage((page) => page + 1);
                 }}
               >

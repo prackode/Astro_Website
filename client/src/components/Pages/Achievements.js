@@ -6,20 +6,26 @@ import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css';
 import { EmojiEvents } from '@material-ui/icons'
+import {animateScroll} from 'react-scroll'
 
 export default function Achievements() {
   const [achievements, setAchievements] = useState([]);
-  document.title = `Achievements | ${REACT_APP_BASE_TITLE}`;
+  const [fetching, setFetching] = useState(1)
   useEffect(() => {
+    document.title = `Achievements | ${REACT_APP_BASE_TITLE}`;
+    animateScroll.scrollToTop()
     fetch(`${REACT_APP_SERVER}/api/achievement`, {
       method: "get",
     })
       .then((res) => res.json())
-      .then((data) => setAchievements(data));
+      .then((data) => {
+        setAchievements(data)
+        setFetching(0)
+      });
   }, []);
   return (
     <>
-      <Loading time={2} />
+     <Loading time={2} fetching={fetching}/>
       <div className="pagesa">
         <div className="overlaya starbg">
           <div className="pageTitlea titleBolda">Our Achievements</div>
