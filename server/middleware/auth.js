@@ -143,7 +143,6 @@ exports.forgetPassword = (req, res) => {
         if (err) {
           console.log(err);
         } else {
-          console.log("Email sent: " + info.response);
           res.json({ message: "Checkout your registered email !" });
         }
       }
