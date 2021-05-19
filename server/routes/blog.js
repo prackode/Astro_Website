@@ -100,7 +100,6 @@ router.post("/blogs", isSignedIn, (req, res) => {
 
 // updating a blog
 router.put("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
-  console.log(req.params.id);
   const pic = req.body.pic;
   if (pic) {
     try {
