@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.1d40c423.chunk.css",
-    "main.js": "/static/js/main.7b0859ed.chunk.js",
-    "main.js.map": "/static/js/main.7b0859ed.chunk.js.map",
+    "main.css": "/static/css/main.6f5b266c.chunk.css",
+    "main.js": "/static/js/main.c25b21a9.chunk.js",
+    "main.js.map": "/static/js/main.c25b21a9.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.a0db9e6d.js",
     "runtime-main.js.map": "/static/js/runtime-main.a0db9e6d.js.map",
     "static/css/2.320e782e.chunk.css": "/static/css/2.320e782e.chunk.css",
-    "static/js/2.d71d123f.chunk.js": "/static/js/2.d71d123f.chunk.js",
-    "static/js/2.d71d123f.chunk.js.map": "/static/js/2.d71d123f.chunk.js.map",
+    "static/js/2.27b860eb.chunk.js": "/static/js/2.27b860eb.chunk.js",
+    "static/js/2.27b860eb.chunk.js.map": "/static/js/2.27b860eb.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.320e782e.chunk.css.map": "/static/css/2.320e782e.chunk.css.map",
-    "static/css/main.1d40c423.chunk.css.map": "/static/css/main.1d40c423.chunk.css.map",
-    "static/js/2.d71d123f.chunk.js.LICENSE.txt": "/static/js/2.d71d123f.chunk.js.LICENSE.txt",
+    "static/css/main.6f5b266c.chunk.css.map": "/static/css/main.6f5b266c.chunk.css.map",
+    "static/js/2.27b860eb.chunk.js.LICENSE.txt": "/static/js/2.27b860eb.chunk.js.LICENSE.txt",
     "static/media/Abhas Raj.8ca33df7.jpg": "/static/media/Abhas Raj.8ca33df7.jpg",
     "static/media/Abhijeet Pandey.45264f7c.jpg": "/static/media/Abhijeet Pandey.45264f7c.jpg",
     "static/media/Abhinav Anand.e52266b3.jpeg": "/static/media/Abhinav Anand.e52266b3.jpeg",
@@ -64,16 +64,16 @@
     "static/media/knowhow.8fbbac27.png": "/static/media/knowhow.8fbbac27.png",
     "static/media/Login.css": "/static/media/login_3-min.3bccca12.jpg",
     "static/media/lostinspace.957be404.PNG": "/static/media/lostinspace.957be404.PNG",
-    "static/media/pcb.b57dfa9f.png": "/static/media/pcb.b57dfa9f.png",
     "static/media/Sponsorhome.css": "/static/media/space4-min.fbb49412.jpg",
-    "static/media/tsawlogo.d9821c3e.png": "/static/media/tsawlogo.d9821c3e.png",
+    "static/media/pcb.b57dfa9f.png": "/static/media/pcb.b57dfa9f.png",
+    "static/media/tsawlogo.2c5c9e6f.png": "/static/media/tsawlogo.2c5c9e6f.png",
     "static/media/ultratech.d01f664d.png": "/static/media/ultratech.d01f664d.png"
   },
   "entrypoints": [
     "static/js/runtime-main.a0db9e6d.js",
     "static/css/2.320e782e.chunk.css",
-    "static/js/2.d71d123f.chunk.js",
-    "static/css/main.1d40c423.chunk.css",
-    "static/js/main.7b0859ed.chunk.js"
+    "static/js/2.27b860eb.chunk.js",
+    "static/css/main.6f5b266c.chunk.css",
+    "static/js/main.c25b21a9.chunk.js"
   ]
 }

@@ -132,6 +132,7 @@ function AstrophotoGraphy() {
             )}
           </div>
           {
+            photos.length !== filteredPhotos.length &&
             <Button className='float-left ml-3 my-3' onClick={e => {
               setFilteredPhotos(photos)
               SetPage(1)
