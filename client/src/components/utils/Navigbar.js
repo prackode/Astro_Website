@@ -49,7 +49,7 @@ export default function Navigbar() {
         collapseOnSelect
         expand="lg"
         variant="light"
-        className="style top-bottom starbg"
+        className="style top-bottom starbg2"
         id="navbar"
       >
         <Navbar.Brand as={Link} to="/" className="title-nav">

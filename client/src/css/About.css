@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
 body{
   -webkit-font-smoothing: antialiased;
@@ -34,7 +34,8 @@ body{
   order: -1;
 }
 .col-text{
-  background: url("../images/utils/space4-min.jpg");
+  background-color: #02051b;
+  /* background: url("../images/utils/space4-min.jpg"); */
   background-size:contain;
   background-position:center center;
   display: flex;
@@ -44,6 +45,8 @@ body{
 }
 
 .col-text div p {
+  font-weight: lighter;
+  font-family: 'Ubuntu', sans-serif;
   color: rgb(255, 255, 255);
   align-items: center;
   justify-content: center;

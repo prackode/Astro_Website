@@ -80,7 +80,7 @@ function AstrophotoGraphy() {
                     <LazyLoadImage
                       alt='astro'
                       effect="blur"
-                      src={photo.pic}
+                      src={photo.pic || 'https://lh3.googleusercontent.com/KeGUSRLz1rB_jHD09u2KLp7UGC-zTcyFSSrOjv12CNx49f1Irx8OGljn9Az-tFJmaJQ6tuEPG6DCMPQVIyAVhkqGv0ogjyqXsuJQMWYghkvo1yebCArmoa7NO021e3D9LJiNx1ZATQ=w2400'}
                     />
                     <div
                       className="card_text forphone forphone3 img-text"

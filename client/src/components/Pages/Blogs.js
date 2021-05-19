@@ -71,7 +71,7 @@ function Blogs() {
                   data-aos-duration="1500">
                   <div className="card cardproj">
                     <div className="card_image">
-                      <img className="evfeatured" src={blog.pic || 'https://lh3.googleusercontent.com/PPRLO6cS9pz1oyVlPhoHBMH3u9LKlLJEBQ7kJMzziAav-C7GEp9vVpJwfky-hsrlR4h0xisARPSzF19VIPmRb31Wpf6xScPJKOggnz4rPDqSJG9FPr9m-BMyDr9zrABeZ8VsDcm9=w2400'} style={{ width: '100%', minHeight: '16rem' }} />
+                      <img className="evfeatured" src={blog.pic || 'https://lh3.googleusercontent.com/L99OiiIfJs9-r2gT3wIS_yce11s6kcHQ_gAiKkjbxnpjesu6ciqRP9ZTt5Tq8CEyxbY_PHCvSuLFx3UF-dG02PbhP3QaFAi6aL1aAGDTCNzXVGP-rysXXV5Es2xLn8AIwUHYhGx6hw=w2400'} style={{ width: '100%', minHeight: '16rem' }} />
                     </div>
                     <div className="card_content forphone forphone1" style={{ width: '100%' }}>
                       <h2 className="card_title forphone forphone2" style={{ width: '100%', minHeight: '4rem' }}>{blog.title}</h2>

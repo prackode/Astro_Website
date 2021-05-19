@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <div>
-      <footer className="site-footer container-fluid starbg">
+      <footer className="site-footer container-fluid starbg2">
         <div className="topBottomMargin">
           {location.pathname === "/" && (
             <div className="wrap mar ">
@@ -47,7 +47,7 @@ export default function Footer() {
                       </a>
                     </li>
                     <li>
-                      <a className="hov" href="/sponsor">
+                      <a className="hov" href="/sponsors">
                         <i className="fa fa-caret-right"></i> Sponsors
                       </a>
                     </li>
@@ -57,7 +57,7 @@ export default function Footer() {
                       </a>
                     </li>
                     <li>
-                      <a className="hov" href="https://roboticsclubmnnit.website/">
+                      <a className="hov" href="https://roboticsclub.mnnit.ac.in/">
                         <i className="fa fa-caret-right"></i> RoboClub
                       </a>
                     </li>

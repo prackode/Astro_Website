@@ -5,8 +5,7 @@ export default function About() {
   return (
     <section>
       <div className="grid-flex">
-        <div className="col col-image" data-aos="zoom-in">
-        </div>
+        
         <div className="col col-text">
           <div className="Aligner-item">
             <div className="pageTitle titleBold headingc white-headingc" style={{ marginBottom: '5px', color: 'white' }} data-aos="fade-down">ABOUT US</div>
@@ -16,6 +15,8 @@ export default function About() {
             We are continuously striving towards merging our prowess in technology with our passion for astronomy and aspire to share the spirit with you.
             </p>
           </div>
+        </div>
+        <div className="col col-image" data-aos="zoom-in">
         </div>
       </div>
 
