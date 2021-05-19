@@ -60,7 +60,7 @@ function SingleBlog() {
               {blog?.title}
             </div>
             <p className="meta">
-              <div className='mt-5 postedBy-info'>
+              <div className='postedBy-info'>
                 <i className="fa fa-user mr-3 ml-1"></i> by{" "}
                 {
                   branch[blog?.postedBy.registration_no[4]] === 'NA' || blog?.postedBy.year === -1 || blog?.postedBy.linkedin_url ===
