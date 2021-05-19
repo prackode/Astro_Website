@@ -70,7 +70,7 @@ function FeaturedProjects() {
           <ul className="cards">
             {projects
               .slice((page - 1) * projects_per_page, page * projects_per_page)
-              .map((project) => (
+              .map((project, i) => (
                 <li
                   className="cards_item"
                   data-aos="fade-up"

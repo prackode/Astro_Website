@@ -34,6 +34,7 @@ import Loading from "./Animations/Loading.js";
 import Astrophotography from "./components/Pages/Astrophotography.js";
 import SingleAstrophoto from "./components/Pages/SingleAstrophoto.js";
 import APOD from "./components/utils/APOD.js"
+import './css/Eventhome.css'
 const Navigbar = loadable(() => import("./components/utils/Navigbar.js"));
 const About = loadable(() => import("./components/utils/About"));
 const Footer = loadable(() => import("./components/utils/Footer.js"));
