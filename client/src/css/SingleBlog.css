@@ -13,7 +13,7 @@
 }
 
 .singleblog-pagesp{
-  height: 30vh;
+  height: 40vh;
 }
 
 .post-heading {
@@ -35,11 +35,16 @@ article {
 
 .postedBy-info{
   font-size: medium;
+  margin-top: 2rem;
 }
 
 @media only screen and (max-width: 800px) {
+  .postedBy-info{
+    font-size: medium;
+    margin-top: 2rem;
+  }
   .singleblog-pagesp{
-    height: 30vh;
+    height: 35vh;
   }
   #header h1 {
     font-size: x-large;
@@ -68,8 +73,12 @@ article {
 }
 
 @media only screen and (max-width: 450px) {
+  .postedBy-info{
+    font-size: medium;
+    margin-top: 2rem;
+  }
   .singleblog-pagesp{
-    height: 30vh;
+    height: 35vh;
   }
   .post-heading h5 {
     font-size: small;

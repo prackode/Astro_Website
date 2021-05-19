@@ -143,7 +143,7 @@ export default function Workshop() {
                       </em>
                     </div><br /> */}
                     {/* Link for discription of Workshop */}
-                    <a href={singleNews.brochure} download>
+                    <a href={singleNews.brochure} download target="_blank">
                       <p className="card-text">Download Brochure</p>
                     </a>
                     {/* Date of posting */}
