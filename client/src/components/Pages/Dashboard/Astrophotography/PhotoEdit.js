@@ -150,12 +150,11 @@ export default function PhotoEdit({ photo }) {
             />
           </div>
           <div className="form-floating mb-3 ">
-            <label htmlFor="title">Image *</label>
+            <label htmlFor="title">Image </label>
             <input
               type="file"
               className="form-control"
               id="image"
-              required
               onChange={onChangeHandler}
             />
             <img src={pic} />
@@ -258,7 +257,14 @@ export default function PhotoEdit({ photo }) {
               </ul>
             </div>
           </div>
-          <button type="submit" className="btn btn-primary my-3">
+          <button
+            type="submit"
+            className="btn btn-primary"
+            data-toggle="collapse"
+            data-target="#collapsephotoedit"
+            aria-expanded="false"
+            aria-controls="collapsephotoedit"
+            className="btn btn-primary my-3">
             {loading ? "loading..." : "Submit"}
           </button>
         </form>
