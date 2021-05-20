@@ -1,12 +1,9 @@
+import "./css/App.css";
 import React, { useEffect } from "react";
-import Navigbar from "./components/utils/Navigbar.js";
-import Footer from "./components/utils/Footer.js";
+import loadable from '@loadable/component'
 import { Redirect, Route, Switch } from "react-router-dom";
 import AdminComp from "./components/admin/AdminComp.js";
-import Landing from "./Animations/Landing.js";
 import Alumni from "./components/Pages/Alumni.js";
-import Featuredproject from "./components/utils/featured-proj";
-import Testimonials from "./components/utils/Testimonials";
 import Login from "./components/Pages/Login";
 import Projects from "./components/Pages/Project";
 import SingleProject from "./components/Pages/SingleProject";
@@ -24,14 +21,10 @@ import News from "./components/Pages/News.js";
 import Avishkar from "./components/Pages/Avishkar";
 import Prosang from "./components/Pages/Prosang";
 import Workshop from "./components/Pages/Workshop";
-import About from "./components/utils/About";
-import ContactUs from "./components/utils/ContactUs.js";
 import Faculty from "./components/Pages/Faculty.js";
 import Coordinators from "./components/Pages/Coordinators.js";
 import Nontech from "./components/Pages/Nontech.js";
-import ResearchThemes from "./components/utils/ResearchThemes.js";
 import Sponsors from "./components/Pages/Sponsor";
-import Sponsorhome from "./components/utils/Sponsorhome";
 import Achievements from "./components/Pages/Achievements.js";
 import Collaboration from "./components/Pages/Collaboration.js";
 import Spinoff from "./components/Pages/Spinoff.js";
@@ -40,9 +33,18 @@ import FeaturedProjects from "./components/Pages/FeaturedProjects.js";
 import Loading from "./Animations/Loading.js";
 import Astrophotography from "./components/Pages/Astrophotography.js";
 import SingleAstrophoto from "./components/Pages/SingleAstrophoto.js";
-import APOD from "./components/utils/APOD.js";
-import SharedProj from "./components/Pages/SharedProj.js";
-import "./css/App.css";
+import APOD from "./components/utils/APOD.js"
+import './css/Eventhome.css'
+const Navigbar = loadable(() => import("./components/utils/Navigbar.js"));
+const About = loadable(() => import("./components/utils/About"));
+const Footer = loadable(() => import("./components/utils/Footer.js"));
+const Sponsorhome = loadable(() => import("./components/utils/Sponsorhome"));
+const ContactUs = loadable(() => import("./components/utils/ContactUs.js"));
+const SharedProj = loadable(() => import("./components/Pages/SharedProj.js"));
+const Landing = loadable(() => import("./Animations/Landing.js"));
+const Testimonials = loadable(() => import("./components/utils/Testimonials"));
+const Featuredproject = loadable(() => import("./components/utils/featured-proj"));
+const ResearchThemes = loadable(() => import("./components/utils/ResearchThemes.js"));
 
 function App() {
   useEffect(() => {
@@ -110,7 +112,7 @@ function App() {
           <Navigbar />
           <Switch>
             <Route path="/" exact>
-              <Loading time={2} />
+              <Loading time={1} />
               <Landing />
               <About />
               <Featuredproject />

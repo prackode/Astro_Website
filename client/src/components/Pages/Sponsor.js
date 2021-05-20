@@ -11,15 +11,17 @@ import ultratech from "../../images/Sponsors/ultra.png";
 import alumni from '../../images/Sponsors/alumni2.PNG';
 import { REACT_APP_BASE_TITLE } from "../../grobalVars"
 import tsaw from "../../images/Sponsors/tsawlogo.png";
+import { animateScroll } from "react-scroll";
 
 export default function Ṣponsors() {
   useEffect(() => {
     document.title = `Sponsors | ${REACT_APP_BASE_TITLE}`;
+    animateScroll.scrollToTop()
   }, [])
 
   return (
     <>
-      <Loading time={2} />
+      <Loading time={1} />
       <div className="pagesg">
         <div className="overlayg starbg">
           <div className="pageTitleg titleBoldg">Sponsors</div>

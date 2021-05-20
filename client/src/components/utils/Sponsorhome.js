@@ -13,6 +13,7 @@ import knowhow from "../../images/Sponsors/knowhow.png";
 import pcb from "../../images/Sponsors/pcb.png";
 import ultratech from "../../images/Sponsors/ultratech.png";
 import tsaw from "../../images/Sponsors/tsawlogo.png";
+import { Link } from 'react-router-dom';
 
 export default function Sponsorhome() {
     return (
@@ -194,7 +195,7 @@ export default function Sponsorhome() {
                     </div>
                 </OwlCarousel>
                 <div className='d-flex justify-content-center mt-5 '>
-                    <a href="/sponsors" className="btn btn-primary mx-2">View More</a>
+                    <Link to="/sponsors" className="btn btn-primary mx-2">View More</Link>
                     <a href="mailto:aeroclubclub@mnnit.ac.in?subject=Regarding%20sponsoring%20the%20Aero%20Club%20MNNIT&amp;body=We%20would%20like%20to%20sponsor%20the%20Aero%20Club%20MNNIT." target="__blank" className='btn btn-primary'>Sponsor Us</a>
                 </div>
             </div>

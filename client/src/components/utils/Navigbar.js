@@ -16,7 +16,6 @@ export default function Navigbar() {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -66,9 +65,9 @@ export default function Navigbar() {
               onTouchEnd={() => setShow4(!show4)}
               show={show4}
             >
-              <NavDropdown.Item as={Link} to="/projects/featured">Flagship Projects</NavDropdown.Item>
+              <NavDropdown.Item as={Link} eventKey="featuredp" active={false} to="/projects/featured">Flagship Projects</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="/projects">Other Projects</NavDropdown.Item>
+              <NavDropdown.Item as={Link} eventKey="otherp" active={false} to="/projects">Other Projects</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link eventKey="blogs" hresname="nav-items" as={Link} to="/blogs">
               Blogs
@@ -84,9 +83,9 @@ export default function Navigbar() {
               onTouchEnd={() => setShow3(!show3)}
               show={show3}
             >
-              <NavDropdown.Item as={Link} to="/avishkar">Avishkar</NavDropdown.Item>
+              <NavDropdown.Item as={Link} eventKey="avishkar" active={false} to="/avishkar">Avishkar</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="/prosang">Prosang</NavDropdown.Item>
+              <NavDropdown.Item as={Link} as={Link} eventKey="Prosang" to="/prosang">Prosang</NavDropdown.Item>
             </NavDropdown>
             <Nav.Link eventKey="blogs" as={Link} to="/workshop" className="nav-items">
               Jigyasa
@@ -107,21 +106,21 @@ export default function Navigbar() {
               onTouchEnd={() => setShow1(!show1)}
               show={show1}
             >
-              <NavDropdown.Item as={Link} to="/faculty">
+              <NavDropdown.Item as={Link} eventKey='faculty' active={false} to="/faculty">
                 Faculty Corner
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="/coordinators">
+              <NavDropdown.Item as={Link} eventKey='coordinators' active={false} to="/coordinators">
                 Coordinators
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="/non-tech">
+              <NavDropdown.Item as={Link} eventKey='non-tech' active={false} to="/non-tech">
                 Non-Tech Members
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="/alumni">Our Alumni</NavDropdown.Item>
+              <NavDropdown.Item as={Link} eventKey='alumni' active={false} to="/alumni">Our Alumni</NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="/webteam">
+              <NavDropdown.Item as={Link} eventKey='webteam' active={false} to="/webteam">
                 Web Team
               </NavDropdown.Item>
             </NavDropdown>
@@ -141,7 +140,7 @@ export default function Navigbar() {
             >
               {
                 loggedIn ?
-                  <NavDropdown.Item as={Link} to="/user/dashboard" eventKey="dasboard" active={false}>
+                  <NavDropdown.Item as={Link} to="/user/dashboard" eventKey="dashboard" active={false}>
                     <PermIdentity className='mr-1' /> Dashboard
                   </NavDropdown.Item>
                   :
@@ -159,7 +158,7 @@ export default function Navigbar() {
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Button className='mr-sm-2 my-2 right-btn btn-primary' target="_blank" href={process.env.REACT_APP_AEROCLUB}>Aero Club</Button>
+          <Button className='mr-sm-2 my-2 right-btn btn-primary' target="_blank" href={process.env.REACT_APP_AEROCLUB}>AeroClub MNNIT</Button>
         </Navbar.Collapse>
       </Navbar>
     </>

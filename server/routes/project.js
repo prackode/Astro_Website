@@ -190,7 +190,6 @@ router.post("/projects/user", isSignedIn, (req, res) => {
             select: "name",
           })
           .execPopulate((err, popProject) => {
-            console.log(popProject);
             return res.json(popProject);
           });
       }

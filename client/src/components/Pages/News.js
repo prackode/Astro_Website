@@ -3,24 +3,29 @@ import { Container, Jumbotron } from "react-bootstrap";
 import Loading from "../../Animations/Loading";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 import "../../css/news.css";
+import { animateScroll } from "react-scroll";
 
 export default function News() {
 
   const [news, SetNews] = useState([]);
+  const [fetching, setFetching] = useState(1)
 
   useEffect(() => {
     document.title = `Updates | ${REACT_APP_BASE_TITLE}`;
+    animateScroll.scrollToTop()
     fetch(`${REACT_APP_SERVER}/api/news/public`, {
       method: "get",
     })
       .then((res) => res.json())
-      .then((data) => SetNews(data));
-  }
-    , [news]);
+      .then((data) => {
+        SetNews(data)
+        setFetching(0)
+      });
+  }, []);
 
   return (
     <>
-      <Loading time={2} />
+      <Loading time={2} fetching={fetching} />
       <div>
         <div className="pagesg">
           <div className="overlayg starbg">

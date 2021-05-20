@@ -3,9 +3,10 @@ import { Button } from "react-bootstrap";
 import Loading from "../../Animations/Loading";
 import "../../css/featured-proj.css";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
-import { animateScroll as scroll } from 'react-scroll'
+import { animateScroll } from 'react-scroll'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
+import { Link } from "react-router-dom";
 
 function AstrophotoGraphy() {
   const [photos, SetPhotos] = useState([]);
@@ -13,9 +14,11 @@ function AstrophotoGraphy() {
   const [no_of_pages, setNoOfPages] = useState(0);
   const [page, SetPage] = useState(1);
   const [currTag, setCurrTag] = useState('')
-  document.title = `Astrophotography | ${REACT_APP_BASE_TITLE}`;
+  const [fetching, setFetching] = useState(1)
 
   useEffect(() => {
+    document.title = `Astrophotography | ${REACT_APP_BASE_TITLE}`;
+    animateScroll.scrollToTop()
     fetch(`${REACT_APP_SERVER}/api/astrophotographies/approved`, {
       method: "get",
     })
@@ -25,6 +28,7 @@ function AstrophotoGraphy() {
         setCurrTag('')
         setFilteredPhotos(data);
         setNoOfPages(Math.ceil(data.length / photos_per_page))
+        setFetching(0)
       });
   }, []);
 
@@ -32,7 +36,7 @@ function AstrophotoGraphy() {
 
   const handleTagFilter = (tag) => {
     setCurrTag(tag.name)
-    scroll.scrollToTop()
+    animateScroll.scrollToTop()
     setFilteredPhotos(
       photos.filter((item) => item.tags.some((itag) => itag._id === tag._id))
     );
@@ -42,7 +46,7 @@ function AstrophotoGraphy() {
 
   return (
     <>
-      <Loading time={2} />
+      <Loading time={2} fetching={fetching} />
       <div className="cont astrobg">
         <h3 className="my-3 titleBold d-flex justify-content-center topic">
           <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>
@@ -76,14 +80,14 @@ function AstrophotoGraphy() {
                     <LazyLoadImage
                       alt='astro'
                       effect="blur"
-                      src={photo.pic}
+                      src={photo.pic || 'https://lh3.googleusercontent.com/KeGUSRLz1rB_jHD09u2KLp7UGC-zTcyFSSrOjv12CNx49f1Irx8OGljn9Az-tFJmaJQ6tuEPG6DCMPQVIyAVhkqGv0ogjyqXsuJQMWYghkvo1yebCArmoa7NO021e3D9LJiNx1ZATQ=w2400'}
                     />
                     <div
                       className="card_text forphone forphone3 img-text"
                       style={{ width: "100%", height: "3rem" }}
                     >
-                      {/* <strong>Tags : </strong> */}
-                      <a href={`/astrophotography/${photo.id}`} ><p style={{ paddingLeft: "2px" }} className="clickable">Click to Know More </p></a>
+                      <Link to={`/astrophotography/${photo.id}`}><p style={{ paddingLeft: "2px" }} className="clickable">Click to Know More </p></Link>
+                      {/* <a href= ></a> */}
                       {photo.tags.map((tag, i) => (
                         <h5
                           className="d-inline"
@@ -107,7 +111,7 @@ function AstrophotoGraphy() {
                 className="mx-1"
                 variant="primary"
                 onClick={() => {
-                  scroll.scrollToTop()
+                  animateScroll.scrollToTop()
                   SetPage((page) => page - 1);
                 }}
               >
@@ -119,7 +123,7 @@ function AstrophotoGraphy() {
                 variant="primary"
                 className="mx-1"
                 onClick={() => {
-                  scroll.scrollToTop()
+                  animateScroll.scrollToTop()
                   SetPage((page) => page + 1);
                 }}
               >
@@ -128,11 +132,12 @@ function AstrophotoGraphy() {
             )}
           </div>
           {
+            photos.length !== filteredPhotos.length &&
             <Button className='float-left ml-3 my-3' onClick={e => {
               setFilteredPhotos(photos)
               SetPage(1)
               setNoOfPages(Math.ceil(photos.length / photos_per_page))
-              scroll.scrollToTop()
+              animateScroll.scrollToTop()
               setCurrTag('')
             }}>All Images</Button>
           }

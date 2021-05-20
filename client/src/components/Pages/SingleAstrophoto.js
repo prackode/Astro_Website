@@ -3,13 +3,17 @@ import { useHistory, useParams } from "react-router-dom";
 import "../../css/SingleProject.css";
 import Loading from "../../Animations/Loading";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
+import { animateScroll } from "react-scroll";
 
 function SingleAstrophoto() {
     const { photoId } = useParams();
     const [photo, setPhoto] = useState(undefined);
+    const [fetching, setFetching] = useState(1)
     const history = useHistory();
 
     useEffect(() => {
+        animateScroll.scrollToTop()
+
         fetch(`${REACT_APP_SERVER}/api//astrophotographies/${photoId}`, {
             method: "get",
             headers: {
@@ -22,12 +26,13 @@ function SingleAstrophoto() {
                 document.title = `${data.title} | ${REACT_APP_BASE_TITLE}`;
                 if (data.error) history.push("/404");
                 setPhoto(data);
+                setFetching(0)
             });
     }, []);
 
     return (
         <>
-            <Loading time={2} />
+            <Loading time={1} fetching={fetching} />
             <div className="my-5">
                 <div className="mb-4">
                     <h4 className='my-3' style={{ marginBottom: "0px", textAlign: "center" }}>{photo?.title}</h4>

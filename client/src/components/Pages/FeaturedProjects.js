@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
+import { animateScroll } from "react-scroll";
 import Loading from "../../Animations/Loading";
 import "../../css/featured-proj.css";
+import { Link } from 'react-router-dom'
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
 
 function FeaturedProjects() {
   const [projects, SetProjects] = useState([]);
   const [signedin, setsignedin] = useState(false);
   const [fetching, setFetching] = useState(1)
-  document.title = `Flagship Projects | ${REACT_APP_BASE_TITLE}`;
 
   useEffect(() => {
+    document.title = `Flagship Projects | ${REACT_APP_BASE_TITLE}`;
+    animateScroll.scrollToTop()
     fetch(`${REACT_APP_SERVER}/api/isSignedIn`, {
       method: "post",
       headers: {
@@ -67,7 +70,7 @@ function FeaturedProjects() {
           <ul className="cards">
             {projects
               .slice((page - 1) * projects_per_page, page * projects_per_page)
-              .map((project) => (
+              .map((project, i) => (
                 <li
                   className="cards_item"
                   data-aos="fade-up"
@@ -82,7 +85,7 @@ function FeaturedProjects() {
                         className="evfeatured phoneviewproj"
                         src={
                           project.pic ||
-                          "https://lh3.googleusercontent.com/22uNNnzS6tHVU9N-BR3zlu6S_Fg03yb5omXJtTbR7Ixcd_FRL23sNadI2G5X0tkoQAqcjzwMPf5BXDYdtCWtfxcmEN90ybDONZCzQdQiIcnrnIg9oAhrjRjiCqGwXxx8tDsk4yH89A=w2400"
+                          "https://lh3.googleusercontent.com/Qc1N9hR-ovN8PDV6J9NOSF82BlUeEDtng33AUNn52x_8RajvRUOabe9C62hmtuWLRgPyjkXv6VbOG7PES8K3ZzWYFxyLuJSGIihC-_tc5kFsEiomcVbB-KWHPwWY3qu_JuhwMxzpAA=w2400"
                         }
 
                       />
@@ -107,7 +110,8 @@ function FeaturedProjects() {
                       <Button
                         className="btns card_btns"
                         variant="primary"
-                        href={`${window.location.origin}/projects/${project._id}`}
+                        as={Link}
+                        to={`/projects/${project._id}`}
                         style={{ marginTop: 10 }}
                       >
                         Read More
@@ -123,6 +127,7 @@ function FeaturedProjects() {
                 className="mx-1"
                 variant="danger"
                 onClick={() => {
+                  animateScroll.scrollToTop()
                   SetPage((page) => page - 1);
                 }}
               >
@@ -134,6 +139,7 @@ function FeaturedProjects() {
                 variant="primary"
                 className="mx-1"
                 onClick={() => {
+                  animateScroll.scrollToTop()
                   SetPage((page) => page + 1);
                 }}
               >

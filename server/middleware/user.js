@@ -245,7 +245,6 @@ exports.getMyInvites = (req, res) => {
             });
           }
           invites.photos = photos;
-          console.log(invites);
           res.json(invites);
         });
     });

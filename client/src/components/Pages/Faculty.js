@@ -5,14 +5,16 @@ import f1 from "../../images/gallery/faculty1.jpeg";
 import f2 from "../../images/gallery/faculty2.jpeg";
 import f3 from "../../images/gallery/faculty3.jpeg";
 import { REACT_APP_BASE_TITLE } from "../../grobalVars"
+import { animateScroll } from "react-scroll";
 
 export default function Faculty() {
   useEffect(() => {
     document.title = `Faculty | ${REACT_APP_BASE_TITLE}`;
+    animateScroll.scrollToTop()
   }, [])
   return (
     <>
-      <Loading time={2} />
+      <Loading time={1} />
       <h3 className="my-3 titleBold d-flex justify-content-center topic">
         <p className="" style={{ marginBottom: "0px", textAlign: "center" }}>FACULTY CORNER</p>
       </h3>

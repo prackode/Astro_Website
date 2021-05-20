@@ -4,27 +4,29 @@ import "../../css/Event.css";
 import Loading from "../../Animations/Loading";
 import m from "../../images/utils/Jigyasa_logo.png";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { animateScroll } from "react-scroll";
 
 export default function Workshop() {
-  useEffect(() => {
-    document.title = `Jigyasa | ${REACT_APP_BASE_TITLE}`;
-  }, [])
 
   const [workshops, SetWorkshops] = useState([]);
+  const [fetching, setFetching] = useState(1)
 
   useEffect(() => {
+    document.title = `Jigyasa | ${REACT_APP_BASE_TITLE}`;
+    animateScroll.scrollToTop()
     fetch(`${REACT_APP_SERVER}/api/workshop`, {
       method: "get",
     })
       .then((res) => res.json())
-      .then((data) => SetWorkshops(data));
+      .then((data) => {
+        SetWorkshops(data)
+        setFetching(0)
+      });
   }, []);
-
-
 
   return (
     <>
-      <Loading time={2} />
+      <Loading time={2} fetching={fetching} />
       <section className="section1 pagese ">
         <div className="overlaye starbg">
           <div className="containere ">
@@ -117,7 +119,7 @@ export default function Workshop() {
                 {/* Assigning column for image */}
                 <div className="col-md-4 image text-center">
 
-                  <img className="img-fluid" src={singleNews.pic || 'https://lh3.googleusercontent.com/T9bjg12M_QXvpPvs4eYdw3VkmrgX0pGTWzFIyyzqQQ_XO_IUetQVyZBxNE80yTLYP0ft3it_S2_sMiY6p7IN7QZa156zFCVqg2qlhQR99MY0hdh83lfWCO3Ymy_nILhckIJj8LOm=w2400'} />
+                  <img className="img-fluid" src={singleNews.pic || 'https://lh3.googleusercontent.com/KeGUSRLz1rB_jHD09u2KLp7UGC-zTcyFSSrOjv12CNx49f1Irx8OGljn9Az-tFJmaJQ6tuEPG6DCMPQVIyAVhkqGv0ogjyqXsuJQMWYghkvo1yebCArmoa7NO021e3D9LJiNx1ZATQ=w2400'} />
                 </div>
                 {/* Details of Workshop */}
                 <div className="col-md-8">
