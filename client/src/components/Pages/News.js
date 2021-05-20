@@ -41,7 +41,7 @@ export default function News() {
             paddingBottom: "1rem",
             minHeight: '25rem'
           }}>
-          <Container className='col-11 my-5'>
+          <Container className='col-12 my-5'>
             <div className="panel-group news-container" id="accordion" role="tablist" aria-multiselectable="true"
               style={{ margin: "1.5rem" }}>
               {
@@ -70,7 +70,7 @@ export default function News() {
                       ).toLocaleDateString()}
                       </em>
                     </div>
-                    <div className="panel-body my-5 mx-4 ql-editor" dangerouslySetInnerHTML={{ __html: singleNews.body }}></div>
+                    <div className="panel-body my-5 ql-editor" dangerouslySetInnerHTML={{ __html: singleNews.body }}></div>
                   </div>
                 </div>
               ))}
