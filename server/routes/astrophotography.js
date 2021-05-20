@@ -4,7 +4,10 @@ const { Astrophotography, Member1 } = require("../models/astrophotography");
 const { isSignedIn, isAdmin } = require("../middleware/auth");
 const User = require("../models/user");
 const { drivePicParser } = require("../middleware/fileUpload");
-
+const {
+  saveUploadPhoto,
+  editUploadPhoto,
+} = require("../middleware/astrophoto");
 // fetching all photos
 router.get("/astrophotographies", isSignedIn, isAdmin, (req, res) => {
   res.setHeader("Content-Range", "astrophotographies 0-10/20");
@@ -94,55 +97,7 @@ router.post("/astrophotographies", isSignedIn, (req, res) => {
 });
 
 // creating a photo from dashboard
-router.post("/astrophotographies/user", isSignedIn, (req, res) => {
-  req.body.leader = req.user.id;
-  const pic = req.body.pic;
-  if (pic) {
-    try {
-      req.body.pic = drivePicParser(req.body.pic);
-    } catch (error) {
-      return res.status(400).json({
-        err: error.message,
-      });
-    }
-  } else {
-    return res.status(400).json({
-      err: "Picture is compulsory",
-    });
-  }
-  const photoObj = new Astrophotography(req.body);
-  photoObj.members.push(
-    new Member1({ user: req.user.id, accepted: true, leader: true })
-  );
-
-  photoObj.save((err, photo) => {
-    if (err) {
-      return res.status(400).json({
-        err: err.message,
-      });
-    }
-    let userIds = photo.members.map((member) => member.user);
-    User.updateMany(
-      { _id: { $in: userIds } },
-      { $push: { photos: photo._id } },
-      (err, users) => {
-        if (err) {
-          return res.status(400).json({
-            err: err.message,
-          });
-        }
-        photo
-          .populate({
-            path: "members.user",
-            select: "name",
-          })
-          .execPopulate((err, popProject) => {
-            return res.json(popProject);
-          });
-      }
-    );
-  });
-});
+router.post("/astrophotographies/user", isSignedIn, saveUploadPhoto);
 
 // updating a photo
 router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
@@ -235,6 +190,8 @@ router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
     }
   );
 });
+
+router.put("/astrophotographies/user/:id", isSignedIn, editUploadPhoto);
 
 // deleting a photo
 router.delete("/astrophotographies/:id", isSignedIn, isAdmin, (req, res) => {

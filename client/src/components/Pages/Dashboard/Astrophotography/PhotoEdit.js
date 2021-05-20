@@ -12,19 +12,110 @@ export default function PhotoEdit({ photo }) {
   const [definedTags, setDefinedTags] = useState([]);
   const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
+  const [pic, setpic] = useState("");
 
   useEffect(() => {
     if (photo) {
       fetch(`${REACT_APP_SERVER}/api/tags`, { method: "GET" })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data)
-          setDefinedTags(data.filter((item) => !photo.tags.find(tag => tag.name === item.name)));
-          setformData(photo);
+          console.log(data);
+          setDefinedTags(
+            data.filter(
+              (item) => !photo.tags.find((tag) => tag.name === item.name)
+            )
+          );
+          setpic(photo.pic);
+          setformData({
+            ...photo,
+            file: null,
+          });
           setTags(photo.tags);
         });
     }
   }, [photo]);
+
+  const checkMimeType = (event) => {
+    //getting file object
+    let files = event.target.files;
+    //define message container
+    let err = "";
+    // list allow mime type
+    const types = ["image/png", "image/jpeg", "image/gif"];
+    // loop access array
+    for (var x = 0; x < files.length; x++) {
+      // compare file type find doesn't matach
+      if (types.every((type) => files[x].type !== type)) {
+        // create error message and assign to container
+        err += files[x].type + " is not a supported format\n";
+      }
+    }
+
+    if (err !== "") {
+      // if message not same old that mean has error
+      event.target.value = null; // discard selected file
+      toast.error(err);
+      return false;
+    }
+    return true;
+  };
+  const checkFileSize = (event) => {
+    let files = event.target.files;
+    let size = 1024 * 1204 * 3;
+    let err = "";
+    for (var x = 0; x < files.length; x++) {
+      if (files[x].size > size) {
+        err += files[x].type + `is too large, max allowed 3 MB\n`;
+      }
+    }
+    if (err !== "") {
+      event.target.value = null;
+      toast.error(err);
+      return false;
+    }
+
+    return true;
+  };
+  const onChangeHandler = (event) => {
+    const file = event.target.files[0];
+    setpic(URL.createObjectURL(event.target.files[0]));
+    if (checkMimeType(event) && checkFileSize(event)) {
+      setformData({
+        ...formData,
+        file: file,
+      });
+    }
+  };
+
+  const submitHandler = (event) => {
+    event.preventDefault();
+    setLoading(true);
+    const data = new FormData();
+    data.append("file", formData.file);
+    data.append("title", formData.title);
+    data.append("instrumentUsed", formData.instrumentUsed);
+    data.append("instrumentSettings", formData.instrumentSettings);
+    data.append("desc", formData.desc);
+    data.append("tags", JSON.stringify(tags));
+    fetch(`${REACT_APP_SERVER}/api/astrophotographies/user/${photo._id}`, {
+      method: "put",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+      },
+      body: data,
+    })
+      .then((res) => {
+        res.json().then((data) => {
+          data._id = data.id;
+          toast.success("Photo Updated !");
+          dispatch({ type: "UPDATE_PHOTO", payload: data });
+          setLoading(false);
+        });
+      })
+      .catch((err) => {
+        setLoading(false);
+      });
+  };
 
   return (
     <div>
@@ -41,40 +132,7 @@ export default function PhotoEdit({ photo }) {
         </button>
       </p>
       <div className="collapse my-4" id="collapsephotoedit">
-        <form
-          className="my-5"
-          onSubmit={(e) => {
-            e.preventDefault();
-            setLoading(true);
-            fetch(`${REACT_APP_SERVER}/api/astrophotographies/${photo._id}`, {
-              method: "put",
-              headers: {
-                Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                title: formData.title,
-                desc: formData.desc,
-                instrumentUsed: formData.instrumentUsed,
-                instrumentSettings: formData.instrumentSettings,
-                tags,
-                pic: formData.pic,
-              }),
-            })
-              .then((res) => {
-                res.json().then((data) => {
-                  data._id = data.id;
-                  delete data.id;
-                  toast.success("Photo Updated !");
-                  dispatch({ type: "UPDATE_PHOTO", payload: data });
-                  setLoading(false);
-                });
-              })
-              .catch((err) => {
-                setLoading(false);
-              });
-          }}
-        >
+        <form className="my-5" onSubmit={submitHandler}>
           <div className="form-floating mb-3 ">
             <label htmlFor="title">Title *</label>
             <input
@@ -92,20 +150,15 @@ export default function PhotoEdit({ photo }) {
             />
           </div>
           <div className="form-floating mb-3 ">
-            <label htmlFor="title">Image Link *</label>
+            <label htmlFor="title">Image *</label>
             <input
-              type="url"
+              type="file"
               className="form-control"
               id="image"
               required
-              value={formData.pic}
-              onChange={(e) => {
-                setformData((prev) => ({
-                  ...prev,
-                  pic: e.target.value,
-                }));
-              }}
+              onChange={onChangeHandler}
             />
+            <img src={pic} />
           </div>
           <label htmlFor="description">Description *</label>
           <DashQuill
@@ -183,7 +236,7 @@ export default function PhotoEdit({ photo }) {
 
               <ul
                 className="dropdown-menu"
-                style={{ overflowY: "auto", maxHeight: "120px" }}
+                style={{ overflowY: "auto" }}
                 aria-labelledby="dLabel"
               >
                 {definedTags.map((tag, i) => (
