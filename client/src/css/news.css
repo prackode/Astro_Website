@@ -79,3 +79,11 @@
     /* border-top-left-radius: 25px; */
     border-bottom-right-radius: 15px;
 }
+
+@media screen and (max-width:1000px) 
+{
+  .panel-body, .ql-editor {
+    font-size: medium !important;
+    text-align: justify !important;
+  }
+}

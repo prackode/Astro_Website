@@ -134,6 +134,9 @@
     .hdimage iframe{
         height: 16rem;
     }
+    .information h3{
+        margin: 0 1.3rem;
+    }
 }
 
 

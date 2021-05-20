@@ -19,6 +19,7 @@
     margin: 0vh 0vw;
 
     /* background-image: url('https://unsplash.it/600/600'); */
+    background: url("../images/utils/space4-min.jpg");
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center !important;

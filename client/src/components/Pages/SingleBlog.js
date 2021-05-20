@@ -107,7 +107,7 @@ function SingleBlog() {
         }}
         className="my-4"
       >
-        <Container className="col-10 col-md-10 col-lg-11 singleblog-contents">
+        <Container className="col-12 col-md-10 col-lg-11 singleblog-contents">
           {
             blog?.pic &&
             <>
