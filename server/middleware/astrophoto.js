@@ -95,9 +95,10 @@ exports.editUploadPhoto = (req, res) => {
         });
       }
       const oldPhoto = new URL(photo.pic);
-      fs.unlink("." + oldPhoto.pathname, (err) => {
-        if (err) console.log(err);
-      });
+      if (req.file)
+        fs.unlink("." + oldPhoto.pathname, (err) => {
+          if (err) console.log(err);
+        });
       photo.title = req.body.title ? req.body.title : photo.title;
       photo.instrumentUsed = req.body.instrumentUsed
         ? req.body.instrumentUsed
@@ -106,7 +107,7 @@ exports.editUploadPhoto = (req, res) => {
         ? req.body.instrumentSettings
         : photo.instrumentSettings;
       photo.desc = req.body.desc ? req.body.desc : photo.desc;
-      photo.pic = req.fileURL ? req.fileURL : photo.pic;
+      photo.pic = req.file ? req.fileURL : photo.pic;
       photo.save((err, updatedPhoto) => {
         if (err) {
           return res.status(400).json({

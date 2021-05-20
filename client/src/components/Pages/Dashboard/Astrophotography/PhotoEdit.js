@@ -150,12 +150,11 @@ export default function PhotoEdit({ photo }) {
             />
           </div>
           <div className="form-floating mb-3 ">
-            <label htmlFor="title">Image *</label>
+            <label htmlFor="title">Image</label>
             <input
               type="file"
               className="form-control"
               id="image"
-              required
               onChange={onChangeHandler}
             />
             <img src={pic} />
