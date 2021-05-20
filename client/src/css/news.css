@@ -82,7 +82,7 @@
 
 @media screen and (max-width:1000px) 
 {
-  .panel-body, .ql-editor h4, h3, h1, h2, h5, h6{
+  .panel-body, .ql-editor {
     font-size: medium !important;
     text-align: justify !important;
   }
