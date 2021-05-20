@@ -51,7 +51,7 @@ exports.saveUploadPhoto = (req, res) => {
           }
           photo
             .populate({
-              path: "members.user",
+              path: "members.user tags",
               select: "name",
             })
             .execPopulate((err, popProject) => {
@@ -115,7 +115,7 @@ exports.editUploadPhoto = (req, res) => {
         }
         updatedPhoto
           .populate({
-            path: "members.user",
+            path: "members.user tags",
             select: "name",
           })
           .execPopulate((err, popProject) => {
