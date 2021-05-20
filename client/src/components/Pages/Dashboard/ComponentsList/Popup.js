@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../../grobalVars"
+import { REACT_APP_SERVER } from "../../../../grobalVars"
 
 export default function Popup(props) {
   const [num, setnum] = useState(0);
@@ -17,7 +17,7 @@ export default function Popup(props) {
       <Modal.Body>
         <div style={{ display: "flex" }}>
           <img
-            src={props.comp.image_url}
+            src={props.comp.pic}
             style={{ width: "150px", height: "150px" }}
           />
           <div>
