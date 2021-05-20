@@ -40,17 +40,13 @@ export default function Dashphotos() {
               if (m.leader) return m.user._id;
             });
             let isCurLeader = leaders?.includes(user.id);
-            if (photo.status === "Ongoing")
+            if (photo.approved)
               badge = (
-                <span class="badge badge-pill badge-warning">
-                  {photo.status}
-                </span>
+                <span class="badge badge-pill badge-success">Approved</span>
               );
-            else if (photo.status === "Completed")
+            else
               badge = (
-                <span class="badge badge-pill badge-success">
-                  {photo.status}
-                </span>
+                <span class="badge badge-pill badge-warning">Ongoing</span>
               );
             return (
               <Card key={photo._id}>

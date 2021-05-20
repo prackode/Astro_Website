@@ -61,11 +61,11 @@ export default function PhotoEdit({ photo }) {
   };
   const checkFileSize = (event) => {
     let files = event.target.files;
-    let size = 1024 * 1204 * 3;
+    let size = 1024 * 1204 * 1;
     let err = "";
     for (var x = 0; x < files.length; x++) {
       if (files[x].size > size) {
-        err += files[x].type + `is too large, max allowed 3 MB\n`;
+        err += files[x].type + `is too large, max allowed 1 MB\n`;
       }
     }
     if (err !== "") {
