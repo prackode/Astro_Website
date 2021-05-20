@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Tabs, Tab } from "react-bootstrap";
 import Loading from "../../../../Animations/Loading";
 import CompCard from "./CompCard";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../../grobalVars"
+import { REACT_APP_SERVER } from "../../../../grobalVars"
 
 export default function CompIssue() {
 

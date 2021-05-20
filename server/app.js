@@ -4,10 +4,10 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const port = process.env.PORT || 9500;
 const path = require("path");
-const compression = require('compression')
+const compression = require("compression");
 require("dotenv").config();
 app.use(cors());
-app.use(compression())
+app.use(compression());
 app.use(express.static(__dirname + "/public"));
 app.use("/images", express.static("/public/images"));
 // mongodb
@@ -53,8 +53,9 @@ app.use("/api", contactRouters);
 app.use("/api", tagRouters);
 app.use("/api", shareRouter);
 
-app.use(express.static("client/build"));
+app.use("/public", express.static(path.join(__dirname, "public")));
 
+app.use(express.static("client/build"));
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 });
