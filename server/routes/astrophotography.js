@@ -46,7 +46,7 @@ router.get("/astrophotographies/:id", (req, res) => {
     return res.json({ error: "not found !" });
   }
   Astrophotography.findOne({ _id: req.params.id })
-    .populate({ path: "members.user" })
+    .populate({ path: "members.user tags" })
     .populate("tags")
     .then((photo) => {
       return res.json(photo.transform());
@@ -245,7 +245,7 @@ router.post("/astrophotographies/invite", isSignedIn, (req, res) => {
         }
         updatedPhoto
           .populate({
-            path: "members.user",
+            path: "members.user tags",
             select: "name",
           })
           .execPopulate((err, populatedPhoto) => {
