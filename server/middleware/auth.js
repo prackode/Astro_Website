@@ -17,7 +17,7 @@ exports.signup = (req, res) => {
     if (!newUser)
       return res.status(400).json({ error: "Email address already exists !" });
     const jwtToken = jwt.sign({ _id: newUser._id }, process.env.JWT_SECRET, {
-      expiresIn: "1h",
+      expiresIn: "365y",
     });
     mailer.sendMail({
       from: process.env.USER,
@@ -39,7 +39,7 @@ exports.signup = (req, res) => {
       If you think it's not you, just ignore this email.
       </p>
       
-     `
+     `,
     });
     res
       .status(400)
@@ -106,7 +106,9 @@ exports.signin = (req, res) => {
         error: "You need to verify your email before login !",
       });
     if (!user.canSignIn)
-      return res.status(401).json({ error: "Your account is temporarily suspended!" });
+      return res
+        .status(401)
+        .json({ error: "Your account is temporarily suspended!" });
 
     if (!user.autheticate(password)) {
       return res.status(401).json({
@@ -118,8 +120,8 @@ exports.signin = (req, res) => {
     // put token in cookie
     res.cookie("token", jwtToken, { expire: new Date() + 9999 });
     res.json({ token: jwtToken, message: "LoggedIn Successfully !", user });
-  })
-}
+  });
+};
 
 exports.forgetPassword = (req, res) => {
   User.findOne({ email: req.body.email }).then((user) => {
@@ -147,7 +149,7 @@ exports.forgetPassword = (req, res) => {
         }
       }
     );
-    user.save()
+    user.save();
   });
 };
 
@@ -163,11 +165,14 @@ exports.resetPassword = (req, res) => {
       user.reset_pass_session = false;
       if (!user) return res.json({ error: "User does not exists !" });
       user.password = newPassword;
-      user.save().then((savedUser) => {
-        return res.json({ message: "Password updated successfully !" });
-      }).catch(err => {
-        res.status(422).json({ error: err });
-      });
+      user
+        .save()
+        .then((savedUser) => {
+          return res.json({ message: "Password updated successfully !" });
+        })
+        .catch((err) => {
+          res.status(422).json({ error: err });
+        });
     });
   });
 };
@@ -192,18 +197,21 @@ exports.isSignedIn = (req, res, next) => {
     const { _id } = payload;
 
     // finding the user with the id
-    User.findById(_id)
-      .exec((err, user) => {
-        if (!user)
-          return res.status(401).json({ error: "You must be logged in !" });
-        if (!user.confirmed)
-          return res.status(401).json({ error: "You must confirm your account first!" });
-        if (!user.canSignIn)
-          return res.status(401).json({ error: "Your account is temporarily suspended!" });
+    User.findById(_id).exec((err, user) => {
+      if (!user)
+        return res.status(401).json({ error: "You must be logged in !" });
+      if (!user.confirmed)
+        return res
+          .status(401)
+          .json({ error: "You must confirm your account first!" });
+      if (!user.canSignIn)
+        return res
+          .status(401)
+          .json({ error: "Your account is temporarily suspended!" });
 
-        req.user = user.transform()
-        next();
-      });
+      req.user = user.transform();
+      next();
+    });
   });
 };
 
