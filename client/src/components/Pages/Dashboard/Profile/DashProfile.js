@@ -145,7 +145,7 @@ export default function DashProfile({ disabled, setDisabled }) {
           Year :{" "}
         </label>
         <div className="col-sm-10">
-          <select class="form-control form-select form-select-lg" disabled={disabled} aria-label=".form-select-lg example" defaultValue={year} itemType='number' onChange={e => setYear(e.target.value)}>
+          <select class="form-control form-select form-select-lg" disabled={disabled} aria-label=".form-select-lg example" value={year} itemType='number' onChange={e => setYear(e.target.value)}>
             <option value="1">1st</option>
             <option value="2">2nd</option>
             <option value="3">3rd</option>
