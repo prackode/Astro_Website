@@ -43,6 +43,12 @@ export default function DashProfile({ disabled, setDisabled }) {
   };
 
   const handleSaveChange = () => {
+
+    if (name.length < 3) {
+      toast.warn("name should be at least 3 characters !");
+      return;
+    }
+
     if (regis_no.length < 8 || parseInt(regis_no[4]) === 7) {
       toast.warn("Invalid registration number !");
       return;
@@ -145,7 +151,7 @@ export default function DashProfile({ disabled, setDisabled }) {
           Year :{" "}
         </label>
         <div className="col-sm-10">
-          <select class="form-control form-select form-select-lg" disabled={disabled} aria-label=".form-select-lg example" value={year} itemType='number' onChange={e => setYear(e.target.value)}>
+          <select className="form-control form-select form-select-lg" disabled={disabled} aria-label=".form-select-lg example" value={year} itemType='number' onChange={e => setYear(e.target.value)}>
             <option value="1">1st</option>
             <option value="2">2nd</option>
             <option value="3">3rd</option>

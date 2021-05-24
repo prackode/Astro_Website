@@ -17,7 +17,6 @@ export default function APOD() {
     return (
         <div className="cont my-5">
             <div className="container-fluid">
-                {/* <p><span> Astronomy Picture of the Day</span></p> */}
 
                 <div
                     className="pageTitle titleBold headingc white-headingc backst"
@@ -32,9 +31,8 @@ export default function APOD() {
                         <div className="title">
                             <h3>{data?.title}</h3>
                         </div>
-                        <div className="explanation mx-3 mx-md-3 mt-md-2 mt-lg-5 mozStyle" id="style-3">
+                        <div className="explanation mx-3 mx-md-3 mt-md-2 mt-lg-5 mozStyle" id="style-2">
                             <p className="expl">{data?.explanation} <br></br><br></br><div>source : <i><a href="https://apod.nasa.gov/apod/astropix.html" target="_blank">apod.nasa.gov</a></i></div></p>
-                            {/* <p className='expl'>source : <i><a href="https://apod.nasa.gov/apod/astropix.html">apod.nasa.gov</a></i></p> */}
                         </div>
                     </div>
                     <div className="hdimage">
