@@ -123,13 +123,27 @@ export default function ProjForm() {
             />
           </div>
           <label htmlFor="overview">Overview *</label>
-          <DashQuill text={formData.overview} id={v4()} setText={txt => setformData(prev => ({
-            ...prev, overview: txt
-          }))} />
+          <DashQuill
+            text={formData.overview}
+            id={v4()}
+            setText={(txt) =>
+              setformData((prev) => ({
+                ...prev,
+                overview: txt,
+              }))
+            }
+          />
           <label htmlFor="description">Description *</label>
-          <DashQuill text={formData.description} id={v4()} setText={txt => setformData(prev => ({
-            ...prev, description: txt
-          }))} />
+          <DashQuill
+            text={formData.description}
+            id={v4()}
+            setText={(txt) =>
+              setformData((prev) => ({
+                ...prev,
+                description: txt,
+              }))
+            }
+          />
           <div className="form-floating mb-3">
             <label htmlFor="image">Image Link</label>
 
@@ -147,10 +161,7 @@ export default function ProjForm() {
             />
           </div>
           <div className="form-floating mb-3">
-            <label htmlFor="embed">
-              Youtube Embed ID ( eg : https://www.youtube.com/watch?v=
-              <b>azaSaWAyQE4</b> ){" "}
-            </label>
+            <label htmlFor="embed">Youtube Link</label>
             <input
               type="text"
               className="form-control"
