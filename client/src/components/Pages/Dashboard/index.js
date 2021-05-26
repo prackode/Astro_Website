@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "../../../css/Dashboard.css";
@@ -16,6 +16,7 @@ import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../grobalVars"
 function Dashboard() {
   const history = useHistory();
   const dispatch = useDispatch();
+  const [disabled, setDisabled] = useState(true);
   document.title = `Dashboard | ${REACT_APP_BASE_TITLE}`;
   useEffect(() => {
     document.getElementsByClassName('App')[0].classList.remove('bgrt')
@@ -73,6 +74,7 @@ function Dashboard() {
             role="tab"
             aria-controls="nav-blogs"
             aria-selected="false"
+            onClick={() => setDisabled(true)}
           >
             Blogs
           </a>
@@ -84,6 +86,7 @@ function Dashboard() {
             role="tab"
             aria-controls="nav-projects"
             aria-selected="false"
+            onClick={() => setDisabled(true)}
           >
             Projects
           </a>
@@ -95,6 +98,7 @@ function Dashboard() {
             role="tab"
             aria-controls="nav-invites"
             aria-selected="false"
+            onClick={() => setDisabled(true)}
           >
             Invites
           </a>
@@ -106,6 +110,7 @@ function Dashboard() {
             role="tab"
             aria-controls="nav-photos"
             aria-selected="false"
+            onClick={() => setDisabled(true)}
           >
             Astrophotography
           </a>
@@ -117,6 +122,7 @@ function Dashboard() {
             role="tab"
             aria-controls="nav-components"
             aria-selected="false"
+            onClick={() => setDisabled(true)}
           >
             Components
           </a>
@@ -128,6 +134,7 @@ function Dashboard() {
             role="tab"
             aria-controls="nav-inventory"
             aria-selected="false"
+            onClick={() => setDisabled(true)}
           >
             Component Info
           </a>
@@ -139,6 +146,7 @@ function Dashboard() {
             role="tab"
             aria-controls="nav-news"
             aria-selected="false"
+            onClick={() => setDisabled(true)}
           >
             Updates
           </a>
@@ -151,7 +159,7 @@ function Dashboard() {
           role="tabpanel"
           aria-labelledby="nav-profile-tab"
         >
-          <DashProfile />
+          <DashProfile disabled={disabled} setDisabled={setDisabled} />
         </div>
         <div
           className="tab-pane fade"

@@ -10,10 +10,20 @@ const userReducer = (user = null, action) => {
   switch (action.type) {
     case "SET":
       return action.payload;
-    case "UPDATE_BLOG":
+    case "CREATE_BLOG":
       return {
         ...user,
         blogs: [...user.blogs, action.payload],
+      };
+    case "UPDATE_BLOG":
+      return {
+        ...user,
+        blogs: user.blogs.map(p => {
+          if (p._id === action.payload._id)
+            return action.payload
+          else
+            return p
+        }),
       };
     case "REQUEST_COMPONENT":
       return {

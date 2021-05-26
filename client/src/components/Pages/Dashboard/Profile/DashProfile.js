@@ -6,9 +6,8 @@ import { useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import { REACT_APP_SERVER } from "../../../../grobalVars";
 
-export default function DashProfile() {
+export default function DashProfile({ disabled, setDisabled }) {
   const user = useSelector((state) => state.user);
-  const [disabled, setDisabled] = useState(true);
   const [name, setName] = useState("");
   const [regis_no, setRegis_no] = useState("");
   const [year, setYear] = useState(-1);
@@ -44,7 +43,18 @@ export default function DashProfile() {
   };
 
   const handleSaveChange = () => {
-    if (parseInt(regis_no[4]) === 7) {
+
+    if (name.length < 3) {
+      toast.warn("name should be at least 3 characters !");
+      return;
+    }
+
+    if (regis_no.length < 8 || parseInt(regis_no[4]) === 7) {
+      toast.warn("Invalid registration number !");
+      return;
+    }
+
+    if (isNaN(parseInt(regis_no))) {
       toast.warn("Invalid registration number !");
       return;
     }
@@ -141,17 +151,12 @@ export default function DashProfile() {
           Year :{" "}
         </label>
         <div className="col-sm-10">
-          <input
-            type="number"
-            min={1}
-            max={4}
-            maxLength={1}
-            className="form-control"
-            id="year"
-            value={year}
-            disabled={disabled}
-            onChange={(e) => setYear(e.target.value)}
-          />
+          <select className="form-control form-select form-select-lg" disabled={disabled} aria-label=".form-select-lg example" value={year} itemType='number' onChange={e => setYear(e.target.value)}>
+            <option value="1">1st</option>
+            <option value="2">2nd</option>
+            <option value="3">3rd</option>
+            <option value="4">Final</option>
+          </select>
         </div>
       </div>
       <div className="mb-3 row">

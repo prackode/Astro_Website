@@ -65,7 +65,7 @@ export default function CreateBlog() {
         setPic('')
         document.getElementById('collapsecreateblog').classList.remove('show')
         setLoading(false);
-        dispatch({ type: "UPDATE_BLOG", payload: { ...data, _id: data.id } });
+        dispatch({ type: "CREATE_BLOG", payload: { ...data, _id: data.id } });
         toast.success(
           "Blog has been sent for confirmation...Till then stay tuned !"
         );

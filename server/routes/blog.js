@@ -164,6 +164,41 @@ router.put("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
   );
 });
 
+// updating blog from dashboard
+router.put("/blogs/dashboard/:id", isSignedIn, isAdmin, (req, res) => {
+  const pic = req.body.pic;
+  if (pic) {
+    try {
+      req.body.pic = drivePicParser(req.body.pic);
+    } catch (error) {
+      return res.status(400).json({
+        err: error.message,
+      });
+    }
+  }
+  Blog.findOneAndUpdate(
+    { _id: req.params.id },
+    {
+      $set: {
+        title: req.body.title,
+        pic: req.body.pic,
+        body: req.body.body,
+        accepted: false,
+        acceptedBy: null,
+      },
+    },
+    { new: true },
+    (e, blog) => {
+      if (e) {
+        return res.status(400).json({
+          error: "Project cannot be updated !",
+        });
+      }
+      res.json(blog);
+    }
+  );
+});
+
 // deleting a blog
 router.delete("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
   Blog.findById(req.params.id, (err, blog) => {

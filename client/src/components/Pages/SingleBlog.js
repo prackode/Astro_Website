@@ -34,8 +34,9 @@ function SingleBlog() {
   }
 
   useEffect(() => {
-
     animateScroll.scrollToTop()
+    document.getElementsByClassName('App')[0].classList.remove('bgrt')
+    document.getElementsByClassName('App')[0].style.backgroundColor = '#ffffff'
 
     fetch(`${REACT_APP_SERVER}/api/blogstoUI/${blogId}`, {
       method: "get",
@@ -49,6 +50,11 @@ function SingleBlog() {
           setFetching(0)
         }
       });
+
+    return () => {
+      document.getElementsByClassName('App')[0].classList.add('bgrt')
+    }
+
   }, []);
 
   return (
