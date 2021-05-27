@@ -48,7 +48,6 @@ function Dashboard() {
     return () => {
       document.getElementsByClassName('App')[0].classList.add('bgrt')
     }
-
   }, []);
 
   return (

@@ -3,7 +3,7 @@ import ReactQuill, { Quill } from "react-quill";
 import ImageResize from "quill-image-resize";
 import '../../../css/DashQuill.css'
 const Font = Quill.import("formats/font");
-Font.whitelist = ["Serif", "Sans-serif", "Roboto", 'Ubuntu', "cursive", "Audiowide", "fantasy", "monospace"];
+Font.whitelist = ["Serif", "Sans-serif", "Roboto", "Ubuntu", "cursive", "Audiowide", "fantasy", "monospace"];
 Quill.register(Font, true);
 Quill.register("modules/imageResize", ImageResize);
 const ImageFormatAttributesList = [
@@ -82,7 +82,7 @@ export default function DashQuill({ text, setText, id }) {
                 onChange={(content, delta, source, editor) => {
                     setText(editor.getHTML());
                 }}
-                value={text || ''}
+                value={text || ""}
             />
         </div>
     );

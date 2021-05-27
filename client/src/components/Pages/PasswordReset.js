@@ -38,7 +38,6 @@ function PasswordReset() {
       return;
     }
     if (!/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,25}$/.test(password.current.value)) {
-      console.log(password)
       toast.warn("Invalid password type !");
       return;
     }
@@ -55,12 +54,9 @@ function PasswordReset() {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.error) toast.warn(data.error);
-        else {
-          if (data.message) toast.success(data.message);
-          else toast.warn("Your session has expired...try again !");
-          history.push("/user/login");
-        }
+        if (data.error) toast.warn(data.error)
+        else toast.success(data.message);
+        history.push("/user/login");
       });
   };
 

@@ -125,7 +125,7 @@ exports.forgetPassword = (req, res) => {
   User.findOne({ email: req.body.email }).then((user) => {
     if (!user)
       return res.status(422).json({ error: "Email is not registered !" });
-    const jwtToken = jwt.sign({ _id: user._id }, `${process.env.JWT_SECRET}${process.env.FORGET_SECRET}`, {
+    const jwtToken = jwt.sign({ _id: user._id }, process.env.FORGET_SECRET, {
       expiresIn: "1h",
     });
     user.reset_pass_session = true;
@@ -147,21 +147,27 @@ exports.resetPassword = (req, res) => {
   const { authorization } = req.headers;
   const token = authorization.replace("Bearer ", "");
 
-  jwt.verify(token, `${process.env.JWT_SECRET}${process.env.FORGET_SECRET}`, (err, payload) => {
-    if (err) res.status(401).json({ error: 'Unauthorized' });
+  jwt.verify(token, process.env.FORGET_SECRET, (err, payload) => {
+    if (err) return res.status(401).json({ error: 'Unauthorized or Session expired !' });
     const { _id } = payload;
 
     User.findById(_id).exec((err, user) => {
+
+      if (!user.reset_pass_session)
+        return res
+          .status(422)
+          .json({ error: 'Unauthorized or Session expired !' });
+
       user.reset_pass_session = false;
       if (!user) return res.json({ error: "User does not exists !" });
-      user.password = newPassword;
+      user.password = newPassword; // requires more protection in future :(
       user
         .save()
         .then((savedUser) => {
           return res.json({ message: "Password updated successfully !" });
         })
         .catch((err) => {
-          res.status(401).json({ error: 'Unauthorized' });
+          res.status(401).json({ error: 'Error updating password...try Again !' });
         });
     });
   });
@@ -209,18 +215,19 @@ exports.resetVerify = (req, res, next) => {
   const { authorization } = req.headers;
   const token = authorization.replace("Bearer ", "");
 
-  jwt.verify(token, `${process.env.JWT_SECRET}${process.env.FORGET_SECRET}`, (err, payload) => {
-    if (err) {
-      res.status(401).json({ error: 'Unauthorized' });
-    }
+  jwt.verify(token, process.env.FORGET_SECRET, (err, payload) => {
+    if (err) return res.status(401).json({ error: 'Unauthorized or Session expired !' });
+
     const { _id } = payload;
 
     User.findById(_id).exec((err, user) => {
+
+      if (err) return res.json({ error: "User does not exists !" });
       if (!user.reset_pass_session)
         return res
           .status(422)
-          .json({ error: "Session has expired...try again !" });
-      next();
+          .json({ error: 'Unauthorized or Session expired !' });
+      res.json({ message: 'Authorized !' })
     });
   });
 };

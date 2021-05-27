@@ -1,6 +1,10 @@
 import { useInput } from 'react-admin';
 import ReactQuill, { Quill } from "react-quill";
 import ImageResize from "quill-image-resize";
+import '../../css/DashQuill.css'
+const Font = Quill.import("formats/font");
+Font.whitelist = ["Serif", "Sans-serif", "Roboto", "Ubuntu", "cursive", "Audiowide", "fantasy", "monospace"];
+Quill.register(Font, true);
 Quill.register("modules/imageResize", ImageResize);
 const ImageFormatAttributesList = [
     'alt',
@@ -50,7 +54,7 @@ const RichTextQuill = props => {
                         ["bold", "italic", "underline", "strike"],
                         [{ header: [1, 2, 3, 4, 5, 6, false] }],
                         [{ size: ["small", false, "large", "huge"] }],
-                        [{ font: [] }],
+                        [{ font: Font.whitelist }],
                         [{ color: [] }, { background: [] }],
                         [{ list: "ordered" }, { list: "bullet" }],
                         [{ script: "sub" }, { script: "super" }],
