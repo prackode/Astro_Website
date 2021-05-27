@@ -17,7 +17,7 @@ exports.signup = (req, res) => {
     if (!newUser)
       return res.status(400).json({ error: "Email address already exists !" });
     const jwtToken = jwt.sign({ _id: newUser._id }, process.env.JWT_SECRET, {
-      expiresIn: "365y",
+      expiresIn: "365d",
     });
     mailer.sendMail({
       from: process.env.USER,
@@ -25,11 +25,11 @@ exports.signup = (req, res) => {
       subject: "Activate your account",
       html: `
       <h2>Hello ${req.body.name},</h2>
-      <p style='font-size:1rem;'>Heartiest welcome from <strong>Astrowing MNNIT</strong>.
+      <p style='font-size:1rem;'>Heartiest welcome from <strong>Aeroclub MNNIT</strong>.
       We hope you have an exciting and adrenaline-packed experience throughout your stay with us.
       You're just a step away from completion.</p>
       
-      <h4><a href="${process.env.CLIENT_URL}/user/confirm/${jwtToken}">Click Here</a> to confirm your registration.</h4>
+      <h4><a href="${process.env.BASE_URL}/user/confirm/${jwtToken}">Click Here</a> to confirm your registration.</h4>
       
       <br/>
       <p class='float-left'>
@@ -37,9 +37,7 @@ exports.signup = (req, res) => {
       </p>
       <p class='float-left'>
       If you think it's not you, just ignore this email.
-      </p>
-      
-     `,
+      </p>`,
     });
     res
       .status(400)
@@ -127,28 +125,19 @@ exports.forgetPassword = (req, res) => {
   User.findOne({ email: req.body.email }).then((user) => {
     if (!user)
       return res.status(422).json({ error: "Email is not registered !" });
-
-    const jwtToken = jwt.sign({ _id: user._id }, process.env.JWT_SECRET, {
+    const jwtToken = jwt.sign({ _id: user._id }, `${process.env.JWT_SECRET}${process.env.FORGET_SECRET}`, {
       expiresIn: "1h",
     });
-
     user.reset_pass_session = true;
     mailer.sendMail(
       {
         from: process.env.USER,
         to: req.body.email,
-        subject: "Password-Reset@astrowingmnnit",
+        subject: "Password-Reset@aeroclubmnnit",
         html: `<h2>You requested for password reset</h2>
-      <p>Click on this <a href="${process.env.CLIENT_URL}/user/resetpassword/${jwtToken}">link</a> to reset password<p>`,
-      },
-      (err, info) => {
-        if (err) {
-          console.log(err);
-        } else {
-          res.json({ message: "Checkout your registered email !" });
-        }
-      }
-    );
+            <p>Click on this <a href="${process.env.BASE_URL}/user/resetpassword/${jwtToken}">link</a> to reset password<p>`,
+      })
+    res.json({ message: "Checkout your registered email !" });
     user.save();
   });
 };
@@ -158,9 +147,10 @@ exports.resetPassword = (req, res) => {
   const { authorization } = req.headers;
   const token = authorization.replace("Bearer ", "");
 
-  jwt.verify(token, process.env.JWT_SECRET, (err, payload) => {
-    if (err) return res.status(422).json({ error: err });
+  jwt.verify(token, `${process.env.JWT_SECRET}${process.env.FORGET_SECRET}`, (err, payload) => {
+    if (err) res.status(401).json({ error: 'Unauthorized' });
     const { _id } = payload;
+
     User.findById(_id).exec((err, user) => {
       user.reset_pass_session = false;
       if (!user) return res.json({ error: "User does not exists !" });
@@ -171,7 +161,7 @@ exports.resetPassword = (req, res) => {
           return res.json({ message: "Password updated successfully !" });
         })
         .catch((err) => {
-          res.status(422).json({ error: err });
+          res.status(401).json({ error: 'Unauthorized' });
         });
     });
   });
@@ -219,9 +209,9 @@ exports.resetVerify = (req, res, next) => {
   const { authorization } = req.headers;
   const token = authorization.replace("Bearer ", "");
 
-  jwt.verify(token, process.env.JWT_SECRET, (err, payload) => {
+  jwt.verify(token, `${process.env.JWT_SECRET}${process.env.FORGET_SECRET}`, (err, payload) => {
     if (err) {
-      return res.status(422).json({ error: err });
+      res.status(401).json({ error: 'Unauthorized' });
     }
     const { _id } = payload;
 

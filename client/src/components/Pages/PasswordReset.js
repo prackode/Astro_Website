@@ -23,7 +23,10 @@ function PasswordReset() {
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.error) history.push("/404");
+        if (data.error) {
+          toast.warn(data.error)
+          history.push("/404");
+        }
       });
   }, []);
 

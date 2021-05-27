@@ -1,0 +1,93 @@
+.ql-picker.ql-font .ql-picker-item {
+    font-size: 0;
+}
+.ql-picker.ql-font .ql-picker-item:before {
+    content: attr(data-value) !important;
+    font-size: 14px;
+}
+.ql-picker.ql-font .ql-active:before {
+    content: attr(data-value) !important;
+    font-size: 14px;
+}
+
+  
+  .ql-picker.ql-font .ql-picker-label[data-value="serif"]::before, 
+  .ql-picker.ql-font .ql-picker-item[data-value="serif"]::before
+  {
+      font-family: serif !important;
+      content: "serif" ;
+  }
+  
+  .ql-picker.ql-font .ql-picker-label[data-value="Sans-serif"]::before, 
+  .ql-picker.ql-font .ql-picker-item[data-value="Sans-serif"]::before
+  {
+      font-family: sans-serif !important;
+      content: "sans-serif" ;
+  }
+  
+  .ql-picker.ql-font .ql-picker-label[data-value="Roboto"]::before, 
+  .ql-picker.ql-font .ql-picker-item[data-value="Roboto"]::before
+  {
+      font-family: "Roboto" !important;
+      content: "Roboto" ;
+    }
+    .ql-picker.ql-font .ql-picker-label[data-value="Ubuntu"]::before, 
+    .ql-picker.ql-font .ql-picker-item[data-value="Ubuntu"]::before
+    {
+        font-family: "Ubuntu" !important;
+        content: "Ubuntu";
+      }
+    .ql-picker.ql-font .ql-picker-label[data-value="cursive"]::before, 
+    .ql-picker.ql-font .ql-picker-item[data-value="cursive"]::before
+    {
+        font-family: cursive !important;
+        content: "cursive" ;
+    }
+    
+    
+    .ql-picker.ql-font .ql-picker-label[data-value="Audiowide"]::before, 
+    .ql-picker.ql-font .ql-picker-item[data-value="Audiowide"]::before
+  {
+      font-family: "Audiowide" !important;
+      content: "Audiowide" ;
+  }
+  .ql-picker.ql-font .ql-picker-label[data-value="fantasy"]::before, 
+  .ql-picker.ql-font .ql-picker-item[data-value="fantasy"]::before
+  {
+      font-family: fantasy !important;
+      content: "fantasy";
+  }
+  
+  .ql-picker.ql-font .ql-picker-label[data-value="monospace"]::before, 
+  .ql-picker.ql-font .ql-picker-item[data-value="monospace"]::before
+  {
+      font-family: monospace !important;
+      content: "monospace";
+  }
+  
+  
+  /* Set content font-families */
+  .ql-font-Serif {
+      font-family: serif;
+  }
+  .ql-font-Sans-serif {
+      font-family: sans-serif;
+  }
+  .ql-font-Roboto {
+      font-family: "Roboto";
+    }
+    .ql-font-Ubuntu {
+        font-family: "Ubuntu";
+      }
+    .ql-font-cursive {
+        font-family: cursive;
+    }
+  .ql-font-Audiowide {
+    font-family:"Audiowide";
+  }
+  .ql-font-fantasy {
+    font-family:fantasy;
+  }
+  .ql-font-monospace {
+    font-family:monospace;
+  }
