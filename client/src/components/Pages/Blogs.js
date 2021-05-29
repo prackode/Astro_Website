@@ -6,25 +6,15 @@ import "../../css/featured-proj.css";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
 import { animateScroll } from "react-scroll";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux'
 
 function Blogs() {
+
   const [blogs, SetBlogs] = useState([]);
   const [fetching, setFetching] = useState(1)
-
-  useEffect(() => {
-    document.title = `Blogs | ${REACT_APP_BASE_TITLE}`;
-    animateScroll.scrollToTop()
-    fetch(`${REACT_APP_SERVER}/api/blogs/toUI`, {
-      method: "get",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        SetBlogs(data)
-        setFetching(0)
-      });
-  }, []);
-
-  const [page, SetPage] = useState(1);
+  const scrollId = useSelector(state => state.scrollId)
+  const page = useSelector(state => state.page)
+  const dispatch = useDispatch()
   const blogs_per_page = 9;
   const no_of_pages = Math.ceil(blogs.length / blogs_per_page);
   const year = {
@@ -33,7 +23,6 @@ function Blogs() {
     3: "3rd year",
     4: "Final year",
   };
-
   const branch = {
     '0': 'Biotechnology',
     '1': 'Civil Engg.',
@@ -46,6 +35,30 @@ function Blogs() {
     '9': 'Chemical Engg.',
     'x': 'NA'
   }
+
+  useEffect(() => {
+    document.title = `Blogs | ${REACT_APP_BASE_TITLE}`;
+    if (!scrollId) animateScroll.scrollToTop()
+    fetch(`${REACT_APP_SERVER}/api/blogs/toUI`, {
+      method: "get",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        SetBlogs(data)
+        setFetching(0)
+      });
+  }, []);
+
+
+  useEffect(() => {
+    if (document.getElementById(scrollId)) {
+      document.getElementById(scrollId).scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+        inline: 'center'
+      });
+    }
+  }, [document.getElementById(scrollId)])
 
   return (
     <>
@@ -68,7 +81,7 @@ function Blogs() {
               .slice((page - 1) * blogs_per_page, page * blogs_per_page)
               .map(blog => (
                 <li className="cards_item" data-aos="fade-up" data-aos="flip-left" data-aos-easing="linear" key={blog._id}
-                  data-aos-duration="1500">
+                  data-aos-duration="1500" id={blog._id}>
                   <div className="card cardproj">
                     <div className="card_image">
                       <img className="evfeatured" src={blog.pic || 'https://lh3.googleusercontent.com/L99OiiIfJs9-r2gT3wIS_yce11s6kcHQ_gAiKkjbxnpjesu6ciqRP9ZTt5Tq8CEyxbY_PHCvSuLFx3UF-dG02PbhP3QaFAi6aL1aAGDTCNzXVGP-rysXXV5Es2xLn8AIwUHYhGx6hw=w2400'} style={{ width: '100%', minHeight: '16rem' }} />
@@ -107,6 +120,7 @@ function Blogs() {
                         variant="primary"
                         to={`/blogs/${blog._id}`}
                         style={{ marginTop: 10 }}
+                        onClick={() => dispatch({ type: "SET_ID", payload: blog._id })}
                       >
                         Read More
                   </Button>
@@ -123,7 +137,7 @@ function Blogs() {
                 variant="primary"
                 onClick={() => {
                   animateScroll.scrollToTop()
-                  SetPage((page) => page - 1);
+                  dispatch({ type: "SET_PAGE", payload: page - 1 })
                 }}
               >
                 <i className="fa fa-angle-double-left"></i> Previous
@@ -135,7 +149,7 @@ function Blogs() {
                 className="mx-1"
                 onClick={() => {
                   animateScroll.scrollToTop()
-                  SetPage((page) => page + 1);
+                  dispatch({ type: "SET_PAGE", payload: page + 1 })
                 }}
               >
                 Next <i className="fa fa-angle-double-right"></i>

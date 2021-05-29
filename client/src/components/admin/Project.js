@@ -27,12 +27,10 @@ import {
   ReferenceField,
   ChipField,
   SingleFieldList,
-  UrlField,
 } from "react-admin";
 
 import TextArrayField from "./TextArrayField";
 import RichTextQuill from "./RichTextQuill";
-import { REACT_APP_SERVER } from "../../grobalVars";
 import ShareLink from "./ShareLink";
 import ShareField from "./ShareField";
 
@@ -64,6 +62,7 @@ export const ProjectCreate = (props) => {
         <RichTextQuill source="overview" label="Overview" />
         <RichTextQuill source="description" label="Description" />
         <TextInput source="pic" label="Image Link" />
+        <TextInput source="ytID" label="Youtube Link" />
         <SelectInput
           source="status"
           choices={[
@@ -90,7 +89,7 @@ export const ProjectCreate = (props) => {
           label="Issued On"
           defaultValue={Date.now()}
         />
-        <TextInput source="ytID" label="Youtube Embed ID" />
+        <TextInput source="ytID" label="Youtube Link" />
         <BooleanInput source="featured" label="Featured" />
         <BooleanInput source="home" />
         <BooleanInput source="approved" />
@@ -108,6 +107,7 @@ export const ProjectShow = (props) => {
         <RichTextField source="overview" label="Overview" />
         <RichTextField source="description" label="Description" />
         <ImageField source="pic" label="Image" />
+        <TextField source="ytID" label="Youtube Link" />
         <TextField source="status" label="Status" />
         <ShareField source="shareId" />
         <ArrayField source="members">
@@ -151,6 +151,7 @@ export const ProjectEdit = (props) => {
         <RichTextQuill source="overview" label="Overview" />
         <RichTextQuill source="description" label="Description" />
         <TextInput source="pic" label="Image Link" />
+        <TextInput source="ytID" label="Youtube Link" />
         <ArrayInput source="members">
           <SimpleFormIterator>
             <ReferenceInput label="User" source="user._id" reference="users">
@@ -166,7 +167,6 @@ export const ProjectEdit = (props) => {
           </SimpleFormIterator>
         </ArrayInput>
         <DateInput source="issuedon" label="Issued On" validate={required()} />
-        <TextInput source="ytID" label="Youtube Embed ID" />
         <BooleanInput source="featured" label="Featured" />
         <BooleanInput source="home" />
         <BooleanInput source="approved" />

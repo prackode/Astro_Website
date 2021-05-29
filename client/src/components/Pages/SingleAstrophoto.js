@@ -60,9 +60,9 @@ function SingleAstrophoto() {
                     <div>
                         <h3 className='my-3 subheaders'>Clicked By: </h3>
                         <ul className="px-5">
-                            {photo?.members?.map((member) =>
+                            {photo?.members?.map((member, i) =>
                                 member.accepted ? (
-                                    <li>
+                                    <li key={i}>
                                         {member.user.linkedin_url ? (
                                             <a href={member.user.linkedin_url}>{member.user.name}</a>
                                         ) : (

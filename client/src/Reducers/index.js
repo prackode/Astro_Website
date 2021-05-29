@@ -103,10 +103,34 @@ const userReducer = (user = null, action) => {
   }
 };
 
+const pageReducer = (page = 1, action) => {
+  switch (action.type) {
+    case 'SET_PAGE':
+      return action.payload
+    case 'CLEAR_PAGE':
+      return 1
+    default:
+      return page
+  }
+}
+
+const scrollIdReducer = (scrollId = null, action) => {
+  switch (action.type) {
+    case 'SET_ID':
+      return action.payload
+    case 'CLEAR_ID':
+      return null
+    default:
+      return scrollId
+  }
+}
+
 const rootReducer = (history) =>
   combineReducers({
     router: connectRouter(history),
     user: userReducer,
+    page: pageReducer,
+    scrollId: scrollIdReducer,
     admin: adminReducer,
   });
 

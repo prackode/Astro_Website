@@ -7,18 +7,22 @@ import { animateScroll } from 'react-scroll'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux'
 
 function AstrophotoGraphy() {
   const [photos, SetPhotos] = useState([]);
   const [filteredPhotos, setFilteredPhotos] = useState([]);
   const [no_of_pages, setNoOfPages] = useState(0);
-  const [page, SetPage] = useState(1);
   const [currTag, setCurrTag] = useState('')
   const [fetching, setFetching] = useState(1)
+  const photos_per_page = 9;
+  const scrollId = useSelector(state => state.scrollId)
+  const page = useSelector(state => state.page)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     document.title = `Astrophotography | ${REACT_APP_BASE_TITLE}`;
-    animateScroll.scrollToTop()
+    if (!scrollId) animateScroll.scrollToTop()
     fetch(`${REACT_APP_SERVER}/api/astrophotographies/approved`, {
       method: "get",
     })
@@ -32,7 +36,16 @@ function AstrophotoGraphy() {
       });
   }, []);
 
-  const photos_per_page = 9;
+  useEffect(() => {
+    if (document.getElementById(scrollId)) {
+      setTimeout(() => {
+        document.getElementById(scrollId).scrollIntoView({
+          behavior: 'smooth'
+        });
+      }, 1000)
+    }
+  }, [document.getElementById(scrollId)])
+
 
   const handleTagFilter = (tag) => {
     setCurrTag(tag.name)
@@ -40,7 +53,7 @@ function AstrophotoGraphy() {
     setFilteredPhotos(
       photos.filter((item) => item.tags.some((itag) => itag._id === tag._id))
     );
-    SetPage(1)
+    dispatch({ type: "CLEAR_PAGE" })
     setNoOfPages(Math.ceil(photos.filter((item) => item.tags.some((itag) => itag._id === tag._id)).length / photos_per_page));
   };
 
@@ -74,6 +87,7 @@ function AstrophotoGraphy() {
                 <li
                   className="cards_item"
                   key={photo.id}
+                  id={photo.id}
                 >
                   <div className="card hovpic astroproj">
                     {/* <p className="content_img"> */}
@@ -86,7 +100,8 @@ function AstrophotoGraphy() {
                       className="card_text forphone forphone3 img-text"
                       style={{ width: "100%", height: "3rem" }}
                     >
-                      <Link to={`/astrophotography/${photo.id}`}><p style={{ paddingLeft: "2px" }} className="clickable">Click to Know More </p></Link>
+                      <Link to={`/astrophotography/${photo.id}`}><p style={{ paddingLeft: "2px" }} className="clickable"
+                        onClick={() => dispatch({ type: "SET_ID", payload: photo.id })}>Click to Know More </p></Link>
                       {/* <a href= ></a> */}
                       {photo.tags.map((tag, i) => (
                         <h5
@@ -112,7 +127,7 @@ function AstrophotoGraphy() {
                 variant="primary"
                 onClick={() => {
                   animateScroll.scrollToTop()
-                  SetPage((page) => page - 1);
+                  dispatch({ type: "SET_PAGE", payload: page - 1 })
                 }}
               >
                 <i className="fa fa-angle-double-left"></i> Previous
@@ -124,7 +139,7 @@ function AstrophotoGraphy() {
                 className="mx-1"
                 onClick={() => {
                   animateScroll.scrollToTop()
-                  SetPage((page) => page + 1);
+                  dispatch({ type: "SET_PAGE", payload: page + 1 })
                 }}
               >
                 Next <i className="fa fa-angle-double-right"></i>
@@ -135,7 +150,8 @@ function AstrophotoGraphy() {
             photos.length !== filteredPhotos.length &&
             <Button className='float-left ml-3 my-3' onClick={e => {
               setFilteredPhotos(photos)
-              SetPage(1)
+              dispatch({ type: "CLEAR_PAGE" })
+              dispatch({ type: "CLEAR_ID" })
               setNoOfPages(Math.ceil(photos.length / photos_per_page))
               animateScroll.scrollToTop()
               setCurrTag('')
