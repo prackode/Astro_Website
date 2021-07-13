@@ -1,5 +1,6 @@
 import React from "react";
 import { Accordion, Card, Button, Modal, Form } from "react-bootstrap";
+import { getId } from "../../../../utilities";
 
 export default function ProjPreview({ project }) {
   return (
@@ -93,7 +94,9 @@ export default function ProjPreview({ project }) {
                     <iframe
                       width="889px"
                       height="500"
-                      src={project?.ytID}
+                      src={`https://www.youtube.com/embed/${getId(
+                        project?.ytID
+                      )}`}
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen

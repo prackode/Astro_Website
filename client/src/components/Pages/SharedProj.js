@@ -5,13 +5,14 @@ import "../../css/featured-proj.css";
 import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
 import $ from "jquery";
 import { animateScroll } from "react-scroll";
+import { getId } from "../../utilities.js";
 
 function SharedProj() {
   const { shareId } = useParams();
   const { projectId } = useParams();
   const [project, setProject] = useState(undefined);
   const history = useHistory();
-  const [fetching, setFetching] = useState(1)
+  const [fetching, setFetching] = useState(1);
 
   useEffect(() => {
     $(document).ready(function () {
@@ -25,7 +26,7 @@ function SharedProj() {
       });
     });
 
-    animateScroll.scrollToTop()
+    animateScroll.scrollToTop();
 
     fetch(`${REACT_APP_SERVER}/api/share/project/${shareId}`, {
       method: "get",
@@ -41,7 +42,7 @@ function SharedProj() {
       .then((data) => {
         document.title = `${data.title} | ${REACT_APP_BASE_TITLE}`;
         setProject(data);
-        setFetching(0)
+        setFetching(0);
       });
   }, []);
 
@@ -119,7 +120,7 @@ function SharedProj() {
               <iframe
                 width="889px"
                 height="500"
-                src={`https://www.youtube.com/embed/${project?.ytID}`}
+                src={`https://www.youtube.com/embed/${getId(project?.ytID)}`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
