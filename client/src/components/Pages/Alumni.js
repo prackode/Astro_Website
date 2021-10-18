@@ -26,7 +26,7 @@ export default function Alumni() {
       name: "Bhuvan Jhamb",
       yearOfGraduation: 2021,
       yourLinkedinId: "https://www.linkedin.com/in/bhuvanjhamb/",
-      presentOrganisation: "Graduated Mechanical Engineer, MNNIT Allahabad",
+      presentOrganisation: "Intel Labs",
       areaOfInterests: "Theoretical Physics, Computational Physics, Observational Astronomy.",
       aPhotoForWebsiteOfYourself: f6
     },
@@ -35,7 +35,7 @@ export default function Alumni() {
       name: "Ardhya Kumar",
       yearOfGraduation: 2021,
       yourLinkedinId: "https://www.linkedin.com/in/ardhya/",
-      presentOrganisation: "Graduated CSE Engineer, MNNIT Allahabad",
+      presentOrganisation: "ServiceNow",
       areaOfInterests: "Observational Astronomy, Astrophysics",
       aPhotoForWebsiteOfYourself: f7
     },
@@ -44,7 +44,7 @@ export default function Alumni() {
       name: "Apoorva Dinesh Singh ",
       yearOfGraduation: 2021,
       yourLinkedinId: "https://www.linkedin.com/in/apoorva-singh-0111",
-      presentOrganisation: "Graduated CSE Engineer, MNNIT Allahabad",
+      presentOrganisation: "Arista Networks",
       areaOfInterests: "ML, CV",
       aPhotoForWebsiteOfYourself: f8
     },
