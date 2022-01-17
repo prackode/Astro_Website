@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Loading from "../../Animations/Loading";
 import "../../css/Alumni.css";
-
 import f1 from "../../images/alumni/SHREY Dixit.jpg";
 import f2 from "../../images/alumni/Soumya Khanna.jpeg";
 import f3 from "../../images/alumni/Aman Sharma(1).jpg";
@@ -19,6 +18,7 @@ export default function Alumni() {
     document.title = `Alumni | ${REACT_APP_BASE_TITLE}`;
     animateScroll.scrollToTop()
   }, [])
+
 
   const members = [
     {
@@ -187,13 +187,13 @@ export default function Alumni() {
                   data-toggle="collapse"
                   data-parent="#accordion"
                   href="#collapse2020"
-                  aria-expanded="true" aria-controls='collapse2020'
+                  aria-expanded="false" aria-controls='collapse2020'
                 >
                   Batch 2020
                 </a>
               </h4>
             </div>
-            <div id="collapse2020" className="panel-collapse collapse show">
+            <div id="collapse2020" className="panel-collapse collapse">
               <div className="panel-body">
                 <div className="fluid-container">
                   <div className="d-flex flex-wrap m-auto justify-content-center align-items-center">
