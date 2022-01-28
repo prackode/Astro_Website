@@ -1,6 +1,6 @@
 const Component = require("../models/component");
 const { drivePicParser } = require("./fileUpload");
-
+//Logic for components
 exports.getComponentById = (req, res, next, id) => {
   Component.findById(id).exec((err, comp) => {
     if (err) {
@@ -12,7 +12,7 @@ exports.getComponentById = (req, res, next, id) => {
     next();
   });
 };
-
+//Fetch all components
 exports.getAllComponents = (req, res) => {
   res.setHeader("Content-Range", "component 0-10/20");
   res.setHeader("Access-Control-Expose-Headers", "Content-Range");
@@ -27,7 +27,7 @@ exports.getAllComponents = (req, res) => {
     res.json(arr);
   });
 };
-
+//fetch components with filter
 exports.getAllComponentsFilter = (req, res) => {
   res.setHeader("Content-Range", "component 0-10/20");
   res.setHeader("Access-Control-Expose-Headers", "Content-Range");
@@ -45,12 +45,12 @@ exports.getAllComponentsFilter = (req, res) => {
     res.json(comps);
   });
 };
-
+//Add a component
 exports.addComponent = (req, res) => {
   const pic = req.body.pic;
   if (pic) {
     try {
-      req.body.pic = drivePicParser(req.body.pic);
+      req.body.pic = drivePicParser(req.body.pic);//Parsing googledrive link
     } catch (error) {
       return res.status(400).json({
         err: error.message,
@@ -74,7 +74,7 @@ exports.addComponent = (req, res) => {
     });
   });
 };
-
+//update a component
 exports.updateComponent = (req, res) => {
   const component = req.component;
   component.available = req.body.available;
@@ -97,7 +97,7 @@ exports.updateComponent = (req, res) => {
     res.json(updatedComponent);
   });
 };
-
+//Delete a component
 exports.deleteComponent = (req, res) => {
   const component = req.component;
 
