@@ -13,6 +13,8 @@
 
 4.  Similarly, Open 'server' folder (NodeJS part) in cmd, and run
     > npm install
+
+
     > node app.js or nodemon app.js (if you have installed it with npm i nodemon -g command)
 
 # Features :-
