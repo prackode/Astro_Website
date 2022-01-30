@@ -7,6 +7,8 @@
 3.  Open 'client' folder (ReactJS part) in cmd, and install all dependent packages
 
     > npm  install
+
+
     > npm start
 
 4.  Similarly, Open 'server' folder (NodeJS part) in cmd, and run
