@@ -6,6 +6,7 @@ const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const { drivePicParser } = require("../middleware/fileUpload");
 const uuid = require("uuid");
+
 // fetching all projects
 router.get("/projects", isSignedIn, isAdmin, (req, res) => {
   res.setHeader("Content-Range", "projects 0-10/20");

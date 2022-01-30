@@ -12,6 +12,8 @@ const tagRouter = express.Router();
 const { errHandler } = require("../middleware/errValidator");
 tagRouter.get("/tags", getAllTags);
 tagRouter.get("/tags/:id", getOneTag);
+
+// Creating tag
 tagRouter.post(
   "/tags",
   [body(["name"]).notEmpty().withMessage("No fields should be empty!")],
@@ -20,6 +22,8 @@ tagRouter.post(
   isAdmin,
   createTag
 );
+
+// Updating tag
 tagRouter.put(
   "/tags/:id",
   [body(["name"]).notEmpty().withMessage("No fields should be empty!")],
@@ -28,6 +32,8 @@ tagRouter.put(
   isAdmin,
   updateTag
 );
+
+// Deleting tag
 tagRouter.delete("/tags/:id", isSignedIn, isAdmin, deleteTag);
 
 module.exports = tagRouter;

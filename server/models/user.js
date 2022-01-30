@@ -2,6 +2,7 @@ var mongoose = require("mongoose");
 const crypto = require("crypto");
 const uuidv1 = require("uuid/v1");
 
+// Creating schema for user object (in MongoDB Collection)
 var userSchema = new mongoose.Schema(
   {
     name: {

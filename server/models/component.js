@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 
+// Creating schema for component object (in MongoDB Collection)
 var componentSchema = new mongoose.Schema(
   {
     name: {

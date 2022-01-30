@@ -1,9 +1,15 @@
 const express = require("express");
 const router = express.Router();
 const Achievement = require("../models/achievement");
-const { isSignedIn, isAdmin } = require("../middleware/auth");
 
-// fetching all achievement
+const {
+  isSignedIn,
+  isAdmin
+} = require("../middleware/auth");
+
+//Implementing the CRUD operations below
+
+// Fetching all achievement
 router.get("/achievement", (req, res) => {
   res.setHeader("Content-Range", "achievement 0-10/20");
   res.setHeader("Access-Control-Expose-Headers", "Content-Range");
@@ -18,24 +24,33 @@ router.get("/achievement", (req, res) => {
     .catch((e) => console.log(e));
 });
 
-//group achievements by their year
+// Group achievements by their year
 router.get("/achievement/year", (req, res) => {
   res.setHeader("Access-Control-Expose-Headers", "Content-Range");
 
   Achievement.aggregate(
-    [
-      {
-        $group: { _id: "$year", achievements: { $push: "$$ROOT" }, year: { $first: "$year" } },
+    [{
+        $group: {
+          _id: "$year",
+          achievements: {
+            $push: "$$ROOT"
+          },
+          year: {
+            $first: "$year"
+          }
+        },
       },
       {
-        $sort: { "year": -1 }
+        $sort: {
+          "year": -1
+        }
       },
     ],
     (e, achievements) => {
       if (e) {
         console.log(e);
         res.status(400).json({
-          msg: "Internal server error",
+          msg: "Internal Server Error.",
         });
       }
       res.json(achievements);
@@ -43,16 +58,18 @@ router.get("/achievement/year", (req, res) => {
   );
 });
 
-// fetching a achievement with id
+// Fetching an achievement with id
 router.get("/achievement/:id", (req, res) => {
-  Achievement.findOne({ _id: req.params.id })
+  Achievement.findOne({
+      _id: req.params.id
+    })
     .then((achievement) => {
       res.json(achievement.transform());
     })
     .catch((e) => console.log(e));
 });
 
-// creating a achievement
+// Creating a new achievement
 router.post("/achievement", isSignedIn, isAdmin, (req, res) => {
   const achievement = new Achievement(req.body);
   achievement
@@ -61,20 +78,21 @@ router.post("/achievement", isSignedIn, isAdmin, (req, res) => {
       res.json(achievement.transform());
     })
     .catch((e) => res.status(400).json({
-      error: "cannot be created !",
+      error: "Cannot be created !",
     }));
 });
 
-// updating a achievement
+// Updating an achievement
 router.put("/achievement/:id", isSignedIn, isAdmin, (req, res) => {
-  Achievement.findOneAndReplace(
-    { _id: req.params.id },
+  Achievement.findOneAndReplace({
+      _id: req.params.id
+    },
     req.body,
     null,
     (e, achievement) => {
       if (e) {
         return res.status(400).json({
-          error: "achievement cannot be updated !",
+          error: "Achievement cannot be updated !",
         });
       }
       return res.json(achievement.transform());
@@ -82,11 +100,13 @@ router.put("/achievement/:id", isSignedIn, isAdmin, (req, res) => {
   );
 });
 
-// deleting a achievement
+// Deleting an achievement
 router.delete("/achievement/:id", isSignedIn, isAdmin, (req, res) => {
   Achievement.findByIdAndDelete(req.params.id, (err, achievement) => {
     if (err) return res.status(500).send(err);
-    return res.json({ achievement });
+    return res.json({
+      achievement
+    });
   });
 });
 

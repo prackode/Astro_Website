@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+// Creating schema for tag object (in MongoDB Collection)
 const tagSchema = new Schema(
   {
     name: {

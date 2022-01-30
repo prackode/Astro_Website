@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema.Types;
 
+// Creating schema for blog object (in MongoDB Collection)
 const blogSchema = new mongoose.Schema(
   {
     title: {

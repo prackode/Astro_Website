@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// Creating schema for member object (in MongoDB Collection)
 const memberSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -16,6 +17,8 @@ const memberSchema = new mongoose.Schema({
 });
 
 const Member = mongoose.model("Member", memberSchema);
+
+// Creating schema for project object (in MongoDB Collection)
 const projectSchema = new mongoose.Schema(
   {
     title: {
@@ -98,4 +101,5 @@ projectSchema.pre("remove", function (next) {
 });
 
 const Project = mongoose.model("Project", projectSchema);
+
 module.exports = { Member, Project };

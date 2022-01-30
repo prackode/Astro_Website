@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Schema;
 
-const ComponentsIssueSchema = new mongoose.Schema(
+// Creating schema for issue object (in MongoDB Collection)
+const componentsIssueSchema = new mongoose.Schema(
     {
         component: {
           type: ObjectId,
@@ -30,13 +31,11 @@ const ComponentsIssueSchema = new mongoose.Schema(
     {timestamps:true}
 );
 
-ComponentsIssueSchema.method('transform', function () {
+componentsIssueSchema.method('transform', function () {
   let obj = this.toObject()
   obj.id = obj._id;
   delete obj._id;
   return obj;
 });
 
-const ComponentsIssue = mongoose.model("ComponentsIssue", ComponentsIssueSchema);
-
-module.exports = ComponentsIssue ;
+module.exports = mongoose.model("ComponentsIssue", componentsIssueSchema);
