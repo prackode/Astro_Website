@@ -11,7 +11,7 @@ import DashBlogs from "./Blogs/DashBlogs";
 import ComponentsList from "./ComponentsList";
 import { useDispatch } from "react-redux";
 import DashNews from "./News/DashNews";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../grobalVars"
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../../globalVars"
 
 function Dashboard() {
   const history = useHistory();

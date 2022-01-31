@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import ProjForm from "./ProjForm";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { REACT_APP_SERVER } from "../../../../grobalVars";
+import { REACT_APP_SERVER } from "../../../../globalVars";
 import ProjEdit from "./ProjEdit";
 import ProjPreview from "./ProjPreview";
 

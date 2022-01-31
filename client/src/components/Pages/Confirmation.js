@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loading from "../../Animations/Loading";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars"
 
 export default function Confirmation() {
   const { token } = useParams();

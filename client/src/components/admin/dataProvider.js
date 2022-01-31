@@ -1,6 +1,6 @@
 import simpleRestProvider from "ra-data-simple-rest";
 import { fetchUtils } from "react-admin";
-import { REACT_APP_SERVER } from "../../grobalVars";
+import { REACT_APP_SERVER } from "../../globalVars";
 
 const httpClient = (url, options = {}) => {
     if (!options.headers) {

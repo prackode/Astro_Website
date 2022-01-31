@@ -1,7 +1,11 @@
-import "./css/App.css";
 import React, { useEffect } from "react";
 import loadable from '@loadable/component'
 import { Redirect, Route, Switch } from "react-router-dom";
+import "react-toastify/dist/ReactToastify.css";
+import { ToastContainer } from "react-toastify";
+
+// components and styles import
+import "./css/App.css";
 import AdminComp from "./components/admin/AdminComp.js";
 import Alumni from "./components/Pages/Alumni.js";
 import Login from "./components/Pages/Login";
@@ -10,21 +14,19 @@ import SingleProject from "./components/Pages/SingleProject";
 import Blogs from "./components/Pages/Blogs";
 import SingleBlog from "./components/Pages/SingleBlog";
 import Signup from "./components/Pages/Signup";
-import "react-toastify/dist/ReactToastify.css";
-import { ToastContainer } from "react-toastify";
 import ForgetPassword from "./components/Pages/ForgetPassword";
 import PasswordReset from "./components/Pages/PasswordReset.js";
 import Dashboard from "./components/Pages/Dashboard";
 import Confirmation from "./components/Pages/Confirmation.js";
 import NotFound from "./components/Pages/NotFound.js";
 import News from "./components/Pages/News.js";
-import Avishkar from "./components/Pages/Avishkar";
+import Avishkar from "./components/Pages/Avishkar/Avishkar";
 import Prosang from "./components/Pages/Prosang";
 import Workshop from "./components/Pages/Workshop";
 import Faculty from "./components/Pages/Faculty.js";
 import Coordinators from "./components/Pages/Coordinators.js";
 import Nontech from "./components/Pages/Nontech.js";
-import Sponsors from "./components/Pages/Sponsor";
+import Sponsors from "./components/Pages/Sponsor/Sponsor";
 import Achievements from "./components/Pages/Achievements.js";
 import Collaboration from "./components/Pages/Collaboration.js";
 import Spinoff from "./components/Pages/Spinoff.js";
@@ -48,6 +50,7 @@ const Featuredproject = loadable(() => import("./components/utils/featured-proj"
 const ResearchThemes = loadable(() => import("./components/utils/ResearchThemes.js"));
 
 function App() {
+  // main screen loader
   useEffect(() => {
     const { hash } = window.location;
     if (hash !== "") {

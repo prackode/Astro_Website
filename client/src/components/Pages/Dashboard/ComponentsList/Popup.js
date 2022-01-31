@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Modal, Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { REACT_APP_SERVER } from "../../../../grobalVars"
+import { REACT_APP_SERVER } from "../../../../globalVars"
 
 export default function Popup(props) {
   const [num, setnum] = useState(0);

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { toast } from "react-toastify";
 import "../../../../css/CreateBlog.css";
 import "../../../../css/SingleBlog.css";
-import { REACT_APP_SERVER } from "../../../../grobalVars"
+import { REACT_APP_SERVER } from "../../../../globalVars"
 import { Button, Container, Jumbotron, OverlayTrigger, Tab, Tabs, Tooltip } from "react-bootstrap";
 import DashQuill from "../DashQuill";
 import { v4 } from 'uuid'

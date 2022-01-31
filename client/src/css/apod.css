@@ -1,147 +1,153 @@
-.apod-container{
+.apod-container {
     padding: 0;
     border: 2px solid;
     background-color: white;
 }
 
-.information{
+.information {
     flex: 1;
 }
-.hdimage img{
-    height: 35rem;
-    width: 35rem;
-}
-.hdimage iframe{
+
+.hdimage img {
     height: 35rem;
     width: 35rem;
 }
 
-.scroller2
-{
+.hdimage iframe {
+    height: 35rem;
+    width: 35rem;
+}
+
+.scroller2 {
     text-align: justify;
-	margin-left: 15px;
-	float: left;
-	height: auto;
-	width: 25rem;
-	background: #F5F5F5;
-	overflow-y: auto;
-	margin-bottom: 25px;
+    margin-left: 15px;
+    float: left;
+    height: auto;
+    width: 25rem;
+    background: #F5F5F5;
+    overflow-y: auto;
+    margin-bottom: 25px;
 }
 
 .expl {
     padding: 15px;
 }
 
-.force-overflow
-{
-	min-height: 100px;
+.force-overflow {
+    min-height: 100px;
 }
 
-.mozStyle
-{
-  
-	overflow-y: auto;
-	/* margin-bottom: 25px; */
-  scrollbar-width: thin;
-  scrollbar-color: rgb(30, 81, 116) transparent;
-  
-  /* scrollbar-darkshadow-color: teal; */
+.mozStyle {
+
+    overflow-y: auto;
+    /* margin-bottom: 25px; */
+    scrollbar-width: thin;
+    scrollbar-color: rgb(30, 81, 116) transparent;
+
+    /* scrollbar-darkshadow-color: teal; */
 }
 
-#style-3::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
+#style-3::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
 }
 
-#style-3::-webkit-scrollbar
-{
-	width: 8px;
-	background-color: #F5F5F5;
+#style-3::-webkit-scrollbar {
+    width: 8px;
+    background-color: #F5F5F5;
 }
 
-#style-3::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: rgb(30, 81, 116);
+#style-3::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: rgb(30, 81, 116);
 }
 
 
-.explanation{
+.explanation {
     text-align: justify;
     max-height: 22rem;
     overflow-y: auto;
 }
 
-@media only screen and ( max-width:990px){
-    .hdimage img{
+@media only screen and (max-width:990px) {
+    .hdimage img {
         height: 25rem;
         width: auto;
     }
-    .information h3{
+
+    .information h3 {
         font-size: medium;
     }
+
     .information p {
-        margin-top: 0 ;
-        font-size: small;
-        max-height: 18rem;
-    }
-}
-@media only screen and ( max-width:770px){
-    .information{
-        margin-top: 1.5rem !important;
-    }
-    .hdimage img{   
-        display: block;
-        margin:1rem auto;
-        /* margin-bottom: 2rem; */
-    }
-    .hdimage iframe{
-        width: 95%;
-        height: 22rem;
-        display: block;
-        margin:1rem auto;
-        margin-bottom: 2rem;
-    }
-    .information h3{
-        font-size: medium;
-    }
-    .information p {
-        margin-top: 0 ;
+        margin-top: 0;
         font-size: small;
         max-height: 18rem;
     }
 }
 
-@media only screen and ( max-width:450px){
-    .hdimage img{
+@media only screen and (max-width:770px) {
+    .information {
+        margin-top: 1.5rem !important;
+    }
+
+    .hdimage img {
+        display: block;
+        margin: 1rem auto;
+        /* margin-bottom: 2rem; */
+    }
+
+    .hdimage iframe {
+        width: 95%;
+        height: 22rem;
+        display: block;
+        margin: 1rem auto;
+        margin-bottom: 2rem;
+    }
+
+    .information h3 {
+        font-size: medium;
+    }
+
+    .information p {
+        margin-top: 0;
+        font-size: small;
+        max-height: 18rem;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .hdimage img {
         margin-bottom: 0;
     }
-    .hdimage iframe{
+
+    .hdimage iframe {
         height: 18rem;
         margin-bottom: 0.9rem;
     }
 }
 
-@media only screen and ( max-width:500px){
-    .hdimage iframe{
+@media only screen and (max-width:500px) {
+    .hdimage iframe {
         height: 20rem;
     }
 }
-@media only screen and ( max-width:400px){
-    .hdimage iframe{
+
+@media only screen and (max-width:400px) {
+    .hdimage iframe {
         height: 16rem;
     }
-    .information h3{
+
+    .information h3 {
         margin: 0 1.3rem;
     }
 }
 
 
-.backst{
-    font-weight:500;
+.backst {
+    font-weight: 500;
     background: url(https://media.giphy.com/media/3o7buijTqhjxjbEqjK/giphy.gif) center center;
     background-size: cover;
     color: #fff;

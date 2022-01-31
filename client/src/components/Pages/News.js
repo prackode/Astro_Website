@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Jumbotron } from "react-bootstrap";
 import Loading from "../../Animations/Loading";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars"
 import "../../css/news.css";
 import { animateScroll } from "react-scroll";
 

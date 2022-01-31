@@ -1,6 +1,6 @@
 import React from "react";
 import "../css/Landing.css";
-import { REACT_APP_BASE_TITLE } from "../grobalVars";
+import { REACT_APP_BASE_TITLE } from "../globalVars";
 import m from "../images/utils/astro_logo4.png";
 
 class Landing extends React.Component {

@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import "../../css/Login.css";
 import { toast } from "react-toastify";
 import m from "../../images/utils/astro_logo4.png";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars"
 import { OverlayTrigger, Tooltip } from "react-bootstrap";
 
 function Signup() {

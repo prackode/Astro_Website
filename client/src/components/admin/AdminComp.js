@@ -9,7 +9,7 @@ import {
   ComponentShow,
 } from "./Component";
 import { IssueEdit, IssueList } from "./Issues";
-import { REACT_APP_BASE_TITLE } from "../../grobalVars";
+import { REACT_APP_BASE_TITLE } from "../../globalVars";
 
 import {
   ProjectCreate,

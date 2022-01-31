@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
-import { REACT_APP_SERVER } from "../../grobalVars";
+import { REACT_APP_SERVER } from "../../globalVars";
 
 const ShareLink = ({ record, source }) => {
   const [shareId, setshareId] = useState(record.shareId);

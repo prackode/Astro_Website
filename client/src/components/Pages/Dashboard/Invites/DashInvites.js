@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Accordion, Card, Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { REACT_APP_SERVER } from "../../../../grobalVars";
+import { REACT_APP_SERVER } from "../../../../globalVars";
 
 export default function DashInvites() {
   const [invites, setInvites] = useState([]);

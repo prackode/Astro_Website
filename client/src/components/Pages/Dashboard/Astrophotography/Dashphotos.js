@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import PhotoForm from "./PhotoForm";
 import { useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { REACT_APP_SERVER } from "../../../../grobalVars";
+import { REACT_APP_SERVER } from "../../../../globalVars";
 import PhotoPreview from "./PhotoPreview";
 import PhotoEdit from "./PhotoEdit";
 

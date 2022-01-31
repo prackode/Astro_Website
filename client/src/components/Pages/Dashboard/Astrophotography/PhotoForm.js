@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import { useDispatch } from "react-redux";
-import { REACT_APP_SERVER } from "../../../../grobalVars";
+import { REACT_APP_SERVER } from "../../../../globalVars";
 import { CloseRounded } from "@material-ui/icons";
 import { toast } from "react-toastify";
 import { v4 } from "uuid";
