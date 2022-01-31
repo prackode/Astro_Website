@@ -2,6 +2,7 @@ const multer = require("multer");
 const path = require("path");
 const { v4 } = require("uuid");
 const DIR = "./public/images/";
+// storage configuration
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, DIR);
@@ -26,7 +27,7 @@ exports.upload = multer({
     }
   },
 });
-
+//Parsing the drive link provided for the image
 exports.drivePicParser = (inputUrl) => {
   const dUrl = new URL(inputUrl);
   if (dUrl.hostname === "drive.google.com") {

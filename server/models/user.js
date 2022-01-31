@@ -1,7 +1,7 @@
 var mongoose = require("mongoose");
 const crypto = require("crypto");
 const uuidv1 = require("uuid/v1");
-
+// Schema for user
 var userSchema = new mongoose.Schema(
   {
     name: {
@@ -74,7 +74,8 @@ var userSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
+/*define a virtual property "password"(which will not be persisted in MongoDb) to set 
+the user password and also get it*/
 userSchema
   .virtual("password")
   .set(function (password) {
@@ -87,10 +88,11 @@ userSchema
   });
 
 userSchema.methods = {
+  //Logic to verify password entered by user
   autheticate: function (plainpassword) {
     return this.securePassword(plainpassword) === this.encry_password;
   },
-
+// logic to encrypt password
   securePassword: function (plainpassword) {
     if (!plainpassword) return "";
     try {
@@ -103,7 +105,7 @@ userSchema.methods = {
     }
   },
 };
-
+//delete these properties when transform method is called
 userSchema.method("transform", function () {
   let obj = this.toObject();
   obj.id = obj._id;
@@ -115,8 +117,10 @@ userSchema.method("transform", function () {
   delete obj.reset_pass_session;
   return obj;
 });
-
+//Attach virtuals when toObject is called
 userSchema.set('toObject', { virtuals: true });
+/* Make Mongoose attach virtuals whenever calling `JSON.stringify()`,
+ including using `res.json()`*/
 userSchema.set('toJSON', { virtuals: true });
 
 module.exports = mongoose.model("User", userSchema);

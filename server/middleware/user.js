@@ -1,3 +1,5 @@
+//Logic related to user functionalities and component issuing
+
 const ComponentsIssue = require("../models/issue");
 const { Project } = require("../models/project");
 const User = require("../models/user");
@@ -17,7 +19,7 @@ exports.getAllUsers = (req, res) => {
     })
     .catch((e) => console.log(e));
 };
-
+// As an Admin, create a new user profile
 exports.createUserFromAdmin = (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -63,9 +65,10 @@ exports.deleteUser = (req, res) => {
     });
   });
 };
-
+//  issuing a component requested by user
 exports.requestComponent = (req, res) => {
   let component = req.component;
+  // check if there are sufficient components
   if (component.available < req.body.num) {
     return res.status(400).json({
       error: "Not enough available.",
@@ -188,7 +191,7 @@ exports.updateRequestStatus = (req, res) => {
     });
   }
 };
-
+// get an issue request by id
 exports.getIssueById = (req, res, next, id) => {
   ComponentsIssue.findOne({ _id: id })
     .populate("user")
@@ -203,7 +206,7 @@ exports.getIssueById = (req, res, next, id) => {
       next();
     });
 };
-
+//Get component requests of the user
 exports.getMyRequests = (req, res) => {
   ComponentsIssue.find({ user: req.user.id })
     .populate("component")
@@ -249,7 +252,7 @@ exports.getMyInvites = (req, res) => {
         });
     });
 };
-
+// update user profile
 exports.updateMyProfile = (req, res) => {
   User.findOneAndUpdate(
     { _id: req.user.id },
@@ -278,6 +281,7 @@ exports.updateMyProfile = (req, res) => {
     })
     .catch((e) => console.log(e));
 };
+// Get user details
 exports.getMyDetails = (req, res) => {
   User.findById(req.user.id)
     .populate({
@@ -444,7 +448,7 @@ exports.acceptInvitePhoto = (req, res) => {
     });
   });
 };
-
+//As an Admin update a user's profile
 exports.updateProfileFromAdmin = (req, res) => {
   User.findOneAndUpdate(
     { _id: req.params.id },
@@ -470,6 +474,3 @@ exports.updateProfileFromAdmin = (req, res) => {
     .catch((e) => console.log(e));
 };
 
-exports.isImageFromGDrive = (req, res, next) => {
-  // if(req.body.)
-};
