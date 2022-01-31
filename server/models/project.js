@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-
+//Schema of a member of the project
 const memberSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -16,6 +16,7 @@ const memberSchema = new mongoose.Schema({
 });
 
 const Member = mongoose.model("Member", memberSchema);
+//Schema for projects
 const projectSchema = new mongoose.Schema(
   {
     title: {
@@ -79,14 +80,15 @@ const projectSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
+//delete "_id" property  and convert it to "id" instead on caliing transform method
 projectSchema.method("transform", function () {
   let obj = this.toObject();
   obj.id = obj._id;
   delete obj._id;
   return obj;
 });
-
+/*Before deleting the project grab all users who are part of the project and delete
+the project id from their 'projects' array*/ 
 projectSchema.pre("remove", function (next) {
   let userIds = this.members.map((member) => member.user);
   this.model("User").update(

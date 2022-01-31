@@ -1,8 +1,11 @@
+/* All logic related to user login/signup/authorization/resetting password and checking 
+user roles*/
 const User = require("../models/user");
 const { validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const { mailer } = require("./mailer");
 
+// Register a new user
 exports.signup = (req, res) => {
   const errors = validationResult(req);
 
@@ -16,9 +19,11 @@ exports.signup = (req, res) => {
   user.save((err, newUser) => {
     if (!newUser)
       return res.status(400).json({ error: "Email address already exists !" });
+      //Create a jsonwebtoken 
     const jwtToken = jwt.sign({ _id: newUser._id }, process.env.JWT_SECRET, {
       expiresIn: "365d",
     });
+    // Send confirmation e-mail using mailer
     mailer.sendMail({
       from: process.env.USER,
       to: req.body.email,
@@ -45,6 +50,8 @@ exports.signup = (req, res) => {
   });
 };
 
+
+// get token from authorization header and verify it
 exports.confirm = (req, res) => {
   const { authorization } = req.headers;
   const token = authorization.replace("Bearer ", "");
@@ -64,7 +71,7 @@ exports.confirm = (req, res) => {
     });
   });
 };
-
+//Login Admin
 exports.Adminlogin = (req, res) => {
   const { email, password } = req.body;
   User.findOne({ email }, (err, user) => {
@@ -81,7 +88,7 @@ exports.Adminlogin = (req, res) => {
     res.json({ role: user.role, message: "Admin loggedIn successfully !" });
   });
 };
-
+//Login user
 exports.signin = (req, res) => {
   const errors = validationResult(req);
   const { email, password } = req.body;
@@ -120,7 +127,8 @@ exports.signin = (req, res) => {
     res.json({ token: jwtToken, message: "LoggedIn Successfully !", user });
   });
 };
-
+/*If user forgets password send a mail to registered e-mail address to
+reset the password*/
 exports.forgetPassword = (req, res) => {
   User.findOne({ email: req.body.email }).then((user) => {
     if (!user)
@@ -141,7 +149,7 @@ exports.forgetPassword = (req, res) => {
     user.save();
   });
 };
-
+//Verify forget-password jwt token and reset user password
 exports.resetPassword = (req, res) => {
   const newPassword = req.body.password;
   const { authorization } = req.headers;
@@ -172,9 +180,9 @@ exports.resetPassword = (req, res) => {
     });
   });
 };
-
+//Logoff/Signout user
 exports.signout = (req, res) => {
-  res.clearCookie("token");
+  res.clearCookie("token");//Delete jwt token from cookie
   res.json({
     message: "User signout successfully !",
   });
@@ -231,7 +239,7 @@ exports.resetVerify = (req, res, next) => {
     });
   });
 };
-
+// Check wheter user is an Admin or not
 exports.isAdmin = (req, res, next) => {
   if (req.user.role === "User") {
     return res.status(403).json({

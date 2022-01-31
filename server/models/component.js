@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-
+// Schema for components
 var componentSchema = new mongoose.Schema(
   {
     name: {
@@ -28,7 +28,7 @@ var componentSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
+//delete "_id" property  and convert it to "id" instead on caliing transform method
 componentSchema.method('transform', function () {
   let obj = this.toObject()
   obj.id = obj._id;

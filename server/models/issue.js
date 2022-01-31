@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { ObjectId } = mongoose.Schema;
-
+//Schema for component issue request
 const ComponentsIssueSchema = new mongoose.Schema(
     {
         component: {
@@ -29,7 +29,7 @@ const ComponentsIssueSchema = new mongoose.Schema(
     },
     {timestamps:true}
 );
-
+//delete "_id" property  and convert it to "id" instead on caliing transform method
 ComponentsIssueSchema.method('transform', function () {
   let obj = this.toObject()
   obj.id = obj._id;
