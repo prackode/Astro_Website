@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema.Types;
 
-// Creating schema for achievement object (in MongoDB Collection)
 const achievementSchema = new mongoose.Schema(
   {
     desc: {

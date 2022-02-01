@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 
-// Creating schema for member object (in MongoDB Collection)
 const memberSchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
@@ -17,8 +16,6 @@ const memberSchema = new mongoose.Schema({
 });
 
 const Member1 = mongoose.model("Member1", memberSchema);
-
-// Creating schema for astrophotography object (in MongoDB Collection)
 const astrophotographySchema = new mongoose.Schema(
   {
     title: {
@@ -80,5 +77,4 @@ const Astrophotography = mongoose.model(
   "Astrophotography",
   astrophotographySchema
 );
-
 module.exports = { Member1, Astrophotography };

@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-// Creating schema for contact object (in MongoDB Collection)
 const contactSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -9,7 +8,7 @@ const contactSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true
-    },
+    },  
     subject: {
         type: String,
         required: true
@@ -27,4 +26,4 @@ contactSchema.method('transform', function () {
     return obj;
 });
 
-module.exports = mongoose.model("Contact", contactSchema)
+module.exports = mongoose.model('Contact', contactSchema)

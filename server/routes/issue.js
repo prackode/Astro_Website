@@ -7,12 +7,12 @@ const router = express.Router();
 router.param("componentId", getComponentById);
 router.param("issueId", getIssueById);
 
-// Creating a request
 router.post(
     "/issue/:componentId",
     isSignedIn,
     requestComponent
 );
+//body{num, reason}
 
 router.get(
     "/issue",
@@ -30,7 +30,6 @@ router.get(
     }
 );
 
-// Updating Request status
 router.put(
     "/issue/:issueId",
     isSignedIn,

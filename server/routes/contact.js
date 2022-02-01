@@ -3,11 +3,11 @@ const router = express.Router()
 const Contact = require('../models/contact')
 const { isSignedIn, isAdmin } = require('../middleware/auth')
 
-// Fetching all news
+// fetching all news
 router.get('/contact', (req, res) => {
     res.setHeader('Content-Range', 'news 0-10/20')
   res.setHeader('Access-Control-Expose-Headers', 'Content-Range')
-
+    
     Contact.find({}).sort('-createdAt')
         .then(contact => {
             let arr = []
@@ -17,7 +17,7 @@ router.get('/contact', (req, res) => {
         .catch(e => console.log(e))
 })
 
-// Fetching a news with id
+// fetching a news with id
 router.get('/contact/:id', (req, res) => {
     Contact.findOne({ _id: req.params.id })
         .then(contact => {
@@ -27,7 +27,7 @@ router.get('/contact/:id', (req, res) => {
         .catch(e => console.log(e))
 })
 
-// Creating a news
+// creating a news
 router.post('/contact', (req, res) => {
 
     const contact = new Contact(req.body)
@@ -39,7 +39,7 @@ router.post('/contact', (req, res) => {
         }))
 })
 
-// Deleting a news
+// deleting a news
 router.delete('/contact/:id', isSignedIn, isAdmin, (req, res) => {
     Contact.findByIdAndDelete(req.params.id, (err, contact) => {
         if (err) return res.status(500).send(err)

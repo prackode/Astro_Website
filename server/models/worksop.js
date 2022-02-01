@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-// Creating schema for workshop object (in MongoDB Collection)
 const workshopSchema = new mongoose.Schema({
     name: {
         type: String,
@@ -30,12 +29,10 @@ const workshopSchema = new mongoose.Schema({
         type: Date
     }
 }, { timestamps: true })
-
 workshopSchema.method('transform', function () {
     let obj = this.toObject()
     obj.id = obj._id;
     delete obj._id;
     return obj;
 });
-
 module.exports = mongoose.model("Workshop", workshopSchema);

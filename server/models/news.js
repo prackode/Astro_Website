@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 
-// Creating schema for news object (in MongoDB Collection)
 const newsSchema = new mongoose.Schema({
     title: {
         type: String,
@@ -27,4 +26,4 @@ newsSchema.method('transform', function () {
     return obj;
 });
 
-module.exports = mongoose.model("News", newsSchema)
+module.exports = mongoose.model('News', newsSchema)

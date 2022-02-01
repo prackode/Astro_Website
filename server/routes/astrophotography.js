@@ -1,27 +1,14 @@
 const express = require("express");
-const User = require("../models/user");
 const router = express.Router();
-
-const {
-  Astrophotography,
-  Member1
-} = require("../models/astrophotography");
-
-const {
-  isSignedIn,
-  isAdmin
-} = require("../middleware/auth");
-
-const {
-  drivePicParser
-} = require("../middleware/fileUpload");
-
+const { Astrophotography, Member1 } = require("../models/astrophotography");
+const { isSignedIn, isAdmin } = require("../middleware/auth");
+const User = require("../models/user");
+const { drivePicParser } = require("../middleware/fileUpload");
 const {
   saveUploadPhoto,
   editUploadPhoto,
 } = require("../middleware/astrophoto");
-
-// Fetching all photos
+// fetching all photos
 router.get("/astrophotographies", isSignedIn, isAdmin, (req, res) => {
   res.setHeader("Content-Range", "astrophotographies 0-10/20");
   res.setHeader("Access-Control-Expose-Headers", "Content-Range");
@@ -36,14 +23,10 @@ router.get("/astrophotographies", isSignedIn, isAdmin, (req, res) => {
     .catch((e) => console.log(e));
 });
 
-// Fetching all approved photos
+// fetching all approved photos
 router.get("/astrophotographies/approved", (req, res) => {
-  Astrophotography.find({
-      approved: true
-    })
-    .populate({
-      path: "tags"
-    })
+  Astrophotography.find({ approved: true })
+    .populate({ path: "tags" })
     .exec((err, photos) => {
       if (err) {
         console.log(err.message);
@@ -57,19 +40,13 @@ router.get("/astrophotographies/approved", (req, res) => {
     });
 });
 
-// Fetching a project with id
+// fetching a projects with id
 router.get("/astrophotographies/:id", (req, res) => {
   if (!req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
-    return res.json({
-      error: "Not found !"
-    });
+    return res.json({ error: "not found !" });
   }
-  Astrophotography.findOne({
-      _id: req.params.id
-    })
-    .populate({
-      path: "members.user tags"
-    })
+  Astrophotography.findOne({ _id: req.params.id })
+    .populate({ path: "members.user tags" })
     .populate("tags")
     .then((photo) => {
       return res.json(photo.transform());
@@ -77,7 +54,7 @@ router.get("/astrophotographies/:id", (req, res) => {
     .catch((e) => console.log(e));
 });
 
-// Creating a photo
+// creating a photo
 router.post("/astrophotographies", isSignedIn, (req, res) => {
   req.body.leader = req.user.id;
   const pic = req.body.pic;
@@ -91,7 +68,7 @@ router.post("/astrophotographies", isSignedIn, (req, res) => {
     }
   } else {
     return res.status(400).json({
-      err: "Picture is compulsory.",
+      err: "Picture is compulsory",
     });
   }
   const photoObj = new Astrophotography(req.body);
@@ -103,15 +80,9 @@ router.post("/astrophotographies", isSignedIn, (req, res) => {
       });
     }
     let userIds = photo.members.map((member) => member.user);
-    User.updateMany({
-        _id: {
-          $in: userIds
-        }
-      }, {
-        $push: {
-          photos: photo._id
-        }
-      },
+    User.updateMany(
+      { _id: { $in: userIds } },
+      { $push: { photos: photo._id } },
       (err, users) => {
         if (err) {
           console.log(err);
@@ -125,10 +96,10 @@ router.post("/astrophotographies", isSignedIn, (req, res) => {
   });
 });
 
-// Creating a photo from dashboard
+// creating a photo from dashboard
 router.post("/astrophotographies/user", isSignedIn, saveUploadPhoto);
 
-// Updating a photo
+// updating a photo
 router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
   const pic = req.body.pic;
   if (pic) {
@@ -145,9 +116,7 @@ router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
     });
   }
 
-  Astrophotography.findOne({
-      _id: req.params.id
-    })
+  Astrophotography.findOne({ _id: req.params.id })
     .then((project) => {
       const leaders = project.members.map((m) => {
         if (m.leader) return m.user;
@@ -166,9 +135,9 @@ router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
     })
     .catch((e) => console.log(e));
 
-  Astrophotography.findByIdAndUpdate({
-      _id: req.params.id
-    }, {
+  Astrophotography.findByIdAndUpdate(
+    { _id: req.params.id },
+    {
       $set: {
         title: req.body.title,
         instrumentUsed: req.body.instrumentUsed,
@@ -180,9 +149,8 @@ router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
         tags: req.body.tags,
         pic: req.body.pic,
       },
-    }, {
-      new: true
     },
+    { new: true },
     (e, photo) => {
       if (e) {
         return res.status(400).json({
@@ -196,15 +164,9 @@ router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
         .filter(
           (item) => !userIds_old.includes(item) || !userIds_new.includes(item)
         );
-      User.updateMany({
-          _id: {
-            $in: userIds_new
-          }
-        }, {
-          $addToSet: {
-            photos: photo._id
-          }
-        },
+      User.updateMany(
+        { _id: { $in: userIds_new } },
+        { $addToSet: { photos: photo._id } },
         (err, users) => {
           if (err) {
             return res.status(400).json({
@@ -213,17 +175,9 @@ router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
           }
         }
       );
-      User.updateMany({
-          _id: {
-            $in: diff
-          }
-        }, {
-          $pull: {
-            photos: {
-              _id: photo._id
-            }
-          }
-        },
+      User.updateMany(
+        { _id: { $in: diff } },
+        { $pull: { photos: { _id: photo._id } } },
         (err, users) => {
           if (err) {
             return res.status(400).json({
@@ -239,7 +193,7 @@ router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
 
 router.put("/astrophotographies/user/:id", isSignedIn, editUploadPhoto);
 
-// Deleting a photo
+// deleting a photo
 router.delete("/astrophotographies/:id", isSignedIn, isAdmin, (req, res) => {
   Astrophotography.findById(req.params.id, (err, photo) => {
     if (err) return res.status(500).send(err);
@@ -253,14 +207,9 @@ router.delete("/astrophotographies/:id", isSignedIn, isAdmin, (req, res) => {
 
 //Invite member to the photo
 router.post("/astrophotographies/invite", isSignedIn, (req, res) => {
-  const {
-    email,
-    photoId
-  } = req.body;
+  const { email, photoId } = req.body;
   let userId;
-  User.findOne({
-    email: email
-  }).exec((err, user) => {
+  User.findOne({ email: email }).exec((err, user) => {
     if (err || !user) {
       return res.status(400).json({
         error: "No such user found.",
@@ -286,11 +235,7 @@ router.post("/astrophotographies/invite", isSignedIn, (req, res) => {
         });
       }
       photo.members.push(
-        new Member1({
-          user: userId,
-          accepted: false,
-          leader: false
-        })
+        new Member1({ user: userId, accepted: false, leader: false })
       );
       photo.save((err, updatedPhoto) => {
         if (err) {

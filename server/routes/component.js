@@ -8,7 +8,7 @@ const { isSignedIn, isAdmin } = require("../middleware/auth");
 //params
 router.param("componentId", getComponentById);
 
-// Get routes
+//get routes
 router.get("/component", getAllComponents);
 router.get("/component/filter", getAllComponentsFilter);
 
@@ -16,7 +16,7 @@ router.get('/component/:componentId', isSignedIn, (req, res) => {
   res.json(req.component.transform())
 })
 
-// Create route
+//create route
 router.post(
   "/component",
   isSignedIn,
@@ -26,7 +26,7 @@ router.post(
 );
 // body:{name, type, image_url, available}
 
-// Update route
+//update route
 router.put(
   "/component/:componentId",
   isSignedIn,
@@ -34,7 +34,7 @@ router.put(
   updateComponent
 );
 
-// Delete route
+//delete route
 router.delete(
   "/component/:componentId",
   isSignedIn,

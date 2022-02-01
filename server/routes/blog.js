@@ -5,7 +5,7 @@ const User = require("../models/user");
 const { isSignedIn, isAdmin } = require("../middleware/auth");
 const { drivePicParser } = require("../middleware/fileUpload");
 
-// Fetching all blogs through admin
+// fetching all blogs through admin
 router.get("/blogs", isSignedIn, isAdmin, (req, res) => {
   res.setHeader("Content-Range", "blogs 0-10/20");
   res.setHeader("Access-Control-Expose-Headers", "Content-Range");
@@ -19,7 +19,7 @@ router.get("/blogs", isSignedIn, isAdmin, (req, res) => {
     .catch((e) => console.log(e));
 });
 
-// Fetching all accepted blogs to the frontend
+// fetching all accepted blogs to the frontend
 router.get("/blogs/toUI", (req, res) => {
   Blog.find({ accepted: true }, { pic: 1, title: 1, postedBy: 1 })
     .sort("-createdAt")
@@ -30,7 +30,7 @@ router.get("/blogs/toUI", (req, res) => {
     .catch((e) => console.log(e));
 });
 
-// Fetching a blog with id
+// fetching a blog with id
 router.get("/blogs/:id", (req, res) => {
   if (!req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
     return res.json({ error: "not found !" });
@@ -44,7 +44,7 @@ router.get("/blogs/:id", (req, res) => {
     .catch((e) => console.log(e));
 });
 
-// Fetching a blog with id to the frontend
+// fetching a blog with id to the frontend
 router.get("/blogstoUI/:id", (req, res) => {
   if (!req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
     return res.json({ error: "not found !" });
@@ -59,7 +59,7 @@ router.get("/blogstoUI/:id", (req, res) => {
     .catch((e) => console.log(e));
 });
 
-// Creating a blog
+// creating a blog
 router.post("/blogs", isSignedIn, (req, res) => {
   const pic = req.body.pic;
   if (pic) {
@@ -98,7 +98,7 @@ router.post("/blogs", isSignedIn, (req, res) => {
     .catch((e) => console.log(e));
 });
 
-// Updating a blog
+// updating a blog
 router.put("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
   const pic = req.body.pic;
   if (pic) {
@@ -164,7 +164,7 @@ router.put("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
   );
 });
 
-// Updating blog from dashboard
+// updating blog from dashboard
 router.put("/blogs/dashboard/:id", isSignedIn, isAdmin, (req, res) => {
   const pic = req.body.pic;
   if (pic) {
@@ -199,7 +199,7 @@ router.put("/blogs/dashboard/:id", isSignedIn, isAdmin, (req, res) => {
   );
 });
 
-// Deleting a blog
+// deleting a blog
 router.delete("/blogs/:id", isSignedIn, isAdmin, (req, res) => {
   Blog.findById(req.params.id, (err, blog) => {
     if (err) return res.status(500).send(err);

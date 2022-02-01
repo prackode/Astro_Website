@@ -1,18 +1,16 @@
-//Importing npm modules
-require("dotenv").config();
 const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
+const port = process.env.PORT || 9500;
 const path = require("path");
 const compression = require("compression");
-
+require("dotenv").config();
 app.use(cors());
 app.use(compression());
 app.use(express.static(__dirname + "/public"));
 app.use("/images", express.static("/public/images"));
-
-// Connecting to MongoDB
+// mongodb
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -20,7 +18,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useCreateIndex: true,
 });
 mongoose.connection.on("connected", () => {
-  console.log("Connected to MongoDB");
+  console.log("connected to mongodb");
 });
 
 //My routes
@@ -37,11 +35,10 @@ const achievementRoutes = require("./routes/achievement");
 const contactRouters = require("./routes/contact");
 const tagRouters = require("./routes/tag");
 const shareRouter = require("./routes/shareProj");
-
-// App specific
+// app specific
 app.use(express.json());
 
-// Adding routes to the app
+//Adding routes to the app
 app.use("/api", authRoutes);
 app.use("/api", blogRoutes);
 app.use("/api", componentRoutes);
@@ -59,16 +56,10 @@ app.use("/api", shareRouter);
 app.use("/public", express.static(path.join(__dirname, "public")));
 
 app.use(express.static("client/build"));
-
-// If any invalid route is accessed
 app.get("*", (req, res) => {
   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 });
 
-// PORT
-const port = process.env.PORT || 9500;
-
-// Staring the server
 app.listen(port, () => {
   console.log(`Server Started at ${port}`);
 });
