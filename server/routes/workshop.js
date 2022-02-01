@@ -1,8 +1,10 @@
+// Importing npm modules
 const express = require('express')
 const { isSignedIn, isAdmin } = require('../middleware/auth')
 const router = express.Router()
 const Workshop = require('../models/worksop')
 
+// Creating Workshop
 router.get("/workshop", (req, res) => {
     res.setHeader('Content-Range', 'workshops 0-10/20')
     res.setHeader('Access-Control-Expose-Headers', 'Content-Range')
@@ -14,6 +16,8 @@ router.get("/workshop", (req, res) => {
         })
         .catch(e => console.log(e))
 })
+
+// Fetching a workshop by id
 router.get("/workshop/:id", (req, res) => {
     Workshop.findOne({ _id: req.params.id })
         .then(workshop => {
@@ -21,8 +25,8 @@ router.get("/workshop/:id", (req, res) => {
         })
         .catch(e => console.log(e))
 })
-router.post("/workshop", isSignedIn, isAdmin, (req, res) => {
 
+router.post("/workshop", isSignedIn, isAdmin, (req, res) => {
     const workshop = new Workshop(req.body)
     workshop.save().then(workshop => {
         const { id, target, description, about, brochure, date } = workshop.transform();
@@ -35,6 +39,8 @@ router.post("/workshop", isSignedIn, isAdmin, (req, res) => {
             })
         })
 })
+
+// Updating a Workshop
 router.put("/workshop/:id", isSignedIn, isAdmin, (req, res) => {
     Workshop.findOneAndReplace({ _id: req.params.id }, req.body, null, (e, workshop) => {
         if (e) {
@@ -45,6 +51,8 @@ router.put("/workshop/:id", isSignedIn, isAdmin, (req, res) => {
         return res.json(workshop.transform())
     })
 })
+
+// Deleting a Workshop
 router.delete("/workshop/:id", isSignedIn, isAdmin, (req, res) => {
     Workshop.findByIdAndDelete(req.params.id, (err, workshop) => {
         if (err) {
@@ -54,4 +62,5 @@ router.delete("/workshop/:id", isSignedIn, isAdmin, (req, res) => {
         return res.json({ workshop })
     })
 })
+
 module.exports = router;

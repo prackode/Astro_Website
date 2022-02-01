@@ -1,3 +1,4 @@
+// Importing npm modules
 const express = require('express');
 const { isSignedIn, isAdmin } = require('../middleware/auth');
 const { getComponentById } = require('../middleware/component');
@@ -7,12 +8,12 @@ const router = express.Router();
 router.param("componentId", getComponentById);
 router.param("issueId", getIssueById);
 
+// Creating a request
 router.post(
     "/issue/:componentId",
     isSignedIn,
     requestComponent
 );
-//body{num, reason}
 
 router.get(
     "/issue",
@@ -30,6 +31,7 @@ router.get(
     }
 );
 
+// Updating Request status
 router.put(
     "/issue/:issueId",
     isSignedIn,
