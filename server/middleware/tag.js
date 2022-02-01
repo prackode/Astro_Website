@@ -1,5 +1,5 @@
-const express = require("express");
-const tagRouter = express.Router();
+//logic for handling image tags
+
 const Tag = require("../models/tag");
 
 exports.getAllTags = (req, res) => {

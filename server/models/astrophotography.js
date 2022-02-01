@@ -55,14 +55,14 @@ const astrophotographySchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
+//delete "_id" property  and convert it to "id" instead on caliing transform method
 astrophotographySchema.method("transform", function () {
   let obj = this.toObject();
   obj.id = obj._id;
   delete obj._id;
   return obj;
 });
-
+//Before deleting grab users and delete id from the project array
 astrophotographySchema.pre("remove", function (next) {
   let userIds = this.members.map((member) => member.user);
   this.model("User").update(

@@ -190,7 +190,7 @@ router.put("/astrophotographies/:id", isSignedIn, (req, res) => {
     }
   );
 });
-
+// editing a photo from dashboard
 router.put("/astrophotographies/user/:id", isSignedIn, editUploadPhoto);
 
 // deleting a photo

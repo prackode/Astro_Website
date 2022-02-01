@@ -176,9 +176,9 @@ export default function Coordinators() {
         </div>
       </div>
 
-      <div className="pageTitle my-5 titleBold header white-heading padtop">
+      {/* <div className="pageTitle my-5 titleBold header white-heading padtop">
         Junior Coordinators
-      </div>
+      </div> */}
 
     </>
   );

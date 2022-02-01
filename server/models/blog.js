@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { ObjectId } = mongoose.Schema.Types;
-
+//Schema for the blogs
 const blogSchema = new mongoose.Schema(
   {
     title: {
@@ -33,14 +33,15 @@ const blogSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
+//delete "_id" property  and convert it to "id" instead on caliing transform method
 blogSchema.method("transform", function () {
   let obj = this.toObject();
   obj.id = obj._id;
   delete obj._id;
   return obj;
 });
-
+/* Before the blog is deleted grab the user of the blog and delete the blog id from "blogs"
+array of the user*/
 blogSchema.pre('remove', function (next) {
   this.model('User').updateOne(
     { _id: { $in: this.postedBy } },
