@@ -24,7 +24,7 @@ export default function Testimonials() {
           <div className="carousel-inner" role="listbox">
             <div className="carousel-item active">
               <div className="testimonial4_slide">
-                <img src={aman} className="img-circle img-responsive" />
+                <img src={aman} className="img-circle img-responsive" alt = 'aman image'/>
                 {/* <div className="scrollert" id="stylet-2"> */}
                 <p className="testfont scrollert" id="stylet-2">"Indeed the best place to learn and show your creativity .Thanks to all the juniors, seniors, professors and my colleagues for supporting and guiding me to lead the club. Happy to see that the club is expanding continuously with new Astrowing dimension. The experience gained has helped me a lot to adjust to my corporate life. It was a roller coaster ride for me and I have enjoyed every bit of it!"</p>
 

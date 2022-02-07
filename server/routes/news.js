@@ -1,9 +1,10 @@
+// Importing npm modules
 const express = require('express')
 const router = express.Router()
 const News = require('../models/news')
 const { isSignedIn, isAdmin } = require('../middleware/auth')
 
-// fetching all news
+// Fetching all news
 router.get('/news', isSignedIn, isAdmin, (req, res) => {
     res.setHeader('Content-Range', 'news 0-10/20')
     res.setHeader('Access-Control-Expose-Headers', 'Content-Range')
@@ -41,7 +42,7 @@ router.get('/news/private', isSignedIn, (req, res) => {
         .catch(e => console.log(e))
 })
 
-// fetching a news with id
+// Fetching a news with id
 router.get('/news/:id', isSignedIn, isAdmin, (req, res) => {
     News.findOne({ _id: req.params.id })
         .then(news => {
@@ -50,7 +51,7 @@ router.get('/news/:id', isSignedIn, isAdmin, (req, res) => {
         .catch(e => console.log(e))
 })
 
-// creating a news
+// Creating a news
 router.post('/news', isSignedIn, isAdmin, (req, res) => {
 
     const news = new News(req.body)
@@ -61,7 +62,7 @@ router.post('/news', isSignedIn, isAdmin, (req, res) => {
         .catch(e => console.log(e))
 })
 
-// updating a news
+// Updating a news
 router.put('/news/:id', isSignedIn, isAdmin, (req, res) => {
     News.findOneAndReplace({ _id: req.params.id }, req.body, null, (e, news) => {
         if (e) {
@@ -73,7 +74,7 @@ router.put('/news/:id', isSignedIn, isAdmin, (req, res) => {
     })
 })
 
-// deleting a news
+// Deleting a news
 router.delete('/news/:id', isSignedIn, isAdmin, (req, res) => {
     News.findByIdAndDelete(req.params.id, (err, news) => {
         if (err) return res.status(500).send(err)

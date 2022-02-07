@@ -1,3 +1,4 @@
+// Importing npm modules
 const express = require("express");
 const router = express.Router();
 
@@ -5,10 +6,10 @@ const { getAllComponents, addComponent, updateComponent, deleteComponent, getCom
 const { upload } = require('../middleware/fileUpload')
 const { isSignedIn, isAdmin } = require("../middleware/auth");
 
-//params
+// params
 router.param("componentId", getComponentById);
 
-//get routes
+// Get routes
 router.get("/component", getAllComponents);
 router.get("/component/filter", getAllComponentsFilter);
 
@@ -16,7 +17,7 @@ router.get('/component/:componentId', isSignedIn, (req, res) => {
   res.json(req.component.transform())
 })
 
-//create route
+// Create route
 router.post(
   "/component",
   isSignedIn,
@@ -26,7 +27,7 @@ router.post(
 );
 // body:{name, type, image_url, available}
 
-//update route
+// Update route
 router.put(
   "/component/:componentId",
   isSignedIn,
@@ -34,7 +35,7 @@ router.put(
   updateComponent
 );
 
-//delete route
+// Delete route
 router.delete(
   "/component/:componentId",
   isSignedIn,

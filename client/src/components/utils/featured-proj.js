@@ -45,7 +45,7 @@ export default function Featuredproject() {
                       <li className="cards_item" data-aos="fade-up" style={{ width: '100%' }} data-aos="flip-left">
                         <div className="card" style={{width:'inherit'}}>
                           <div className="card_image">
-                            <img className="evfeatured phoneviewproj" src={project.pic || 'https://lh3.googleusercontent.com/Qc1N9hR-ovN8PDV6J9NOSF82BlUeEDtng33AUNn52x_8RajvRUOabe9C62hmtuWLRgPyjkXv6VbOG7PES8K3ZzWYFxyLuJSGIihC-_tc5kFsEiomcVbB-KWHPwWY3qu_JuhwMxzpAA=w2400'} />
+                            <img className="evfeatured phoneviewproj" src={project.pic || 'https://lh3.googleusercontent.com/Qc1N9hR-ovN8PDV6J9NOSF82BlUeEDtng33AUNn52x_8RajvRUOabe9C62hmtuWLRgPyjkXv6VbOG7PES8K3ZzWYFxyLuJSGIihC-_tc5kFsEiomcVbB-KWHPwWY3qu_JuhwMxzpAA=w2400' } alt='project image' />
                           </div>
                           <div className="card_content forphone forphone1" style={{ width: '100%' }}>
                             <h2 className="card_title forphone forphone2" style={{ width: '100%' }}>{project.title}</h2>
