@@ -1,5 +1,8 @@
+// Importing npm modules
 const express = require("express");
 const { isSignedIn, isAdmin } = require("../middleware/auth");
+const { body } = require("express-validator");
+const router = express.Router();
 const {
   getMyRequests,
   getMyInvites,
@@ -15,8 +18,6 @@ const {
   acceptInvitePhoto,
   rejectInvitePhoto,
 } = require("../middleware/user");
-const { body } = require("express-validator");
-const router = express.Router();
 
 router.get("/users", getAllUsers);
 router.post(
@@ -30,6 +31,7 @@ router.post(
   ],
   createUserFromAdmin
 );
+
 router.get("/users/:id", getSingleUser);
 router.delete("/users/:id", isSignedIn, isAdmin, deleteUser);
 router.post("/my/updateProfile", isSignedIn, updateMyProfile);
@@ -41,4 +43,5 @@ router.get("/my/invites/accept/project/:projectId", isSignedIn, acceptInvite);
 router.get("/my/invites/reject/project/:projectId", isSignedIn, rejectInvite);
 router.get("/my/invites/accept/photo/:photoId", isSignedIn, acceptInvitePhoto);
 router.get("/my/invites/reject/photo/:photoId", isSignedIn, rejectInvitePhoto);
+
 module.exports = router;

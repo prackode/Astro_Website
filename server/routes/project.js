@@ -6,7 +6,8 @@ const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const { drivePicParser } = require("../middleware/fileUpload");
 const uuid = require("uuid");
-// fetching all projects
+
+// Fetching all projects
 router.get("/projects", isSignedIn, isAdmin, (req, res) => {
   res.setHeader("Content-Range", "projects 0-10/20");
   res.setHeader("Access-Control-Expose-Headers", "Content-Range");
@@ -20,6 +21,7 @@ router.get("/projects", isSignedIn, isAdmin, (req, res) => {
     .catch((e) => console.log(e));
 });
 
+// Fetching approved projects
 router.get("/projects/approved", (req, res) => {
   Project.find(
     { approved: true, status: "Completed", featured: false },
@@ -34,6 +36,7 @@ router.get("/projects/approved", (req, res) => {
   });
 });
 
+// Fetching featured projects
 router.get("/projects/featured", (req, res) => {
   Project.find(
     { approved: true, status: "Completed", featured: true },
@@ -67,7 +70,7 @@ router.get("/projects/featured_home", (req, res) => {
   });
 });
 
-// fetching a projects with id
+// Fetching a projects with id
 router.get("/projects/:id", (req, res) => {
   if (!req.params.id.match(/^[0-9a-fA-F]{24}$/)) {
     return res.json({ error: "not found !" });
@@ -81,7 +84,7 @@ router.get("/projects/:id", (req, res) => {
         project.description = undefined;
         return res.json(project.transform());
       } else {
-        // finding the user with the id
+        // Finding the user with the id
         const token = authorization.replace("Bearer ", "");
 
         const payload = jwt.verify(
@@ -108,7 +111,7 @@ router.get("/projects/:id", (req, res) => {
     .catch((e) => console.log(e));
 });
 
-// creating a project
+// Creating a project
 router.post("/projects", isSignedIn, (req, res) => {
   req.body.leader = req.user.id;
   req.body.shareId = uuid.v4();
@@ -147,7 +150,7 @@ router.post("/projects", isSignedIn, (req, res) => {
   });
 });
 
-// creating a project
+// Creating a project
 router.post("/projects/user", isSignedIn, (req, res) => {
   req.body.leader = req.user.id;
   req.body.shareId = uuid.v4();
@@ -197,7 +200,7 @@ router.post("/projects/user", isSignedIn, (req, res) => {
   });
 });
 
-// updating a project
+// Updating a project
 router.put("/projects/:id", isSignedIn, (req, res) => {
   const pic = req.body.pic;
   if (pic) {
@@ -282,7 +285,7 @@ router.put("/projects/:id", isSignedIn, (req, res) => {
   );
 });
 
-// deleting a project
+// Deleting a project
 router.delete("/projects/:id", isSignedIn, isAdmin, (req, res) => {
   Project.findById(req.params.id, (err, project) => {
     if (err) return res.status(500).send(err);
@@ -294,7 +297,7 @@ router.delete("/projects/:id", isSignedIn, isAdmin, (req, res) => {
   });
 });
 
-//Invite member to the project
+// Invite member to the project
 router.post("/projects/invite", isSignedIn, (req, res) => {
   const { email, projectId } = req.body;
   let userId;

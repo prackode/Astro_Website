@@ -1,13 +1,14 @@
+// Importing npm modules
 const express = require('express')
 const router = express.Router()
 const Contact = require('../models/contact')
 const { isSignedIn, isAdmin } = require('../middleware/auth')
 
-// fetching all news
+// Fetching all news
 router.get('/contact', (req, res) => {
     res.setHeader('Content-Range', 'news 0-10/20')
   res.setHeader('Access-Control-Expose-Headers', 'Content-Range')
-    
+
     Contact.find({}).sort('-createdAt')
         .then(contact => {
             let arr = []
@@ -17,7 +18,7 @@ router.get('/contact', (req, res) => {
         .catch(e => console.log(e))
 })
 
-// fetching a news with id
+// Fetching a news with id
 router.get('/contact/:id', (req, res) => {
     Contact.findOne({ _id: req.params.id })
         .then(contact => {
@@ -27,7 +28,7 @@ router.get('/contact/:id', (req, res) => {
         .catch(e => console.log(e))
 })
 
-// creating a news
+// Creating a news
 router.post('/contact', (req, res) => {
 
     const contact = new Contact(req.body)
@@ -39,7 +40,7 @@ router.post('/contact', (req, res) => {
         }))
 })
 
-// deleting a news
+// Deleting a news
 router.delete('/contact/:id', isSignedIn, isAdmin, (req, res) => {
     Contact.findByIdAndDelete(req.params.id, (err, contact) => {
         if (err) return res.status(500).send(err)
