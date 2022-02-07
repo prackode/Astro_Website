@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars"
 import "../../css/Login.css";
 
 function ForgetPassword() {

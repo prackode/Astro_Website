@@ -3,7 +3,7 @@ import { Button, OverlayTrigger, Tooltip } from "react-bootstrap";
 import Loading from "../../Animations/Loading";
 import "react-quill/dist/quill.snow.css";
 import "../../css/featured-proj.css";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars"
 import { animateScroll } from "react-scroll";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux'
@@ -123,7 +123,7 @@ function Blogs() {
                         onClick={() => dispatch({ type: "SET_ID", payload: blog._id })}
                       >
                         Read More
-                  </Button>
+                      </Button>
                     </div>
                   </div>
                 </li>

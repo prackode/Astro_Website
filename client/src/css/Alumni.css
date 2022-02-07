@@ -8,24 +8,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Audiowide&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=El+Messiri&display=swap");
 
-#style-2::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
+#style-2::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
 }
 
-#style-2::-webkit-scrollbar
-{
-	width: 8px;
-	background-color: #F5F5F5;
+#style-2::-webkit-scrollbar {
+  width: 8px;
+  background-color: #F5F5F5;
 }
 
-#style-2::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: rgb(30, 81, 116);
+#style-2::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+  background-color: rgb(30, 81, 116);
 }
 
 .overlaya {
@@ -59,6 +56,7 @@
     "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
     "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+
 .pageTitlea {
   text-transform: uppercase;
   font-weight: 300;
@@ -72,6 +70,7 @@
   margin: 3rem 2rem;
   transition: transform 400ms ease-in;
 }
+
 .card-item-1 {
   margin: 3rem 1.5rem;
   transition: transform 400ms ease-in;
@@ -84,32 +83,36 @@
 }
 
 .panel-title a {
-  color: rgb(22 ,101, 151);
+  color: rgb(22, 101, 151);
   text-decoration: none;
 }
 
-.faculty-container img{
+.faculty-container img {
   height: 20rem;
   width: 20rem;
 }
-.faculty-container .side-content p{
+
+.faculty-container .side-content p {
   font-weight: 600;
 }
 
 .alumni-container {
   font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana,
-  sans-serif !important;
+    sans-serif !important;
   font-size: 14px !important;
   /* margin: 50px auto 0 auto !important; */
 }
-.alumni-container .card-body{
+
+.alumni-container .card-body {
   /* background-color: rgb(10 ,83 ,248); */
   background-color: #0f1a3a;
   color: white;
 }
-.alumni-container .card-body a{
+
+.alumni-container .card-body a {
   color: white;
 }
+
 .panel {
   margin-bottom: 20px;
   background-color: #fff;
@@ -118,29 +121,36 @@
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
 .panel-group .panel {
   margin-bottom: 0;
   border-radius: 0;
 }
-.panel-group .panel + .panel {
+
+.panel-group .panel+.panel {
   margin-top: 0;
 }
+
 .panel-default {
   border: none;
 }
+
 .panel-heading {
   padding: 20px 15px;
   border: none;
   border-radius: 0;
 }
-.panel-default > .panel-heading {
+
+.panel-default>.panel-heading {
   color: #333;
   background: none;
   border-top: 1px solid #ddd;
 }
-.panel-default > .panel-heading + .panel-collapse > .panel-body {
+
+.panel-default>.panel-heading+.panel-collapse>.panel-body {
   border: none;
 }
+
 .panel-heading .accordion-toggle:after {
   content: "\f078";
   font-family: "Font Awesome 5 Free";
@@ -148,13 +158,14 @@
   float: right;
   color: rgb(19, 15, 15);
 }
+
 .panel-heading .accordion-toggle.collapsed:after {
   content: "\f054";
   color: rgb(212, 184, 184);
 }
 
-.alumni-container .panel-collapse{
-  background:#e3eafa;
+.alumni-container .panel-collapse {
+  background: #e3eafa;
 }
 
 @media screen and (max-width: 619px) {
@@ -162,20 +173,25 @@
     font-size: larger !important;
     margin-bottom: -1rem !important;
   }
-  .faculty-container .content{
+
+  .faculty-container .content {
     font-size: small;
   }
-  .faculty-container .side-content{
+
+  .faculty-container .side-content {
     float: none !important;
     text-align: center;
   }
-  .faculty-container .side-content h5{
+
+  .faculty-container .side-content h5 {
     font-size: medium;
   }
-  .faculty-container .side-content p{
+
+  .faculty-container .side-content p {
     font-size: smaller;
   }
-  .item-alumni{
+
+  .item-alumni {
     margin: 3rem 0rem;
   }
 }
@@ -187,24 +203,27 @@
     font-size: 35px;
     text-align: center;
     padding-top: 1.7em;
-}
+  }
+
   .topic {
     font-size: 16px;
   }
-  .paragr{
+
+  .paragr {
     font-size: small;
   }
-  
+
   .quote {
     font-size: medium !important;
   }
+
   .achievement div {
     font-size: small !important;
   }
 }
 
-@media only screen and (max-width: 960px){
-  .faculty-container img{
+@media only screen and (max-width: 960px) {
+  .faculty-container img {
     width: 15rem;
     height: 15rem;
   }

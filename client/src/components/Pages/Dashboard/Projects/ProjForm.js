@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { REACT_APP_SERVER } from "../../../../grobalVars";
+import { REACT_APP_SERVER } from "../../../../globalVars";
 import { AddCircleOutline, RemoveCircleOutline } from "@material-ui/icons";
 import { toast } from "react-toastify";
 import DashQuill from "../DashQuill";

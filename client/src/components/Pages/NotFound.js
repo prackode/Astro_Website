@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { REACT_APP_BASE_TITLE } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE } from "../../globalVars"
 import Particles from "react-particles-js";
 
 export default function NotFound() {

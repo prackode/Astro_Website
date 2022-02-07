@@ -3,7 +3,7 @@ import "../../css/Contact.css";
 import logo from "../../images/utils/collegelogo.png";
 import $ from "jquery";
 import { toast } from "react-toastify";
-import { REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_SERVER } from "../../globalVars"
 
 const ContactUs = () => {
   const name = useRef("");

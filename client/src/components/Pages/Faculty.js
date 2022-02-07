@@ -4,7 +4,7 @@ import "../../css/Alumni.css";
 import f1 from "../../images/gallery/faculty1.jpeg";
 import f2 from "../../images/gallery/faculty2.jpeg";
 import f3 from "../../images/gallery/faculty3.jpeg";
-import { REACT_APP_BASE_TITLE } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE } from "../../globalVars"
 import { animateScroll } from "react-scroll";
 
 export default function Faculty() {
@@ -63,18 +63,18 @@ export default function Faculty() {
           <div className="content col-11 col-md-6 col-lg-7 mx-auto mt-5 mb-md-5" style={{ textAlign: "justify" }}>
             <em >
               "If you’re not making some notable mistakes along the way, you’re
-            certainly not taking enough chances. <br /> Aeroclub and Astrowing
-            of MNNIT are the places where one not only learns but most
-            importantly make mistakes. <br /> From building planes and drones to
-            understanding telescopes , from viewing and analysing celestial
-            spheres to studying the mechanism of real life problems, the
-            students never fail to propose innovative ideas. Under the umbrella
-            of these clubs students have not only built numerous projects but
-            have created a place for themselves by winning many events. They've
-            cultivated themselves to use resources in advancement of the present
-            day technology. I take pride in being the faculty incharge of such
-            technical clubs where even failure is celebrated. I wish them all
-            the success, may they conquer every kingdom they visit!"
+              certainly not taking enough chances. <br /> Aeroclub and Astrowing
+              of MNNIT are the places where one not only learns but most
+              importantly make mistakes. <br /> From building planes and drones to
+              understanding telescopes , from viewing and analysing celestial
+              spheres to studying the mechanism of real life problems, the
+              students never fail to propose innovative ideas. Under the umbrella
+              of these clubs students have not only built numerous projects but
+              have created a place for themselves by winning many events. They've
+              cultivated themselves to use resources in advancement of the present
+              day technology. I take pride in being the faculty incharge of such
+              technical clubs where even failure is celebrated. I wish them all
+              the success, may they conquer every kingdom they visit!"
             </em>
             <br />
             <br />
@@ -82,7 +82,7 @@ export default function Faculty() {
               <h5>Dr. Venkateswara Rao Komma</h5>
               <p>
                 Faculty Incharge Technical Activities, SAC <br />
-Associate Professor, Department of Mechanical Engineering
+                Associate Professor, Department of Mechanical Engineering
               </p>
               <a className="btn btn-primary" href='http://www.mnnit.ac.in/images/newstories/2021/med/cv/Dr._V.R._Komma_Profile.pdf' target='_blank'>View Profile</a>
             </div>

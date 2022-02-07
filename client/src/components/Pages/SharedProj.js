@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router";
 import Loading from "../../Animations/Loading";
 import "../../css/featured-proj.css";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars";
 import $ from "jquery";
 import { animateScroll } from "react-scroll";
 import { getId } from "../../utilities.js";

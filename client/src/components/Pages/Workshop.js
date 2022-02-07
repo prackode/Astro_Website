@@ -3,7 +3,7 @@ import { Container, Jumbotron } from "react-bootstrap";
 import "../../css/Event.css";
 import Loading from "../../Animations/Loading";
 import m from "../../images/utils/Jigyasa_logo.png";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars"
 import { animateScroll } from "react-scroll";
 
 export default function Workshop() {

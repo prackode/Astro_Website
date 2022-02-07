@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import "../../css/Login.css";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars"
 
 function Login() {
   const email = useRef();

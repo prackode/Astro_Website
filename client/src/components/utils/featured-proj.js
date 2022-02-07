@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button } from "react-bootstrap";
 import "../../css/featured-proj.css";
 import OwlCarousel from 'react-owl-carousel';
-import { REACT_APP_SERVER } from "../../grobalVars";
+import { REACT_APP_SERVER } from "../../globalVars";
 import { Link } from "react-router-dom";
 
 export default function Featuredproject() {

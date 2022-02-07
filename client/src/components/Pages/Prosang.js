@@ -4,7 +4,7 @@ import "../../css/Event.css";
 import pro from "../../images/utils/Prosangnew.png";
 
 
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars"
 import { animateScroll } from "react-scroll";
 
 export default function Prosang() {
@@ -22,8 +22,8 @@ export default function Prosang() {
                         <h1 className="titlee">
                             <div className="pageTitlee titleBolde">
                                 {/* <div><img src={`${baseURL}/images/utils/Prosang.jpg`} alt="prosang" srcset="" style={{alignItems:'center', width: '12%'}} /></div> */}
-                Prosang
-                {/* </div> */}
+                                Prosang
+                                {/* </div> */}
                             </div>
                         </h1>
                         <div className="content-wrapper">
@@ -45,14 +45,14 @@ export default function Prosang() {
                                     skilled group of people to showcase their scientific prowess
                                     in the form of actual projects as well as ideas in fun and
                                     challenging tech-based events.
-                </p>
+                                </p>
                                 <p className="texte">
                                     It began with the efforts of the batch of 2019 with the basic
                                     need for helping students score the gap between industrial
                                     skill set requirements and our academics, and hence build
                                     projects that add value to their CVs, and motivate them to
                                     model solutions to real world problems.
-                </p>
+                                </p>
 
                             </div>
                         </div>
@@ -113,14 +113,14 @@ export default function Prosang() {
                                         <p className="text-gray-700" style={{ textAlign: "justify", }}>
                                             <i style={{ fontSize: "16px" }}>Every year ProSang witnesses: </i><br></br><br></br><ul className="ulprosang">
                                                 <li><b>Talks: </b>
- Many talks from eminent people in industry and academia, thus helping students understand the current trends and needs.</li><br></br>
+                                                    Many talks from eminent people in industry and academia, thus helping students understand the current trends and needs.</li><br></br>
                                                 <li><b>Competitions: </b>
-Cut-throat competition in challenging events thrills the students and encourages them to make products to solve challenging problems put to them in the form of problem statements.</li><br></br>
+                                                    Cut-throat competition in challenging events thrills the students and encourages them to make products to solve challenging problems put to them in the form of problem statements.</li><br></br>
                                                 <li><b>Workshops: </b>
-Several workshops are organized on IoT, drone automation, etc., giving students hands-on experience and honing their skill set.
-Also, we organize several free of cost workshops for school students to embed scientific temperament at young ages only. They also visit and experience the atmosphere of a National Institute of Technology, see technical workshops, visit many labs, and much more.</li><br></br>
+                                                    Several workshops are organized on IoT, drone automation, etc., giving students hands-on experience and honing their skill set.
+                                                    Also, we organize several free of cost workshops for school students to embed scientific temperament at young ages only. They also visit and experience the atmosphere of a National Institute of Technology, see technical workshops, visit many labs, and much more.</li><br></br>
                                                 <li><b>Project Exhibition: </b>
-Students of our clubs and outside display projects built throughout the year to professors from all college departments and benefit from their valuable insights in the project exhibition.</li><br></br>
+                                                    Students of our clubs and outside display projects built throughout the year to professors from all college departments and benefit from their valuable insights in the project exhibition.</li><br></br>
 
                                                 <li><b>Shows: </b>Many fun yet enlightening activities like Airshow, Stargazing Workshop by professionals.</li><br></br>
                                             </ul>
@@ -149,18 +149,17 @@ Students of our clubs and outside display projects built throughout the year to 
                                     }}
                                 >
                                     <div style={{ padding: "10px" }}>
-
                                         <p className="text-gray-700" style={{ textAlign: "justify" }}>
                                             <i style={{ fontSize: "medium" }}>Every year ProSang witnesses: </i><br></br><br></br><ul className="ulprosang">
                                                 <li><b>Talks: </b>
- Many talks from eminent people in industry and academia, thus helping students understand the current trends and needs.</li><br></br>
+                                                    Many talks from eminent people in industry and academia, thus helping students understand the current trends and needs.</li><br></br>
                                                 <li><b>Competitions: </b>
-Cut-throat competition in challenging events thrills the students and encourages them to make products to solve challenging problems put to them in the form of problem statements.</li><br></br>
+                                                    Cut-throat competition in challenging events thrills the students and encourages them to make products to solve challenging problems put to them in the form of problem statements.</li><br></br>
                                                 <li><b>Workshops: </b>
-Several workshops are organized on IoT, drone automation, etc., giving students hands-on experience and honing their skill set.
-Also, we organize several free of cost workshops for school students to embed scientific temperament at young ages only. They also visit and experience the atmosphere of a National Institute of Technology, see technical workshops, visit many labs, and much more.</li><br></br>
+                                                    Several workshops are organized on IoT, drone automation, etc., giving students hands-on experience and honing their skill set.
+                                                    Also, we organize several free of cost workshops for school students to embed scientific temperament at young ages only. They also visit and experience the atmosphere of a National Institute of Technology, see technical workshops, visit many labs, and much more.</li><br></br>
                                                 <li><b>Project Exhibition: </b>
-Students of our clubs and outside display projects built throughout the year to professors from all college departments and benefit from their valuable insights in the project exhibition.</li><br></br>
+                                                    Students of our clubs and outside display projects built throughout the year to professors from all college departments and benefit from their valuable insights in the project exhibition.</li><br></br>
 
                                                 <li><b>Shows: </b>Many fun yet enlightening activities like Airshow, Stargazing Workshop by professionals.</li><br></br>
                                             </ul>
@@ -182,7 +181,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                 aria-controls="collapseExample1"
                             >
                                 Prosang 2020
-              </a>
+                            </a>
                         </p>
                         {/* <div className="colarea"> */}
                         <div className="collapse colarea" id="collapseExample1">
@@ -222,13 +221,13 @@ Students of our clubs and outside display projects built throughout the year to 
                                                             <li> <b>Mr. Sanjeev Sharma (CEO and Founder, Swaayatt Robots) </b><a href="https://www.linkedin.com/in/sanjeevsharmaiitr/"><i className="fab fa-linkedin fa-lg"></i></a></li>
 
                                                             <br></br>
-                                                        Autonomous Vehicles in Indian Scenarios
-                                                        <hr></hr>
+                                                            Autonomous Vehicles in Indian Scenarios
+                                                            <hr></hr>
                                                             <li><b>Dr. Vijay Kapoor (Founder, Delhi Astronomy Club, Bangalore Astronomy Club) </b><a href="https://www.linkedin.com/in/sanjeevsharmaiitr/"><i className="fab fa-linkedin fa-lg"></i></a></li><br></br>
-                                                        Amateur Astronomy and Beyond
-                                                        <hr></hr>
+                                                            Amateur Astronomy and Beyond
+                                                            <hr></hr>
                                                             <li><b>Mr. Mani Tripathi (Head, Allahabad Smart City Project) </b><a href="https://www.linkedin.com/in/sanjeevsharmaiitr/"><i className="fab fa-linkedin fa-lg"></i></a><br></br><br></br>
-                                                        What Does it Take to Build a Smart City</li>
+                                                                What Does it Take to Build a Smart City</li>
                                                         </ul>
                                                     </p>
 
@@ -246,7 +245,7 @@ Students of our clubs and outside display projects built throughout the year to 
 
                                                     <button className="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                                         Workshops
-                                                     </button>
+                                                    </button>
                                                 </p>
 
                                                 <div className="collapse collapsews" id="collapseExample">
@@ -256,11 +255,6 @@ Students of our clubs and outside display projects built throughout the year to 
                                                         <p>A Day in the world of Robotics</p>
                                                     </div>
                                                 </div>
-
-
-
-
-
                                                 <span><h6>Project Exhibition</h6>
                                                 </span><br></br>
                                                 <span><h6>Airshow by Vortex RC</h6>
@@ -295,7 +289,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                     MNNIT became a hosting ground for an enchanting workshop conducted by Vijay Kapoor sir, a prominent Indian astrophotographer, this ProSang. After the inauguration ceremony, where he quickly earned the attention and awe of his audience with his clicked images, the observation sessions began at the athletics ground. Participant counts ran high as he taught everyone, on the first day, how to set up a telescope and focused our myopic attention on life onto the powerful telescope and the cosmos it revealed, accompanying it with a matching explanation.
                                                     The second day brought forward a chance to peer at our star, the Sun, in the daytime. Vijay sir elaborated on sunspots and the equipment used to capture such images, followed by a session on processing raw images and software used in the process. The evening brought a chance to gaze at the sky again, with the clouds giving an unexpected cameo yet again through our observation events. With his telescope and amassed knowledge, he stood in the center of the circle of huddled enthusiasts listening with rapt attention even on the last session. Children covered under the Anokhi Pehel program (a non-profit organisation managed by students who share the common aim of helping the underprivileged children by providing them with education) also took a look from the telescope, excited faces beaming with happiness. Though the ProSang and the workshop concluded, the joy of looking at the sky and learning more about our universe has only grown stronger since the event.
 
-                                                            </i>
+                                                </i>
                                             </p>
                                         </p>
 
@@ -328,7 +322,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                     </h4>
                                                     <p className="phonetxt">
                                                         Home Automation event
-                                                    <br></br><br></br>
+                                                        <br></br><br></br>
                                                     </p>
 
                                                 </div>
@@ -355,7 +349,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                         <a>
                                                             {" "}
                                                             Daksha
-                            </a>
+                                                        </a>
                                                     </h4>
                                                     <p className="phonetxt">
                                                         Manual Robotics event
@@ -368,7 +362,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                         className="btn btn-link btn-block"
                                                     >
                                                         Problem Statement
-                          </a>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -384,7 +378,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                     <h4 className="card-title cardev-title">
                                                         <a>
                                                             Guardian
-                            </a>
+                                                        </a>
                                                     </h4>
                                                     <p className="phonetxt">
                                                         QuadCopter Frame construction and Flight Test</p>
@@ -395,7 +389,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                         className="btn btn-link btn-block"
                                                     >
                                                         Problem Statement
-                          </a>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>
@@ -416,7 +410,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                     </h4>
                                                     <p className="phonetxt">
                                                         Mechanical Design Competition
-                                                    <br></br><br></br>
+                                                        <br></br><br></br>
                                                     </p>
 
                                                 </div>
@@ -447,7 +441,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                     </h4>
                                                     <p className="phonetxt">
                                                         A coding event
-                                                    <br></br><br></br>
+                                                        <br></br><br></br>
                                                     </p>
 
                                                 </div>
@@ -478,7 +472,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                     </h4>
                                                     <p className="phonetxt">
                                                         Innovative Ideas
-                                                    <br></br><br></br>
+                                                        <br></br><br></br>
                                                     </p>
 
                                                 </div>
@@ -509,7 +503,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                     </h4>
                                                     <p className="phonetxt">
                                                         An astronomy trivia quiz event
-                                                    <br></br><br></br>
+                                                        <br></br><br></br>
                                                     </p>
 
                                                 </div>
@@ -539,7 +533,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                 aria-controls="collapseExample2"
                             >
                                 Prosang 2019
-              </a>
+                            </a>
                         </p>
                         {/* <div className="colarea"> */}
                         <div className="collapse colarea" id="collapseExample2">
@@ -558,7 +552,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                             ></div>
                                             <h5 className="font-bold text-3xl my-4 sm:text-4xl">
                                                 <span className="text-indigo-300 font-bold">Making Humanity Interplanetary
-</span>
+                                                </span>
                                             </h5>
                                             <div
                                                 style={{
@@ -578,23 +572,23 @@ Students of our clubs and outside display projects built throughout the year to 
                                                         ></div>
                                                         <ul className="remul">
                                                             <li> <b>Mr. Ravi Prakash
-                                                            -Winner, Amazon Robotics Challenge-Japan 2017
-(Ph.D. Scholar, IIT Kanpur) </b><a href="https://www.linkedin.com/in/ravi-prakash-a93ab9a8/?originalSubdomain=in"><i className="fab fa-linkedin fa-lg"></i></a></li>
+                                                                -Winner, Amazon Robotics Challenge-Japan 2017
+                                                                (Ph.D. Scholar, IIT Kanpur) </b><a href="https://www.linkedin.com/in/ravi-prakash-a93ab9a8/?originalSubdomain=in"><i className="fab fa-linkedin fa-lg"></i></a></li>
 
                                                             <br></br>
                                                             Autonomous Robots for Mars Civilizations
-                                                        <hr></hr>
+                                                            <hr></hr>
                                                             <li><b>Mr. Ganesh Shankar
-(Co-Founder and CEO, FluxGen Engineering) </b><a href="https://www.linkedin.com/in/ganesh-shankar/?originalSubdomain=in"><i className="fab fa-linkedin fa-lg"></i></a></li><br></br>
-                                                        Internet of Things
-                                                        <hr></hr>
+                                                                (Co-Founder and CEO, FluxGen Engineering) </b><a href="https://www.linkedin.com/in/ganesh-shankar/?originalSubdomain=in"><i className="fab fa-linkedin fa-lg"></i></a></li><br></br>
+                                                            Internet of Things
+                                                            <hr></hr>
                                                             <li><b>Prof. Sanjay Mittal
-(Ex HOD and Coordinator Wind Tunnel, IIT Kanpur) </b><a href="https://www.iitk.ac.in/new/sanjay-mittal"><i className="fab fa-linkedin fa-lg"></i></a><br></br><br></br>
-                                                        The Science of Flight<hr></hr></li>
+                                                                (Ex HOD and Coordinator Wind Tunnel, IIT Kanpur) </b><a href="https://www.iitk.ac.in/new/sanjay-mittal"><i className="fab fa-linkedin fa-lg"></i></a><br></br><br></br>
+                                                                The Science of Flight<hr></hr></li>
                                                             <li><b>Dr. GR Sinha
-(Distinguished ACM Speaker) </b><a href="https://www.linkedin.com/in/dr-g-r-sinha-65713b18/"><i className="fab fa-linkedin fa-lg"></i></a></li><br></br>
-                                                         Applications of Image Processing for Space Explorations
-                                                        <hr></hr>
+                                                                (Distinguished ACM Speaker) </b><a href="https://www.linkedin.com/in/dr-g-r-sinha-65713b18/"><i className="fab fa-linkedin fa-lg"></i></a></li><br></br>
+                                                            Applications of Image Processing for Space Explorations
+                                                            <hr></hr>
 
                                                         </ul>
                                                     </p>
@@ -612,7 +606,7 @@ Students of our clubs and outside display projects built throughout the year to 
 
 
                                                 <span><h6>Workshop for school students and teachers on robotics.
-</h6>
+                                                </h6>
                                                 </span><br></br>
                                                 <h6><span>Project exhibition-witnessed by professor Sanjay Mittal -IIT Kanpur </span>
                                                     <a href="https://www.iitk.ac.in/new/sanjay-mittal"><i className="fas fa-user fa-lg"></i></a></h6>
@@ -628,9 +622,6 @@ Students of our clubs and outside display projects built throughout the year to 
                                         </div>
                                     </div>
                                 </div>
-
-
-
                                 <div className="container">
                                     <h3 className="font-bold text-3xl my-4 sm:text-4xl">
                                         <span className="text-indigo-300 font-bold">Competitions</span>
@@ -657,7 +648,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                     </h4>
                                                     <p className="phonetxt">
                                                         Designing and flying RC aircraft
-                                                    <br></br><br></br>
+                                                        <br></br><br></br>
                                                     </p>
 
                                                 </div>
@@ -677,7 +668,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                         <a>
                                                             {" "}
                                                             Extempore
-                            </a>
+                                                        </a>
                                                     </h4>
                                                     <p className="phonetxt">
                                                         electronic circuit design
@@ -699,7 +690,7 @@ Students of our clubs and outside display projects built throughout the year to 
                                                     <h4 className="card-title cardev-title">
                                                         <a>
                                                             CodeWarZ
-                            </a>
+                                                        </a>
                                                     </h4>
                                                     <p className="phonetxt">
                                                         A competitive coding event </p>
@@ -724,15 +715,13 @@ Students of our clubs and outside display projects built throughout the year to 
                                                     </h4>
                                                     <p className="phonetxt">
                                                         A gaming event
-                                                    <br></br><br></br>
+                                                        <br></br><br></br>
                                                     </p>
 
                                                 </div>
 
                                             </div>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>

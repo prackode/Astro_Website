@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import "../../css/SingleProject.css";
 import Loading from "../../Animations/Loading";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars";
 import { animateScroll } from "react-scroll";
 
 function SingleAstrophoto() {

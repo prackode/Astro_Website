@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import Loading from "../../Animations/Loading";
 import "../../css/news.css";
 import '../../css/Achievements.css'
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars"
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css';
 import { EmojiEvents } from '@material-ui/icons'
-import {animateScroll} from 'react-scroll'
+import { animateScroll } from 'react-scroll'
 
 export default function Achievements() {
   const [achievements, setAchievements] = useState([]);
@@ -25,7 +25,7 @@ export default function Achievements() {
   }, []);
   return (
     <>
-     <Loading time={2} fetching={fetching}/>
+      <Loading time={2} fetching={fetching} />
       <div className="pagesa">
         <div className="overlaya starbg">
           <div className="pageTitlea titleBolda">Our Achievements</div>
@@ -35,8 +35,7 @@ export default function Achievements() {
               style={{ fontSize: "1.5rem" }}
             >
               "Everyone Has A Will To Win, But Very Few Have The Will To Prepare To Win." ~ Vince Lombardi
-              
-          </p>
+            </p>
           </div>
         </div>
       </div>
@@ -53,9 +52,7 @@ export default function Achievements() {
                 icon={<EmojiEvents />}
               >
                 <div className='my-4'>
-                  <div className="vertical-timeline-element-title achievement-title text-center ql-editor" dangerouslySetInnerHTML={{
-                    __html: achievement.desc,
-                  }}></div>
+                  <div className="vertical-timeline-element-title achievement-title text-center ql-editor" dangerouslySetInnerHTML={{ __html: achievement.desc, }}></div>
                   <div className='text-center achievement-member'>
                     <p>Team Members : </p>
                     {
@@ -79,7 +76,6 @@ export default function Achievements() {
           }
         </VerticalTimeline>
       </div>
-
     </>
   );
 }

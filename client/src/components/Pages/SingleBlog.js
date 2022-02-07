@@ -4,7 +4,7 @@ import "../../css/SingleBlog.css";
 import Loading from "../../Animations/Loading";
 import "react-quill/dist/quill.core.css";
 import { Container, Jumbotron, OverlayTrigger, Tooltip } from "react-bootstrap";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars"
 import { animateScroll } from "react-scroll";
 
 function SingleBlog() {

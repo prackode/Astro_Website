@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { animateScroll } from "react-scroll";
 import Loading from "../../Animations/Loading";
 import "../../css/featured-proj.css";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars";
 import { useDispatch, useSelector } from 'react-redux'
 
 function Projects() {

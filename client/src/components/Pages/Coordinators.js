@@ -10,7 +10,7 @@ import f6 from "../../images/coordinators&Nontech/Dushyant Mittal.jpeg";
 import f7 from "../../images/coordinators&Nontech/Ankur Kumar.jpg";
 import f8 from "../../images/coordinators&Nontech/Nilotpal Mukherjee.jpeg";
 
-import { REACT_APP_BASE_TITLE } from "../../grobalVars"
+import { REACT_APP_BASE_TITLE } from "../../globalVars"
 import { animateScroll } from "react-scroll";
 
 export default function Coordinators() {

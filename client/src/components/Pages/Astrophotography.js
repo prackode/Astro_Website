@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 import Loading from "../../Animations/Loading";
 import "../../css/featured-proj.css";
-import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../grobalVars";
+import { REACT_APP_BASE_TITLE, REACT_APP_SERVER } from "../../globalVars";
 import { animateScroll } from 'react-scroll'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/blur.css';
