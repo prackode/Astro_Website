@@ -16,21 +16,21 @@ export default function WebTeam() {
     const members = [
         {
             name: "Abhinav Anand",
-            year: "2nd",
+            year: "3rd",
             branch: "Information Technology",
             photo: f1,
             linkedinId: "https://www.linkedin.com/in/abhinav-anand-33b7a3204/",
         },
         {
             name: "Ishan Gupta",
-            year: "2nd",
+            year: "3rd",
             branch: "Computer Science and Engg.",
             photo: f2,
             linkedinId: "https://www.linkedin.com/in/ishan-gupta100/",
         },
         {
             name: "Parnab Ghosh",
-            year: "2nd",
+            year: "3rd",
             branch: "Electronics and Comm. Engg.",
             photo: f3,
             linkedinId: "https://www.linkedin.com/in/parnab-ghosh-57326118b/",

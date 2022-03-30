@@ -39,6 +39,7 @@ function SingleProject() {
         if (data.error) history.push("/404");
         else {
           document.title = `${data.title} | ${REACT_APP_BASE_TITLE}`;
+          console.log(data);
           setProject(data);
           setFetching(0);
         }

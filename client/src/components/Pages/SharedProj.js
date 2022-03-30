@@ -34,16 +34,15 @@ function SharedProj() {
         "Content-Type": "application/json",
         Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
       },
-    })
-      .then((res) => {
-        if (res.status !== 200) history.push("/404");
-        return res.json();
-      })
-      .then((data) => {
-        document.title = `${data.title} | ${REACT_APP_BASE_TITLE}`;
-        setProject(data);
-        setFetching(0);
-      });
+    }).then((res) => {
+      if (res.status !== 200) history.push("/404");
+      return res.json();
+    }).then((data) => {
+      document.title = `${data.title} | ${REACT_APP_BASE_TITLE}`;
+      console.log(data);
+      setProject(data);
+      setFetching(0);
+    });
   }, []);
 
   return (

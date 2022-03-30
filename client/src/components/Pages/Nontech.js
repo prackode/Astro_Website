@@ -32,7 +32,7 @@ export default function Nontech() {
         {
           emailAddress: "rishankb575@gmail.com",
           name: "Rishank Barua",
-          year: "2nd",
+          year: "3rd",
           linkedinId: "https://www.linkedin.com/in/rishank-barua-3413821b9/",
           profilePicture: f4,
           branch: 'Information Technology'
@@ -40,7 +40,7 @@ export default function Nontech() {
         {
           emailAddress: "saptarshroyc@gmail.com",
           name: "Saptarshi Roy Chowdhury",
-          year: "3rd",
+          year: "4th",
           linkedinId: "https://www.linkedin.com/in/saptarshi-roy-c-5bb29b92",
           profilePicture: f6,
           branch: 'Electonics and Comm. Engg.'
@@ -48,7 +48,7 @@ export default function Nontech() {
         {
           emailAddress: "maazshuaib18@gmail.com",
           name: "Maaz",
-          year: "2nd",
+          year: "3rd",
           linkedinId: "https://www.linkedin.com/in/maaz-shuaib-baa715206",
           profilePicture: f8,
           branch: 'Civil Engineering'
@@ -56,7 +56,7 @@ export default function Nontech() {
         {
           emailAddress: "prasannasneha1322@gmail.com",
           name: "Prasanna Sneha",
-          year: "2nd",
+          year: "3rd",
           ifWebThenRoboOrAero: "Aero",
           linkedinId: "https://www.linkedin.com/in/prasanna-sneha-2211200013",
           profilePicture: f11,
@@ -65,7 +65,7 @@ export default function Nontech() {
         {
           emailAddress: "devanshsethi77@gmail.com",
           name: "Devansh Sethi",
-          year: "2nd",
+          year: "3rd",
           linkedinId: "https://www.linkedin.com/in/devansh-sethi-2a97721b3",
           profilePicture: f12,
           branch: 'Electonics and Comm. Engg.'
@@ -78,7 +78,7 @@ export default function Nontech() {
         {
           emailAddress: "nilotpalmukherjee.909@gmail.com",
           name: "NILOTPAL MUKHERJEE",
-          year: "3rd",
+          year: "4th",
           linkedinId: "https://www.linkedin.com/in/nilotpal-mukherjee-579249196",
           profilePicture: f1,
           branch: 'Mechanical Engineering'
@@ -86,7 +86,7 @@ export default function Nontech() {
         {
           emailAddress: "aditya.20192074@mnnit.ac.in",
           name: "Aditya Gupta",
-          year: "2nd",
+          year: "3rd",
           linkedinId: "https://www.linkedin.com/in/aditya-gupta-916304199",
           profilePicture: f3,
           branch: 'Electrical Engineering'
@@ -94,7 +94,7 @@ export default function Nontech() {
         {
           emailAddress: "apanshula.20193143@mnnit.ac.in",
           name: "Apanshula Shourie",
-          year: "2nd",
+          year: "3rd",
           linkedinId: "Apanshula Shourie",
           profilePicture: f7,
           branch: 'Mechanical Engineering'
@@ -102,7 +102,7 @@ export default function Nontech() {
         {
           emailAddress: "maazshuaib18@gmail.com",
           name: "Maaz",
-          year: "2nd",
+          year: "3rd",
           linkedinId: "https://www.linkedin.com/in/maaz-shuaib-baa715206",
           profilePicture: f8,
           branch: 'Civil Engineering'
@@ -110,7 +110,7 @@ export default function Nontech() {
         {
           emailAddress: "abhasraj177@gmail.com",
           name: "Abhas Raj",
-          year: "3rd",
+          year: "4th",
           linkedinId: "https://www.linkedin.com/in/abhas-raj-333360179",
           profilePicture: f9,
           branch: 'Mechanical Engineering'
@@ -125,7 +125,7 @@ export default function Nontech() {
         {
           emailAddress: "ankur.20191080@mnnit.ac.in",
           name: "Ankur Kumar",
-          year: "2nd",
+          year: "3rd",
           branch: 'Civil Engineering',
           profilePicture: f15,
           linkedinId: "https://www.linkedin.com/in/ankur-kumar-3565721a2/",
@@ -138,7 +138,7 @@ export default function Nontech() {
         {
           emailAddress: "Agrawalpurushotam@gmail.com",
           name: "Purushotam Kumar Agrawal",
-          year: "2nd",
+          year: "3rd",
           ifWebThenRoboOrAero: "Robo",
           linkedinId: "https://www.linkedin.com/in/puru2411",
           profilePicture: f2,
@@ -147,7 +147,7 @@ export default function Nontech() {
         {
           emailAddress: "rahulvermadbm@gmail.com",
           name: "Rahul Verma",
-          year: "2nd",
+          year: "3rd",
           ifWebThenRoboOrAero: "Robo",
           linkedinId: "https://www.linkedin.com/in/rahul-verma-0406021b3",
           profilePicture: f5,
@@ -156,7 +156,7 @@ export default function Nontech() {
         {
           emailAddress: "saptarshroyc@gmail.com",
           name: "Saptarshi Roy Chowdhury",
-          year: "3rd",
+          year: "4th",
           linkedinId: "https://www.linkedin.com/in/saptarshi-roy-c-5bb29b92",
           profilePicture: f6,
           branch: 'Electonics and Comm. Engg.'
@@ -164,14 +164,14 @@ export default function Nontech() {
         {
           emailAddress: "prakhar21102001@gmail.com",
           name: "Prakhar jain",
-          year: "2nd",
+          year: "3rd",
           profilePicture: f10,
           branch: 'Mechanical Engineering'
         },
         {
           emailAddress: "harshkumarsingh325@gmail.com",
           name: "Harsh Kumar Singh",
-          year: "2nd",
+          year: "3rd",
           profilePicture: f14,
           branch: 'Electonics and Comm. Engg.',
           linkedinId: "harshkumarsingh325@gmail.com",
